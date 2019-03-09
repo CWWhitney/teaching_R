@@ -1,26 +1,256 @@
-Teaching-R
+Data Wrangling
 ========================================================
-author: 
-date: 
+author: Cory Whitney
+font-family: 'Helvetica'
+date: "`r Sys.Date()`"
 autosize: true
+***
+<img src="Teaching-R-figure/wrangler.png" style="background:none; border:none; box-shadow:none;height="70%"; width="70%";">
+```{r setup, include = FALSE}
+library(knitr)
+library(tidyr)
+library(dplyr)
+library(magrittr)
 
-First Slide
+participants_data <- read.csv("18_Teaching_R/R/participants_data.csv")
+```
+Overview
+====================================
+incremental: true
+<img src="Teaching-R-figure/tidyR.png" style="background:none; border:none; box-shadow:none;height="20%"; width="20%";">
+<img src="Teaching-R-figure/dplyr.png" style="background:none; border:none; box-shadow:none;height="30%"; width="30%";">
+<img src="Teaching-R-figure/magrittr.png" style="background:none; border:none; box-shadow:none;height="20%"; width="20%";">
+***
+- Tidy code style with tidyR  
+- Clean and intuitive functions with dplyr
+- Concise code with magrittr 'Ceci n'est pas une pipe'
+
+Notes on R
+========================================================
+incremental: true
+
+Left-brained, paint in your hair experience
+
+<img src="Teaching-R-figure/a_macdonaldideas.png" style="background:none; border:none; box-shadow:none;height="90%"; width="90%";">
+
+<img src="Teaching-R-figure/andrew_macdonald.png" style="background:none; border:none; box-shadow:none; box-shadow:none;height="10%"; width="10%";">
+
+Andrew MacDonald @polesasunder http://thestudyofthehousehold.com/2018/02/09/2018-02-09-how-i-use-rmarkdown/
+
+Notes on R
 ========================================================
 
-For more details on authoring R presentations please visit <https://support.rstudio.com/hc/en-us/articles/200486468>.
+<img src="Teaching-R-figure/concentrate.png" style="background:none; border:none; box-shadow:none;height="40%"; width="40%";">
 
-- Bullet 1
-- Bullet 2
-- Bullet 3
-
-Slide With Code
+Notes on R
 ========================================================
+incremental: true
+Keep it tidy <img src="Teaching-R-figure/tidyR.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";"> http://style.tidyverse.org/
+
+Use ‘#’ to annotate and not run
+
+If not Rmarkdown then at least use ‘----’ or ‘####’ 
+
+#Section 1----
+
+#Section 2####
+
+#Section 3####
+
+<span style="font-weight:bold; color:red;">TOC in upper right console</span>
+
+
+Notes on R 
+========================================================
+incremental: true
+Keep it tidy <img src="Teaching-R-figure/tidyR.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";"> http://style.tidyverse.org/
 
 ```{r}
-summary(cars)
+browseVignettes(package = "tidyverse")
 ```
 
-Slide With Plot
+***
+<img src="Teaching-R-figure/hadley_wickham.png" style="background:none; border:none; box-shadow:none;height="40%"; width="40%";">  
+Hadley Wickham
+
+Notes on R 
+========================================================
+incremental: true
+Keep it tidy <img src="Teaching-R-figure/tidyR.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";"> http://style.tidyverse.org/
+
+<img src="Teaching-R-figure/tidyR_process.png" style="background:none; border:none; box-shadow:none;height="100%"; width="100%";">
+
+Good coding style is like correct punctuation:
+withoutitthingsarehardtoread
+
+Notes on R 
+========================================================
+incremental: true
+Keep it tidy <img src="Teaching-R-figure/tidyR.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";"> http://style.tidyverse.org/
+
+- Keep your data tidy
+- When your data is tidy, each column is a variable, and each row is an observation
+- Consistent structure lets you focus your struggle on questions about the data, not fighting to get the data into the right form for different functions
+
+<img src="Teaching-R-figure/wrangler.png" style="background:none; border:none; box-shadow:none;height="20%"; width="20%";">
+
+
+
+Notes on R 
+========================================================
+incremental: true
+
+'Tidy Data' in the Journal of Statistical Software http://www.jstatsoft.org/v59/i10/paper.
+
+Three things make a dataset tidy:
+- Each variable with its own column.
+- Each observation with its own row.
+- Each value with its own cell.
+
+<img src="Teaching-R-figure/tidydata.png" style="background:none; border:none; box-shadow:none;height="90%"; width="90%";">
+
+
+Wrangling 
+========================================================
+incremental: true
+
+- Once you have __tidy__ data, a common first step is to __transform__ it
+- narrowing in on observations of interest
+- creating new variables that are functions of existing variables
+- calculating a set of summary statistics
+
+<img src="Teaching-R-figure/Wrangling_Data.png" style="background:none; border:none; box-shadow:none;height="50%"; width="50%";"> http://www.codeastar.com/data-wrangling/
+
+Wrangling 
+========================================================
+incremental: true
+<img src="Teaching-R-figure/dplyr.png" style="background:none; border:none; box-shadow:none;height="20%"; width="20%";">
+
+<img src="Teaching-R-figure/hadley_wickham.png" style="background:none; border:none; box-shadow:none;height="50%"; width="50%";">
+
+***
+Format of __dplyr__ by H. Wickham
+- __Arguments start with a data frame__
+- __select__: return a subset of the columns
+- __filter__: extract a subset of rows
+- __arrange__: reorder rows
+- __rename__: rename variables
+- __mutate__: add new variables and columns or transform
+- __summarize__: generate summary statistics
+
+Wrangling 
+========================================================
+incremental: true
+- Using __dplyr__ <img src="Teaching-R-figure/dplyr.png" style="background:none; border:none; box-shadow:none;height="20%"; width="20%";">
+
+```{r}
+# install.packages("dplyr")
+library(dplyr)
+```
+***
+![Alt text](Teaching-R-figure/Roger_Peng .png)
+
+Roger Peng genomicsclass.github.io/ book/pages/ dplyr_tutorial
+
+<img src="Teaching-R-figure/github.png" style="background:none; border:none; box-shadow:none;height="20%"; width="20%";">
+
+Wrangling 
+========================================================
+incremental: true
+Subsetting <img src="Teaching-R-figure/dplyr.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";">
+
+__Select__
+
+```{r}
+aca_work_filter<-select(participants_data, academic_parents, working_hours_per_day)
+aca_work_filter
+```
+```{r}
+non_aca_work_filter<-select(participants_data, -academic_parents, -working_hours_per_day)
+non_aca_work_filter
+```
+***
+__Base R alternative__
+
+```{r}
+aca_work<-participants_data[, c(8, 6)]
+aca_work
+```
+```{r}
+non_aca_work<-participants_data[, c(8, 6)]
+non_aca_work
+```
+
+Wrangling 
+========================================================
+incremental: true
+Subsetting ![Alt text](Teaching-R-figure/dplyr.png)
+
+__Filter__
+```{r}
+work_filter<-filter(participants_data, working_hours_per_day >10)
+work_filter
+work_name_filter<-filter(participants_data, working_hours_per_day >10 & letters_in_first_name >6)
+work_name_filter
+```
+
+Wrangling 
+========================================================
+incremental: true
+![Alt text](Teaching-R-figure/dplyr.png)
+
+__Rename__
+```{r}
+participants_data <- rename(participants_data, name_length = letters_in_first_name)
+names(participants_data)
+
+participants_data <- rename(participants_data,
+daily_labor=letters_in_first_name)
+names(participants_data)
+```
+
+Wrangling 
+========================================================
+incremental: true
+![Alt text](Teaching-R-figure/dplyr.png)
+
+__Mutate__
+```{r}
+participants_data <- mutate(participants_data, daily_labor*mean(daily_labor, na.rm=T))
+head(participants_data)
+
+participants_data <- mutate(participants_data, number_of_siblings -mean(number_of_siblings))
+head(participants_data)
+```
+
+Wrangling 
+========================================================
+incremental: true
+![Alt text](Teaching-R-figure/dplyr.png)
+
+__Group by__
+
+- Commute category
+```{r}
+participants_data <- mutate(participants_data, commute = factor(1* (km_home_to_zef > 10), labels = c("commuter", "local")))
+participants_data$commute
+commuter_data <- group_by(participants_data, commute)
+commuter_data
+summarize(commuter_data, mean(days_to_email_response), median(name_length), max(years_of_study))
+```
+
+Wrangling 
+========================================================
+incremental: true
+<img src="Teaching-R-figure/dplyr.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";"> <img src="Teaching-R-figure/magrittr.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";">
+
+- Pipeline %>% (saves on assigning data frames)
+- Do all the previous with a pipeline %>%
+```{r}
+participants_data %>% mutate(commute = factor(1* (km_home_to_zef > 10), labels = c("commuter", "local"))) %>% group_by(commute) %>% summarize(mean(days_to_email_response), median(name_length), max(years_of_study)) %>% as.data.frame
+```
+
+Animated figures
 ========================================================
 
 ```{r, echo=FALSE}
@@ -32,5 +262,4 @@ library(gifski)
   geom_point() +
   transition_states(am, transition_length = 4, state_length = 1) + 
   view_follow()
-
 ```
