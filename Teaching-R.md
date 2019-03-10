@@ -2,7 +2,7 @@ Data Wrangling
 ========================================================
 author: Cory Whitney
 font-family: 'Helvetica'
-date: "2019-03-09"
+date: "2019-03-10"
 autosize: true
 ***
 <img src="Teaching-R-figure/wrangler.png" style="background:none; border:none; box-shadow:none;height="70%"; width="70%";">
@@ -122,11 +122,11 @@ incremental: true
 Wrangling 
 ========================================================
 incremental: true
-<small>Format of __dplyr__</small> <img src="Teaching-R-figure/dplyr.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";"> <small>http://style.tidyverse.org/</small>
+<small>Format of __dplyr__</small> <img src="Teaching-R-figure/dplyr.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";"> 
 
 <img src="Teaching-R-figure/hadley_wickham.png" style="background:none; border:none; box-shadow:none;height="50%"; width="50%";">
 
-Hadley Wickham 
+<small>http://style.tidyverse.org/</small> 
 
 ***
 - __Arguments start with a data frame__
@@ -135,7 +135,7 @@ Hadley Wickham
 - __arrange__: reorder rows
 - __rename__: rename variables
 - __mutate__: add new variables and columns or transform
-- __summarize__: generate summary statistics
+- __summarize__: generate tables of summary statistics
 
 Wrangling 
 ========================================================
@@ -149,13 +149,12 @@ library(dplyr)
 ```
 
 
-<img src="Teaching-R-figure/github.png" style="background:none; border:none; box-shadow:none;height="40%"; width="40%";">
-<small>genomicsclass.github.io/book/pages/dplyr_tutorial</small>
+<img src="Teaching-R-figure/github.png" style="background:none; border:none; box-shadow:none;height="40%"; width="40%";"> <small>genomicsclass.github.io/book/pages/dplyr_tutorial</small>
 
 ***
 
-![Alt text](Teaching-R-figure/Roger_Peng .png)
-Roger Peng
+<img src="Teaching-R-figure/Roger_Peng.png" style="background:none; border:none; box-shadow:none;height="40%"; width="40%";">
+<small>Roger Peng</small>
 
 
 Wrangling 
@@ -227,13 +226,11 @@ participants_data <- mutate(participants_data, number_of_siblings -mean(number_o
 Wrangling 
 ========================================================
 incremental: true
-<small> __Group by__ </small> <img src="Teaching-R-figure/dplyr.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";">
+<small> __Group by__ </small> <img src="Teaching-R-figure/dplyr.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";"> create a commute category
 
-- Commute category
 
 ```r
 participants_data <- mutate(participants_data, commute = factor(1* (km_home_to_zef > 10), labels = c("commuter", "local")))
-# participants_data$commute
 ```
 
 
@@ -241,18 +238,19 @@ participants_data <- mutate(participants_data, commute = factor(1* (km_home_to_z
 commuter_data <- group_by(participants_data, commute)
 ```
 
+Wrangling 
+========================================================
+incremental: true
+<small> __Summarize__ </small> <img src="Teaching-R-figure/dplyr.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";"> <small>get a summary of travel times and days to response</small>
+
 
 ```r
-summarize(commuter_data, mean(days_to_email_response), median(name_length), max(years_of_study))
+commuter_summary <- summarize(commuter_data, mean(days_to_email_response), median(name_length))
 ```
 
-```
-# A tibble: 2 x 4
-  commute  `mean(days_to_email_res… `median(name_lengt… `max(years_of_stud…
-  <fct>                       <dbl>               <dbl>               <dbl>
-1 commuter                     1.8                    5                  20
-2 local                        1.25                   7                   9
-```
+- Make your own query
+
+</small> <img src="Teaching-R-figure/dplyr.png" style="background:none; border:none; box-shadow:none;height="20%"; width="20%";">
 
 Wrangling 
 ========================================================
@@ -262,9 +260,11 @@ incremental: true
 
 ```r
 pipe_data <- participants_data %>% 
-  mutate(commute = factor(1* (km_home_to_zef > 10), labels = c("commuter", "local"))) %>% 
+  mutate(commute = factor(1* (km_home_to_zef > 10), 
+                          labels = c("commuter", "local"))) %>% 
   group_by(commute) %>% 
-  summarize(mean(days_to_email_response), median(name_length), max(years_of_study)) %>% 
+  summarize(mean(days_to_email_response), median(name_length), 
+            max(years_of_study)) %>% 
   as.data.frame
 ```
 
