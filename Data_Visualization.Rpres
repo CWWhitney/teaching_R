@@ -1,0 +1,23 @@
+Data_Visualization
+========================================================
+author: 
+date: 
+autosize: true
+
+Next time we talk about vizualiation
+========================================================
+incremental: true
+left: 30%
+<img src="Teaching-R-figure/yihui.png" style="background:none; border:none; box-shadow:none;height="50%"; width="50%";"> https://yihui.name/en/2017/08/so-gh-email/
+***
+```{r, echo=FALSE}
+library(ggplot2)
+library(gganimate)
+library(gifski)
+         ggplot(mtcars, aes(factor(cyl), mpg)) + 
+  geom_boxplot() + 
+  geom_point() +
+  transition_states(am, transition_length = 4, state_length = 1) + 
+  view_follow()
+```
+
