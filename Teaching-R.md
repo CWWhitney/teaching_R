@@ -4,8 +4,10 @@ author: Cory Whitney
 font-family: 'Helvetica'
 date: "2019-03-10"
 autosize: true
-***
+
 <img src="Teaching-R-figure/wrangler.png" style="background:none; border:none; box-shadow:none;height="70%"; width="70%";">
+
+<div class="footer">University of Bonn </div>
 
 Overview
 ====================================
@@ -268,7 +270,15 @@ pipe_data <- participants_data %>%
   as.data.frame
 ```
 
-Animated figures
+Next time we talk about vizualiation
 ========================================================
-
+incremental: true
+left: 30%
+<img src="Teaching-R-figure/yihui.png" style="background:none; border:none; box-shadow:none;height="50%"; width="50%";"> https://yihui.name/en/2017/08/so-gh-email/
+***
 ![plot of chunk unnamed-chunk-15](Teaching-R-figure/unnamed-chunk-15-1.gif)
+
+Next time we talk about Markdown
+========================================================
+https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf
+

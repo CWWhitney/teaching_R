@@ -4,7 +4,7 @@ author: Cory Whitney
 font-family: 'Helvetica'
 date: "`r Sys.Date()`"
 autosize: true
-***
+
 <img src="Teaching-R-figure/wrangler.png" style="background:none; border:none; box-shadow:none;height="70%"; width="70%";">
 ```{r setup, include = FALSE}
 library(knitr)
@@ -14,6 +14,8 @@ library(magrittr)
 
 participants_data <- read.csv("18_Teaching_R/R/participants_data.csv")
 ```
+<div class="footer">University of Bonn </div>
+
 Overview
 ====================================
 incremental: true
@@ -261,9 +263,12 @@ pipe_data <- participants_data %>%
   as.data.frame
 ```
 
-Animated figures
+Next time we talk about vizualiation
 ========================================================
-
+incremental: true
+left: 30%
+<img src="Teaching-R-figure/yihui.png" style="background:none; border:none; box-shadow:none;height="50%"; width="50%";"> https://yihui.name/en/2017/08/so-gh-email/
+***
 ```{r, echo=FALSE}
 library(ggplot2)
 library(gganimate)
@@ -274,3 +279,8 @@ library(gifski)
   transition_states(am, transition_length = 4, state_length = 1) + 
   view_follow()
 ```
+
+Next time we talk about Markdown
+========================================================
+https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf
+
