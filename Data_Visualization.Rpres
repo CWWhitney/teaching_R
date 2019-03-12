@@ -22,7 +22,7 @@ right: 40%
 ***
 
 ```{r, out.width='35%', fig.align='center', echo=FALSE}
-knitr::include_graphics('Data_Visualization-figure/ggplot2.png.png')
+knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
 ```
 
 gganimate
