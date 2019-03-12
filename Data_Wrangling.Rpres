@@ -316,9 +316,9 @@ knitr::include_graphics('Data_Wrangling-figure/magrittr.png')
 
 ***
 - Use other R data set (e.g. iris, diamonds, ethnobotanydata) to work through  tasks 
-- long format in base
-- short format with magrittr pipeline
-- Descriptive statistics (checks in base R and dplyr)
+  - long format in base
+  - short format with magrittr pipeline
+  - Descriptive statistics (checks in base R and dplyr)
 
 <div class="footer"></small>cory.whitney@uni-bonn.de </small></div>
 
