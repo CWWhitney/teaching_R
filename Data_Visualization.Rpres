@@ -1,8 +1,29 @@
+<style>
+.section .reveal .state-background {
+    background: white;}
+.section .reveal h1,
+.section .reveal p {
+    color: black;
+    position: relative;
+    top: 4%;}
+    </style>
+    
 Data_Visualization
 ========================================================
-author: 
-date: 
+author: Cory Whitney
+font-family: 'Helvetica'
+date: "`r Sys.Date()`"
 autosize: true
+css: mySlideTemplate.css
+incremental: true
+right: 40%
+
+```{r, out.width='35%', fig.align='center', echo=FALSE}
+knitr::include_graphics('Data_Visualization-figure/ggplot2.png.png')
+```
+
+
+
 
 Next time we talk about vizualiation
 ========================================================
