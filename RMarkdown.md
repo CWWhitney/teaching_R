@@ -64,5 +64,6 @@ right: 30%
 <img src="RMarkdown-figure/open_markdown_file.jpg" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" width="50%" style="display: block; margin: auto;" />
 
 - Use the setup chunk
+- Remember the Table of Contents
 
 ***

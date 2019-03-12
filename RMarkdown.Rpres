@@ -75,5 +75,6 @@ knitr::include_graphics('RMarkdown-figure/open_markdown_file.jpg')
 ```
 
 - Use the setup chunk
+- Remember the Table of Contents
 
 ***
