@@ -1,9 +1,29 @@
+<style>
+.section .reveal .state-background {
+    background: white;}
+.section .reveal h1,
+.section .reveal p {
+    color: black;
+    position: relative;
+    top: 4%;}
+    </style>
+    
 Using RMarkdown
 ========================================================
-author: 
-date: 
+author: Cory Whitney
+font-family: 'Helvetica'
+date: "`r Sys.Date()`"
 autosize: true
+css: mySlideTemplate.css
 
-Next time we talk about Markdown
+RMarkdown
 ========================================================
 https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf
+
+![](RMarkdown-figure/RMarkdown.png)
+
+- Use it! 
+- You will thank yourself 
+- Save often with new version
+
+<div class="footer"></small>https://rmarkdown.rstudio.com/ </small></div>
