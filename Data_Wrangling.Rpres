@@ -295,7 +295,6 @@ knitr::include_graphics('Data_Wrangling-figure/tidyR.png')
 knitr::include_graphics('Data_Wrangling-figure/dplyr.png')
 ```
 
-
 ***
 - Create a dataset with a number of different variables of the course participants
 - Data transformation (subsetting with base R and dplyr)

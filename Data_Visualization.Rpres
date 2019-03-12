@@ -18,6 +18,9 @@ css: mySlideTemplate.css
 incremental: true
 right: 40%
 
+<img src="RMarkdown-figure/knit-logo.png" style="background:none; border:none; box-shadow:none;height="400"; width="400";"><img src="RMarkdown-figure/INRES_Logo.png" style="background:none; border:none; box-shadow:none;height="100"; width="100";"><img src="RMarkdown-figure/Uni_Bonn_Picture.png" style="background:none; border:none; box-shadow:none;height="200"; width="200";"><img src="RMarkdown-figure/ZEF_Logo.png" style="background:none; border:none; box-shadow:none;height="200"; width="200";">
+***
+
 ```{r, out.width='35%', fig.align='center', echo=FALSE}
 knitr::include_graphics('Data_Visualization-figure/ggplot2.png.png')
 ```
