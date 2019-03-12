@@ -15,6 +15,7 @@ font-family: 'Helvetica'
 date: "`r Sys.Date()`"
 autosize: true
 css: mySlideTemplate.css
+![](RMarkdown-figure/RMarkdown.png)
 
 RMarkdown
 ========================================================
