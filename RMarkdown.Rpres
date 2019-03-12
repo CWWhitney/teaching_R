@@ -15,16 +15,23 @@ font-family: 'Helvetica'
 date: "`r Sys.Date()`"
 autosize: true
 css: mySlideTemplate.css
-![](RMarkdown-figure/RMarkdown.png)
+incremental: true
+right: 40%
+***
 
-RMarkdown
+```{r, out.width='35%', fig.align='center', echo=FALSE}
+knitr::include_graphics('RMarkdown-figure/hex-rmarkdown.png')
+knitr::include_graphics('RMarkdown-figure/knit-logo.png')
+```
+
+RMarkdown: overview
 ========================================================
-https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf
-
+incremental: true
 ![](RMarkdown-figure/RMarkdown.png)
-
+***
 - Use it! 
 - You will thank yourself 
 - Save often with new version
+- Or use git
 
 <div class="footer"></small>https://rmarkdown.rstudio.com/ </small></div>
