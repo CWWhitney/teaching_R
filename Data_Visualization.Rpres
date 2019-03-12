@@ -8,7 +8,7 @@
     top: 4%;}
     </style>
     
-Data_Visualization
+Data Visualization
 ========================================================
 author: Cory Whitney
 font-family: 'Helvetica'
@@ -25,10 +25,7 @@ right: 40%
 knitr::include_graphics('Data_Visualization-figure/ggplot2.png.png')
 ```
 
-
-
-
-Next time we talk about vizualiation
+gganimate
 ========================================================
 incremental: true
 left: 30%
@@ -44,4 +41,30 @@ library(gifski)
   transition_states(am, transition_length = 4, state_length = 1) + 
   view_follow()
 ```
+
+Tasks for the afternoon: Basic
+========================================================
+incremental: true
+```{r, out.width='35%', fig.align='center', echo=FALSE}
+knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
+```
+
+- Check your data for interesting trends and correlations
+- Use scatter plots, barcharts and boxplots
+- Bootstrap and vary the sample and run the same analysis and plots
+- Save your most interesting figure and share it with us the next day
+
+Tasks for the afternoon: Advanced
+========================================================
+incremental: true
+
+```{r, out.width='35%', fig.align='center', echo=FALSE}
+knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
+```
+
+- Import data from an external source (e.g. FAO, World Bank)
+- Display those data in an interactive plot
+- Play around with the design
+- Export your most interesting figure and share it with us tomorrow
+
 
