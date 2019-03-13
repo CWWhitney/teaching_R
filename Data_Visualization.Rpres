@@ -25,6 +25,40 @@ right: 40%
 knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
 ```
 
+Data visualization: getting stuck
+========================================================
+incremental: true
+right: 30%
+
+- open RStudio
+
+```{r, out.width='35%', fig.align='center', echo=FALSE}
+knitr::include_graphics('RMarkdown-figure/rstudio-hex.png')
+```
+
+Help > Cheatsheets > Data Visualization with ggplot2
+
+- type ‘?’ in R console with function, package, data name
+- Add “R” to a search with a copy of an error message
+- Many talented programmers who scan the web and answer issues
+
+```{r, out.width='50%', fig.align='center', echo=FALSE}
+knitr::include_graphics('RMarkdown-figure/stack-overflow.png')
+```
+<div class="footer"></small>https://stackoverflow.com/ </small></div>
+
+***
+```{r, out.width='50%', fig.align='center', echo=FALSE}
+knitr::include_graphics('RMarkdown-figure/hadley_wickham.png')
+```
+Hadley Wickham
+```{r, out.width='50%', fig.align='center', echo=FALSE}
+knitr::include_graphics('RMarkdown-figure/Yihui.png')
+```
+Yihui Xie
+
+<div class="footer"><small>https://rmarkdown.rstudio.com/ </small></div>
+
 gganimate
 ========================================================
 incremental: true
@@ -67,4 +101,18 @@ knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
 - Play around with the design
 - Export your most interesting figure and share it with us tomorrow
 
+Be prepared for tomorrow
+========================================================
+incremental: true
+
+Install Git & Github (if you do not already have them). 
+
+Git
+<small>https://git-scm.com/downloads</small>
+
+Github
+<small>http://r-pkgs.had.co.nz/git.html</small>
+
+join Github
+<small>https://github.com/</small>
 
