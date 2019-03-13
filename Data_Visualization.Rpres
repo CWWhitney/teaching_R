@@ -381,7 +381,7 @@ grid.arrange(pt4, pt5, pt6, ncol=6)
 ```
 ~~ggplot2 histograms~~
 
-ggplot2: ---
+ggplot2: subset
 ========================================================
 incremental: true
 right: 80%
@@ -404,7 +404,7 @@ plt2 <- qplot(displ, hwy, data = mpg, colour = factor(cyl), geom=c("point","smoo
 library(gridExtra)
 grid.arrange(plt1, plt2, ncol=2)
 ```
-~~ggplot2 --~~
+~~ggplot2 subset with smooth line~~
 
 
 
@@ -432,7 +432,7 @@ Bonus: gganimate Datasaurus Dozen
 incremental: true
 right: 80%
 ```{r, out.width='20%', fig.align='right', echo=FALSE}
-knitr::include_graphics('Data_Visualization-figure/spaghetti_monster.png', 'Data_Visualization-figure/gganimate_logo.png')
+knitr::include_graphics('Data_Visualization-figure/gganimate_logo.png')
 ```
 
 - Using the datasauRus, ggplot2 and gganimate libraries.
@@ -461,6 +461,12 @@ ggplot(datasaurus_dozen, aes(x=x, y=y))+
   
 Bonus: gganimate mtcars mpg
 ========================================================
+incremental: true
+right: 80%
+```{r, out.width='20%', fig.align='right', echo=FALSE}
+knitr::include_graphics('Data_Visualization-figure/gganimate_logo.png')
+```
+
 - Using the gifski, ggplot2 and gganimate libraries.
 
 ```
