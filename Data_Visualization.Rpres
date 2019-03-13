@@ -13,7 +13,8 @@ Data Visualization
 author: Cory Whitney
 font-family: 'Helvetica'
 date: "`r Sys.Date()`"
-autosize: true
+width: 1440
+height: 900
 css: mySlideTemplate.css
 incremental: true
 
@@ -28,7 +29,7 @@ incremental: true
 right: 30%
 
 - open RStudio
-```{r, out.width='30%', fig.align='right', echo=FALSE}
+```{r, out.width='20%', fig.align='right', echo=FALSE}
 knitr::include_graphics('Data_Visualization-figure/rstudio-hex.png')
 ```
 
@@ -38,7 +39,7 @@ knitr::include_graphics('Data_Visualization-figure/rstudio-hex.png')
 - Add “R” to a search with a copy of an error message
 - Many talented programmers who scan the web and answer issues
 
-```{r, out.width='50%', fig.align='center', echo=FALSE}
+```{r, out.width='20%', fig.align='center', echo=FALSE}
 knitr::include_graphics('Data_Visualization-figure/stack-overflow.png')
 ```
 </small>https://stackoverflow.com/ </small>
@@ -65,7 +66,7 @@ incremental: true
 
 - **Base R** 
 
-```{r}
+```{r out.width='50%', fig.align='center'}
 participants_data <- read.csv("participants_data.csv")
 plot(participants_data$academic_parents)
 ```
@@ -73,12 +74,12 @@ plot(participants_data$academic_parents)
 
 ***
 
-```{r} 
+```{r out.width='50%', fig.align='center'} 
 plot(participants_data$academic_parents, participants_data$days_to_email_response)
 ```
 <small>Boxplot of days to email response grouped by binary data related to academic parents</small>
 
-**Use help functions**
+**Use help '?' for function**
 ```{r} 
 ?plot
 ``` 
@@ -88,24 +89,29 @@ ggplot2: overview
 incremental: true
 right: 30%
 
-**R has several systems for making graphs**
+**Many libraries and functions for graphs in R...**
 
 - **ggplot2** is one of the most elegant and most versatile.
-```{r, out.width='30%', fig.align='right', echo=FALSE}
+```{r, out.width='20%', fig.align='right', echo=FALSE}
 knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
 ```
 
-- it implements the *grammar of graphics* to describe and build graphs. 
+- **ggplot** implements the *grammar of graphics* to describe and build graphs. 
 
-- Do more faster by learning one system and applying it in many places.
+- Do more and do it faster by learning one system and applying it in many places.
 
 - Learn more about ggplot2 in “The Layered Grammar of Graphics”
 
 <http://vita.had.co.nz/papers/layered-grammar.pdf>
 
+
 ggplot2: qplot with participant data
 ========================================================
 incremental: true
+```{r, out.width='20%', fig.align='right', echo=FALSE}
+knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
+```
+
 
 ```{r fig.align='center'}
 library(ggplot2)
@@ -113,34 +119,113 @@ qplot(days_to_email_response, letters_in_first_name, data = participants_data)
 ```
 <small>Scatterplot of days to email response as a function of the letters in your first name</small>
 
+**Use help '?' for function**
+```{r} 
+?qplot
+``` 
+
 <small>Want to understand how all the pieces fit together? See the R
 for Data Science book: http://r4ds.had.co.nz/</small>
 
 ggplot2: qplot with built-in data
 ========================================================
 incremental: true
-right: 30%
+```{r, out.width='20%', fig.align='right', echo=FALSE}
+knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
+```
 
-Example from built-in R data on iris
+
+**Example from Fisher's iris data set**
 
 ```{r fig.align='center'}
 qplot(Sepal.Length, Petal.Length, data=iris, color=Species, size=Petal.Width)
 ```
-<small> Scatterplot of iris petal length as a function of sepal length with colors representing iris species and petal width as bubble sizes.</small>
+<small>Scatterplot of iris petal length as a function of sepal length with colors representing iris species and petal width as bubble sizes.</small>
 
-
+**Use help '?' for data**
 ```{r} 
 ?iris
 ``` 
 
-
-
-
-
-Bonus: gganimate
+ggplot2: qplot with your data
 ========================================================
+incremental: true
+right: 30%
+```{r, out.width='20%', fig.align='right', echo=FALSE}
+knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
+```
 
-```{r fig.align='center'}
+**Example from your data**
+
+```{r fig.align='center'} 
+qplot(days_to_email_response, letters_in_first_name, color=academic_parents, size=working_hours_per_day, data=participants_data)
+``` 
+<small>Scatterplot of letters in your first name as a function of days to email response with colors representing binary data related to academic parents and working hours per day as bubble sizes.
+</small>
+
+**~~Make more graphs~~**
+
+Correlation
+========================================================
+incremental: true
+right: 30%
+```{r, out.width='20%', fig.align='right', echo=FALSE}
+knitr::include_graphics('Data_Visualization-figure/spaghetti_monster.png')
+```
+
+```{r, out.width='70%', fig.align='center', echo=FALSE}
+cor.test(participants_data$days_to_email_response, participants_data$letters_in_first_name)
+```
+
+**Use help '?' for function**
+```{r} 
+?cor.test
+``` 
+
+Bonus: gganimate Datasaurus Dozen
+========================================================
+```{r, out.width='20%', fig.align='right', echo=FALSE}
+knitr::include_graphics('Data_Visualization-figure/spaghetti_monster.png')
+```
+
+- Using the datasauRus, ggplot2 and gganimate libraries.
+
+```
+ggplot(datasaurus_dozen, aes(x=x, y=y))+
+  geom_point()+
+  theme_minimal() +
+  transition_states(dataset, 3, 1) + 
+  ease_aes('cubic-in-out')
+```
+
+***
+```{r out.width='80%', fig.align='center', echo=FALSE}
+library(datasauRus)
+library(ggplot2)
+library(gganimate)
+
+ggplot(datasaurus_dozen, aes(x=x, y=y))+
+  geom_point()+
+  theme_minimal() +
+  transition_states(dataset, 3, 1) + 
+  ease_aes('cubic-in-out')
+```
+  
+Bonus: gganimate mtcars mpg
+========================================================
+- Using the gifski, ggplot2 and gganimate libraries.
+
+```
+ggplot(mtcars, aes(factor(cyl), mpg)) + 
+  geom_boxplot() + 
+  geom_point() +
+  transition_states(am, transition_length = 4, state_length = 1) + 
+  view_follow()
+```
+
+***
+
+```{r out.width='80%', fig.align='center', echo=FALSE}
 library(ggplot2)
 library(gganimate)
 library(gifski)
@@ -151,10 +236,39 @@ library(gifski)
   view_follow()
 ```
 
+ggplot2: geom_tile
+========================================================
+right: 30%
+
+- Using the gifski, ggplot2 and gganimate libraries.
+
+```{r out.height='80%', fig.align='center', echo=FALSE}
+library(dplyr)
+part_data<-select(participants_data, days_to_email_response, number_of_siblings, years_of_study, number_of_publications, letters_in_first_name, km_home_to_zef, working_hours_per_day, days_to_email_response)
+cormat <- round(cor(part_data), 1)
+library(reshape2)
+melted_cormat <- melt(cormat)
+ggplot(data = melted_cormat, aes(x=Var1, 
+y=Var2, fill=value)) + 
+geom_tile()
+```
+
+***
+
+- Check with journal about size, resolution etc.
+
+```{r}
+?pdf
+```
+
+```{r}
+?png
+```
+
 Tasks for the afternoon: Basic
 ========================================================
 incremental: true
-```{r, out.width='35%', fig.align='center', echo=FALSE}
+```{r, out.width='20%', fig.align='center', echo=FALSE}
 knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
 ```
 
@@ -166,8 +280,7 @@ knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
 Tasks for the afternoon: Advanced
 ========================================================
 incremental: true
-
-```{r, out.width='35%', fig.align='center', echo=FALSE}
+```{r, out.width='20%', fig.align='center', echo=FALSE}
 knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
 ```
 
