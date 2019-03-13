@@ -433,6 +433,22 @@ right: 30%
 ?png
 ```
 
+Export Figures
+========================================================
+incremental: true
+
+```
+png(file = "cortile.png", width = 7, height = 6, units = "in", res = 300)
+
+ggplot(data = melted_cormat, aes(x = Var1, y = Var2, fill = value)) + geom_tile() + theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+dev.off()
+```
+```
+list.files()
+```
+~~If time export more figures of participants data~~
+
 Tasks for the afternoon: Basic
 ========================================================
 incremental: true

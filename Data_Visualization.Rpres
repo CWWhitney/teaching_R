@@ -221,7 +221,7 @@ qplot(carat, price, data = diamonds, alpha=I(0.1), colour=I("blue"))
 qplot(carat, price, data = diamonds, alpha=I(0.4), colour=I("green"))
 ```
 
-```{r, fig.width=16, fig.height=5, fig.align='center', echo=FALSE} 
+```{r, fig.width=20, fig.height=5, fig.align='center', echo=FALSE} 
 plot5<-qplot(carat, price, data = diamonds, alpha=I(0.1), colour=I("blue"))
 plot6<-qplot(carat, price, data = diamonds, alpha=I(0.4), colour=I("green"))
 library(gridExtra)
@@ -247,7 +247,7 @@ qplot(carat, price, data = dsmall, colour = color)
 #Plot with different shapes for cut 
 qplot(carat, price, data = dsmall, shape = cut)
 ```
-```{r, fig.width=16, fig.height=5, fig.align='center', echo=FALSE} 
+```{r, fig.width=20, fig.height=5, fig.align='center', echo=FALSE} 
 #Create a sample
 dsmall <- diamonds[sample(nrow(diamonds), 100), ]
 #Plot with different colors for color
@@ -277,7 +277,7 @@ qplot(carat,price,data=dsmall, geom="line")
 qplot(carat,price,data=dsmall, geom="smooth")
 qplot(carat,price,data=dsmall, geom=c("point","smooth"))
 ```
-```{r, fig.width=16, fig.height=5, fig.align='center', echo=FALSE} 
+```{r, fig.width=20, fig.height=5, fig.align='center', echo=FALSE} 
 #Create a sample
 p1 <- qplot(carat,price,data=dsmall, geom="line")
 p2 <- qplot(carat,price,data=dsmall, geom="smooth")
@@ -311,7 +311,7 @@ Use method to specify your smoothing method
 qplot(carat,price,data=dsmall,geom=c("point","smooth"),method="lm")
 ```
 
-```{r, fig.width=16, fig.height=5, fig.align='center', echo=FALSE} 
+```{r, fig.width=20, fig.height=5, fig.align='center', echo=FALSE} 
 #Create a sample
 pl1 <- qplot(carat,price,data=dsmall,geom=c("point","smooth"))
 pl2 <- qplot(carat,price,data=diamonds,geom=c("point","smooth"))
@@ -343,7 +343,7 @@ qplot(color,price/carat,data=diamonds, geom="jitter")
 qplot(color,price/carat,data=diamonds, geom="jitter", alpha=I(0.1))
 ```
 
-```{r, fig.width=16, fig.height=5, fig.align='center', echo=FALSE} 
+```{r, fig.width=20, fig.height=5, fig.align='center', echo=FALSE} 
 #Create a sample
 pt1 <- qplot(color,price/carat,data=diamonds,  geom="boxplot")
 pt2 <- qplot(color,price/carat,data=diamonds, geom="jitter")
@@ -371,7 +371,7 @@ qplot(carat, data = diamonds, geom = "density", colour = color)
 qplot(carat, data = diamonds, geom = "density", fill = color, alpha=I(0.3))
 ```
 
-```{r, fig.width=16, fig.height=5, fig.align='center', echo=FALSE} 
+```{r, fig.width=20, fig.height=5, fig.align='center', echo=FALSE} 
 #Create a sample
 pt4 <- qplot(carat, data = diamonds, geom = "density")
 pt5 <- qplot(carat, data = diamonds, geom = "density", colour = color)
@@ -397,7 +397,7 @@ qplot(displ, hwy, data = mpg, colour = cyl, geom=c("point","smooth"),method="lm"
 qplot(displ, hwy, data = mpg, colour = factor(cyl), geom=c("point","smooth"),method="lm")
 ```
 
-```{r, fig.width=16, fig.height=5, fig.align='center', echo=FALSE} 
+```{r, fig.width=20, fig.height=5, fig.align='center', echo=FALSE} 
 #Create a sample
 plt1 <- qplot(displ, hwy, data = mpg, colour = cyl, geom=c("point","smooth"),method="lm")
 plt2 <- qplot(displ, hwy, data = mpg, colour = factor(cyl), geom=c("point","smooth"),method="lm")
@@ -519,6 +519,22 @@ geom_tile()
 ```{r}
 ?png
 ```
+
+Export Figures
+========================================================
+incremental: true
+
+```
+png(file = "cortile.png", width = 7, height = 6, units = "in", res = 300)
+
+ggplot(data = melted_cormat, aes(x = Var1, y = Var2, fill = value)) + geom_tile() + theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+dev.off()
+```
+```
+list.files()
+```
+~~If time export more figures of participants data~~
 
 Tasks for the afternoon: Basic
 ========================================================
