@@ -192,7 +192,7 @@ knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
 plot1<-qplot(carat, price, data = diamonds)
 plot2<-qplot(log(carat), log(price), data = diamonds,
 ```
-```{r, fig.width=12, fig.height=4, fig.align='center', echo=FALSE} 
+```{r, fig.width=20, fig.height=5, fig.align='center', echo=FALSE} 
 plot1<-qplot(carat, price, data = diamonds)
 plot2<-qplot(log(carat), log(price), data = diamonds, alpha=0.2)
 library(gridExtra)
@@ -350,7 +350,7 @@ pt2 <- qplot(color,price/carat,data=diamonds, geom="jitter")
 pt3 <- qplot(color,price/carat,data=diamonds, geom="jitter", alpha=I(0.1))
 
 library(gridExtra)
-grid.arrange(pt1, pt2, pt3, ncol=6)
+grid.arrange(pt1, pt2, pt3, ncol=3)
 ```
 ~~ggplot2 boxplots and jitter~~
 
@@ -377,7 +377,7 @@ pt4 <- qplot(carat, data = diamonds, geom = "density")
 pt5 <- qplot(carat, data = diamonds, geom = "density", colour = color)
 pt6 <- qplot(carat, data = diamonds, geom = "density", fill = color, alpha=I(0.3))
 library(gridExtra)
-grid.arrange(pt4, pt5, pt6, ncol=6)
+grid.arrange(pt4, pt5, pt6, ncol=3)
 ```
 ~~ggplot2 histograms~~
 
@@ -430,7 +430,6 @@ cor.test(participants_data$days_to_email_response, participants_data$letters_in_
 Bonus: gganimate Datasaurus Dozen
 ========================================================
 incremental: true
-right: 80%
 ```{r, out.width='20%', fig.align='right', echo=FALSE}
 knitr::include_graphics('Data_Visualization-figure/gganimate_logo.png')
 ```
@@ -462,7 +461,6 @@ ggplot(datasaurus_dozen, aes(x=x, y=y))+
 Bonus: gganimate mtcars mpg
 ========================================================
 incremental: true
-right: 80%
 ```{r, out.width='20%', fig.align='right', echo=FALSE}
 knitr::include_graphics('Data_Visualization-figure/gganimate_logo.png')
 ```
@@ -493,11 +491,16 @@ library(gifski)
 
 ggplot2: geom_tile
 ========================================================
-right: 30%
+incremental: true
+right: 70%
+```{r, out.width='20%', fig.align='right', echo=FALSE}
+knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
+```
 
 - Using the gifski, ggplot2 and gganimate libraries.
 
-```{r out.height='80%', fig.align='center', echo=FALSE}
+***
+```{r fig.width=12, fig.height=14, fig.align='center', echo=FALSE}
 library(dplyr)
 part_data<-select(participants_data, days_to_email_response, number_of_siblings, years_of_study, number_of_publications, letters_in_first_name, km_home_to_zef, working_hours_per_day, days_to_email_response)
 cormat <- round(cor(part_data), 1)
@@ -508,7 +511,6 @@ y=Var2, fill=value)) +
 geom_tile()
 ```
 
-***
 
 - Check with journal about size, resolution etc.
 
@@ -523,6 +525,16 @@ geom_tile()
 Export Figures
 ========================================================
 incremental: true
+```{r fig.width=10, fig.height=10, fig.align='center', echo=FALSE}
+library(dplyr)
+part_data<-select(participants_data, days_to_email_response, number_of_siblings, years_of_study, number_of_publications, letters_in_first_name, km_home_to_zef, working_hours_per_day, days_to_email_response)
+cormat <- round(cor(part_data), 1)
+library(reshape2)
+melted_cormat <- melt(cormat)
+ggplot(data = melted_cormat, aes(x=Var1, 
+y=Var2, fill=value)) + 
+geom_tile()
+```
 
 ```
 png(file = "cortile.png", width = 7, height = 6, units = "in", res = 300)
@@ -546,14 +558,17 @@ knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
 - Check your data for interesting trends and correlations
 - Use scatter plots, barcharts and boxplots
 - Bootstrap and vary the sample and run the same analysis and plots
-- Save your most interesting figure and share it with us the next day
+- Save your most interesting figure and share it with us tomorrow
 
 Tasks for the afternoon: Advanced
 ========================================================
 incremental: true
+right: 80%
 ```{r, out.width='20%', fig.align='center', echo=FALSE}
 knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
 ```
+
+***
 
 - Import data from an external source (e.g. FAO, World Bank)
 - Display those data in an interactive plot

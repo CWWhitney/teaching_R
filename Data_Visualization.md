@@ -374,7 +374,6 @@ sample estimates:
 Bonus: gganimate Datasaurus Dozen
 ========================================================
 incremental: true
-right: 80%
 <img src="Data_Visualization-figure/gganimate_logo.png" title="plot of chunk unnamed-chunk-38" alt="plot of chunk unnamed-chunk-38" width="20%" style="display: block; margin: auto 0 auto auto;" />
 
 - Using the datasauRus, ggplot2 and gganimate libraries.
@@ -394,7 +393,6 @@ ggplot(datasaurus_dozen, aes(x=x, y=y))+
 Bonus: gganimate mtcars mpg
 ========================================================
 incremental: true
-right: 80%
 <img src="Data_Visualization-figure/gganimate_logo.png" title="plot of chunk unnamed-chunk-40" alt="plot of chunk unnamed-chunk-40" width="20%" style="display: block; margin: auto 0 auto auto;" />
 
 - Using the gifski, ggplot2 and gganimate libraries.
@@ -413,13 +411,15 @@ ggplot(mtcars, aes(factor(cyl), mpg)) +
 
 ggplot2: geom_tile
 ========================================================
-right: 30%
+incremental: true
+right: 70%
+<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-42" alt="plot of chunk unnamed-chunk-42" width="20%" style="display: block; margin: auto 0 auto auto;" />
 
 - Using the gifski, ggplot2 and gganimate libraries.
 
-<img src="Data_Visualization-figure/unnamed-chunk-42-1.png" title="plot of chunk unnamed-chunk-42" alt="plot of chunk unnamed-chunk-42" height="80%" style="display: block; margin: auto;" />
-
 ***
+<img src="Data_Visualization-figure/unnamed-chunk-43-1.png" title="plot of chunk unnamed-chunk-43" alt="plot of chunk unnamed-chunk-43" style="display: block; margin: auto;" />
+
 
 - Check with journal about size, resolution etc.
 
@@ -436,6 +436,7 @@ right: 30%
 Export Figures
 ========================================================
 incremental: true
+<img src="Data_Visualization-figure/unnamed-chunk-46-1.png" title="plot of chunk unnamed-chunk-46" alt="plot of chunk unnamed-chunk-46" style="display: block; margin: auto;" />
 
 ```
 png(file = "cortile.png", width = 7, height = 6, units = "in", res = 300)
@@ -452,17 +453,20 @@ list.files()
 Tasks for the afternoon: Basic
 ========================================================
 incremental: true
-<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-45" alt="plot of chunk unnamed-chunk-45" width="20%" style="display: block; margin: auto;" />
+<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-47" alt="plot of chunk unnamed-chunk-47" width="20%" style="display: block; margin: auto;" />
 
 - Check your data for interesting trends and correlations
 - Use scatter plots, barcharts and boxplots
 - Bootstrap and vary the sample and run the same analysis and plots
-- Save your most interesting figure and share it with us the next day
+- Save your most interesting figure and share it with us tomorrow
 
 Tasks for the afternoon: Advanced
 ========================================================
 incremental: true
-<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-46" alt="plot of chunk unnamed-chunk-46" width="20%" style="display: block; margin: auto;" />
+right: 80%
+<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-48" alt="plot of chunk unnamed-chunk-48" width="20%" style="display: block; margin: auto;" />
+
+***
 
 - Import data from an external source (e.g. FAO, World Bank)
 - Display those data in an interactive plot
