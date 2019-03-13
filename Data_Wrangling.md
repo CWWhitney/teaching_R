@@ -12,7 +12,7 @@ Data Wrangling
 ========================================================
 author: Cory Whitney
 font-family: 'Helvetica'
-date: "2019-03-12"
+date: "2019-03-13"
 autosize: true
 css: mySlideTemplate.css
 <img src="Data_Wrangling-figure/wrangler.png" style="background:none; border:none; box-shadow:none;height="400"; width="400";"><img src="Data_Wrangling-figure/INRES_Logo.png" style="background:none; border:none; box-shadow:none;height="100"; width="100";"><img src="Data_Wrangling-figure/Uni_Bonn_Picture.png" style="background:none; border:none; box-shadow:none;height="200"; width="200";"><img src="Data_Wrangling-figure/ZEF_Logo.png" style="background:none; border:none; box-shadow:none;height="200"; width="200";">
@@ -297,8 +297,7 @@ pipe_data <- participants_data %>%
 Tasks for the afternoon: Basic
 ========================================================
 incremental: true
-<img src="Data_Wrangling-figure/tidyR.png" style="background:none; border:none; box-shadow:none;height="30%"; width="30%";">
-<img src="Data_Wrangling-figure/dplyr.png" style="background:none; border:none; box-shadow:none;height="45%"; width="45%";">
+<img src="Data_Wrangling-figure/tidyR.png" title="plot of chunk unnamed-chunk-15" alt="plot of chunk unnamed-chunk-15" width="35%" style="display: block; margin: auto;" /><img src="Data_Wrangling-figure/dplyr.png" title="plot of chunk unnamed-chunk-15" alt="plot of chunk unnamed-chunk-15" width="35%" style="display: block; margin: auto;" />
 
 ***
 - Create a dataset with a number of different variables of the course participants
@@ -309,17 +308,17 @@ incremental: true
 
 <div class="footer"></small>cory.whitney@uni-bonn.de </small></div>
 
-Tasks for the afternoon: Basic
+Tasks for the afternoon: Advanced
 ========================================================
 incremental: true
-<img src="Data_Wrangling-figure/tidyR.png" style="background:none; border:none; box-shadow:none;height="30%"; width="30%";">
-<img src="Data_Wrangling-figure/dplyr.png" style="background:none; border:none; box-shadow:none;height="45%"; width="45%";">
-<img src="Data_Wrangling-figure/magrittr.png" style="background:none; border:none; box-shadow:none;height="30%"; width="30%";">
+
+<img src="Data_Wrangling-figure/tidyR.png" title="plot of chunk unnamed-chunk-16" alt="plot of chunk unnamed-chunk-16" width="35%" style="display: block; margin: auto;" /><img src="Data_Wrangling-figure/dplyr.png" title="plot of chunk unnamed-chunk-16" alt="plot of chunk unnamed-chunk-16" width="35%" style="display: block; margin: auto;" /><img src="Data_Wrangling-figure/magrittr.png" title="plot of chunk unnamed-chunk-16" alt="plot of chunk unnamed-chunk-16" width="35%" style="display: block; margin: auto;" />
+
 ***
 - Use other R data set (e.g. iris, diamonds, ethnobotanydata) to work through  tasks 
-- long format in base
-- short format with magrittr pipeline
-- Descriptive statistics (checks in base R and dplyr)
+  - long format in base
+  - short format with magrittr pipeline
+  - Descriptive statistics (checks in base R and dplyr)
 
 <div class="footer"></small>cory.whitney@uni-bonn.de </small></div>
 
