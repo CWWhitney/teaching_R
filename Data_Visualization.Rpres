@@ -32,7 +32,7 @@ right: 30%
 knitr::include_graphics('Data_Visualization-figure/rstudio-hex.png')
 ```
 
-- Help > Cheatsheets > Data Visualization with ggplot2
+- **Help > Cheatsheets > Data Visualization with ggplot2**
 
 - type ‘?’ in R console with function, package or data name
 - Add “R” to a search with a copy of an error message
@@ -57,11 +57,90 @@ Yihui Xie
 
 <small>https://rmarkdown.rstudio.com/ </small>
 
-gganimate
+Creating basic plots
 ========================================================
 incremental: true
 
-```{r, echo=FALSE}
+**R has several systems for making graphs**
+
+- **Base R** 
+
+```{r}
+participants_data <- read.csv("participants_data.csv")
+plot(participants_data$academic_parents)
+```
+<small>Bar plot of number of observations of binary data related to academic parents </small>
+
+***
+
+```{r} 
+plot(participants_data$academic_parents, participants_data$days_to_email_response)
+```
+<small>Boxplot of days to email response grouped by binary data related to academic parents</small>
+
+**Use help functions**
+```{r} 
+?plot
+``` 
+
+ggplot2: overview
+========================================================
+incremental: true
+right: 30%
+
+**R has several systems for making graphs**
+
+- **ggplot2** is one of the most elegant and most versatile.
+```{r, out.width='30%', fig.align='right', echo=FALSE}
+knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
+```
+
+- it implements the *grammar of graphics* to describe and build graphs. 
+
+- Do more faster by learning one system and applying it in many places.
+
+- Learn more about ggplot2 in “The Layered Grammar of Graphics”
+
+<http://vita.had.co.nz/papers/layered-grammar.pdf>
+
+ggplot2: qplot with participant data
+========================================================
+incremental: true
+
+```{r fig.align='center'}
+library(ggplot2)
+qplot(days_to_email_response, letters_in_first_name, data = participants_data)
+```
+<small>Scatterplot of days to email response as a function of the letters in your first name</small>
+
+<small>Want to understand how all the pieces fit together? See the R
+for Data Science book: http://r4ds.had.co.nz/</small>
+
+ggplot2: qplot with built-in data
+========================================================
+incremental: true
+right: 30%
+
+Example from built-in R data on iris
+
+```{r fig.align='center'}
+qplot(Sepal.Length, Petal.Length, data=iris, color=Species, size=Petal.Width)
+```
+<small> Scatterplot of iris petal length as a function of sepal length with colors representing iris species and petal width as bubble sizes.</small>
+
+
+```{r} 
+?iris
+``` 
+
+
+
+
+
+Bonus: gganimate
+========================================================
+
+```{r fig.align='center'}
 library(ggplot2)
 library(gganimate)
 library(gifski)
