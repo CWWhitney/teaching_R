@@ -213,7 +213,6 @@ qplot(carat, price, data = diamonds, alpha=I(0.1), colour=I("blue"))
 qplot(carat, price, data = diamonds, alpha=I(0.4), colour=I("green"))
 ```
 
-
 <img src="Data_Visualization-figure/unnamed-chunk-22-1.png" title="plot of chunk unnamed-chunk-22" alt="plot of chunk unnamed-chunk-22" style="display: block; margin: auto;" />
 ~~Inhibit Interpretation / Conversion of Objects~~
 
@@ -320,13 +319,30 @@ qplot(carat, data = diamonds, geom = "density", fill = color, alpha=I(0.3))
 <img src="Data_Visualization-figure/unnamed-chunk-32-1.png" title="plot of chunk unnamed-chunk-32" alt="plot of chunk unnamed-chunk-32" style="display: block; margin: auto;" />
 ~~ggplot2 histograms~~
 
+ggplot2: ---
+========================================================
+incremental: true
+right: 80%
+<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-33" alt="plot of chunk unnamed-chunk-33" width="70%" style="display: block; margin: auto;" />
+
+***
+
+Use factor to subset your data.
+```
+qplot(displ, hwy, data = mpg, colour = cyl, geom=c("point","smooth"),method="lm")
+qplot(displ, hwy, data = mpg, colour = factor(cyl), geom=c("point","smooth"),method="lm")
+```
+
+<img src="Data_Visualization-figure/unnamed-chunk-34-1.png" title="plot of chunk unnamed-chunk-34" alt="plot of chunk unnamed-chunk-34" style="display: block; margin: auto;" />
+~~ggplot2 --~~
+
 
 
 Correlation
 ========================================================
 incremental: true
 right: 80%
-<img src="Data_Visualization-figure/spaghetti_monster.png" title="plot of chunk unnamed-chunk-33" alt="plot of chunk unnamed-chunk-33" width="70%" style="display: block; margin: auto 0 auto auto;" />
+<img src="Data_Visualization-figure/spaghetti_monster.png" title="plot of chunk unnamed-chunk-35" alt="plot of chunk unnamed-chunk-35" width="70%" style="display: block; margin: auto 0 auto auto;" />
 
 ***
 
@@ -357,92 +373,25 @@ sample estimates:
 
 Bonus: gganimate Datasaurus Dozen
 ========================================================
-<img src="Data_Visualization-figure/spaghetti_monster.png" title="plot of chunk unnamed-chunk-36" alt="plot of chunk unnamed-chunk-36" width="20%" style="display: block; margin: auto 0 auto auto;" />
-
-- Using the datasauRus, ggplot2 and gganimate libraries.
-
-```
-ggplot(datasaurus_dozen, aes(x=x, y=y))+
-  geom_point()+
-  theme_minimal() +
-  transition_states(dataset, 3, 1) + 
-  ease_aes('cubic-in-out')
-```
-
-***
-
-<img src="Data_Visualization-figure/unnamed-chunk-37-1.gif" title="plot of chunk unnamed-chunk-37" alt="plot of chunk unnamed-chunk-37" style="display: block; margin: auto;" />
-  
-Bonus: gganimate mtcars mpg
-========================================================
-- Using the gifski, ggplot2 and gganimate libraries.
-
-```
-ggplot(mtcars, aes(factor(cyl), mpg)) + 
-  geom_boxplot() + 
-  geom_point() +
-  transition_states(am, transition_length = 4, state_length = 1) + 
-  view_follow()
-```
-
-***
-
-<img src="Data_Visualization-figure/unnamed-chunk-38-1.gif" title="plot of chunk unnamed-chunk-38" alt="plot of chunk unnamed-chunk-38" style="display: block; margin: auto;" />
-
-ggplot2: geom_tile
-========================================================
-right: 30%
-
-- Using the gifski, ggplot2 and gganimate libraries.
-
-<img src="Data_Visualization-figure/unnamed-chunk-39-1.png" title="plot of chunk unnamed-chunk-39" alt="plot of chunk unnamed-chunk-39" height="80%" style="display: block; margin: auto;" />
-
-***
-
-- Check with journal about size, resolution etc.
-
-
-```r
-?pdf
-```
-
-
-```r
-?png
-```
-
-Tasks for the afternoon: Basic
-========================================================
 incremental: true
-<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-42" alt="plot of chunk unnamed-chunk-42" width="20%" style="display: block; margin: auto;" />
+right: 80%
 
-- Check your data for interesting trends and correlations
-- Use scatter plots, barcharts and boxplots
-- Bootstrap and vary the sample and run the same analysis and plots
-- Save your most interesting figure and share it with us the next day
 
-Tasks for the afternoon: Advanced
-========================================================
-incremental: true
-<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-43" alt="plot of chunk unnamed-chunk-43" width="20%" style="display: block; margin: auto;" />
 
-- Import data from an external source (e.g. FAO, World Bank)
-- Display those data in an interactive plot
-- Play around with the design
-- Export your most interesting figure and share it with us tomorrow
 
-Be prepared for tomorrow
-========================================================
-incremental: true
 
-Install Git & Github (if you do not already have them). 
 
-Git
-<small>https://git-scm.com/downloads</small>
 
-Github
-<small>http://r-pkgs.had.co.nz/git.html</small>
 
-join Github
-<small>https://github.com/</small>
 
+
+
+
+
+
+
+
+
+```
+Error in auto_pdf && is_latex_output() : invalid 'x' type in 'x && y'
+```
