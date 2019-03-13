@@ -13,8 +13,8 @@ Data Visualization
 author: Cory Whitney
 font-family: 'Helvetica'
 date: "2019-03-13"
-width: 1440
-height: 900
+width: 1920
+height: 1080
 css: mySlideTemplate.css
 incremental: true
 
@@ -86,12 +86,14 @@ plot(participants_data$academic_parents, participants_data$days_to_email_respons
 ggplot2: overview
 ========================================================
 incremental: true
-right: 30%
+right: 80%
+<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-8" alt="plot of chunk unnamed-chunk-8" width="70%" style="display: block; margin: auto 0 auto auto;" />
+
+***
 
 **Many libraries and functions for graphs in R...**
 
 - **ggplot2** is one of the most elegant and most versatile.
-<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-8" alt="plot of chunk unnamed-chunk-8" width="20%" style="display: block; margin: auto 0 auto auto;" />
 
 - **ggplot** implements the *grammar of graphics* to describe and build graphs. 
 
@@ -101,20 +103,24 @@ right: 30%
 
 <http://vita.had.co.nz/papers/layered-grammar.pdf>
 
+<img src="Data_Visualization-figure/layered_grammer.jpg" title="plot of chunk unnamed-chunk-9" alt="plot of chunk unnamed-chunk-9" width="80%" style="display: block; margin: auto 0 auto auto;" />
 
 ggplot2: qplot with participant data
 ========================================================
 incremental: true
-<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-9" alt="plot of chunk unnamed-chunk-9" width="20%" style="display: block; margin: auto 0 auto auto;" />
+right: 80%
+<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-10" alt="plot of chunk unnamed-chunk-10" width="70%" style="display: block; margin: auto 0 auto auto;" />
 
+***
 
 
 ```r
 library(ggplot2)
+
 qplot(days_to_email_response, letters_in_first_name, data = participants_data)
 ```
 
-<img src="Data_Visualization-figure/unnamed-chunk-10-1.png" title="plot of chunk unnamed-chunk-10" alt="plot of chunk unnamed-chunk-10" style="display: block; margin: auto;" />
+<img src="Data_Visualization-figure/unnamed-chunk-11-1.png" title="plot of chunk unnamed-chunk-11" alt="plot of chunk unnamed-chunk-11" height="30%" style="display: block; margin: auto;" />
 <small>Scatterplot of days to email response as a function of the letters in your first name</small>
 
 **Use help '?' for function**
@@ -126,20 +132,22 @@ qplot(days_to_email_response, letters_in_first_name, data = participants_data)
 <small>Want to understand how all the pieces fit together? See the R
 for Data Science book: http://r4ds.had.co.nz/</small>
 
-ggplot2: qplot with built-in data
+ggplot2: qplot with iris data
 ========================================================
 incremental: true
-<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-12" alt="plot of chunk unnamed-chunk-12" width="20%" style="display: block; margin: auto 0 auto auto;" />
+right: 80%
+<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-13" alt="plot of chunk unnamed-chunk-13" width="70%" style="display: block; margin: auto 0 auto auto;" />
 
+***
 
-**Example from Fisher's iris data set**
+**Example from Anderson's iris data set**
 
 
 ```r
 qplot(Sepal.Length, Petal.Length, data=iris, color=Species, size=Petal.Width)
 ```
 
-<img src="Data_Visualization-figure/unnamed-chunk-13-1.png" title="plot of chunk unnamed-chunk-13" alt="plot of chunk unnamed-chunk-13" style="display: block; margin: auto;" />
+<img src="Data_Visualization-figure/unnamed-chunk-14-1.png" title="plot of chunk unnamed-chunk-14" alt="plot of chunk unnamed-chunk-14" style="display: block; margin: auto;" />
 <small>Scatterplot of iris petal length as a function of sepal length with colors representing iris species and petal width as bubble sizes.</small>
 
 **Use help '?' for data**
@@ -148,11 +156,14 @@ qplot(Sepal.Length, Petal.Length, data=iris, color=Species, size=Petal.Width)
 ?iris
 ```
 
+
 ggplot2: qplot with your data
 ========================================================
 incremental: true
-right: 30%
-<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-15" alt="plot of chunk unnamed-chunk-15" width="20%" style="display: block; margin: auto 0 auto auto;" />
+right: 80%
+<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-16" alt="plot of chunk unnamed-chunk-16" width="70%" style="display: block; margin: auto 0 auto auto;" />
+
+***
 
 **Example from your data**
 
@@ -161,18 +172,168 @@ right: 30%
 qplot(days_to_email_response, letters_in_first_name, color=academic_parents, size=working_hours_per_day, data=participants_data)
 ```
 
-<img src="Data_Visualization-figure/unnamed-chunk-16-1.png" title="plot of chunk unnamed-chunk-16" alt="plot of chunk unnamed-chunk-16" style="display: block; margin: auto;" />
-<small>Scatterplot of letters in your first name as a function of days to email response with colors representing binary data related to academic parents and working hours per day as bubble sizes.
-</small>
+<img src="Data_Visualization-figure/unnamed-chunk-17-1.png" title="plot of chunk unnamed-chunk-17" alt="plot of chunk unnamed-chunk-17" style="display: block; margin: auto;" />
+<small>Scatterplot of letters in your first name as a function of days to email response with colors representing binary data related to academic parents and working hours per day as bubble sizes.</small>
 
-**~~Make more graphs~~**
+**Make more graphs**
+
+ggplot2: qplot with carat data
+========================================================
+incremental: true
+right: 80%
+<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-18" alt="plot of chunk unnamed-chunk-18" width="70%" style="display: block; margin: auto 0 auto auto;" />
+
+***
+
+**qplot** accepts formula arguments such as log
+```
+plot1<-qplot(carat, price, data = diamonds)
+plot2<-qplot(log(carat), log(price), data = diamonds,
+```
+<img src="Data_Visualization-figure/unnamed-chunk-19-1.png" title="plot of chunk unnamed-chunk-19" alt="plot of chunk unnamed-chunk-19" style="display: block; margin: auto;" />
+
+**Use help '?' for data**
+
+```r
+?diamonds
+```
+
+
+ggplot2: qplot set parameters
+========================================================
+incremental: true
+right: 80%
+<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-21" alt="plot of chunk unnamed-chunk-21" width="70%" style="display: block; margin: auto 0 auto auto;" />
+
+***
+
+Set parameters manually with I()
+```
+qplot(carat, price, data = diamonds, alpha=I(0.1), colour=I("blue"))
+qplot(carat, price, data = diamonds, alpha=I(0.4), colour=I("green"))
+```
+
+
+<img src="Data_Visualization-figure/unnamed-chunk-22-1.png" title="plot of chunk unnamed-chunk-22" alt="plot of chunk unnamed-chunk-22" style="display: block; margin: auto;" />
+~~Inhibit Interpretation / Conversion of Objects~~
+
+ggplot2: qplot with diamonds data
+========================================================
+incremental: true
+right: 80%
+<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-23" alt="plot of chunk unnamed-chunk-23" width="70%" style="display: block; margin: auto;" />
+
+***
+
+```
+#Create a sample
+dsmall <- diamonds[sample(nrow(diamonds), 100), ]
+#Plot with different colours for color
+qplot(carat, price, data = dsmall, colour = color)
+#Plot with different shapes for cut 
+qplot(carat, price, data = dsmall, shape = cut)
+```
+<img src="Data_Visualization-figure/unnamed-chunk-24-1.png" title="plot of chunk unnamed-chunk-24" alt="plot of chunk unnamed-chunk-24" style="display: block; margin: auto;" />
+~~Different colors and shapes~~
+
+
+ggplot2: geom
+========================================================
+incremental: true
+right: 80%
+<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-25" alt="plot of chunk unnamed-chunk-25" width="70%" style="display: block; margin: auto;" />
+
+***
+
+With “geom” different types of plots can be defined e.g. points, line, boxplot, path, smooth. 
+These can also be combined in a vector.
+```
+qplot(carat,price,data=dsmall, geom="line")
+qplot(carat,price,data=dsmall, geom="smooth")
+qplot(carat,price,data=dsmall, geom=c("point","smooth"))
+```
+<img src="Data_Visualization-figure/unnamed-chunk-26-1.png" title="plot of chunk unnamed-chunk-26" alt="plot of chunk unnamed-chunk-26" style="display: block; margin: auto;" />
+~~ggplot2 geom options~~
+
+ggplot2: smooth function
+========================================================
+incremental: true
+right: 80%
+<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-27" alt="plot of chunk unnamed-chunk-27" width="70%" style="display: block; margin: auto;" />
+
+***
+
+Depending on your dataset size the smooth function will select different lines and smoothing methods.
+```
+qplot(carat,price,data=dsmall,geom=c("point","smooth"))
+qplot(carat,price,data=diamonds,geom=c("point","smooth"))
+```
+With span the wiggliness of the line is controlled.
+```
+qplot(carat,price,data=dsmall, geom=c("point","smooth"), span=0.2)
+```
+Use method to specify your smoothing method
+```
+qplot(carat,price,data=dsmall,geom=c("point","smooth"),method="lm")
+```
+
+<img src="Data_Visualization-figure/unnamed-chunk-28-1.png" title="plot of chunk unnamed-chunk-28" alt="plot of chunk unnamed-chunk-28" style="display: block; margin: auto;" />
+~~ggplot2 lines and smoothing options~~
+
+
+ggplot2: Boxplots
+========================================================
+incremental: true
+right: 80%
+<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-29" alt="plot of chunk unnamed-chunk-29" width="70%" style="display: block; margin: auto;" />
+
+***
+
+- Boxplots can be displayed through geom=“boxplot”. 
+```
+qplot(color,price/carat,data=diamonds,  geom="boxplot")
+```
+- Jittered plots (geom=“jitter”) show all points. In case of overplotting changing alpha can help.
+```
+qplot(color,price/carat,data=diamonds, geom="jitter")
+qplot(color,price/carat,data=diamonds, geom="jitter", alpha=I(0.1))
+```
+
+<img src="Data_Visualization-figure/unnamed-chunk-30-1.png" title="plot of chunk unnamed-chunk-30" alt="plot of chunk unnamed-chunk-30" style="display: block; margin: auto;" />
+~~ggplot2 boxplots and jitter~~
+
+ggplot2: Histograms
+========================================================
+incremental: true
+right: 80%
+<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-31" alt="plot of chunk unnamed-chunk-31" width="70%" style="display: block; margin: auto;" />
+
+***
+
+Histograms can be displayed through geom=“histogram”.
+```
+qplot(carat, data = diamonds, geom = "density")
+qplot(carat, data = diamonds, geom = "density", colour = color)
+qplot(carat, data = diamonds, geom = "density", fill = color, alpha=I(0.3))
+```
+
+<img src="Data_Visualization-figure/unnamed-chunk-32-1.png" title="plot of chunk unnamed-chunk-32" alt="plot of chunk unnamed-chunk-32" style="display: block; margin: auto;" />
+~~ggplot2 histograms~~
+
+
 
 Correlation
 ========================================================
 incremental: true
-right: 30%
-<img src="Data_Visualization-figure/spaghetti_monster.png" title="plot of chunk unnamed-chunk-17" alt="plot of chunk unnamed-chunk-17" width="20%" style="display: block; margin: auto 0 auto auto;" />
+right: 80%
+<img src="Data_Visualization-figure/spaghetti_monster.png" title="plot of chunk unnamed-chunk-33" alt="plot of chunk unnamed-chunk-33" width="70%" style="display: block; margin: auto 0 auto auto;" />
 
+***
+
+
+```r
+cor.test(participants_data$days_to_email_response, participants_data$letters_in_first_name)
+```
 
 ```
 
@@ -196,7 +357,7 @@ sample estimates:
 
 Bonus: gganimate Datasaurus Dozen
 ========================================================
-<img src="Data_Visualization-figure/spaghetti_monster.png" title="plot of chunk unnamed-chunk-20" alt="plot of chunk unnamed-chunk-20" width="20%" style="display: block; margin: auto 0 auto auto;" />
+<img src="Data_Visualization-figure/spaghetti_monster.png" title="plot of chunk unnamed-chunk-36" alt="plot of chunk unnamed-chunk-36" width="20%" style="display: block; margin: auto 0 auto auto;" />
 
 - Using the datasauRus, ggplot2 and gganimate libraries.
 
@@ -209,7 +370,8 @@ ggplot(datasaurus_dozen, aes(x=x, y=y))+
 ```
 
 ***
-<img src="Data_Visualization-figure/unnamed-chunk-21-1.gif" title="plot of chunk unnamed-chunk-21" alt="plot of chunk unnamed-chunk-21" width="80%" style="display: block; margin: auto;" />
+
+<img src="Data_Visualization-figure/unnamed-chunk-37-1.gif" title="plot of chunk unnamed-chunk-37" alt="plot of chunk unnamed-chunk-37" style="display: block; margin: auto;" />
   
 Bonus: gganimate mtcars mpg
 ========================================================
@@ -225,7 +387,7 @@ ggplot(mtcars, aes(factor(cyl), mpg)) +
 
 ***
 
-<img src="Data_Visualization-figure/unnamed-chunk-22-1.gif" title="plot of chunk unnamed-chunk-22" alt="plot of chunk unnamed-chunk-22" width="80%" style="display: block; margin: auto;" />
+<img src="Data_Visualization-figure/unnamed-chunk-38-1.gif" title="plot of chunk unnamed-chunk-38" alt="plot of chunk unnamed-chunk-38" style="display: block; margin: auto;" />
 
 ggplot2: geom_tile
 ========================================================
@@ -233,7 +395,7 @@ right: 30%
 
 - Using the gifski, ggplot2 and gganimate libraries.
 
-<img src="Data_Visualization-figure/unnamed-chunk-23-1.png" title="plot of chunk unnamed-chunk-23" alt="plot of chunk unnamed-chunk-23" height="80%" style="display: block; margin: auto;" />
+<img src="Data_Visualization-figure/unnamed-chunk-39-1.png" title="plot of chunk unnamed-chunk-39" alt="plot of chunk unnamed-chunk-39" height="80%" style="display: block; margin: auto;" />
 
 ***
 
@@ -252,7 +414,7 @@ right: 30%
 Tasks for the afternoon: Basic
 ========================================================
 incremental: true
-<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-26" alt="plot of chunk unnamed-chunk-26" width="20%" style="display: block; margin: auto;" />
+<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-42" alt="plot of chunk unnamed-chunk-42" width="20%" style="display: block; margin: auto;" />
 
 - Check your data for interesting trends and correlations
 - Use scatter plots, barcharts and boxplots
@@ -262,7 +424,7 @@ incremental: true
 Tasks for the afternoon: Advanced
 ========================================================
 incremental: true
-<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-27" alt="plot of chunk unnamed-chunk-27" width="20%" style="display: block; margin: auto;" />
+<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-43" alt="plot of chunk unnamed-chunk-43" width="20%" style="display: block; margin: auto;" />
 
 - Import data from an external source (e.g. FAO, World Bank)
 - Display those data in an interactive plot
