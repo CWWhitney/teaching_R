@@ -16,14 +16,11 @@ date: "`r Sys.Date()`"
 autosize: true
 css: mySlideTemplate.css
 incremental: true
-right: 40%
 
-<img src="RMarkdown-figure/knit-logo.png" style="background:none; border:none; box-shadow:none;height="400"; width="400";"><img src="RMarkdown-figure/INRES_Logo.png" style="background:none; border:none; box-shadow:none;height="100"; width="100";"><img src="RMarkdown-figure/Uni_Bonn_Picture.png" style="background:none; border:none; box-shadow:none;height="200"; width="200";"><img src="RMarkdown-figure/ZEF_Logo.png" style="background:none; border:none; box-shadow:none;height="200"; width="200";">
-***
+<img src="Data_Visualization-figure/Circos.png" style="background:none; border:none; box-shadow:none;height="200"; width="200";"><img src="Data_Visualization-figure/INRES_Logo.png" style="background:none; border:none; box-shadow:none;height="100"; width="100";"><img src="Data_Visualization-figure/Uni_Bonn_Picture.png" style="background:none; border:none; box-shadow:none;height="200"; width="200";"><img src="Data_Visualization-figure/ZEF_Logo.png" style="background:none; border:none; box-shadow:none;height="200"; width="200";">
 
-```{r, out.width='35%', fig.align='center', echo=FALSE}
-knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
-```
+<div class="footer"></small>cory.whitney@uni-bonn.de </small></div>
+
 
 Data visualization: getting stuck
 ========================================================
@@ -32,28 +29,28 @@ right: 30%
 
 - open RStudio
 
-```{r, out.width='35%', fig.align='center', echo=FALSE}
-knitr::include_graphics('RMarkdown-figure/rstudio-hex.png')
+```{r, out.width='20%', fig.align='center', echo=FALSE}
+knitr::include_graphics('Data_Visualization-figure/rstudio-hex.png')
 ```
 
 Help > Cheatsheets > Data Visualization with ggplot2
 
-- type ‘?’ in R console with function, package, data name
+- type ‘?’ in R console with function, package or data name
 - Add “R” to a search with a copy of an error message
 - Many talented programmers who scan the web and answer issues
 
 ```{r, out.width='50%', fig.align='center', echo=FALSE}
-knitr::include_graphics('RMarkdown-figure/stack-overflow.png')
+knitr::include_graphics('Data_Visualization-figure/stack-overflow.png')
 ```
 <div class="footer"></small>https://stackoverflow.com/ </small></div>
 
 ***
 ```{r, out.width='50%', fig.align='center', echo=FALSE}
-knitr::include_graphics('RMarkdown-figure/hadley_wickham.png')
+knitr::include_graphics('Data_Visualization-figure/hadley_wickham.png')
 ```
 Hadley Wickham
 ```{r, out.width='50%', fig.align='center', echo=FALSE}
-knitr::include_graphics('RMarkdown-figure/Yihui.png')
+knitr::include_graphics('Data_Visualization-figure/Yihui.png')
 ```
 Yihui Xie
 
