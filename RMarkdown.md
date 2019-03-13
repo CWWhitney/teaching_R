@@ -12,7 +12,7 @@ Using RMarkdown
 ========================================================
 author: Cory Whitney
 font-family: 'Helvetica'
-date: "2019-03-12"
+date: "2019-03-13"
 autosize: true
 css: mySlideTemplate.css
 
@@ -54,16 +54,71 @@ Yihui Xie
 
 <div class="footer"><small>https://rmarkdown.rstudio.com/ </small></div>
 
-RMarkdown: overview
+RMarkdown: basics
 ========================================================
 incremental: true
-right: 30%
+
+-Markdown Basics
+
+<img src="RMarkdown-figure/Markdown_Basics.jpg" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" width="50%" style="display: block; margin: auto;" />
+
+<small>https://rmarkdown.rstudio.com/authoring_basics.html</small>
+
+<img src="RMarkdown-figure/Yihui.png" title="plot of chunk unnamed-chunk-6" alt="plot of chunk unnamed-chunk-6" width="20%" style="display: block; margin: auto;" />
+<small>https://bookdown.org/yihui/rmarkdown/r-code.html</small>
 
 - open RStudio
+
+<img src="RMarkdown-figure/rstudio-hex.png" title="plot of chunk unnamed-chunk-7" alt="plot of chunk unnamed-chunk-7" width="35%" style="display: block; margin: auto;" />
+
+***
+
 - open a markdown file
-<img src="RMarkdown-figure/open_markdown_file.jpg" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" width="50%" style="display: block; margin: auto;" />
+
+<img src="RMarkdown-figure/open_markdown_file.jpg" title="plot of chunk unnamed-chunk-8" alt="plot of chunk unnamed-chunk-8" width="50%" />
 
 - Use the setup chunk
 - Remember the Table of Contents
 
-***
+Git and GitHub: basics
+========================================================
+incremental: true
+
+Install Git & Github (if you do not already have them). 
+
+- Git
+<small>https://git-scm.com/downloads</small>
+
+- Github
+<small>http://r-pkgs.had.co.nz/git.html</small>
+
+Some useful tips on getting these running from our friends at 
+
+- University of Zurich
+<small>http://www.geo.uzh.ch/microsite/reproducible_research/post/rr-rstudio-git/</small>
+
+- and from Nathan Stephens, a very helpful R blogger 
+<small>https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN</small>
+
+GitHub: intro hello-world
+========================================================
+incremental: true
+
+<img src="RMarkdown-figure/Github_guides.jpg" title="plot of chunk unnamed-chunk-9" alt="plot of chunk unnamed-chunk-9" width="20%" />
+<small>https://guides.github.com/activities/hello-world/</small>
+
+Tasks for the afternoon: Basic and Advanced
+========================================================
+incremental: true
+
+- Go through your scripts again
+- Add documentation
+- Create an Rmarkdown file
+- Export your script as html and pdf
+- Upload your script to git
+- Share your script with your classmates through git
+
+- **Help future R courses! Fill out the feedback form.**
+
+
+
