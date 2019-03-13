@@ -28,17 +28,16 @@ incremental: true
 right: 30%
 
 - open RStudio
+<img src="Data_Visualization-figure/rstudio-hex.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" width="30%" style="display: block; margin: auto 0 auto auto;" />
 
-<img src="Data_Visualization-figure/rstudio-hex.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" width="20%" style="display: block; margin: auto;" />
-
-Help > Cheatsheets > Data Visualization with ggplot2
+- Help > Cheatsheets > Data Visualization with ggplot2
 
 - type ‘?’ in R console with function, package or data name
 - Add “R” to a search with a copy of an error message
 - Many talented programmers who scan the web and answer issues
 
 <img src="Data_Visualization-figure/stack-overflow.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" width="50%" style="display: block; margin: auto;" />
-<div class="footer"></small>https://stackoverflow.com/ </small></div>
+</small>https://stackoverflow.com/ </small>
 
 ***
 <img src="Data_Visualization-figure/hadley_wickham.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" width="50%" style="display: block; margin: auto;" />
@@ -46,14 +45,14 @@ Hadley Wickham
 <img src="Data_Visualization-figure/Yihui.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" width="50%" style="display: block; margin: auto;" />
 Yihui Xie
 
-<div class="footer"><small>https://rmarkdown.rstudio.com/ </small></div>
+<small>https://yihui.name/en/2017/08/so-gh-email/</small>
+
+<small>https://rmarkdown.rstudio.com/ </small>
 
 gganimate
 ========================================================
 incremental: true
-left: 30%
-<img src="Teaching-R-figure/yihui.png" style="background:none; border:none; box-shadow:none;height="50%"; width="50%";"> https://yihui.name/en/2017/08/so-gh-email/
-***
+
 ![plot of chunk unnamed-chunk-5](Data_Visualization-figure/unnamed-chunk-5-1.gif)
 
 Tasks for the afternoon: Basic

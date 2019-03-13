@@ -28,12 +28,11 @@ incremental: true
 right: 30%
 
 - open RStudio
-
-```{r, out.width='20%', fig.align='center', echo=FALSE}
+```{r, out.width='30%', fig.align='right', echo=FALSE}
 knitr::include_graphics('Data_Visualization-figure/rstudio-hex.png')
 ```
 
-Help > Cheatsheets > Data Visualization with ggplot2
+- Help > Cheatsheets > Data Visualization with ggplot2
 
 - type ‘?’ in R console with function, package or data name
 - Add “R” to a search with a copy of an error message
@@ -42,7 +41,7 @@ Help > Cheatsheets > Data Visualization with ggplot2
 ```{r, out.width='50%', fig.align='center', echo=FALSE}
 knitr::include_graphics('Data_Visualization-figure/stack-overflow.png')
 ```
-<div class="footer"></small>https://stackoverflow.com/ </small></div>
+</small>https://stackoverflow.com/ </small>
 
 ***
 ```{r, out.width='50%', fig.align='center', echo=FALSE}
@@ -54,14 +53,14 @@ knitr::include_graphics('Data_Visualization-figure/Yihui.png')
 ```
 Yihui Xie
 
-<div class="footer"><small>https://rmarkdown.rstudio.com/ </small></div>
+<small>https://yihui.name/en/2017/08/so-gh-email/</small>
+
+<small>https://rmarkdown.rstudio.com/ </small>
 
 gganimate
 ========================================================
 incremental: true
-left: 30%
-<img src="Teaching-R-figure/yihui.png" style="background:none; border:none; box-shadow:none;height="50%"; width="50%";"> https://yihui.name/en/2017/08/so-gh-email/
-***
+
 ```{r, echo=FALSE}
 library(ggplot2)
 library(gganimate)
