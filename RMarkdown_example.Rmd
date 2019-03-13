@@ -2,7 +2,8 @@
 title: "RMarkdown_example"
 author: "Cory Whitney"
 date: "`r Sys.Date()`"
-output: html_document
+output:
+  html_document: default
 ---
 
 Avoid absolute paths! Use relative paths (relative to your .Rmd file).
@@ -41,11 +42,115 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 
 You can also embed images, for example:
 
-```{r echo = FALSE}
+```{r}
 knitr::include_graphics('RMarkdown-figure/hex-rmarkdown.png')
 ```
 
 and in other ways
 
 ![](RMarkdown-figure/hex-rmarkdown.png)
+Emphasis
+*italic*   **bold**
+
+_italic_   __bold__
+
+## Headers
+
+# Header 1
+
+## Header 2
+
+### Header 3
+
+##Lists
+
+## Unordered List:
+
+* Item 1
+* Item 2
+    + Item 2a
+    + Item 2b
+
+## Ordered List:
+
+1. Item 1
+2. Item 2
+3. Item 3
+    + Item 3a
+    + Item 3b
+
+## R Code Chunks
+R code will be evaluated and printed
+
+```{r}
+summary(cars$dist)
+summary(cars$speed)
+```
+
+## Inline R Code
+
+There were `r nrow(cars)` cars studied
+
+## Links
+
+Use a plain http address or add a link to a phrase:
+
+```
+http://example.com
+
+[linked phrase](http://example.com)
+```
+
+## Blockquotes
+A friend once said:
+
+> It's always better to give
+> than to receive.
+Plain Code Blocks
+Plain code blocks are displayed in a fixed-width font but not evaulated
+
+```
+This text is displayed verbatim / preformatted
+```
+
+## Inline Code
+
+We defined the `add` function to
+compute the sum of two numbers.
+
+## LaTeX Equations
+
+**Inline equation:**
+
+$equation$
+
+**Display equation:**
+
+$$ equation $$
+Horizontal Rule / Page Break
+Three or more asterisks or dashes:
+
+******
+
+------
+
+## Tables
+
+First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell
+
+## Manual Line Breaks
+
+End a line with two or more spaces:
+
+Roses are red,  
+Violets are blue.
+
+## Miscellaneous
+
+superscript^2^
+
+~~strikethrough~~
 
