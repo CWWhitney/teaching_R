@@ -18,23 +18,42 @@ css: mySlideTemplate.css
 
 <img src="R_Git_GitHub-figure/github.png" style="background:none; border:none; box-shadow:none;height="400"; width="400";"><img src="R_Git_GitHub-figure/INRES_Logo.png" style="background:none; border:none; box-shadow:none;height="100"; width="100";"><img src="R_Git_GitHub-figure/Uni_Bonn_Picture.png" style="background:none; border:none; box-shadow:none;height="200"; width="200";"><img src="R_Git_GitHub-figure/ZEF_Logo.png" style="background:none; border:none; box-shadow:none;height="200"; width="200";">
 
-<div class="footer"></small>cory.whitney@uni-bonn.de </small></div>
+</small>cory.whitney@uni-bonn.de </small>
+
+Automated version control
+========================================================
+incremental: true
+
+**Show of hands:**
+- use 'cmd z' or 'ctrl z'?
+- came to the office but left the work at home on another machine or USB?
+- tried to co-author papers by emailing files back and forth?
+
+<small>Git is an open source version control tool, GitHub is a company that hosts Git repositories in the web and provides a web interface to interact with repos they host.</small>
+
+<small>https://swcarpentry.github.io/git-novice/guide/</small>
+
+***
+
+![](R_Git_GitHub-figure/final_doc_comic.png)
 
 Git: overview
 ========================================================
 incremental: true
 right: 80%
-![](R_Git_GitHub-figure/octocat.png)
+![](R_Git_GitHub-figure/git_logo.png)
+<small>https://git-scm.com/</small>
 
 ***
 
-- Use it! 
-- You will thank yourself 
-- Version histories are stored
-- Easy to share
+A better way to:
+- "undo" changes,
+- collaborate than mailing files back and forth, and
+- share code and other scientific work with the world.
+
 <img src="R_Git_GitHub-figure/git_logo.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" width="35%" style="display: block; margin: auto;" />
 
-<div class="footer"></small>https://rmarkdown.rstudio.com/ </small></div>
+<small>https://swcarpentry.github.io/git-novice/guide/</small>
 
 GitHub: overview
 ========================================================
