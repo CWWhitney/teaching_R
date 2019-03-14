@@ -41,16 +41,20 @@ GitHub: overview
 incremental: true
 right: 80%
 ![](R_Git_GitHub-figure/octocat.png)
+
 ***
-- Use it! 
-- You will thank yourself 
-- Version histories are stored
-- Easy to share and network
+
+A better way to
+- “undo” changes,
+- collaborate than mailing files back and forth, and
+- share your code and other scientific work with the world.
+
 <img src="R_Git_GitHub-figure/Github-Icon-4.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" width="35%" style="display: block; margin: auto;" />
 
-<div class="footer"></small>https://rmarkdown.rstudio.com/ </small></div>
+</small>https://rmarkdown.rstudio.com/ </small>
+</small>https://swcarpentry.github.io/git-novice/guide/</small>
 
-Git and GitHub: getting stuck #myoctocat
+Git and GitHub: getting stuck
 ========================================================
 incremental: true
 right: 80%
