@@ -20,18 +20,19 @@ css: mySlideTemplate.css
 
 <div class="footer"></small>cory.whitney@uni-bonn.de </small></div>
 
-GitHub: overview
+Git and GitHub: overview
 ========================================================
 incremental: true
+right: 80%
 ![](R_Git_GitHub-figure/octocat.png)
 ***
 - Use it! 
 - You will thank yourself 
-- Save often with new version
-- Or use git
+- Version histories are stored
+- Easy to share
 ```{r, out.width='35%', fig.align='center', echo=FALSE}
-knitr::include_graphics('R_Git_GitHub-figure/hex-rmarkdown.png')
-knitr::include_graphics('R_Git_GitHub-figure/knitrhex.jpg')
+knitr::include_graphics('R_Git_GitHub-figure/git_logo.png')
+knitr::include_graphics('R_Git_GitHub-figure/Github-Icon-4.png')
 ```
 
 <div class="footer"></small>https://rmarkdown.rstudio.com/ </small></div>

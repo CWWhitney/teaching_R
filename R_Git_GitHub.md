@@ -12,7 +12,7 @@ R is to RStudio as Git is to GitHub
 ========================================================
 author: Cory Whitney
 font-family: 'Helvetica'
-date: "2019-03-13"
+date: "2019-03-14"
 autosize: true
 css: mySlideTemplate.css
 
@@ -20,16 +20,17 @@ css: mySlideTemplate.css
 
 <div class="footer"></small>cory.whitney@uni-bonn.de </small></div>
 
-GitHub: overview
+Git and GitHub: overview
 ========================================================
 incremental: true
+right: 80%
 ![](R_Git_GitHub-figure/octocat.png)
 ***
 - Use it! 
 - You will thank yourself 
-- Save often with new version
-- Or use git
-<img src="R_Git_GitHub-figure/hex-rmarkdown.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" width="35%" style="display: block; margin: auto;" /><img src="R_Git_GitHub-figure/knitrhex.jpg" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" width="35%" style="display: block; margin: auto;" />
+- Version histories are stored
+- Easy to share
+<img src="R_Git_GitHub-figure/git_logo.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" width="35%" style="display: block; margin: auto;" /><img src="R_Git_GitHub-figure/Github-Icon-4.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" width="35%" style="display: block; margin: auto;" />
 
 <div class="footer"></small>https://rmarkdown.rstudio.com/ </small></div>
 
