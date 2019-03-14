@@ -20,6 +20,23 @@ css: mySlideTemplate.css
 
 <div class="footer"></small>cory.whitney@uni-bonn.de </small></div>
 
+Automated version control
+========================================================
+incremental: true
+right: 80%
+![](R_Git_GitHub-figure/git_logo.png)
+<small>https://git-scm.com/</small>
+
+***
+
+Who uses "undo"?
+- tried to co-author papers by emailing files back and forth
+- biked into the office only to realize that the USB key with last night’s work is still on the kitchen table.
+
+![]R_Git_GitHub-figure/final_doc_comic.png')
+
+<small>https://swcarpentry.github.io/git-novice/guide/</small>
+
 Git: overview
 ========================================================
 incremental: true
@@ -30,7 +47,7 @@ right: 80%
 ***
 
 A better way to:
-- “undo” changes,
+- "undo" changes,
 - collaborate than mailing files back and forth, and
 - share code and other scientific work with the world.
 
