@@ -1,3 +1,9 @@
+.reveal .state-background {
+  background: white;
+} 
+.reveal {
+  color: black;
+}
 
 .reveal h1 { 
   font-size: 2.5em; 

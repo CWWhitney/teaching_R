@@ -28,10 +28,8 @@ Data visualization: getting stuck
 incremental: true
 right: 30%
 
-- open RStudio
-```{r, out.width='20%', fig.align='right', echo=FALSE}
-knitr::include_graphics('Data_Visualization-figure/rstudio-hex.png')
-```
+- **Open RStudio**
+![](Data_Visualization-figure/rstudio-hex.png)
 
 - **Help > Cheatsheets > Data Visualization with ggplot2**
 
@@ -66,7 +64,7 @@ incremental: true
 
 - **Base R** 
 
-```{r out.width='50%', fig.align='center'}
+```{r base_barplot, out.width='50%', fig.align='center'}
 participants_data <- read.csv("participants_data.csv")
 plot(participants_data$academic_parents)
 ```
@@ -74,7 +72,7 @@ plot(participants_data$academic_parents)
 
 ***
 
-```{r out.width='50%', fig.align='center'} 
+```{r base_boxplot, out.width='50%', fig.align='center'} 
 plot(participants_data$academic_parents, participants_data$days_to_email_response)
 ```
 <small>Boxplot of days to email response grouped by binary data related to academic parents</small>
@@ -118,11 +116,11 @@ right: 80%
 knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
 ```
 
+**qplot: 'poor man's ggplot?**
 ***
 
-```{r, out.height='30%', fig.align='center'}
+```{r qplot_partdata, out.height='30%', fig.align='center'}
 library(ggplot2)
-
 qplot(days_to_email_response, letters_in_first_name, data = participants_data)
 ```
 <small>Scatterplot of days to email response as a function of the letters in your first name</small>
@@ -134,29 +132,6 @@ qplot(days_to_email_response, letters_in_first_name, data = participants_data)
 
 <small>Want to understand how all the pieces fit together? See the R
 for Data Science book: http://r4ds.had.co.nz/</small>
-
-ggplot2: qplot with iris data
-========================================================
-incremental: true
-right: 80%
-```{r, out.width='70%', fig.align='right', echo=FALSE}
-knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
-```
-
-***
-
-**Example from Anderson's iris data set**
-
-```{r fig.align='center'}
-qplot(Sepal.Length, Petal.Length, data=iris, color=Species, size=Petal.Width)
-```
-<small>Scatterplot of iris petal length as a function of sepal length with colors representing iris species and petal width as bubble sizes.</small>
-
-**Use help '?' for data**
-```{r} 
-?iris
-``` 
-
 
 ggplot2: qplot with your data
 ========================================================
@@ -170,14 +145,37 @@ knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
 
 **Example from your data**
 
-```{r fig.align='center'} 
+```{r qplot_yourdata, fig.align='center'} 
 qplot(days_to_email_response, letters_in_first_name, color=academic_parents, size=working_hours_per_day, data=participants_data)
 ``` 
 <small>Scatterplot of letters in your first name as a function of days to email response with colors representing binary data related to academic parents and working hours per day as bubble sizes.</small>
 
 **Make more graphs**
 
-ggplot2: qplot with carat data
+ggplot2: qplot with iris data
+========================================================
+incremental: true
+right: 80%
+```{r, out.width='70%', fig.align='right', echo=FALSE}
+knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
+```
+
+***
+
+**Example from Anderson's iris data set**
+
+```{r qplot_iris, fig.align='center'}
+qplot(Sepal.Length, Petal.Length, data=iris, color=Species, size=Petal.Width)
+```
+<small>Scatterplot of iris petal length as a function of sepal length with colors representing iris species and petal width as bubble sizes.</small>
+
+**Use help '?' for data**
+```{r} 
+?iris
+``` 
+
+
+ggplot2: qplot with diamonds price
 ========================================================
 incremental: true
 right: 80%
@@ -192,7 +190,7 @@ knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
 plot1<-qplot(carat, price, data = diamonds)
 plot2<-qplot(log(carat), log(price), data = diamonds,
 ```
-```{r, fig.width=20, fig.height=5, fig.align='center', echo=FALSE} 
+```{r qplot_carat, fig.width=20, fig.height=5, fig.align='center', echo=FALSE} 
 plot1<-qplot(carat, price, data = diamonds)
 plot2<-qplot(log(carat), log(price), data = diamonds, alpha=0.2)
 library(gridExtra)
@@ -202,6 +200,45 @@ grid.arrange(plot1, plot2, ncol=2)
 **Use help '?' for data**
 ```{r} 
 ?diamonds
+``` 
+
+
+ggplot2: qplot diamonds color shape
+========================================================
+incremental: true
+right: 80%
+```{r, out.width='70%', fig.align='center', echo=FALSE}
+knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
+```
+
+***
+
+```
+#Create a sample
+
+dsmall <- diamonds[sample(nrow(diamonds), 100), ]
+
+#Plot with different colours for color
+qplot(carat, price, data = dsmall, colour = color)
+
+#Plot with different shapes for cut 
+qplot(carat, price, data = dsmall, shape = cut)
+```
+```{r qplot_diamonds_color_shape, fig.width=20, fig.height=5, fig.align='center', echo=FALSE} 
+#Create a sample
+dsmall <- diamonds[sample(nrow(diamonds), 100), ]
+#Plot with different colors for color
+plot3<-qplot(carat, price, data = dsmall, colour = color)
+#Plot with different shapes for cut 
+plot4<-qplot(carat, price, data = dsmall, shape = cut)
+library(gridExtra)
+grid.arrange(plot3, plot4, ncol=2)
+```
+~~Different colors and shapes~~
+
+**Use help '?' for function**
+```{r} 
+?sample
 ``` 
 
 
@@ -221,7 +258,7 @@ qplot(carat, price, data = diamonds, alpha=I(0.1), colour=I("blue"))
 qplot(carat, price, data = diamonds, alpha=I(0.4), colour=I("green"))
 ```
 
-```{r, fig.width=20, fig.height=5, fig.align='center', echo=FALSE} 
+```{r qplot_set, fig.width=20, fig.height=5, fig.align='center', echo=FALSE} 
 plot5<-qplot(carat, price, data = diamonds, alpha=I(0.1), colour=I("blue"))
 plot6<-qplot(carat, price, data = diamonds, alpha=I(0.4), colour=I("green"))
 library(gridExtra)
@@ -229,36 +266,10 @@ grid.arrange(plot5, plot6, ncol=2)
 ```
 ~~Inhibit Interpretation / Conversion of Objects~~
 
-ggplot2: qplot with diamonds data
-========================================================
-incremental: true
-right: 80%
-```{r, out.width='70%', fig.align='center', echo=FALSE}
-knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
-```
-
-***
-
-```
-#Create a sample
-dsmall <- diamonds[sample(nrow(diamonds), 100), ]
-#Plot with different colours for color
-qplot(carat, price, data = dsmall, colour = color)
-#Plot with different shapes for cut 
-qplot(carat, price, data = dsmall, shape = cut)
-```
-```{r, fig.width=20, fig.height=5, fig.align='center', echo=FALSE} 
-#Create a sample
-dsmall <- diamonds[sample(nrow(diamonds), 100), ]
-#Plot with different colors for color
-plot3<-qplot(carat, price, data = dsmall, colour = color)
-#Plot with different shapes for cut 
-plot4<-qplot(carat, price, data = dsmall, shape = cut)
-library(gridExtra)
-grid.arrange(plot3, plot4, ncol=2)
-```
-~~Different colors and shapes~~
-
+**Use help '?' for function**
+```{r} 
+?I
+``` 
 
 ggplot2: geom
 ========================================================
@@ -277,7 +288,7 @@ qplot(carat,price,data=dsmall, geom="line")
 qplot(carat,price,data=dsmall, geom="smooth")
 qplot(carat,price,data=dsmall, geom=c("point","smooth"))
 ```
-```{r, fig.width=20, fig.height=5, fig.align='center', echo=FALSE} 
+```{r qplot_geom, fig.width=20, fig.height=5, fig.align='center', echo=FALSE} 
 #Create a sample
 p1 <- qplot(carat,price,data=dsmall, geom="line")
 p2 <- qplot(carat,price,data=dsmall, geom="smooth")
@@ -287,11 +298,17 @@ grid.arrange(p1, p2, p3, ncol=3)
 ```
 ~~ggplot2 geom options~~
 
+**Use help '?' for function**
+```{r} 
+?qplot
+``` 
+~~read 'Arguments' section of help file~~
+
 ggplot2: smooth function
 ========================================================
 incremental: true
 right: 80%
-```{r, out.width='70%', fig.align='center', echo=FALSE}
+```{r out.width='70%', fig.align='center', echo=FALSE}
 knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
 ```
 
@@ -311,7 +328,7 @@ Use method to specify your smoothing method
 qplot(carat,price,data=dsmall,geom=c("point","smooth"),method="lm")
 ```
 
-```{r, fig.width=20, fig.height=5, fig.align='center', echo=FALSE} 
+```{r qplot_smooth, fig.width=20, fig.height=5, fig.align='center', echo=FALSE} 
 #Create a sample
 pl1 <- qplot(carat,price,data=dsmall,geom=c("point","smooth"))
 pl2 <- qplot(carat,price,data=diamonds,geom=c("point","smooth"))
@@ -346,7 +363,7 @@ qplot(color,price/carat,data=diamonds, geom="jitter")
 qplot(color,price/carat,data=diamonds, geom="jitter", alpha=I(0.1))
 ```
 
-```{r, fig.width=20, fig.height=5, fig.align='center', echo=FALSE} 
+```{r qplot_box_jitter, fig.width=20, fig.height=5, fig.align='center', echo=FALSE} 
 #Create a sample
 pt1 <- qplot(color,price/carat,data=diamonds,  geom="boxplot")
 pt2 <- qplot(color,price/carat,data=diamonds, geom="jitter")
@@ -374,7 +391,7 @@ qplot(carat, data = diamonds, geom = "density", colour = color)
 qplot(carat, data = diamonds, geom = "density", fill = color, alpha=I(0.3))
 ```
 
-```{r, fig.width=20, fig.height=5, fig.align='center', echo=FALSE} 
+```{r qplot_histograms, fig.width=20, fig.height=5, fig.align='center', echo=FALSE} 
 #Create a sample
 pt4 <- qplot(carat, data = diamonds, geom = "density")
 pt5 <- qplot(carat, data = diamonds, geom = "density", colour = color)
@@ -388,7 +405,7 @@ ggplot2: subset
 ========================================================
 incremental: true
 right: 80%
-```{r, out.width='70%', fig.align='center', echo=FALSE}
+```{r out.width='70%', fig.align='center', echo=FALSE}
 knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
 ```
 
@@ -397,10 +414,11 @@ knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
 Use factor to subset your data.
 ```
 qplot(displ, hwy, data = mpg, colour = cyl, geom=c("point","smooth"),method="lm")
+
 qplot(displ, hwy, data = mpg, colour = factor(cyl), geom=c("point","smooth"),method="lm")
 ```
 
-```{r, fig.width=20, fig.height=5, fig.align='center', echo=FALSE} 
+```{r qplot_subset, fig.width=20, fig.height=5, fig.align='center', echo=FALSE} 
 #Create a sample
 plt1 <- qplot(displ, hwy, data = mpg, colour = cyl, geom=c("point","smooth"),method="lm")
 plt2 <- qplot(displ, hwy, data = mpg, colour = factor(cyl), geom=c("point","smooth"),method="lm")
@@ -408,8 +426,6 @@ library(gridExtra)
 grid.arrange(plt1, plt2, ncol=2)
 ```
 ~~ggplot2 subset with smooth line~~
-
-
 
 Correlation
 ========================================================
@@ -421,7 +437,7 @@ knitr::include_graphics('Data_Visualization-figure/spaghetti_monster.png')
 
 ***
 
-```{r, out.width='70%', fig.align='center'}
+```{r qplot_correlation, out.width='70%', fig.align='center'}
 cor.test(participants_data$days_to_email_response, participants_data$letters_in_first_name)
 ```
 
@@ -438,6 +454,7 @@ knitr::include_graphics('Data_Visualization-figure/gganimate_logo.png')
 ```
 
 - Using the datasauRus, ggplot2 and gganimate libraries.
+- Note the many calls for ggplot
 
 ```
 ggplot(datasaurus_dozen, aes(x=x, y=y))+
@@ -449,7 +466,7 @@ ggplot(datasaurus_dozen, aes(x=x, y=y))+
 
 ***
 
-```{r , fig.width=12, fig.height=14, fig.align='center', echo=FALSE}
+```{r animate_datasaurus_dozen, fig.width=12, fig.height=14, fig.align='center', echo=FALSE}
 library(datasauRus)
 library(ggplot2)
 library(gganimate)
@@ -480,7 +497,7 @@ ggplot(mtcars, aes(factor(cyl), mpg)) +
 
 ***
 
-```{r, fig.width=12, fig.height=14, fig.align='center', echo=FALSE}
+```{r animate_mtcars, fig.width=12, fig.height=14, fig.align='center', echo=FALSE}
 library(ggplot2)
 library(gganimate)
 library(gifski)
@@ -495,7 +512,6 @@ library(gifski)
 ggplot2: geom_tile
 ========================================================
 incremental: true
-right: 70%
 ```{r, out.width='20%', fig.align='right', echo=FALSE}
 knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
 ```
@@ -512,7 +528,7 @@ geom_tile()
 ```
 
 ***
-```{r fig.width=12, fig.height=14, fig.align='center', echo=FALSE}
+```{r geom_melted_cormat, fig.width=12, fig.height=7, fig.align='center', echo=FALSE}
 library(dplyr)
 part_data<-select(participants_data, days_to_email_response, number_of_siblings, years_of_study, number_of_publications, letters_in_first_name, km_home_to_zef, working_hours_per_day, days_to_email_response)
 cormat <- round(cor(part_data), 1)
@@ -537,16 +553,12 @@ geom_tile()
 Export Figures
 ========================================================
 incremental: true
-```{r fig.width=10, fig.height=10, fig.align='center', echo=FALSE}
-library(dplyr)
-part_data<-select(participants_data, days_to_email_response, number_of_siblings, years_of_study, number_of_publications, letters_in_first_name, km_home_to_zef, working_hours_per_day, days_to_email_response)
-cormat <- round(cor(part_data), 1)
-library(reshape2)
-melted_cormat <- melt(cormat)
-ggplot(data = melted_cormat, aes(x=Var1, 
-y=Var2, fill=value)) + 
-geom_tile()
+right: 70%
+```{r fig.width=10, fig.height=5, fig.align='center', echo=FALSE}
+knitr::include_graphics('Data_Visualization-figure/geom_melted_cormat-1.png')
 ```
+
+***
 
 ```
 png(file = "cortile.png", width = 7, height = 6, units = "in", res = 300)

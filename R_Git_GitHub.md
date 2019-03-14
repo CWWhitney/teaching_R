@@ -20,7 +20,23 @@ css: mySlideTemplate.css
 
 <div class="footer"></small>cory.whitney@uni-bonn.de </small></div>
 
-Git and GitHub: overview
+Git: overview
+========================================================
+incremental: true
+right: 80%
+![](R_Git_GitHub-figure/octocat.png)
+
+***
+
+- Use it! 
+- You will thank yourself 
+- Version histories are stored
+- Easy to share
+<img src="R_Git_GitHub-figure/git_logo.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" width="35%" style="display: block; margin: auto;" />
+
+<div class="footer"></small>https://rmarkdown.rstudio.com/ </small></div>
+
+GitHub: overview
 ========================================================
 incremental: true
 right: 80%
@@ -29,20 +45,22 @@ right: 80%
 - Use it! 
 - You will thank yourself 
 - Version histories are stored
-- Easy to share
-<img src="R_Git_GitHub-figure/git_logo.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" width="35%" style="display: block; margin: auto;" /><img src="R_Git_GitHub-figure/Github-Icon-4.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" width="35%" style="display: block; margin: auto;" />
+- Easy to share and network
+<img src="R_Git_GitHub-figure/Github-Icon-4.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" width="35%" style="display: block; margin: auto;" />
 
 <div class="footer"></small>https://rmarkdown.rstudio.com/ </small></div>
 
-GitHub: getting stuck #myoctocat
+Git and GitHub: getting stuck #myoctocat
 ========================================================
 incremental: true
-right: 30%
+right: 80%
+![](R_Git_GitHub-figure/octocat.png)
+***
 
-- If you get stuck, use Google: just add “Git” to a search e.g. a copy of an error message
+- If you get stuck, just add “Git” to a search query e.g. a short description of your issue
 - Someone else has also been confused by it and has written about it
 Thousands of talented programmers who scan the web and answer these problems
-<img src="R_Git_GitHub-figure/stack-overflow.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" width="50%" style="display: block; margin: auto;" />
+<img src="R_Git_GitHub-figure/stack-overflow.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" width="50%" style="display: block; margin: auto;" />
 <div class="footer"></small>https://stackoverflow.com/ </small></div>
 
 
@@ -58,19 +76,19 @@ Install Git & Github (if you do not already have them).
 - Github
 <small>http://r-pkgs.had.co.nz/git.html</small>
 
-Some useful tips on getting these running from our friends at 
+Some useful tips on getting these running from our friends 
 
 - University of Zurich
 <small>http://www.geo.uzh.ch/microsite/reproducible_research/post/rr-rstudio-git/</small>
 
-- and from Nathan Stephens, a very helpful R blogger 
+- Nathan Stephens, a very helpful R blogger 
 <small>https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN</small>
 
 GitHub: intro hello-world
 ========================================================
 incremental: true
 
-<img src="R_Git_GitHub-figure/Github_guides.jpg" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" width="20%" />
+<img src="R_Git_GitHub-figure/Github_guides.jpg" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" width="20%" />
 <small>https://guides.github.com/activities/hello-world/</small>
 
 Tasks for the afternoon: Basic and Advanced

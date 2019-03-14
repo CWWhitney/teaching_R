@@ -20,7 +20,25 @@ css: mySlideTemplate.css
 
 <div class="footer"></small>cory.whitney@uni-bonn.de </small></div>
 
-Git and GitHub: overview
+Git: overview
+========================================================
+incremental: true
+right: 80%
+![](R_Git_GitHub-figure/octocat.png)
+
+***
+
+- Use it! 
+- You will thank yourself 
+- Version histories are stored
+- Easy to share
+```{r, out.width='35%', fig.align='center', echo=FALSE}
+knitr::include_graphics('R_Git_GitHub-figure/git_logo.png')
+```
+
+<div class="footer"></small>https://rmarkdown.rstudio.com/ </small></div>
+
+GitHub: overview
 ========================================================
 incremental: true
 right: 80%
@@ -29,20 +47,21 @@ right: 80%
 - Use it! 
 - You will thank yourself 
 - Version histories are stored
-- Easy to share
+- Easy to share and network
 ```{r, out.width='35%', fig.align='center', echo=FALSE}
-knitr::include_graphics('R_Git_GitHub-figure/git_logo.png')
 knitr::include_graphics('R_Git_GitHub-figure/Github-Icon-4.png')
 ```
 
 <div class="footer"></small>https://rmarkdown.rstudio.com/ </small></div>
 
-GitHub: getting stuck #myoctocat
+Git and GitHub: getting stuck #myoctocat
 ========================================================
 incremental: true
-right: 30%
+right: 80%
+![](R_Git_GitHub-figure/octocat.png)
+***
 
-- If you get stuck, use Google: just add “Git” to a search e.g. a copy of an error message
+- If you get stuck, just add “Git” to a search query e.g. a short description of your issue
 - Someone else has also been confused by it and has written about it
 Thousands of talented programmers who scan the web and answer these problems
 ```{r, out.width='50%', fig.align='center', echo=FALSE}
@@ -63,12 +82,12 @@ Install Git & Github (if you do not already have them).
 - Github
 <small>http://r-pkgs.had.co.nz/git.html</small>
 
-Some useful tips on getting these running from our friends at 
+Some useful tips on getting these running from our friends 
 
 - University of Zurich
 <small>http://www.geo.uzh.ch/microsite/reproducible_research/post/rr-rstudio-git/</small>
 
-- and from Nathan Stephens, a very helpful R blogger 
+- Nathan Stephens, a very helpful R blogger 
 <small>https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN</small>
 
 GitHub: intro hello-world
