@@ -323,7 +323,7 @@ grid.arrange(pl1, pl2, pl3, pl4, ncol=4)
 ~~ggplot2 lines and smoothing options~~
 
 
-ggplot2: Boxplots
+ggplot2: Boxplots and jitter
 ========================================================
 incremental: true
 right: 80%
@@ -334,10 +334,13 @@ knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
 ***
 
 - Boxplots can be displayed through geom=“boxplot”. 
+
 ```
 qplot(color,price/carat,data=diamonds,  geom="boxplot")
 ```
+
 - Jittered plots (geom=“jitter”) show all points. In case of overplotting changing alpha can help.
+
 ```
 qplot(color,price/carat,data=diamonds, geom="jitter")
 qplot(color,price/carat,data=diamonds, geom="jitter", alpha=I(0.1))
@@ -497,7 +500,16 @@ right: 70%
 knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
 ```
 
-- Using the gifski, ggplot2 and gganimate libraries.
+- Using the dplyr, ggplot2 and reshape2 libraries.
+
+```
+part_data<-select(participants_data, days_to_email_response, number_of_siblings, years_of_study, number_of_publications, letters_in_first_name, km_home_to_zef, working_hours_per_day, days_to_email_response)
+cormat <- round(cor(part_data), 1)
+melted_cormat <- melt(cormat)
+ggplot(data = melted_cormat, aes(x=Var1, 
+y=Var2, fill=value)) + 
+geom_tile()
+```
 
 ***
 ```{r fig.width=12, fig.height=14, fig.align='center', echo=FALSE}

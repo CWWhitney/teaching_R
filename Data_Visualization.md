@@ -280,7 +280,7 @@ qplot(carat,price,data=dsmall,geom=c("point","smooth"),method="lm")
 ~~ggplot2 lines and smoothing options~~
 
 
-ggplot2: Boxplots
+ggplot2: Boxplots and jitter
 ========================================================
 incremental: true
 right: 80%
@@ -289,10 +289,13 @@ right: 80%
 ***
 
 - Boxplots can be displayed through geom=“boxplot”. 
+
 ```
 qplot(color,price/carat,data=diamonds,  geom="boxplot")
 ```
+
 - Jittered plots (geom=“jitter”) show all points. In case of overplotting changing alpha can help.
+
 ```
 qplot(color,price/carat,data=diamonds, geom="jitter")
 qplot(color,price/carat,data=diamonds, geom="jitter", alpha=I(0.1))
@@ -415,7 +418,16 @@ incremental: true
 right: 70%
 <img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-42" alt="plot of chunk unnamed-chunk-42" width="20%" style="display: block; margin: auto 0 auto auto;" />
 
-- Using the gifski, ggplot2 and gganimate libraries.
+- Using the dplyr, ggplot2 and reshape2 libraries.
+
+```
+part_data<-select(participants_data, days_to_email_response, number_of_siblings, years_of_study, number_of_publications, letters_in_first_name, km_home_to_zef, working_hours_per_day, days_to_email_response)
+cormat <- round(cor(part_data), 1)
+melted_cormat <- melt(cormat)
+ggplot(data = melted_cormat, aes(x=Var1, 
+y=Var2, fill=value)) + 
+geom_tile()
+```
 
 ***
 <img src="Data_Visualization-figure/unnamed-chunk-43-1.png" title="plot of chunk unnamed-chunk-43" alt="plot of chunk unnamed-chunk-43" style="display: block; margin: auto;" />
