@@ -394,7 +394,8 @@ right: 80%
 - using base R functions and tidyverse functions.  For other packages, the :: style to call them
 - write out arguments (no shortcuts)  aes(x = gdppercap) not aes(gdppercap)
 - order ggplot commands so that reactivity is obvious; scale adjustments to aesthetics might also be near the aesthetic declaration.
-~~https://evamaerey.github.io/ggplot_flipbook/ggplot_flipbook_xaringan.html#1~~
+
+~~<https://evamaerey.github.io/ggplot_flipbook/ggplot_flipbook_xaringan.html#1>~~
 
 ggplot2: slow ggplotting example
 ========================================================
@@ -423,7 +424,8 @@ ggplot(mtcars, aes(mpg, y = hp, col = gear)) +
   labs(title = "My Title")
 ```
 <img src="Data_Visualization-figure/slow_ggplot-1.png" title="plot of chunk slow_ggplot" alt="plot of chunk slow_ggplot" style="display: block; margin: auto;" />
-~~https://evamaerey.github.io/ggplot_flipbook/ggplot_flipbook_xaringan.html#1~~
+
+~~<https://evamaerey.github.io/ggplot_flipbook/ggplot_flipbook_xaringan.html#1>~~
 
 Correlation
 ========================================================
@@ -506,6 +508,8 @@ incremental: true
 
 ```
 part_data<-select(participants_data, days_to_email_response, number_of_siblings, years_of_study, number_of_publications, letters_in_first_name, km_home_to_zef, working_hours_per_day, days_to_email_response)
+```
+```
 cormat <- round(cor(part_data), 1)
 melted_cormat <- melt(cormat)
 ggplot(data = melted_cormat, aes(x=Var1, 
@@ -547,7 +551,7 @@ dev.off()
 ```
 list.files()
 ```
-~~If time export more figures of participants data~~
+~~If time create and export more figures~~
 
 Tasks for the afternoon: Basic
 ========================================================
