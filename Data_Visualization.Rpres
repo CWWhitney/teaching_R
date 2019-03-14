@@ -86,10 +86,7 @@ ggplot2: overview
 ========================================================
 incremental: true
 right: 80%
-```{r, out.width='70%', fig.align='right', echo=FALSE}
-knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
-```
-
+![](Data_Visualization-figure/ggplot2.png)
 ***
 
 **Many libraries and functions for graphs in R...**
@@ -112,9 +109,7 @@ ggplot2: qplot with participant data
 ========================================================
 incremental: true
 right: 80%
-```{r, out.width='70%', fig.align='right', echo=FALSE}
-knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
-```
+![](Data_Visualization-figure/ggplot2.png)
 
 **qplot: 'poor man's ggplot?**
 ***
@@ -137,9 +132,7 @@ ggplot2: qplot with your data
 ========================================================
 incremental: true
 right: 80%
-```{r, out.width='70%', fig.align='right', echo=FALSE}
-knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
-```
+![](Data_Visualization-figure/ggplot2.png)
 
 ***
 
@@ -156,9 +149,8 @@ ggplot2: qplot with iris data
 ========================================================
 incremental: true
 right: 80%
-```{r, out.width='70%', fig.align='right', echo=FALSE}
-knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
-```
+![](Data_Visualization-figure/ggplot2.png)
+
 
 ***
 
@@ -207,9 +199,8 @@ ggplot2: qplot diamonds color shape
 ========================================================
 incremental: true
 right: 80%
-```{r, out.width='70%', fig.align='center', echo=FALSE}
-knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
-```
+![](Data_Visualization-figure/ggplot2.png)
+
 
 ***
 
@@ -246,9 +237,8 @@ ggplot2: qplot set parameters
 ========================================================
 incremental: true
 right: 80%
-```{r, out.width='70%', fig.align='right', echo=FALSE}
-knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
-```
+![](Data_Visualization-figure/ggplot2.png)
+
 
 ***
 
@@ -275,9 +265,8 @@ ggplot2: geom
 ========================================================
 incremental: true
 right: 80%
-```{r, out.width='70%', fig.align='center', echo=FALSE}
-knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
-```
+![](Data_Visualization-figure/ggplot2.png)
+
 
 ***
 
@@ -344,9 +333,8 @@ ggplot2: Boxplots and jitter
 ========================================================
 incremental: true
 right: 80%
-```{r, out.width='70%', fig.align='center', echo=FALSE}
-knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
-```
+![](Data_Visualization-figure/ggplot2.png)
+
 
 ***
 
@@ -378,9 +366,8 @@ ggplot2: Histograms
 ========================================================
 incremental: true
 right: 80%
-```{r, out.width='70%', fig.align='center', echo=FALSE}
-knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
-```
+![](Data_Visualization-figure/ggplot2.png)
+
 
 ***
 
@@ -405,9 +392,8 @@ ggplot2: subset
 ========================================================
 incremental: true
 right: 80%
-```{r out.width='70%', fig.align='center', echo=FALSE}
-knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
-```
+![](Data_Visualization-figure/ggplot2.png)
+
 
 ***
 
@@ -431,9 +417,7 @@ Correlation
 ========================================================
 incremental: true
 right: 80%
-```{r, out.width='70%', fig.align='right', echo=FALSE}
-knitr::include_graphics('Data_Visualization-figure/spaghetti_monster.png')
-```
+![](Data_Visualization-figure/spaghetti_monster.png)
 
 ***
 
@@ -617,3 +601,6 @@ Github
 join Github
 <small>https://github.com/</small>
 
+*** 
+
+![](R_Git_GitHub-figure/octocat.png)

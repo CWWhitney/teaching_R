@@ -87,8 +87,7 @@ ggplot2: overview
 ========================================================
 incremental: true
 right: 80%
-<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" width="70%" style="display: block; margin: auto 0 auto auto;" />
-
+![](Data_Visualization-figure/ggplot2.png)
 ***
 
 **Many libraries and functions for graphs in R...**
@@ -103,13 +102,13 @@ right: 80%
 
 <http://vita.had.co.nz/papers/layered-grammar.pdf>
 
-<img src="Data_Visualization-figure/layered_grammer.jpg" title="plot of chunk unnamed-chunk-6" alt="plot of chunk unnamed-chunk-6" width="80%" style="display: block; margin: auto 0 auto auto;" />
+<img src="Data_Visualization-figure/layered_grammer.jpg" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" width="80%" style="display: block; margin: auto 0 auto auto;" />
 
 ggplot2: qplot with participant data
 ========================================================
 incremental: true
 right: 80%
-<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-7" alt="plot of chunk unnamed-chunk-7" width="70%" style="display: block; margin: auto 0 auto auto;" />
+![](Data_Visualization-figure/ggplot2.png)
 
 **qplot: 'poor man's ggplot?**
 ***
@@ -136,7 +135,7 @@ ggplot2: qplot with your data
 ========================================================
 incremental: true
 right: 80%
-<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-9" alt="plot of chunk unnamed-chunk-9" width="70%" style="display: block; margin: auto 0 auto auto;" />
+![](Data_Visualization-figure/ggplot2.png)
 
 ***
 
@@ -156,7 +155,8 @@ ggplot2: qplot with iris data
 ========================================================
 incremental: true
 right: 80%
-<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-10" alt="plot of chunk unnamed-chunk-10" width="70%" style="display: block; margin: auto 0 auto auto;" />
+![](Data_Visualization-figure/ggplot2.png)
+
 
 ***
 
@@ -181,7 +181,7 @@ ggplot2: qplot with diamonds price
 ========================================================
 incremental: true
 right: 80%
-<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-12" alt="plot of chunk unnamed-chunk-12" width="70%" style="display: block; margin: auto 0 auto auto;" />
+<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-8" alt="plot of chunk unnamed-chunk-8" width="70%" style="display: block; margin: auto 0 auto auto;" />
 
 ***
 
@@ -203,7 +203,8 @@ ggplot2: qplot diamonds color shape
 ========================================================
 incremental: true
 right: 80%
-<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-14" alt="plot of chunk unnamed-chunk-14" width="70%" style="display: block; margin: auto;" />
+![](Data_Visualization-figure/ggplot2.png)
+
 
 ***
 
@@ -243,7 +244,8 @@ ggplot2: qplot set parameters
 ========================================================
 incremental: true
 right: 80%
-<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-16" alt="plot of chunk unnamed-chunk-16" width="70%" style="display: block; margin: auto 0 auto auto;" />
+![](Data_Visualization-figure/ggplot2.png)
+
 
 ***
 
@@ -266,7 +268,8 @@ ggplot2: geom
 ========================================================
 incremental: true
 right: 80%
-<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-18" alt="plot of chunk unnamed-chunk-18" width="70%" style="display: block; margin: auto;" />
+![](Data_Visualization-figure/ggplot2.png)
+
 
 ***
 
@@ -291,7 +294,7 @@ ggplot2: smooth function
 ========================================================
 incremental: true
 right: 80%
-<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-20" alt="plot of chunk unnamed-chunk-20" width="70%" style="display: block; margin: auto;" />
+<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-13" alt="plot of chunk unnamed-chunk-13" width="70%" style="display: block; margin: auto;" />
 
 ***
 
@@ -317,7 +320,8 @@ ggplot2: Boxplots and jitter
 ========================================================
 incremental: true
 right: 80%
-<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-21" alt="plot of chunk unnamed-chunk-21" width="70%" style="display: block; margin: auto;" />
+![](Data_Visualization-figure/ggplot2.png)
+
 
 ***
 
@@ -341,7 +345,8 @@ ggplot2: Histograms
 ========================================================
 incremental: true
 right: 80%
-<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-22" alt="plot of chunk unnamed-chunk-22" width="70%" style="display: block; margin: auto;" />
+![](Data_Visualization-figure/ggplot2.png)
+
 
 ***
 
@@ -359,7 +364,8 @@ ggplot2: subset
 ========================================================
 incremental: true
 right: 80%
-<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-23" alt="plot of chunk unnamed-chunk-23" width="70%" style="display: block; margin: auto;" />
+![](Data_Visualization-figure/ggplot2.png)
+
 
 ***
 
@@ -377,7 +383,7 @@ Correlation
 ========================================================
 incremental: true
 right: 80%
-<img src="Data_Visualization-figure/spaghetti_monster.png" title="plot of chunk unnamed-chunk-24" alt="plot of chunk unnamed-chunk-24" width="70%" style="display: block; margin: auto 0 auto auto;" />
+![](Data_Visualization-figure/spaghetti_monster.png)
 
 ***
 
@@ -409,7 +415,7 @@ sample estimates:
 Bonus: gganimate Datasaurus Dozen
 ========================================================
 incremental: true
-<img src="Data_Visualization-figure/gganimate_logo.png" title="plot of chunk unnamed-chunk-26" alt="plot of chunk unnamed-chunk-26" width="20%" style="display: block; margin: auto 0 auto auto;" />
+<img src="Data_Visualization-figure/gganimate_logo.png" title="plot of chunk unnamed-chunk-15" alt="plot of chunk unnamed-chunk-15" width="20%" style="display: block; margin: auto 0 auto auto;" />
 
 - Using the datasauRus, ggplot2 and gganimate libraries.
 - Note the many calls for ggplot
@@ -429,7 +435,7 @@ ggplot(datasaurus_dozen, aes(x=x, y=y))+
 Bonus: gganimate mtcars mpg
 ========================================================
 incremental: true
-<img src="Data_Visualization-figure/gganimate_logo.png" title="plot of chunk unnamed-chunk-27" alt="plot of chunk unnamed-chunk-27" width="20%" style="display: block; margin: auto 0 auto auto;" />
+<img src="Data_Visualization-figure/gganimate_logo.png" title="plot of chunk unnamed-chunk-16" alt="plot of chunk unnamed-chunk-16" width="20%" style="display: block; margin: auto 0 auto auto;" />
 
 - Using the gifski, ggplot2 and gganimate libraries.
 
@@ -448,7 +454,7 @@ ggplot(mtcars, aes(factor(cyl), mpg)) +
 ggplot2: geom_tile
 ========================================================
 incremental: true
-<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-28" alt="plot of chunk unnamed-chunk-28" width="20%" style="display: block; margin: auto 0 auto auto;" />
+<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-17" alt="plot of chunk unnamed-chunk-17" width="20%" style="display: block; margin: auto 0 auto auto;" />
 
 - Using the dplyr, ggplot2 and reshape2 libraries.
 
@@ -481,7 +487,7 @@ Export Figures
 ========================================================
 incremental: true
 right: 70%
-<img src="Data_Visualization-figure/geom_melted_cormat-1.png" title="plot of chunk unnamed-chunk-31" alt="plot of chunk unnamed-chunk-31" style="display: block; margin: auto;" />
+<img src="Data_Visualization-figure/geom_melted_cormat-1.png" title="plot of chunk unnamed-chunk-20" alt="plot of chunk unnamed-chunk-20" style="display: block; margin: auto;" />
 
 ***
 
@@ -501,7 +507,7 @@ Tasks for the afternoon: Basic
 ========================================================
 incremental: true
 right: 80%
-<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-32" alt="plot of chunk unnamed-chunk-32" width="80%" style="display: block; margin: auto;" />
+<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-21" alt="plot of chunk unnamed-chunk-21" width="80%" style="display: block; margin: auto;" />
 
 ***
 
@@ -514,7 +520,7 @@ Tasks for the afternoon: Advanced
 ========================================================
 incremental: true
 right: 80%
-<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-33" alt="plot of chunk unnamed-chunk-33" width="80%" style="display: block; margin: auto;" />
+<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-22" alt="plot of chunk unnamed-chunk-22" width="80%" style="display: block; margin: auto;" />
 
 ***
 
@@ -538,3 +544,6 @@ Github
 join Github
 <small>https://github.com/</small>
 
+*** 
+
+![](R_Git_GitHub-figure/octocat.png)
