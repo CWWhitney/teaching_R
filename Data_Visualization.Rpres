@@ -563,9 +563,12 @@ list.files()
 Tasks for the afternoon: Basic
 ========================================================
 incremental: true
-```{r, out.width='20%', fig.align='center', echo=FALSE}
+right: 80%
+```{r, out.width='80%', fig.align='center', echo=FALSE}
 knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
 ```
+
+***
 
 - Check your data for interesting trends and correlations
 - Use scatter plots, barcharts and boxplots
@@ -576,7 +579,7 @@ Tasks for the afternoon: Advanced
 ========================================================
 incremental: true
 right: 80%
-```{r, out.width='20%', fig.align='center', echo=FALSE}
+```{r, out.width='80%', fig.align='center', echo=FALSE}
 knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
 ```
 

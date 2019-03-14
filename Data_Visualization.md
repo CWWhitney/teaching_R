@@ -12,7 +12,7 @@ Data Visualization
 ========================================================
 author: Cory Whitney
 font-family: 'Helvetica'
-date: "2019-03-13"
+date: "2019-03-14"
 width: 1920
 height: 1080
 css: mySlideTemplate.css
@@ -465,7 +465,10 @@ list.files()
 Tasks for the afternoon: Basic
 ========================================================
 incremental: true
-<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-47" alt="plot of chunk unnamed-chunk-47" width="20%" style="display: block; margin: auto;" />
+right: 80%
+<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-47" alt="plot of chunk unnamed-chunk-47" width="80%" style="display: block; margin: auto;" />
+
+***
 
 - Check your data for interesting trends and correlations
 - Use scatter plots, barcharts and boxplots
@@ -476,7 +479,7 @@ Tasks for the afternoon: Advanced
 ========================================================
 incremental: true
 right: 80%
-<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-48" alt="plot of chunk unnamed-chunk-48" width="20%" style="display: block; margin: auto;" />
+<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-48" alt="plot of chunk unnamed-chunk-48" width="80%" style="display: block; margin: auto;" />
 
 ***
 
