@@ -24,19 +24,21 @@ Git: overview
 ========================================================
 incremental: true
 right: 80%
-![](R_Git_GitHub-figure/octocat.png)
+![](R_Git_GitHub-figure/git_logo.png)
+<small>https://git-scm.com/</small>
 
 ***
 
-- Use it! 
-- You will thank yourself 
-- Version histories are stored
-- Easy to share
+A better way to:
+- “undo” changes,
+- collaborate than mailing files back and forth, and
+- share code and other scientific work with the world.
+
 ```{r, out.width='35%', fig.align='center', echo=FALSE}
 knitr::include_graphics('R_Git_GitHub-figure/git_logo.png')
 ```
 
-<div class="footer"></small>https://rmarkdown.rstudio.com/ </small></div>
+<small>https://swcarpentry.github.io/git-novice/guide/</small>
 
 GitHub: overview
 ========================================================

@@ -418,7 +418,7 @@ ggplot2: "slow ggplotting"
 incremental: true
 right: 80%
 ![](Data_Visualization-figure/r_ladies.jpg)
-<small>https://evamaerey.github.io/ggplot_flipbook/ggplot_flipbook_xaringan.html#1</small>
+
 
 ***
 
@@ -428,13 +428,13 @@ right: 80%
 - using base R functions and tidyverse functions.  For other packages, the :: style to call them
 - write out arguments (no shortcuts)  aes(x = gdppercap) not aes(gdppercap)
 - order ggplot commands so that reactivity is obvious; scale adjustments to aesthetics might also be near the aesthetic declaration.
+~~https://evamaerey.github.io/ggplot_flipbook/ggplot_flipbook_xaringan.html#1~~
 
 ggplot2: slow ggplotting example
 ========================================================
 incremental: true
 right: 80%
 ![](Data_Visualization-figure/r_ladies.jpg)
-<small>https://evamaerey.github.io/ggplot_flipbook/ggplot_flipbook_xaringan.html#1</small>
 
 ***
 Usual ggplot code
@@ -456,12 +456,13 @@ ggplot(mtcars, aes(mpg, y = hp, col = gear)) +
   labs(col = "legend title") +
   labs(title = "My Title")
 ```
-```{r slow_ggplot, out.width='70%', fig.align='center'}
+```{r slow_ggplot, fig.width=20, fig.height=4, fig.align='center', echo=FALSE}
 ggplot(mtcars, aes(mpg, y = hp, col = gear)) +
   geom_point() +
   ggtitle("My Title") +
   labs(x = "the x label", y = "the y label", col = "legend title")
 ```
+~~https://evamaerey.github.io/ggplot_flipbook/ggplot_flipbook_xaringan.html#1~~
 
 Correlation
 ========================================================

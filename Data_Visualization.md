@@ -379,6 +379,52 @@ qplot(displ, hwy, data = mpg, colour = factor(cyl), geom=c("point","smooth"),met
 <img src="Data_Visualization-figure/qplot_subset-1.png" title="plot of chunk qplot_subset" alt="plot of chunk qplot_subset" style="display: block; margin: auto;" />
 ~~ggplot2 subset with smooth line~~
 
+ggplot2: "slow ggplotting"
+========================================================
+incremental: true
+right: 80%
+![](Data_Visualization-figure/r_ladies.jpg)
+
+
+***
+
+- pulling out aes() from the ggplot() function:  
+- using fewer functions; example - using labs() to add a title instead of ggtitle()
+- using functions multiple times; example aes(x = var1) + aes(y = var2) rather than aes(x = var1, y = var2)
+- using base R functions and tidyverse functions.  For other packages, the :: style to call them
+- write out arguments (no shortcuts)  aes(x = gdppercap) not aes(gdppercap)
+- order ggplot commands so that reactivity is obvious; scale adjustments to aesthetics might also be near the aesthetic declaration.
+~~https://evamaerey.github.io/ggplot_flipbook/ggplot_flipbook_xaringan.html#1~~
+
+ggplot2: slow ggplotting example
+========================================================
+incremental: true
+right: 80%
+![](Data_Visualization-figure/r_ladies.jpg)
+
+***
+Usual ggplot code
+```
+ggplot(mtcars, aes(mpg, y = hp, col = gear)) +
+  geom_point() +
+  ggtitle("My Title") +
+  labs(x = "the x label", y = "the y label", col = "legend title")
+```
+'Slow ggplotting' version for same plot
+``` 
+  ggplot(data = mtcars) +
+  aes(x = mpg) +
+  labs(x = "the x label") +
+  aes(y = hp) +
+  labs(y = "the y label") +
+  geom_point() +
+  aes(col = gear) +
+  labs(col = "legend title") +
+  labs(title = "My Title")
+```
+<img src="Data_Visualization-figure/slow_ggplot-1.png" title="plot of chunk slow_ggplot" alt="plot of chunk slow_ggplot" style="display: block; margin: auto;" />
+~~https://evamaerey.github.io/ggplot_flipbook/ggplot_flipbook_xaringan.html#1~~
+
 Correlation
 ========================================================
 incremental: true
