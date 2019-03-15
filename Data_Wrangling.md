@@ -7,14 +7,26 @@
     position: relative;
     top: 4%;}
     </style>
+    
+<style>
+
+.footer {
+    color: black; background: white;
+    position: fixed; top: 100%;
+    text-align:left; width:100%;
+}
+
+</style>
 
 Data Wrangling
 ========================================================
 author: Cory Whitney
 font-family: 'Helvetica'
-date: "2019-03-13"
-autosize: true
+date: "2019-03-15"
+width: 1920
+height: 1080
 css: mySlideTemplate.css
+
 <img src="Data_Wrangling-figure/wrangler.png" style="background:none; border:none; box-shadow:none;height="400"; width="400";"><img src="Data_Wrangling-figure/INRES_Logo.png" style="background:none; border:none; box-shadow:none;height="100"; width="100";"><img src="Data_Wrangling-figure/Uni_Bonn_Picture.png" style="background:none; border:none; box-shadow:none;height="200"; width="200";"><img src="Data_Wrangling-figure/ZEF_Logo.png" style="background:none; border:none; box-shadow:none;height="200"; width="200";">
 
 
@@ -35,7 +47,7 @@ right: 70%
 - Clean and intuitive functions using dplyr
 - Concise code using magrittr 'Ceci n'est pas une pipe'
 
-<img src="Data_Wrangling-figure/magrittr.png" style="background:none; border:none; box-shadow:none;height="30%"; width="30%";">
+![](Data_Wrangling-figure/magrittr.png)
 
 Notes on R: About process
 ========================================================
@@ -43,18 +55,27 @@ incremental: true
 
 "[...] writing R code is a hedonistically artistic, left-brained, paint-in-your-hair sort of experience [...] learn how to code the same way we learned how to catch salamanders as children – trial and error, flipping over rocks till we get a reward [...] once the ecstasy of creation has swept over us, we awake late the next morning to find our canvas covered with 2100 lines of R code [...] Heads throbbing with a statistical absinthe hangover, we trudge through it slowly over days, trying to figure out what we did."
 
-<img src="Data_Wrangling-figure/andrew_macdonald.png" style="background:none; border:none; box-shadow:none; box-shadow:none;height="10%"; width="10%";">Andrew MacDonald @polesasunder 
-<div class="footer"></small>thestudyofthehousehold.com </small></div>
+<img src="Data_Wrangling-figure/andrew_macdonald.png" style="background:none; border:none; box-shadow:none; box-shadow:none;height="10%"; width="10%";">Andrew MacDonald <small>@polesasunder </small>
 
-Notes on R: Concentration
+<div class="footer" style="margin-top;font-size:60%;"> 
+thestudyofthehousehold.com </div>
+
+
+Notes on R: Focus
 ========================================================
-
-<img src="Data_Wrangling-figure/concentrate.png" style="background:none; border:none; box-shadow:none;height="40%"; width="40%";">
+incremental: true
+right: 90%
+***
+<img src="Data_Wrangling-figure/Focus.png" style="background:none; border:none; box-shadow:none;height="40%"; width="40%";">
 
 Notes on R: Keeping track of work
 ========================================================
 incremental: true
-<small>Keep it tidy</small> <img src="Data_Wrangling-figure/tidyR.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";"> 
+right: 80%
+![](Data_Wrangling-figure/tidyR.png)
+
+Keep it tidy
+***
 
 Use ‘#’ to annotate and not run
 
@@ -68,13 +89,17 @@ If not Rmarkdown then at least use ‘----’ or ‘####’
 
 <span style="font-weight:bold; color:red;">TOC in upper right console</span>
 
-<div class="footer"></small>http://style.tidyverse.org/ </small></div>
+<div class="footer" style="margin-top;font-size:60%;"> 
+http://style.tidyverse.org/ </div>
 
 Notes on R: tidy tools manifesto
 ========================================================
 incremental: true
-left: 70%
-<small>Keep it tidy</small> <img src="Data_Wrangling-figure/tidyR.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";"> 
+right: 80%
+![](Data_Wrangling-figure/tidyR.png)
+
+Keep it tidy
+***
 
 
 ```r
@@ -91,18 +116,28 @@ Hadley Wickham
 Notes on R: tidyR process
 ========================================================
 incremental: true
-<small>Keep it tidy</small> <img src="Data_Wrangling-figure/tidyR.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";"> 
+right: 80%
+![](Data_Wrangling-figure/tidyR.png)
+
+Keep it tidy
+***
 
 <img src="Data_Wrangling-figure/tidyR_process.png" style="background:none; border:none; box-shadow:none;height="100%"; width="100%";">
 
 Good coding style is like correct punctuation:
 withoutitthingsarehardtoread
-<div class="footer"></small>http://style.tidyverse.org/ </small></div>
+
+<div class="footer" style="margin-top;font-size:60%;"> 
+http://style.tidyverse.org/ </div>
 
 Notes on R: Keep your data tidy
 ========================================================
 incremental: true
-<small>Keep it tidy</small> <img src="Data_Wrangling-figure/tidyR.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";">
+right: 80%
+![](Data_Wrangling-figure/tidyR.png)
+
+Keep it tidy
+***
 
 - Keep your data tidy
 - When your data is tidy, each column is a variable, and each row is an observation
@@ -110,7 +145,8 @@ incremental: true
 
 <img src="Data_Wrangling-figure/wrangler.png" style="background:none; border:none; box-shadow:none;height="20%"; width="20%";">
 
-<div class="footer"></small>http://style.tidyverse.org/ </small></div>
+<div class="footer" style="margin-top;font-size:60%;"> 
+http://style.tidyverse.org/ </div>
 
 Notes on R: Tidy Data
 ========================================================
@@ -124,7 +160,10 @@ Three things make a dataset tidy:
 - Each value with its own cell.
 
 <img src="Data_Wrangling-figure/tidydata.png" style="background:none; border:none; box-shadow:none;height="90%"; width="90%";">
-<div class="footer"></small>http://www.jstatsoft.org/v59/i10/paper </small></div>
+
+<div class="footer" style="margin-top;font-size:60%;"> 
+http://www.jstatsoft.org/v59/i10/paper </div>
+
 
 Wrangling: transform
 ========================================================
@@ -154,7 +193,8 @@ incremental: true
 - __mutate__: add new variables and columns or transform
 - __summarize__: generate tables of summary statistics
 
-<div class="footer"></small><small>https://dplyr.tidyverse.org/ </small> </small></div>
+<div class="footer" style="margin-top;font-size:60%;"> 
+https://dplyr.tidyverse.org/ </div>
 
 Wrangling: dplyr library
 ========================================================
@@ -174,8 +214,11 @@ library(dplyr)
 
 <img src="Data_Wrangling-figure/Roger_Peng.png" style="background:none; border:none; box-shadow:none;height="40%"; width="40%";">
 <small>Roger Peng</small>
-![Alt text](Data_Wrangling-figure/wrangler.png)
-<div class="footer"></small><small>https://dplyr.tidyverse.org/ </small> </small></div>
+![](Data_Wrangling-figure/wrangler.png)
+
+<div class="footer" style="margin-top;font-size:60%;"> 
+https://dplyr.tidyverse.org/ </div>
+
 
 Wrangling: dplyr::select
 ========================================================
@@ -193,7 +236,9 @@ aca_work_filter<-select(participants_data, academic_parents, working_hours_per_d
 non_aca_work_filter<-select(participants_data, -academic_parents, -working_hours_per_day)
 ```
 
-<div class="footer"></small><small>https://dplyr.tidyverse.org/ </small> </small></div>
+<div class="footer" style="margin-top;font-size:60%;"> 
+https://dplyr.tidyverse.org/ </div>
+
 
 Wrangling: dplyr::filter
 ========================================================
@@ -210,7 +255,10 @@ work_filter<-filter(participants_data, working_hours_per_day >10)
 ```r
 work_name_filter<-filter(participants_data, working_hours_per_day >10 & letters_in_first_name >6)
 ```
-<div class="footer"></small><small>https://dplyr.tidyverse.org/ </small> </small></div>
+
+<div class="footer" style="margin-top;font-size:60%;"> 
+https://dplyr.tidyverse.org/ </div>
+
 
 Wrangling: dplyr::rename
 ========================================================
@@ -228,7 +276,9 @@ participants_data <- rename(participants_data,
 daily_labor = working_hours_per_day)
 # names(participants_data)
 ```
-<div class="footer"></small><small>https://dplyr.tidyverse.org/ </small> </small></div>
+<div class="footer" style="margin-top;font-size:60%;"> 
+https://dplyr.tidyverse.org/ </div>
+
 
 Wrangling: dplyr::mutate
 ========================================================
@@ -262,7 +312,9 @@ participants_data <- mutate(participants_data, commute = factor(1* (km_home_to_z
 ```r
 commuter_data <- group_by(participants_data, commute)
 ```
-<div class="footer"></small><small>https://dplyr.tidyverse.org/ </small> </small></div>
+<div class="footer" style="margin-top;font-size:60%;"> 
+https://dplyr.tidyverse.org/ </div>
+
 
 Wrangling: dplyr::summarize
 ========================================================
@@ -306,7 +358,9 @@ incremental: true
 - Merge datasets in base R and dplyr
 - Descriptive statistics (checks in base R and dplyr)
 
-<div class="footer"></small>cory.whitney@uni-bonn.de </small></div>
+<div class="footer" style="margin-top;font-size:60%;"> 
+cory.whitney@uni-bonn.de </div>
+
 
 Tasks for the afternoon: Advanced
 ========================================================
@@ -320,5 +374,6 @@ incremental: true
   - short format with magrittr pipeline
   - Descriptive statistics (checks in base R and dplyr)
 
-<div class="footer"></small>cory.whitney@uni-bonn.de </small></div>
+<div class="footer" style="margin-top;font-size:60%;"> 
+cory.whitney@uni-bonn.de </div>
 
