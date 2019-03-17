@@ -22,7 +22,7 @@ Data Wrangling
 ========================================================
 author: Cory Whitney
 font-family: 'Helvetica'
-date: "2019-03-15"
+date: "2019-03-16"
 width: 1920
 height: 1080
 css: mySlideTemplate.css
@@ -232,10 +232,43 @@ __Select__
 aca_work_filter<-select(participants_data, academic_parents, working_hours_per_day)
 ```
 
+```
+  academic_parents working_hours_per_day
+1                N                     8
+2                Y                     8
+3                N                     7
+4                Y                    16
+5                N                    12
+6                N                    16
+```
+
 ```r
 non_aca_work_filter<-select(participants_data, -academic_parents, -working_hours_per_day)
 ```
 
+```
+  age gender continent_of_origin research_continent number_of_publications
+1  33      F              Europe             Europe                      6
+2  31      F       South America      South America                      0
+3  30      F       South America      South America                      1
+4  28      M              Africa             Africa                      1
+5  30      M              Africa             Africa                      3
+6  30      M              Africa             Africa                      3
+  number_of_siblings km_home_to_zef years_of_study days_to_email_response
+1                  1            1.7             20                      1
+2                  2           40.0              9                      1
+3                  2        10370.0              7                      1
+4                  1           15.0              3                      1
+5                  5            6.0              7                      1
+6                  4            8.3             10                      2
+  letters_in_first_name
+1                     4
+2                     6
+3                     7
+4                     7
+5                     6
+6                     6
+```
 <div class="footer" style="margin-top;font-size:60%;"> 
 https://dplyr.tidyverse.org/ </div>
 
@@ -250,10 +283,36 @@ __Filter__
 
 ```r
 work_filter<-filter(participants_data, working_hours_per_day >10)
+work_filter
+```
+
+```
+  age gender continent_of_origin research_continent number_of_publications
+1  28      M              Africa             Africa                      1
+2  30      M              Africa             Africa                      3
+3  30      M              Africa             Africa                      3
+  working_hours_per_day number_of_siblings academic_parents km_home_to_zef
+1                    16                  1                Y           15.0
+2                    12                  5                N            6.0
+3                    16                  4                N            8.3
+  years_of_study days_to_email_response letters_in_first_name
+1              3                      1                     7
+2              7                      1                     6
+3             10                      2                     6
 ```
 
 ```r
 work_name_filter<-filter(participants_data, working_hours_per_day >10 & letters_in_first_name >6)
+work_name_filter
+```
+
+```
+  age gender continent_of_origin research_continent number_of_publications
+1  28      M              Africa             Africa                      1
+  working_hours_per_day number_of_siblings academic_parents km_home_to_zef
+1                    16                  1                Y             15
+  years_of_study days_to_email_response letters_in_first_name
+1              3                      1                     7
 ```
 
 <div class="footer" style="margin-top;font-size:60%;"> 
@@ -274,7 +333,16 @@ participants_data <- rename(participants_data, name_length = letters_in_first_na
 ```r
 participants_data <- rename(participants_data,
 daily_labor = working_hours_per_day)
-# names(participants_data)
+names(participants_data)
+```
+
+```
+ [1] "age"                    "gender"                
+ [3] "continent_of_origin"    "research_continent"    
+ [5] "number_of_publications" "daily_labor"           
+ [7] "number_of_siblings"     "academic_parents"      
+ [9] "km_home_to_zef"         "years_of_study"        
+[11] "days_to_email_response" "name_length"           
 ```
 <div class="footer" style="margin-top;font-size:60%;"> 
 https://dplyr.tidyverse.org/ </div>
@@ -349,7 +417,7 @@ pipe_data <- participants_data %>%
 Tasks for the afternoon: Basic
 ========================================================
 incremental: true
-<img src="Data_Wrangling-figure/tidyR.png" title="plot of chunk unnamed-chunk-15" alt="plot of chunk unnamed-chunk-15" width="35%" style="display: block; margin: auto;" /><img src="Data_Wrangling-figure/dplyr.png" title="plot of chunk unnamed-chunk-15" alt="plot of chunk unnamed-chunk-15" width="35%" style="display: block; margin: auto;" />
+<img src="Data_Wrangling-figure/tidyR.png" title="plot of chunk unnamed-chunk-17" alt="plot of chunk unnamed-chunk-17" width="35%" style="display: block; margin: auto;" /><img src="Data_Wrangling-figure/dplyr.png" title="plot of chunk unnamed-chunk-17" alt="plot of chunk unnamed-chunk-17" width="35%" style="display: block; margin: auto;" />
 
 ***
 - Create a dataset with a number of different variables of the course participants
@@ -366,7 +434,7 @@ Tasks for the afternoon: Advanced
 ========================================================
 incremental: true
 
-<img src="Data_Wrangling-figure/tidyR.png" title="plot of chunk unnamed-chunk-16" alt="plot of chunk unnamed-chunk-16" width="35%" style="display: block; margin: auto;" /><img src="Data_Wrangling-figure/dplyr.png" title="plot of chunk unnamed-chunk-16" alt="plot of chunk unnamed-chunk-16" width="35%" style="display: block; margin: auto;" /><img src="Data_Wrangling-figure/magrittr.png" title="plot of chunk unnamed-chunk-16" alt="plot of chunk unnamed-chunk-16" width="35%" style="display: block; margin: auto;" />
+<img src="Data_Wrangling-figure/tidyR.png" title="plot of chunk unnamed-chunk-18" alt="plot of chunk unnamed-chunk-18" width="35%" style="display: block; margin: auto;" /><img src="Data_Wrangling-figure/dplyr.png" title="plot of chunk unnamed-chunk-18" alt="plot of chunk unnamed-chunk-18" width="35%" style="display: block; margin: auto;" /><img src="Data_Wrangling-figure/magrittr.png" title="plot of chunk unnamed-chunk-18" alt="plot of chunk unnamed-chunk-18" width="35%" style="display: block; margin: auto;" />
 
 ***
 - Use other R data set (e.g. iris, diamonds, ethnobotanydata) to work through  tasks 

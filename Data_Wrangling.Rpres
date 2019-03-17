@@ -235,10 +235,15 @@ __Select__
 ```{r}
 aca_work_filter<-select(participants_data, academic_parents, working_hours_per_day)
 ```
+```{r echo=FALSE}
+head(aca_work_filter)
+```
 ```{r}
 non_aca_work_filter<-select(participants_data, -academic_parents, -working_hours_per_day)
 ```
-
+```{r echo=FALSE}
+head(non_aca_work_filter)
+```
 <div class="footer" style="margin-top;font-size:60%;"> 
 https://dplyr.tidyverse.org/ </div>
 
@@ -252,9 +257,11 @@ incremental: true
 __Filter__
 ```{r}
 work_filter<-filter(participants_data, working_hours_per_day >10)
+work_filter
 ```
 ```{r}
 work_name_filter<-filter(participants_data, working_hours_per_day >10 & letters_in_first_name >6)
+work_name_filter
 ```
 
 <div class="footer" style="margin-top;font-size:60%;"> 
@@ -273,7 +280,7 @@ participants_data <- rename(participants_data, name_length = letters_in_first_na
 ```{r}
 participants_data <- rename(participants_data,
 daily_labor = working_hours_per_day)
-# names(participants_data)
+names(participants_data)
 ```
 <div class="footer" style="margin-top;font-size:60%;"> 
 https://dplyr.tidyverse.org/ </div>
