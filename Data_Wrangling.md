@@ -22,7 +22,7 @@ Data Wrangling
 ========================================================
 author: Cory Whitney
 font-family: 'Helvetica'
-date: "2019-03-17"
+date: "2019-03-18"
 width: 1920
 height: 1080
 css: mySlideTemplate.css
@@ -53,7 +53,10 @@ Notes on R: About process
 ========================================================
 incremental: true
 
-"[...] writing R code is a hedonistically artistic, left-brained, paint-in-your-hair sort of experience [...] learn how to code the same way we learned how to catch salamanders as children – trial and error, flipping over rocks till we get a reward [...] once the ecstasy of creation has swept over us, we awake late the next morning to find our canvas covered with 2100 lines of R code [...] Heads throbbing with a statistical absinthe hangover, we trudge through it slowly over days, trying to figure out what we did."
+- "[...] writing R code is a hedonistically artistic, left-brained, paint-in-your-hair sort of experience [...] 
+- learn how to code the same way we learned how to catch salamanders as children – trial and error, flipping over rocks till we get a reward [...] 
+- once the ecstasy of creation has swept over us, we awake late the next morning to find our canvas covered with 2100 lines of R code [...] 
+- Heads throbbing with a statistical absinthe hangover, we trudge through it slowly over days, trying to figure out what we did."
 
 <img src="Data_Wrangling-figure/andrew_macdonald.png" style="background:none; border:none; box-shadow:none; box-shadow:none;height="10%"; width="10%";">Andrew MacDonald <small>@polesasunder </small>
 
@@ -89,6 +92,7 @@ If not Rmarkdown then at least use ‘----’ or ‘####’
 
 <span style="font-weight:bold; color:red;">TOC in upper right console</span>
 
+
 <div class="footer" style="margin-top;font-size:60%;"> 
 http://style.tidyverse.org/ </div>
 
@@ -103,14 +107,16 @@ Keep it tidy
 
 
 ```r
+# The easiest way to get libraries for today is to install the whole tidyverse:
+#install.packages("tidyverse")
+library(tidyverse)
 browseVignettes(package = "tidyverse")
 ```
 
 The tidy tools manifesto
-
-***
-<img src="Data_Wrangling-figure/hadley_wickham.png" style="background:none; border:none; box-shadow:none;height="40%"; width="40%";">  
-Hadley Wickham
+![](Data_Wrangling-figure/tidy_paper.jpg)
+<!-- <img src="Data_Wrangling-figure/hadley_wickham.png" style="background:none; border:none; box-shadow:none;height="40%"; width="40%";">   -->
+<!-- Hadley Wickham -->
 <div class="footer"></small>http://style.tidyverse.org/ </small></div>
 
 Notes on R: tidyR process
@@ -283,22 +289,6 @@ __Filter__
 
 ```r
 work_filter<-filter(participants_data, working_hours_per_day >10)
-work_filter
-```
-
-```
-  age gender continent_of_origin research_continent number_of_publications
-1  28      M              Africa             Africa                      1
-2  30      M              Africa             Africa                      3
-3  30      M              Africa             Africa                      3
-  working_hours_per_day number_of_siblings academic_parents km_home_to_zef
-1                    16                  1                Y           15.0
-2                    12                  5                N            6.0
-3                    16                  4                N            8.3
-  years_of_study days_to_email_response letters_in_first_name
-1              3                      1                     7
-2              7                      1                     6
-3             10                      2                     6
 ```
 
 ```r
@@ -362,7 +352,45 @@ participants_data <- mutate(participants_data, daily_labor*mean(daily_labor, na.
 
 ```r
 participants_data <- mutate(participants_data, number_of_siblings -mean(number_of_siblings))
-# head(participants_data)
+head(participants_data)
+```
+
+```
+  age gender continent_of_origin research_continent number_of_publications
+1  33      F              Europe             Europe                      6
+2  31      F       South America      South America                      0
+3  30      F       South America      South America                      1
+4  28      M              Africa             Africa                      1
+5  30      M              Africa             Africa                      3
+6  30      M              Africa             Africa                      3
+  daily_labor number_of_siblings academic_parents km_home_to_zef
+1           8                  1                N            1.7
+2           8                  2                Y           40.0
+3           7                  2                N        10370.0
+4          16                  1                Y           15.0
+5          12                  5                N            6.0
+6          16                  4                N            8.3
+  years_of_study days_to_email_response name_length
+1             20                      1           4
+2              9                      1           6
+3              7                      1           7
+4              3                      1           7
+5              7                      1           6
+6             10                      2           6
+  daily_labor * mean(daily_labor, na.rm = T)
+1                                   77.33333
+2                                   77.33333
+3                                   67.66667
+4                                  154.66667
+5                                  116.00000
+6                                  154.66667
+  number_of_siblings - mean(number_of_siblings)
+1                                    -1.7777778
+2                                    -0.7777778
+3                                    -0.7777778
+4                                    -1.7777778
+5                                     2.2222222
+6                                     1.2222222
 ```
 <div class="footer"></small><small>https://dplyr.tidyverse.org/ </small> </small></div>
 
@@ -379,6 +407,28 @@ participants_data <- mutate(participants_data, commute = factor(1* (km_home_to_z
 
 ```r
 commuter_data <- group_by(participants_data, commute)
+commuter_data
+```
+
+```
+# A tibble: 9 x 15
+# Groups:   commute [2]
+    age gender continent_of_or… research_contin… number_of_publi…
+  <dbl> <fct>  <fct>            <fct>                       <dbl>
+1    33 F      Europe           Europe                          6
+2    31 F      South America    South America                   0
+3    30 F      South America    South America                   1
+4    28 M      Africa           Africa                          1
+5    30 M      Africa           Africa                          3
+6    30 M      Africa           Africa                          3
+7    33 F      Africa           Africa                          0
+8    30 F      South America    South America                   2
+9    27 M      Europe           Europe                          0
+# … with 10 more variables: daily_labor <dbl>, number_of_siblings <dbl>,
+#   academic_parents <fct>, km_home_to_zef <dbl>, years_of_study <dbl>,
+#   days_to_email_response <dbl>, name_length <dbl>, `daily_labor *
+#   mean(daily_labor, na.rm = T)` <dbl>, `number_of_siblings -
+#   mean(number_of_siblings)` <dbl>, commute <fct>
 ```
 <div class="footer" style="margin-top;font-size:60%;"> 
 https://dplyr.tidyverse.org/ </div>
@@ -392,9 +442,18 @@ incremental: true
 
 ```r
 commuter_summary <- summarize(commuter_data, mean(days_to_email_response), median(name_length))
+commuter_summary
 ```
 
-- Make your own query
+```
+# A tibble: 2 x 3
+  commute  `mean(days_to_email_response)` `median(name_length)`
+  <fct>                             <dbl>                 <dbl>
+1 commuter                           1.8                      5
+2 local                              1.25                     7
+```
+
+
 
 </small> <img src="Data_Wrangling-figure/dplyr.png" style="background:none; border:none; box-shadow:none;height="20%"; width="20%";"><div class="footer"></small><small>https://dplyr.tidyverse.org/ </small> </small></div>
 
@@ -412,12 +471,70 @@ pipe_data <- participants_data %>%
   summarize(mean(days_to_email_response), median(name_length), 
             max(years_of_study)) %>% 
   as.data.frame
+
+pipe_data
 ```
+
+```
+   commute mean(days_to_email_response) median(name_length)
+1 commuter                         1.80                   5
+2    local                         1.25                   7
+  max(years_of_study)
+1                  20
+2                   9
+```
+
+- Make your own query with `dplyr` and `magrittr`
+
+purrr: Apply a function to each element of a vector
+========================================================
+incremental: true
+![](Data_Wrangling-figure/purrr.jpg)
+
+
+```r
+# Alternatively, install just purrr:
+library(purrr)
+
+# Or the the development version from GitHub:
+# install.packages("devtools")
+#devtools::install_github("tidyverse/purrr")
+```
+
+purr Cheatsheet
+
+purrr: Use
+========================================================
+
+![](Data_Wrangling-figure/purrr.jpg)
+
+Use purrr to solve: split a data frame into pieces, fit a model to each piece, compute the summary, then extract the R^2.
+
+
+```r
+library(purrr)
+
+purrr_regression <- mtcars %>%
+  split(.$cyl) %>% # from base R
+  map(~ lm(mpg ~ wt, data = .)) %>%
+  map(summary) %>%
+  map_dbl("r.squared")
+
+purrr_regression
+```
+
+```
+        4         6         8 
+0.5086326 0.4645102 0.4229655 
+```
+
+https://purrr.tidyverse.org/
+
 
 Tasks for the afternoon: Basic
 ========================================================
 incremental: true
-<img src="Data_Wrangling-figure/tidyR.png" title="plot of chunk unnamed-chunk-17" alt="plot of chunk unnamed-chunk-17" width="35%" style="display: block; margin: auto;" /><img src="Data_Wrangling-figure/dplyr.png" title="plot of chunk unnamed-chunk-17" alt="plot of chunk unnamed-chunk-17" width="35%" style="display: block; margin: auto;" />
+<img src="Data_Wrangling-figure/tidyR.png" title="plot of chunk unnamed-chunk-19" alt="plot of chunk unnamed-chunk-19" width="35%" style="display: block; margin: auto;" /><img src="Data_Wrangling-figure/dplyr.png" title="plot of chunk unnamed-chunk-19" alt="plot of chunk unnamed-chunk-19" width="35%" style="display: block; margin: auto;" />
 
 ***
 - Create a dataset with a number of different variables of the course participants
@@ -434,7 +551,7 @@ Tasks for the afternoon: Advanced
 ========================================================
 incremental: true
 
-<img src="Data_Wrangling-figure/tidyR.png" title="plot of chunk unnamed-chunk-18" alt="plot of chunk unnamed-chunk-18" width="35%" style="display: block; margin: auto;" /><img src="Data_Wrangling-figure/dplyr.png" title="plot of chunk unnamed-chunk-18" alt="plot of chunk unnamed-chunk-18" width="35%" style="display: block; margin: auto;" /><img src="Data_Wrangling-figure/magrittr.png" title="plot of chunk unnamed-chunk-18" alt="plot of chunk unnamed-chunk-18" width="35%" style="display: block; margin: auto;" />
+<img src="Data_Wrangling-figure/tidyR.png" title="plot of chunk unnamed-chunk-20" alt="plot of chunk unnamed-chunk-20" width="35%" style="display: block; margin: auto;" /><img src="Data_Wrangling-figure/dplyr.png" title="plot of chunk unnamed-chunk-20" alt="plot of chunk unnamed-chunk-20" width="35%" style="display: block; margin: auto;" /><img src="Data_Wrangling-figure/magrittr.png" title="plot of chunk unnamed-chunk-20" alt="plot of chunk unnamed-chunk-20" width="35%" style="display: block; margin: auto;" />
 
 ***
 - Use other R data set (e.g. iris, diamonds, ethnobotanydata) to work through  tasks 
