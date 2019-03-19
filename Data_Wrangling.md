@@ -22,7 +22,7 @@ Data Wrangling
 ========================================================
 author: Cory Whitney
 font-family: 'Helvetica'
-date: "2019-03-18"
+date: "2019-03-19"
 width: 1920
 height: 1080
 css: mySlideTemplate.css
@@ -130,8 +130,8 @@ Keep it tidy
 
 <img src="Data_Wrangling-figure/tidyR_process.png" style="background:none; border:none; box-shadow:none;height="100%"; width="100%";">
 
-Good coding style is like correct punctuation:
-withoutitthingsarehardtoread
+- Good coding style is like correct punctuation:
+- withoutitthingsarehardtoread
 
 <div class="footer" style="margin-top;font-size:60%;"> 
 http://style.tidyverse.org/ </div>
@@ -253,27 +253,27 @@ non_aca_work_filter<-select(participants_data, -academic_parents, -working_hours
 ```
 
 ```
-  age gender continent_of_origin research_continent number_of_publications
-1  33      F              Europe             Europe                      6
-2  31      F       South America      South America                      0
-3  30      F       South America      South America                      1
-4  28      M              Africa             Africa                      1
-5  30      M              Africa             Africa                      3
-6  30      M              Africa             Africa                      3
-  number_of_siblings km_home_to_zef years_of_study days_to_email_response
-1                  1            1.7             20                      1
-2                  2           40.0              9                      1
-3                  2        10370.0              7                      1
-4                  1           15.0              3                      1
-5                  5            6.0              7                      1
-6                  4            8.3             10                      2
-  letters_in_first_name
-1                     4
-2                     6
-3                     7
-4                     7
-5                     6
-6                     6
+  batch age gender continent_of_origin research_continent
+1  2017  33      F              Europe             Europe
+2  2017  31      F       South America      South America
+3  2017  30      F       South America      South America
+4  2017  28      M              Africa             Africa
+5  2017  30      M              Africa             Africa
+6  2017  30      M              Africa             Africa
+  number_of_publications number_of_siblings km_home_to_zef years_of_study
+1                      6                  1            1.7             20
+2                      0                  2           40.0              9
+3                      1                  2        10370.0              7
+4                      1                  1           15.0              3
+5                      3                  5            6.0              7
+6                      3                  4            8.3             10
+  days_to_email_response letters_in_first_name
+1                      1                     4
+2                      1                     6
+3                      1                     7
+4                      1                     7
+5                      1                     6
+6                      2                     6
 ```
 <div class="footer" style="margin-top;font-size:60%;"> 
 https://dplyr.tidyverse.org/ </div>
@@ -297,12 +297,14 @@ work_name_filter
 ```
 
 ```
-  age gender continent_of_origin research_continent number_of_publications
-1  28      M              Africa             Africa                      1
-  working_hours_per_day number_of_siblings academic_parents km_home_to_zef
-1                    16                  1                Y             15
-  years_of_study days_to_email_response letters_in_first_name
-1              3                      1                     7
+  batch age gender continent_of_origin research_continent
+1  2017  28      M              Africa             Africa
+  number_of_publications working_hours_per_day number_of_siblings
+1                      1                    16                  1
+  academic_parents km_home_to_zef years_of_study days_to_email_response
+1                Y             15              3                      1
+  letters_in_first_name
+1                     7
 ```
 
 <div class="footer" style="margin-top;font-size:60%;"> 
@@ -327,12 +329,13 @@ names(participants_data)
 ```
 
 ```
- [1] "age"                    "gender"                
- [3] "continent_of_origin"    "research_continent"    
- [5] "number_of_publications" "daily_labor"           
- [7] "number_of_siblings"     "academic_parents"      
- [9] "km_home_to_zef"         "years_of_study"        
-[11] "days_to_email_response" "name_length"           
+ [1] "batch"                  "age"                   
+ [3] "gender"                 "continent_of_origin"   
+ [5] "research_continent"     "number_of_publications"
+ [7] "daily_labor"            "number_of_siblings"    
+ [9] "academic_parents"       "km_home_to_zef"        
+[11] "years_of_study"         "days_to_email_response"
+[13] "name_length"           
 ```
 <div class="footer" style="margin-top;font-size:60%;"> 
 https://dplyr.tidyverse.org/ </div>
@@ -345,52 +348,45 @@ incremental: true
 
 
 ```r
-participants_data <- mutate(participants_data, daily_labor*mean(daily_labor, na.rm=T))
+participants_data <- mutate(participants_data, labor_mean = daily_labor*mean(daily_labor, na.rm=T))
 # head(participants_data)
 ```
 
 
 ```r
-participants_data <- mutate(participants_data, number_of_siblings -mean(number_of_siblings))
+participants_data <- mutate(participants_data, neg_sib_mean = number_of_siblings -mean(number_of_siblings))
 head(participants_data)
 ```
 
 ```
-  age gender continent_of_origin research_continent number_of_publications
-1  33      F              Europe             Europe                      6
-2  31      F       South America      South America                      0
-3  30      F       South America      South America                      1
-4  28      M              Africa             Africa                      1
-5  30      M              Africa             Africa                      3
-6  30      M              Africa             Africa                      3
-  daily_labor number_of_siblings academic_parents km_home_to_zef
-1           8                  1                N            1.7
-2           8                  2                Y           40.0
-3           7                  2                N        10370.0
-4          16                  1                Y           15.0
-5          12                  5                N            6.0
-6          16                  4                N            8.3
-  years_of_study days_to_email_response name_length
-1             20                      1           4
-2              9                      1           6
-3              7                      1           7
-4              3                      1           7
-5              7                      1           6
-6             10                      2           6
-  daily_labor * mean(daily_labor, na.rm = T)
-1                                   77.33333
-2                                   77.33333
-3                                   67.66667
-4                                  154.66667
-5                                  116.00000
-6                                  154.66667
-  number_of_siblings - mean(number_of_siblings)
-1                                    -1.7777778
-2                                    -0.7777778
-3                                    -0.7777778
-4                                    -1.7777778
-5                                     2.2222222
-6                                     1.2222222
+  batch age gender continent_of_origin research_continent
+1  2017  33      F              Europe             Europe
+2  2017  31      F       South America      South America
+3  2017  30      F       South America      South America
+4  2017  28      M              Africa             Africa
+5  2017  30      M              Africa             Africa
+6  2017  30      M              Africa             Africa
+  number_of_publications daily_labor number_of_siblings academic_parents
+1                      6           8                  1                N
+2                      0           8                  2                Y
+3                      1           7                  2                N
+4                      1          16                  1                Y
+5                      3          12                  5                N
+6                      3          16                  4                N
+  km_home_to_zef years_of_study days_to_email_response name_length
+1            1.7             20                      1           4
+2           40.0              9                      1           6
+3        10370.0              7                      1           7
+4           15.0              3                      1           7
+5            6.0              7                      1           6
+6            8.3             10                      2           6
+  labor_mean neg_sib_mean
+1    70.5000       -2.375
+2    70.5000       -1.375
+3    61.6875       -1.375
+4   141.0000       -2.375
+5   105.7500        1.625
+6   141.0000        0.625
 ```
 <div class="footer"></small><small>https://dplyr.tidyverse.org/ </small> </small></div>
 
@@ -401,34 +397,41 @@ incremental: true
 
 
 ```r
-participants_data <- mutate(participants_data, commute = factor(1* (km_home_to_zef > 10), labels = c("commuter", "local")))
+participants_data <- mutate(participants_data, commute = factor(1* (km_home_to_zef > 10), labels = c("commuter", "local")), na.rm=T)
 ```
-
+<!-- #remove missing data -->
+<!-- #new_participants_data <- participants_data[1:15,] -->
 
 ```r
-commuter_data <- group_by(participants_data, commute)
+new_participants_data <- drop_na(participants_data)
+commuter_data <- group_by(new_participants_data, commute)
 commuter_data
 ```
 
 ```
-# A tibble: 9 x 15
+# A tibble: 15 x 17
 # Groups:   commute [2]
-    age gender continent_of_or… research_contin… number_of_publi…
-  <dbl> <fct>  <fct>            <fct>                       <dbl>
-1    33 F      Europe           Europe                          6
-2    31 F      South America    South America                   0
-3    30 F      South America    South America                   1
-4    28 M      Africa           Africa                          1
-5    30 M      Africa           Africa                          3
-6    30 M      Africa           Africa                          3
-7    33 F      Africa           Africa                          0
-8    30 F      South America    South America                   2
-9    27 M      Europe           Europe                          0
-# … with 10 more variables: daily_labor <dbl>, number_of_siblings <dbl>,
-#   academic_parents <fct>, km_home_to_zef <dbl>, years_of_study <dbl>,
-#   days_to_email_response <dbl>, name_length <dbl>, `daily_labor *
-#   mean(daily_labor, na.rm = T)` <dbl>, `number_of_siblings -
-#   mean(number_of_siblings)` <dbl>, commute <fct>
+   batch   age gender continent_of_or… research_contin… number_of_publi…
+ * <int> <int> <fct>  <fct>            <fct>                       <int>
+ 1  2017    33 F      Europe           Europe                          6
+ 2  2017    31 F      South America    South America                   0
+ 3  2017    30 F      South America    South America                   1
+ 4  2017    28 M      Africa           Africa                          1
+ 5  2017    30 M      Africa           Africa                          3
+ 6  2017    30 M      Africa           Africa                          3
+ 7  2017    33 F      Africa           Africa                          0
+ 8  2017    30 F      South America    South America                   2
+ 9  2017    27 M      Europe           Europe                          0
+10  2018    32 F      China            China                           2
+11  2018    32 F      Asia             Asia                            2
+12  2018    36 M      Africa           Africa                         10
+13  2018    43 F      North America    North America                   2
+14  2018    32 M      Asia             Asia                            2
+15  2018    28 M      Asia             Asia                            0
+# … with 11 more variables: daily_labor <int>, number_of_siblings <int>,
+#   academic_parents <fct>, km_home_to_zef <dbl>, years_of_study <int>,
+#   days_to_email_response <int>, name_length <int>, labor_mean <dbl>,
+#   neg_sib_mean <dbl>, commute <fct>, na.rm <lgl>
 ```
 <div class="footer" style="margin-top;font-size:60%;"> 
 https://dplyr.tidyverse.org/ </div>
@@ -449,7 +452,7 @@ commuter_summary
 # A tibble: 2 x 3
   commute  `mean(days_to_email_response)` `median(name_length)`
   <fct>                             <dbl>                 <dbl>
-1 commuter                           1.8                      5
+1 commuter                           1.55                     5
 2 local                              1.25                     7
 ```
 
@@ -467,6 +470,7 @@ incremental: true
 pipe_data <- participants_data %>% 
   mutate(commute = factor(1* (km_home_to_zef > 10), 
                           labels = c("commuter", "local"))) %>% 
+  drop_na() %>% 
   group_by(commute) %>% 
   summarize(mean(days_to_email_response), median(name_length), 
             max(years_of_study)) %>% 
@@ -477,8 +481,8 @@ pipe_data
 
 ```
    commute mean(days_to_email_response) median(name_length)
-1 commuter                         1.80                   5
-2    local                         1.25                   7
+1 commuter                     1.545455                   5
+2    local                     1.250000                   7
   max(years_of_study)
 1                  20
 2                   9
@@ -493,12 +497,7 @@ incremental: true
 
 
 ```r
-# Alternatively, install just purrr:
 library(purrr)
-
-# Or the the development version from GitHub:
-# install.packages("devtools")
-#devtools::install_github("tidyverse/purrr")
 ```
 
 purr Cheatsheet
@@ -530,6 +529,9 @@ purrr_regression
 
 https://purrr.tidyverse.org/
 
+If there is time
+
+http://varianceexplained.org/r/teach-tidyverse/
 
 Tasks for the afternoon: Basic
 ========================================================

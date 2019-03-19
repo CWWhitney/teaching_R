@@ -35,7 +35,7 @@ library(tidyr)
 library(dplyr)
 library(magrittr)
 
-participants_data <- read.csv("18_Teaching_R/R/participants_data.csv")
+participants_data <- read.csv("participants_data.csv")
 ```
 <div class="footer"></small>cory.whitney@uni-bonn.de </small></div>
 
@@ -136,8 +136,8 @@ Keep it tidy
 
 <img src="Data_Wrangling-figure/tidyR_process.png" style="background:none; border:none; box-shadow:none;height="100%"; width="100%";">
 
-Good coding style is like correct punctuation:
-withoutitthingsarehardtoread
+- Good coding style is like correct punctuation:
+- withoutitthingsarehardtoread
 
 <div class="footer" style="margin-top;font-size:60%;"> 
 http://style.tidyverse.org/ </div>
@@ -297,12 +297,12 @@ incremental: true
 <small> __Mutate__ </small> <img src="Data_Wrangling-figure/dplyr.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";">
 
 ```{r}
-participants_data <- mutate(participants_data, daily_labor*mean(daily_labor, na.rm=T))
+participants_data <- mutate(participants_data, labor_mean = daily_labor*mean(daily_labor, na.rm=T))
 # head(participants_data)
 ```
 
 ```{r}
-participants_data <- mutate(participants_data, number_of_siblings -mean(number_of_siblings))
+participants_data <- mutate(participants_data, neg_sib_mean = number_of_siblings -mean(number_of_siblings))
 head(participants_data)
 ```
 <div class="footer"></small><small>https://dplyr.tidyverse.org/ </small> </small></div>
@@ -313,11 +313,13 @@ incremental: true
 <small> __Group by__ </small> <img src="Data_Wrangling-figure/dplyr.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";"> create a commute category
 
 ```{r}
-participants_data <- mutate(participants_data, commute = factor(1* (km_home_to_zef > 10), labels = c("commuter", "local")))
+participants_data <- mutate(participants_data, commute = factor(1* (km_home_to_zef > 10), labels = c("commuter", "local")), na.rm=T)
 ```
-
+<!-- #remove missing data -->
+<!-- #new_participants_data <- participants_data[1:15,] -->
 ```{r}
-commuter_data <- group_by(participants_data, commute)
+new_participants_data <- drop_na(participants_data)
+commuter_data <- group_by(new_participants_data, commute)
 commuter_data
 ```
 <div class="footer" style="margin-top;font-size:60%;"> 
@@ -347,6 +349,7 @@ incremental: true
 pipe_data <- participants_data %>% 
   mutate(commute = factor(1* (km_home_to_zef > 10), 
                           labels = c("commuter", "local"))) %>% 
+  drop_na() %>% 
   group_by(commute) %>% 
   summarize(mean(days_to_email_response), median(name_length), 
             max(years_of_study)) %>% 
@@ -363,12 +366,7 @@ incremental: true
 ![](Data_Wrangling-figure/purrr.jpg)
 
 ```{r}
-# Alternatively, install just purrr:
 library(purrr)
-
-# Or the the development version from GitHub:
-# install.packages("devtools")
-#devtools::install_github("tidyverse/purrr")
 ```
 
 purr Cheatsheet
@@ -394,6 +392,9 @@ purrr_regression
 
 https://purrr.tidyverse.org/
 
+If there is time
+
+http://varianceexplained.org/r/teach-tidyverse/
 
 Tasks for the afternoon: Basic
 ========================================================
