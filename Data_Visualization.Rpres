@@ -180,7 +180,7 @@ knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
 **qplot** accepts formula arguments such as log
 ```
 plot1<-qplot(carat, price, data = diamonds)
-plot2<-qplot(log(carat), log(price), data = diamonds,
+plot2<-qplot(log(carat), log(price), data = diamonds)
 ```
 ```{r qplot_carat, fig.width=20, fig.height=5, fig.align='center', echo=FALSE} 
 plot1<-qplot(carat, price, data = diamonds)

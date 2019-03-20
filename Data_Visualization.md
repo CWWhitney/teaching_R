@@ -12,7 +12,7 @@ Data Visualization
 ========================================================
 author: Cory Whitney
 font-family: 'Helvetica'
-date: "2019-03-15"
+date: "2019-03-20"
 width: 1920
 height: 1080
 css: mySlideTemplate.css
@@ -188,7 +188,7 @@ right: 80%
 **qplot** accepts formula arguments such as log
 ```
 plot1<-qplot(carat, price, data = diamonds)
-plot2<-qplot(log(carat), log(price), data = diamonds,
+plot2<-qplot(log(carat), log(price), data = diamonds)
 ```
 <img src="Data_Visualization-figure/qplot_carat-1.png" title="plot of chunk qplot_carat" alt="plot of chunk qplot_carat" style="display: block; margin: auto;" />
 
@@ -445,13 +445,13 @@ cor.test(participants_data$days_to_email_response, participants_data$letters_in_
 	Pearson's product-moment correlation
 
 data:  participants_data$days_to_email_response and participants_data$letters_in_first_name
-t = -0.64191, df = 7, p-value = 0.5414
+t = -1.647, df = 13, p-value = 0.1235
 alternative hypothesis: true correlation is not equal to 0
 95 percent confidence interval:
- -0.7780668  0.5078670
+ -0.7649469  0.1229287
 sample estimates:
        cor 
--0.2357798 
+-0.4154989 
 ```
 
 **Use help '?' for function**
