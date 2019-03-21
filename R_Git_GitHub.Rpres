@@ -62,7 +62,7 @@ A better way to:
 - share code and other scientific work with the world.
 
 ```{r, out.width='35%', fig.align='center', echo=FALSE}
-knitr::include_graphics('R_Git_GitHub-figure/git_logo.png')
+knitr::include_graphics('R_Git_GitHub-figure/git_logo_orange.png')
 ```
 
 <div class="footer" style="margin-top;font-size:60%;"> 
@@ -94,7 +94,7 @@ right: 80%
 
 - If you get stuck, just add “Git” to a search query e.g. a short description of your issue
 - Someone else has also been confused by it and has written about it
-Thousands of talented programmers who scan the web and answer these problems
+- Thousands of talented programmers who scan the web and answer these problems
 ```{r, out.width='50%', fig.align='center', echo=FALSE}
 knitr::include_graphics('R_Git_GitHub-figure/stack-overflow.png')
 ```
@@ -109,13 +109,14 @@ right: 80%
 ![](R_Git_GitHub-figure/octocat.png)
 ***
 
-Install Git & Github (if you do not already have them). 
+Install Git & join Github (if you have not already):
 
-- Git
+- install Git
 <small>https://git-scm.com/downloads</small>
 
-- Github
-<small>http://r-pkgs.had.co.nz/git.html</small>
+- join Github
+<small>https://github.com/</small>
+
 
 Some useful tips on getting these running from our friends 
 
@@ -124,6 +125,25 @@ Some useful tips on getting these running from our friends
 
 - Nathan Stephens, a very helpful R blogger 
 <small>https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN</small>
+
+Git: Configure
+========================================================
+incremental: true
+right: 80%
+![](R_Git_GitHub-figure/git_logo.png)
+<small>https://git-scm.com/</small>
+
+***
+```{r, out.width='35%', fig.align='center', echo=FALSE}
+knitr::include_graphics('R_Git_GitHub-figure/git_logo_orange.png')
+```
+
+- danger, this will discard all changes you've made in your working directory `git reset --hard [commit hash]`
+
+<div class="footer" style="margin-top;font-size:60%;"> 
+<https://jennybc.github.io/2014-05-12-ubc/ubc-r/session03_git.html> </div>
+
+
 
 GitHub: intro hello-world
 ========================================================

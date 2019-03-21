@@ -22,7 +22,7 @@ Data Wrangling
 ========================================================
 author: Cory Whitney
 font-family: 'Helvetica'
-date: "2019-03-19"
+date: "2019-03-21"
 width: 1920
 height: 1080
 css: mySlideTemplate.css
@@ -104,10 +104,14 @@ right: 80%
 
 Keep it tidy
 ***
+Check your R version
+```
+version
+```
+The easiest way to get libraries for today is to install the whole tidyverse:
 
 
 ```r
-# The easiest way to get libraries for today is to install the whole tidyverse:
 #install.packages("tidyverse")
 library(tidyverse)
 browseVignettes(package = "tidyverse")

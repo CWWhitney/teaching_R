@@ -22,7 +22,7 @@ R is to RStudio as Git is to GitHub
 ========================================================
 author: Cory Whitney   (cory.whitney@uni-bonn.de)
 font-family: 'Helvetica'
-date: "2019-03-15"
+date: "2019-03-21"
 autosize: true
 css: mySlideTemplate.css
 <img src="R_Git_GitHub-figure/github.png" style="background:none; border:none; box-shadow:none;height="400"; width="400";"><img src="R_Git_GitHub-figure/INRES_Logo.png" style="background:none; border:none; box-shadow:none;height="100"; width="100";"><img src="R_Git_GitHub-figure/Uni_Bonn_Picture.png" style="background:none; border:none; box-shadow:none;height="200"; width="200";"><img src="R_Git_GitHub-figure/ZEF_Logo.png" style="background:none; border:none; box-shadow:none;height="200"; width="200";">
@@ -61,7 +61,7 @@ A better way to:
 - collaborate than mailing files back and forth, and
 - share code and other scientific work with the world.
 
-<img src="R_Git_GitHub-figure/git_logo.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" width="35%" style="display: block; margin: auto;" />
+<img src="R_Git_GitHub-figure/git_logo_orange.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" width="35%" style="display: block; margin: auto;" />
 
 <div class="footer" style="margin-top;font-size:60%;"> 
 <https://swcarpentry.github.io/git-novice/guide> </div>
@@ -90,7 +90,7 @@ right: 80%
 
 - If you get stuck, just add “Git” to a search query e.g. a short description of your issue
 - Someone else has also been confused by it and has written about it
-Thousands of talented programmers who scan the web and answer these problems
+- Thousands of talented programmers who scan the web and answer these problems
 <img src="R_Git_GitHub-figure/stack-overflow.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" width="50%" style="display: block; margin: auto;" />
 
 <div class="footer" style="margin-top;font-size:60%;"> 
@@ -103,13 +103,14 @@ right: 80%
 ![](R_Git_GitHub-figure/octocat.png)
 ***
 
-Install Git & Github (if you do not already have them). 
+Install Git & join Github (if you have not already):
 
-- Git
+- install Git
 <small>https://git-scm.com/downloads</small>
 
-- Github
-<small>http://r-pkgs.had.co.nz/git.html</small>
+- join Github
+<small>https://github.com/</small>
+
 
 Some useful tips on getting these running from our friends 
 
@@ -118,6 +119,23 @@ Some useful tips on getting these running from our friends
 
 - Nathan Stephens, a very helpful R blogger 
 <small>https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN</small>
+
+Git: Configure
+========================================================
+incremental: true
+right: 80%
+![](R_Git_GitHub-figure/git_logo.png)
+<small>https://git-scm.com/</small>
+
+***
+<img src="R_Git_GitHub-figure/git_logo_orange.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" width="35%" style="display: block; margin: auto;" />
+
+- danger, this will discard all changes you've made in your working directory `git reset --hard [commit hash]`
+
+<div class="footer" style="margin-top;font-size:60%;"> 
+<https://jennybc.github.io/2014-05-12-ubc/ubc-r/session03_git.html> </div>
+
+
 
 GitHub: intro hello-world
 ========================================================
@@ -130,13 +148,13 @@ right: 80%
 - a friendly interface, no need to remember command line. 
 - useful features including issues, wikis etc.
 
-<img src="R_Git_GitHub-figure/Github-Icon-4.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" style="display: block; margin: auto;" />
+<img src="R_Git_GitHub-figure/Github-Icon-4.png" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" style="display: block; margin: auto;" />
 
 GitHub: intro hello-world
 ========================================================
 incremental: true
 
-![plot of chunk unnamed-chunk-5](R_Git_GitHub-figure/Hello_world.jpg)
+![plot of chunk unnamed-chunk-6](R_Git_GitHub-figure/Hello_world.jpg)
 
 <small>https://guides.github.com/activities/hello-world/</small>
 

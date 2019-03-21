@@ -111,9 +111,13 @@ right: 80%
 
 Keep it tidy
 ***
+Check your R version
+```
+version
+```
+The easiest way to get libraries for today is to install the whole tidyverse:
 
 ```{r}
-# The easiest way to get libraries for today is to install the whole tidyverse:
 #install.packages("tidyverse")
 library(tidyverse)
 browseVignettes(package = "tidyverse")

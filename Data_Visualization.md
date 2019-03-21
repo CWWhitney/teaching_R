@@ -12,7 +12,7 @@ Data Visualization
 ========================================================
 author: Cory Whitney
 font-family: 'Helvetica'
-date: "2019-03-20"
+date: "2019-03-21"
 width: 1920
 height: 1080
 css: mySlideTemplate.css
@@ -61,6 +61,7 @@ incremental: true
 
 ```r
 participants_data <- read.csv("participants_data.csv")
+
 plot(participants_data$academic_parents)
 ```
 
@@ -116,6 +117,7 @@ right: 80%
 
 ```r
 library(ggplot2)
+
 qplot(days_to_email_response, letters_in_first_name, data = participants_data)
 ```
 
@@ -187,8 +189,10 @@ right: 80%
 
 **qplot** accepts formula arguments such as log
 ```
-plot1<-qplot(carat, price, data = diamonds)
-plot2<-qplot(log(carat), log(price), data = diamonds)
+qplot(carat, price, data = diamonds)
+```
+```
+qplot(log(carat), log(price), data = diamonds)
 ```
 <img src="Data_Visualization-figure/qplot_carat-1.png" title="plot of chunk qplot_carat" alt="plot of chunk qplot_carat" style="display: block; margin: auto;" />
 
@@ -252,6 +256,8 @@ right: 80%
 Set parameters manually with I()
 ```
 qplot(carat, price, data = diamonds, alpha=I(0.1), colour=I("blue"))
+```
+```
 qplot(carat, price, data = diamonds, alpha=I(0.4), colour=I("green"))
 ```
 
@@ -277,7 +283,11 @@ With “geom” different types of plots can be defined e.g. points, line, boxpl
 These can also be combined in a vector.
 ```
 qplot(carat,price,data=dsmall, geom="line")
+```
+```
 qplot(carat,price,data=dsmall, geom="smooth")
+```
+```
 qplot(carat,price,data=dsmall, geom=c("point","smooth"))
 ```
 <img src="Data_Visualization-figure/qplot_geom-1.png" title="plot of chunk qplot_geom" alt="plot of chunk qplot_geom" style="display: block; margin: auto;" />
@@ -301,6 +311,8 @@ right: 80%
 Depending on your dataset size the smooth function will select different lines and smoothing methods.
 ```
 qplot(carat,price,data=dsmall,geom=c("point","smooth"))
+```
+```
 qplot(carat,price,data=diamonds,geom=c("point","smooth"))
 ```
 With span the wiggliness of the line is controlled.
@@ -335,6 +347,8 @@ qplot(color,price/carat,data=diamonds,  geom="boxplot")
 
 ```
 qplot(color,price/carat,data=diamonds, geom="jitter")
+```
+```
 qplot(color,price/carat,data=diamonds, geom="jitter", alpha=I(0.1))
 ```
 
@@ -353,7 +367,11 @@ right: 80%
 Histograms can be displayed through geom=“histogram”.
 ```
 qplot(carat, data = diamonds, geom = "density")
+```
+```
 qplot(carat, data = diamonds, geom = "density", colour = color)
+```
+```
 qplot(carat, data = diamonds, geom = "density", fill = color, alpha=I(0.3))
 ```
 
@@ -372,7 +390,8 @@ right: 80%
 Use factor to subset your data.
 ```
 qplot(displ, hwy, data = mpg, colour = cyl, geom=c("point","smooth"),method="lm")
-
+```
+```
 qplot(displ, hwy, data = mpg, colour = factor(cyl), geom=c("point","smooth"),method="lm")
 ```
 
@@ -512,6 +531,8 @@ part_data<-select(participants_data, days_to_email_response, number_of_siblings,
 ```
 cormat <- round(cor(part_data), 1)
 melted_cormat <- melt(cormat)
+```
+```
 ggplot(data = melted_cormat, aes(x=Var1, 
 y=Var2, fill=value)) + 
 geom_tile()
@@ -583,13 +604,10 @@ Be prepared for tomorrow
 ========================================================
 incremental: true
 
-Install Git & Github (if you do not already have them). 
+Install Git & join Github (if you have not already). 
 
 Git
 <small>https://git-scm.com/downloads</small>
-
-Github
-<small>http://r-pkgs.had.co.nz/git.html</small>
 
 join Github
 <small>https://github.com/</small>
