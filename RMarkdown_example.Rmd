@@ -21,15 +21,16 @@ This is an R Markdown document. Markdown is a simple formatting syntax for autho
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-```{r cars}
-summary(cars)
+```{r carschunk}
+part_data <- read.csv("participants_data.csv")
+str(part_data)
 ```
 
 ## Including Plots
 
 You can also embed plots, for example:
 
-```{r pressure, echo=FALSE}
+```{r pressure}
 plot(pressure)
 ```
 
@@ -53,6 +54,8 @@ Emphasis
 
 _italic_   __bold__
 
+`r_code`
+
 ## Headers
 
 # Header 1
@@ -73,12 +76,13 @@ _italic_   __bold__
 ## Ordered List:
 
 1. Item 1
-2. Item 2
-3. Item 3
+1. Item 2
+1. Item 3
     + Item 3a
     + Item 3b
 
 ## R Code Chunks
+
 R code will be evaluated and printed
 
 ```{r}
@@ -90,22 +94,25 @@ summary(cars$speed)
 
 There were `r nrow(cars)` cars studied
 
+There were `r nrow(part_data)` students 
+
 ## Links
 
 Use a plain http address or add a link to a phrase:
 
-```
 http://example.com
 
 [linked phrase](http://example.com)
-```
+
 
 ## Blockquotes
 A friend once said:
 
 > It's always better to give
 > than to receive.
+
 Plain Code Blocks
+
 Plain code blocks are displayed in a fixed-width font but not evaulated
 
 ```
@@ -145,11 +152,12 @@ Content Cell  | Content Cell
 End a line with two or more spaces:
 
 Roses are red,  
-Violets are blue.
+subscript <sub>in <span style="color:blue">blue</span> </sub>
 
-## Miscellaneous
+<u>underline</u>
 
-superscript^2^
+superscript^2^  
 
 ~~strikethrough~~
+
 

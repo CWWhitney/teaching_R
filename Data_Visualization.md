@@ -12,7 +12,7 @@ Data Visualization
 ========================================================
 author: Cory Whitney
 font-family: 'Helvetica'
-date: "2019-03-21"
+date: "2019-03-22"
 width: 1920
 height: 1080
 css: mySlideTemplate.css
