@@ -139,8 +139,8 @@ right: 80%
 knitr::include_graphics('R_Git_GitHub-figure/git_logo_orange.png')
 ```
 
-
-- danger, this will discard all changes you've made in your working directory `git reset --hard [commit hash]`
+- `git reset --hard [commit hash]`
+danger, this will discard all changes you've made in your working directory 
 
 <div class="footer" style="margin-top;font-size:60%;"> 
 <https://jennybc.github.io/2014-05-12-ubc/ubc-r/session03_git.html> </div>

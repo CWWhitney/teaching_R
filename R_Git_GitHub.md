@@ -131,8 +131,8 @@ right: 80%
 
 <img src="R_Git_GitHub-figure/git_logo_orange.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" width="35%" style="display: block; margin: auto;" />
 
-
-- danger, this will discard all changes you've made in your working directory `git reset --hard [commit hash]`
+- `git reset --hard [commit hash]`
+danger, this will discard all changes you've made in your working directory 
 
 <div class="footer" style="margin-top;font-size:60%;"> 
 <https://jennybc.github.io/2014-05-12-ubc/ubc-r/session03_git.html> </div>
