@@ -134,9 +134,11 @@ right: 80%
 <small>https://git-scm.com/</small>
 
 ***
+
 ```{r, out.width='35%', fig.align='center', echo=FALSE}
 knitr::include_graphics('R_Git_GitHub-figure/git_logo_orange.png')
 ```
+
 
 - danger, this will discard all changes you've made in your working directory `git reset --hard [commit hash]`
 
