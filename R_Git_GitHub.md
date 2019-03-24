@@ -22,7 +22,7 @@ R is to RStudio as Git is to GitHub
 ========================================================
 author: Cory Whitney   (cory.whitney@uni-bonn.de)
 font-family: 'Helvetica'
-date: "2019-03-22"
+date: "2019-03-23"
 autosize: true
 css: mySlideTemplate.css
 <img src="R_Git_GitHub-figure/github.png" style="background:none; border:none; box-shadow:none;height="400"; width="400";"><img src="R_Git_GitHub-figure/INRES_Logo.png" style="background:none; border:none; box-shadow:none;height="100"; width="100";"><img src="R_Git_GitHub-figure/Uni_Bonn_Picture.png" style="background:none; border:none; box-shadow:none;height="200"; width="200";"><img src="R_Git_GitHub-figure/ZEF_Logo.png" style="background:none; border:none; box-shadow:none;height="200"; width="200";">
