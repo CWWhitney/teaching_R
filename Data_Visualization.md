@@ -12,7 +12,7 @@ Data Visualization
 ========================================================
 author: Cory Whitney
 font-family: 'Helvetica'
-date: "2019-03-22"
+date: "2019-04-17"
 width: 1920
 height: 1080
 css: mySlideTemplate.css
@@ -21,7 +21,6 @@ incremental: true
 <img src="Data_Visualization-figure/Circos.png" style="background:none; border:none; box-shadow:none;height="200"; width="200";"><img src="Data_Visualization-figure/INRES_Logo.png" style="background:none; border:none; box-shadow:none;height="100"; width="100";"><img src="Data_Visualization-figure/Uni_Bonn_Picture.png" style="background:none; border:none; box-shadow:none;height="200"; width="200";"><img src="Data_Visualization-figure/ZEF_Logo.png" style="background:none; border:none; box-shadow:none;height="200"; width="200";">
 
 <div class="footer"></small>cory.whitney@uni-bonn.de </small></div>
-
 
 Data visualization: getting stuck
 ========================================================

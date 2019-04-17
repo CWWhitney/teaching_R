@@ -9,6 +9,7 @@ url <- "http://varianceexplained.org/files/Brauer2008_DataSet1.tds"
 # of
 # notes
 # Clean and tidy the data
+
 cleaned_data <- read_delim(url, delim = "\t") %>%
   separate(NAME, c("name", "BP", "MF", "systematic_name", "number"), sep = "\\|\\|") %>%
   mutate_at(vars(name:systematic_name), funs(trimws)) %>%
