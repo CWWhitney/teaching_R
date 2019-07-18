@@ -8,7 +8,7 @@ names(aca_work_filter)
 
 ?ethnobotanydata #the '?' symbol opens the help file..
 names(ethnobotanydata)
-str(ethnobotanydata)
+str(ethnobotanydata)  
 head(ethnobotanydata)
 
 ?str
