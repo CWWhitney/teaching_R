@@ -94,7 +94,8 @@ summary(cars$speed)
 
 There were `r nrow(cars)` cars studied
 
-There were `r nrow(part_data)` students 
+
+
 
 ## Links
 

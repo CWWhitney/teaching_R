@@ -5,7 +5,7 @@
 .section .reveal p {
     color: black;
     position: relative;
-    top: 4%;}
+    top: 1%;}
     </style>
     
 <style>
@@ -18,13 +18,13 @@
 
 </style>
 
+
 Data Wrangling
 ========================================================
 author: Cory Whitney
 font-family: 'Helvetica'
 date: "`r Sys.Date()`"
-width: 1920
-height: 1080
+autosize: true
 css: mySlideTemplate.css
 
 <img src="Data_Wrangling-figure/wrangler.png" style="background:none; border:none; box-shadow:none;height="400"; width="400";"><img src="Data_Wrangling-figure/INRES_Logo.png" style="background:none; border:none; box-shadow:none;height="100"; width="100";"><img src="Data_Wrangling-figure/Uni_Bonn_Picture.png" style="background:none; border:none; box-shadow:none;height="200"; width="200";"><img src="Data_Wrangling-figure/ZEF_Logo.png" style="background:none; border:none; box-shadow:none;height="200"; width="200";">
