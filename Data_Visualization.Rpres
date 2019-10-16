@@ -13,8 +13,7 @@ Data Visualization
 author: Cory Whitney
 font-family: 'Helvetica'
 date: "`r Sys.Date()`"
-width: 1920
-height: 1080
+autosize: true
 css: mySlideTemplate.css
 incremental: true
 
