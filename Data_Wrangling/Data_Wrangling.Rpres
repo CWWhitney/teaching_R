@@ -26,7 +26,7 @@ font-family: 'Helvetica'
 autosize: true
 css: mySlideTemplate.css
 
-<img src="Data_Wrangling-figure/wrangler.png" style="background:none; border:none; box-shadow:none;height="400"; width="400";"><img src="Data_Wrangling-figure/INRES_Logo.png" style="background:none; border:none; box-shadow:none;height="100"; width="100";"><img src="Data_Wrangling-figure/Uni_Bonn_Picture.png" style="background:none; border:none; box-shadow:none;height="200"; width="200";"><img src="Data_Wrangling-figure/ZEF_Logo.png" style="background:none; border:none; box-shadow:none;height="200"; width="200";">
+<img src="Data_Wrangling-figure/wrangler.png" style="background:none; border:none; box-shadow:none;height="400"; width="400";"><img src="Data_Wrangling-figure/INRES_Logo.png" style="background:none; border:none; box-shadow:none;height="100"; width="100";"><img src="Data_Wrangling-figure/Uni_Bonn_Picture.png" style="background:none; border:none; box-shadow:none;height="200"; width="200";">
 
 ```{r setup, include = FALSE}
 library(knitr)
@@ -64,17 +64,11 @@ incremental: true
 - once the ecstasy of creation has swept over us, we awake late the next morning to find our canvas covered with 2100 lines of R code [...] 
 - Heads throbbing with a statistical absinthe hangover, we trudge through it slowly over days, trying to figure out what we did."
 
-<img src="Data_Wrangling-figure/andrew_macdonald.png" style="background:none; border:none; box-shadow:none; box-shadow:none;height="10%"; width="10%";">Andrew MacDonald <small>@polesasunder </small>
-
-<div class="footer" style="margin-top;font-size:60%;"> 
-thestudyofthehousehold.com </div>
-
+<img src="Data_Wrangling-figure/andrew_macdonald.png" style="background:none; border:none; box-shadow:none; box-shadow:none;height="10%"; width="10%";">Andrew MacDonald @polesasunder </small>
 
 Notes on R: Focus
 ========================================================
-incremental: true
-right: 90%
-***
+
 <img src="Data_Wrangling-figure/Focus.png" style="background:none; border:none; box-shadow:none;height="40%"; width="40%";">
 
 Notes on R: Keeping track of work
@@ -102,7 +96,7 @@ If not Rmarkdown then at least use ‘----’ or ‘####’
 <div class="footer" style="margin-top;font-size:60%;"> 
 http://style.tidyverse.org/ </div>
 
-Notes on R: tidy tools manifesto
+Notes on tidy R
 ========================================================
 incremental: true
 right: 80%
@@ -121,8 +115,11 @@ The easiest way to get libraries for today is to install the whole tidyverse:
 library(tidyverse)
 browseVignettes(package = "tidyverse")
 ```
+<div class="footer"></small>http://style.tidyverse.org/ </small></div>
 
 The tidy tools manifesto
+========================================================
+incremental: true
 ![](Data_Wrangling-figure/tidy_paper.jpg)
 <!-- <img src="Data_Wrangling-figure/hadley_wickham.png" style="background:none; border:none; box-shadow:none;height="40%"; width="40%";">   -->
 <!-- Hadley Wickham -->
