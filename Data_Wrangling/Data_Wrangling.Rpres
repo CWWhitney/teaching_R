@@ -165,8 +165,6 @@ Notes on R: Tidy Data
 ========================================================
 incremental: true
 
-H. Wickham, Tidy Data, Journal of Statistical Software, 59(10)
-
 Three things make a dataset tidy:
 - Each variable with its own column.
 - Each observation with its own row.
@@ -175,7 +173,7 @@ Three things make a dataset tidy:
 <img src="Data_Wrangling-figure/tidydata.png" style="background:none; border:none; box-shadow:none;height="90%"; width="90%";">
 
 <div class="footer" style="margin-top;font-size:60%;"> 
-http://www.jstatsoft.org/v59/i10/paper </div>
+H. Wickham, Tidy Data, Journal of Statistical Software, 59(10) www.jstatsoft.org/v59/i10/paper </div>
 
 
 Wrangling: transform
@@ -187,8 +185,7 @@ incremental: true
 - creating new variables that are functions of existing variables
 - calculating a set of summary statistics
 
-<img src="Data_Wrangling-figure/Wrangling_Data.png" style="background:none; border:none; box-shadow:none;height="50%"; width="50%";"> 
-<div class="footer"></small><small>http://www.codeastar.com/data-wrangling/</small> </small></div>
+<img src="Data_Wrangling-figure/Wrangling_Data.png" style="background:none; border:none; box-shadow:none;height="50%"; width="50%";"> www.codeastar.com/data-wrangling/ 
 
 Wrangling: dplyr arguments
 ========================================================
@@ -372,7 +369,7 @@ library(purrr)
 
 purr Cheatsheet
 
-purrr: Use
+Using purrr
 ========================================================
 
 ![](Data_Wrangling-figure/purrr.jpg)
