@@ -12,7 +12,6 @@ Data Visualization
 ========================================================
 author: Cory Whitney
 font-family: 'Helvetica'
-date: "2019-07-19"
 autosize: true
 css: mySlideTemplate.css
 incremental: true
@@ -234,7 +233,7 @@ qplot(carat, price, data = dsmall, shape = cut)
 Help on topic 'sample' was found in the following packages:
 
   Package               Library
-  dplyr                 /Users/macbook/Library/R/3.5/library
+  dplyr                 /Library/Frameworks/R.framework/Versions/3.6/Resources/library
   base                  /Library/Frameworks/R.framework/Resources/library
 
 
@@ -495,121 +494,27 @@ ggplot(datasaurus_dozen, aes(x=x, y=y))+
 
 ***
 
-<img src="Data_Visualization-figure/animate_datasaurus_dozen-1.gif" title="plot of chunk animate_datasaurus_dozen" alt="plot of chunk animate_datasaurus_dozen" style="display: block; margin: auto;" />
-  
-Bonus: gganimate mtcars mpg
-========================================================
-incremental: true
-<img src="Data_Visualization-figure/gganimate_logo.png" title="plot of chunk unnamed-chunk-16" alt="plot of chunk unnamed-chunk-16" width="20%" style="display: block; margin: auto 0 auto auto;" />
 
-- Using the gifski, ggplot2 and gganimate libraries.
 
-```
-ggplot(mtcars, aes(factor(cyl), mpg)) + 
-  geom_boxplot() + 
-  geom_point() +
-  transition_states(am, transition_length = 4, state_length = 1) + 
-  view_follow()
-```
 
-***
 
-<img src="Data_Visualization-figure/animate_mtcars-1.gif" title="plot of chunk animate_mtcars" alt="plot of chunk animate_mtcars" style="display: block; margin: auto;" />
 
-ggplot2: geom_tile
-========================================================
-incremental: true
-<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-17" alt="plot of chunk unnamed-chunk-17" width="20%" style="display: block; margin: auto 0 auto auto;" />
 
-- Using the dplyr, ggplot2 and reshape2 libraries.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ```
-part_data<-select(participants_data, days_to_email_response, number_of_siblings, years_of_study, number_of_publications, letters_in_first_name, km_home_to_zef, working_hours_per_day, days_to_email_response)
+Error in library(datasauRus) : there is no package called 'datasauRus'
 ```
-```
-cormat <- round(cor(part_data), 1)
-melted_cormat <- melt(cormat)
-```
-```
-ggplot(data = melted_cormat, aes(x=Var1, 
-y=Var2, fill=value)) + 
-geom_tile()
-```
-
-***
-<img src="Data_Visualization-figure/geom_melted_cormat-1.png" title="plot of chunk geom_melted_cormat" alt="plot of chunk geom_melted_cormat" style="display: block; margin: auto;" />
-
-
-- Check with journal about size, resolution etc.
-
-
-```r
-?pdf
-```
-
-
-```r
-?png
-```
-
-Export Figures
-========================================================
-incremental: true
-right: 70%
-<img src="Data_Visualization-figure/geom_melted_cormat-1.png" title="plot of chunk unnamed-chunk-20" alt="plot of chunk unnamed-chunk-20" style="display: block; margin: auto;" />
-
-***
-
-```
-png(file = "cortile.png", width = 7, height = 6, units = "in", res = 300)
-
-ggplot(data = melted_cormat, aes(x = Var1, y = Var2, fill = value)) + geom_tile() + theme(axis.text.x = element_text(angle = 45, hjust = 1))
-
-dev.off()
-```
-```
-list.files()
-```
-~~If time create and export more figures~~
-
-Tasks for the afternoon: Basic
-========================================================
-incremental: true
-right: 80%
-<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-21" alt="plot of chunk unnamed-chunk-21" width="80%" style="display: block; margin: auto;" />
-
-***
-
-- Check your data for interesting trends and correlations
-- Use scatter plots, barcharts and boxplots
-- Bootstrap and vary the sample and run the same analysis and plots
-- Save your most interesting figure and share it with us tomorrow
-
-Tasks for the afternoon: Advanced
-========================================================
-incremental: true
-right: 80%
-<img src="Data_Visualization-figure/ggplot2.png" title="plot of chunk unnamed-chunk-22" alt="plot of chunk unnamed-chunk-22" width="80%" style="display: block; margin: auto;" />
-
-***
-
-- Import data from an external source (e.g. FAO, World Bank)
-- Display those data in an interactive plot
-- Play around with the design
-- Export your most interesting figure and share it with us tomorrow
-
-Be prepared for tomorrow
-========================================================
-incremental: true
-
-Install Git & join Github (if you have not already). 
-
-Git
-<small>https://git-scm.com/downloads</small>
-
-join Github
-<small>https://github.com/</small>
-
-*** 
-
-![](R_Git_GitHub-figure/octocat.png)

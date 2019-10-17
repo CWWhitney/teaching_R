@@ -12,7 +12,6 @@ Data Visualization
 ========================================================
 author: Cory Whitney
 font-family: 'Helvetica'
-date: "`r Sys.Date()`"
 autosize: true
 css: mySlideTemplate.css
 incremental: true
@@ -659,19 +658,3 @@ knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
 - Display those data in an interactive plot
 - Play around with the design
 - Export your most interesting figure and share it with us tomorrow
-
-Be prepared for tomorrow
-========================================================
-incremental: true
-
-Install Git & join Github (if you have not already). 
-
-Git
-<small>https://git-scm.com/downloads</small>
-
-join Github
-<small>https://github.com/</small>
-
-*** 
-
-![](R_Git_GitHub-figure/octocat.png)
