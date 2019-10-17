@@ -18,7 +18,6 @@
 
 </style>
 
-
 Data Wrangling
 ========================================================
 author: Cory Whitney
@@ -64,12 +63,14 @@ incremental: true
 - once the ecstasy of creation has swept over us, we awake late the next morning to find our canvas covered with 2100 lines of R code [...] 
 - Heads throbbing with a statistical absinthe hangover, we trudge through it slowly over days, trying to figure out what we did."
 
-<img src="Data_Wrangling-figure/andrew_macdonald.png" style="background:none; border:none; box-shadow:none; box-shadow:none;height="10%"; width="10%";">Andrew MacDonald @polesasunder </small>
+<img src="Data_Wrangling-figure/andrew_macdonald.png" style="background:none; border:none; box-shadow:none; box-shadow:none;height="10%"; width="10%";">Andrew MacDonald  @polesasunder </small>
+
 
 Notes on R: Focus
 ========================================================
 
 <img src="Data_Wrangling-figure/Focus.png" style="background:none; border:none; box-shadow:none;height="40%"; width="40%";">
+
 
 Notes on R: Keeping track of work
 ========================================================
@@ -115,7 +116,8 @@ The easiest way to get libraries for today is to install the whole tidyverse:
 library(tidyverse)
 browseVignettes(package = "tidyverse")
 ```
-<div class="footer"></small>http://style.tidyverse.org/ </small></div>
+<div class="footer" style="margin-top;font-size:60%;"> 
+http://style.tidyverse.org/ </div>
 
 The tidy tools manifesto
 ========================================================
@@ -123,7 +125,6 @@ incremental: true
 ![](Data_Wrangling-figure/tidy_paper.jpg)
 <!-- <img src="Data_Wrangling-figure/hadley_wickham.png" style="background:none; border:none; box-shadow:none;height="40%"; width="40%";">   -->
 <!-- Hadley Wickham -->
-<div class="footer"></small>http://style.tidyverse.org/ </small></div>
 
 Notes on R: tidyR process
 ========================================================
