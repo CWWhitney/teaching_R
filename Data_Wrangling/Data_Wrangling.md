@@ -327,12 +327,10 @@ names(participants_data)
 ```
 
 ```
- [1] "batch"                  "age"                   
- [3] "gender"                 "continent_of_origin"   
- [5] "research_continent"     "number_of_publications"
- [7] "daily_labor"            "number_of_siblings"    
- [9] "academic_parents"       "km_home_to_zef"        
-[11] "years_of_study"         "days_to_email_response"
+ [1] "batch"                  "age"                    "gender"                
+ [4] "continent_of_origin"    "research_continent"     "number_of_publications"
+ [7] "daily_labor"            "number_of_siblings"     "academic_parents"      
+[10] "km_home_to_zef"         "years_of_study"         "days_to_email_response"
 [13] "name_length"           
 ```
 <div class="footer" style="margin-top;font-size:60%;"> 
@@ -371,20 +369,20 @@ head(participants_data)
 4                      1          16                  1                Y
 5                      3          12                  5                N
 6                      3          16                  4                N
-  km_home_to_zef years_of_study days_to_email_response name_length
-1            1.7             20                      1           4
-2           40.0              9                      1           6
-3        10370.0              7                      1           7
-4           15.0              3                      1           7
-5            6.0              7                      1           6
-6            8.3             10                      2           6
-  labor_mean neg_sib_mean
-1    70.5000       -2.375
-2    70.5000       -1.375
-3    61.6875       -1.375
-4   141.0000       -2.375
-5   105.7500        1.625
-6   141.0000        0.625
+  km_home_to_zef years_of_study days_to_email_response name_length labor_mean
+1            1.7             20                      1           4    70.5000
+2           40.0              9                      1           6    70.5000
+3        10370.0              7                      1           7    61.6875
+4           15.0              3                      1           7   141.0000
+5            6.0              7                      1           6   105.7500
+6            8.3             10                      2           6   141.0000
+  neg_sib_mean
+1       -2.375
+2       -1.375
+3       -1.375
+4       -2.375
+5        1.625
+6        0.625
 ```
 <div class="footer"></small><small>https://dplyr.tidyverse.org/ </small> </small></div>
 
@@ -478,12 +476,9 @@ pipe_data
 ```
 
 ```
-   commute mean(days_to_email_response) median(name_length)
-1 commuter                     1.545455                   5
-2    local                     1.250000                   7
-  max(years_of_study)
-1                  20
-2                   9
+   commute mean(days_to_email_response) median(name_length) max(years_of_study)
+1 commuter                     1.545455                   5                  20
+2    local                     1.250000                   7                   9
 ```
 
 - Make your own query with `dplyr` and `magrittr`
