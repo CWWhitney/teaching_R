@@ -12,7 +12,6 @@ Using RMarkdown
 ========================================================
 author: Cory Whitney
 font-family: 'Helvetica'
-date: "2019-03-22"
 width: 1920
 height: 1080
 css: mySlideTemplate.css
@@ -42,8 +41,10 @@ right: 30%
 - Use a ‘?’ with function, package, data name in the R console
 - If you get stuck, use Google: just add “R” to a search e.g. a copy of an error message
 - Someone else has also been confused by it and has written about it
-Thousands of talented programmers who scan the web and answer these problems
+- Thousands of talented programmers who scan the web and answer these problems
+
 <img src="RMarkdown-figure/stack-overflow.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" width="50%" style="display: block; margin: auto;" />
+
 <div class="footer"></small>https://stackoverflow.com/ </small></div>
 
 ***
@@ -75,7 +76,7 @@ incremental: true
 
 - open a markdown file
 
-<img src="RMarkdown-figure/open_markdown_file.jpg" title="plot of chunk unnamed-chunk-8" alt="plot of chunk unnamed-chunk-8" width="50%" />
+<img src="RMarkdown-figure/open_markdown_file.jpg" title="plot of chunk unnamed-chunk-8" alt="plot of chunk unnamed-chunk-8" width="40%" />
 
 - Use the setup chunk
 - Remember the Table of Contents
