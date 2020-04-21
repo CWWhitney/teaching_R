@@ -43,26 +43,41 @@ work_filter <- filter(participants_data, working_hours_per_day > 10)
 
 work_name_filter <- filter(participants_data, working_hours_per_day >10 & letters_in_first_name >6)
 
-participants_daya <- rename(participants_data, name_length = letters_in_first_name)
+participants_data <- rename(participants_data, name_length = letters_in_first_name)
 
 participants_data <- rename(participants_data, daily_labor = working_hours_per_day)
 
 participants_data <- mutate(participants_data, labor_mean = daily_labor*mean(daily_labor))
 
 participants_data <- mutate(participants_data, 
-                            commute = factor(1*(km_home_to_zef > 10), 
-                            labels = c("commuter", "local")))
+                            commute = ifelse(km_home_to_zef > 10, 
+                            "commuter", "local"))
 
 commuter_data <- group_by(participants_data, commute)
 
 commuter_summary <- summarize(commuter_data, mean(days_to_email_response), median(name_length))
 
-pipe_data <- participants_data %>%
-  mutate(commute = factor(1*(km_home_to_zef >10),
-                          labels = c("commuter", "local")))%>%
-  group_by(commute) %>%
-  summarize(mean(days_to_email_response), median(name_length),
-            max(years_of_study)) 
+
+pipe_data <- participants_data %>% 
+  mutate(commute = ifelse(
+    km_home_to_zef > 10, 
+    "commuter", "local")) %>% 
+  group_by(commute) %>% 
+  summarize(mean(days_to_email_response), 
+            median(name_length), 
+            max(years_of_study)) %>% 
+  as.data.frame
+
+
+
+
+
+
+
+
+
+
+
 
 participants_data_regression <- participants_data %>%
   split(.$batch) %>% # from base R

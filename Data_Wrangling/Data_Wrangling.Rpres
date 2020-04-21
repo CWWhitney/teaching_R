@@ -210,7 +210,6 @@ Arguments start with a data frame
 ***
 - __select__: return a subset of the columns
 - __filter__: extract a subset of rows
-- __arrange__: reorder rows
 - __rename__: rename variables
 - __mutate__: add new variables and columns or transform
 - __group_by__: split data into groups
@@ -362,7 +361,7 @@ incremental: true
 Create a commute category
 
 ```{r}
-participants_data <- mutate(participants_data, commute = factor(1* (km_home_to_zef > 10), labels = c("commuter", "local")))
+participants_data <- mutate(participants_data, commute = ifelse(km_home_to_zef > 10, "commuter", "local"))
 ```
 
 <div class="footer"></small><small>https://dplyr.tidyverse.org/ </small> </small></div>
@@ -395,10 +394,9 @@ __Pipeline %>%__
 - Do all the previous with a pipeline %>%
 ```{r}
 pipe_data <- participants_data %>% 
-   mutate(commute = 
-    factor(1* (km_home_to_zef > 10), 
-     labels = 
-      c("commuter", "local"))) %>% 
+   mutate(commute = ifelse(
+     km_home_to_zef > 10, 
+     "commuter", "local")) %>% 
   group_by(commute) %>% 
   summarize(mean(days_to_email_response), 
             median(name_length), 
@@ -468,10 +466,8 @@ knitr::include_graphics('Data_Wrangling-figure/dplyr.png')
 ```
 
 ***
-- Data transformation (subsetting with base R and dplyr)
-- Use magrittr pipeline to perform series of tasks with dplyr verbs
-- Merge datasets in base R and dplyr
-- Descriptive statistics (checks in base R and dplyr)
+- Perform the above assessment of participants_data only where gender is 'F'
+- Use the magrittr pipeline to perform the tasks in short form
 
 <div class="footer" style="margin-top;font-size:60%;"> 
 cory.whitney@uni-bonn.de </div>
@@ -479,6 +475,7 @@ cory.whitney@uni-bonn.de </div>
 
 Tasks for the afternoon: Advanced
 ========================================================
+left: 20%
 incremental: true
 
 ```{r, out.width='35%', fig.align='center', echo=FALSE}
@@ -488,10 +485,13 @@ knitr::include_graphics('Data_Wrangling-figure/magrittr.png')
 ```
 
 ***
-- Use other R data set (e.g. iris, diamonds, ethnobotanydata) to work through  tasks 
-  - long format in base
-  - short format with magrittr pipeline
-  - Descriptive statistics (checks in base R and dplyr)
+Work through tasks on the diamonds data in long format in base and short format with magrittr pipeline:
+- select: carat and price
+- filter: only where carat is > 0.5
+- rename: rename price as cost
+- mutate: name expensive or cheap if greater than mean of price/cost
+- group_by: split into cheap and expensive
+- summarize: give summary statistics
 
 <div class="footer" style="margin-top;font-size:60%;"> 
 cory.whitney@uni-bonn.de </div>
