@@ -6,10 +6,9 @@
     color: black;
     position: relative;
     top: 1%;}
-    </style>
+</style>
     
 <style>
-
 .footer {
     color: black; background: white;
     position: fixed; top: 100%;
@@ -18,6 +17,13 @@
 
 </style>
 
+<!-- enable caching globally for the presentation with this code chunk: If you run into problems with cached output you can always use the Clear Knitr Cache command on the More menu to rebuild your presentation without previously cached output. -->
+    
+```{r setup, include=FALSE}
+opts_chunk$set(cache=TRUE)
+```
+
+
 Data Wrangling
 ========================================================
 author: Cory Whitney
@@ -25,16 +31,8 @@ font-family: 'Helvetica'
 autosize: true
 css: mySlideTemplate.css
 
-<img src="Data_Wrangling-figure/wrangler.png" style="background:none; border:none; box-shadow:none;height="400"; width="400";"><img src="Data_Wrangling-figure/INRES_Logo.png" style="background:none; border:none; box-shadow:none;height="100"; width="100";"><img src="Data_Wrangling-figure/Uni_Bonn_Picture.png" style="background:none; border:none; box-shadow:none;height="200"; width="200";">
+<img src="Data_Wrangling-figure/wrangler.png" style="background:none; border:none; box-shadow:none;height="200"; width="200";"><img src="Data_Wrangling-figure/INRES_Logo.png" style="background:none; border:none; box-shadow:none;height="100"; width="100";"><img src="Data_Wrangling-figure/Uni_Bonn_Picture.png" style="background:none; border:none; box-shadow:none;height="200"; width="200";"><img src="Data_Wrangling-figure/ZEF_Logo.png" style="background:none; border:none; box-shadow:none;height="200"; width="200";">
 
-```{r setup, include = FALSE}
-library(knitr)
-library(tidyr)
-library(dplyr)
-library(magrittr)
-
-participants_data <- read.csv("participants_data.csv")
-```
 <div class="footer"></small>cory.whitney@uni-bonn.de </small></div>
 
 Overview
@@ -112,12 +110,26 @@ version
 The easiest way to get libraries for today is to install the whole tidyverse:
 
 ```{r}
-#install.packages("tidyverse")
 library(tidyverse)
+```
+<div class="footer" style="margin-top;font-size:60%;"> 
+http://style.tidyverse.org/ </div>
+
+Notes on tidy R browseVignettes
+========================================================
+incremental: true
+![](Data_Wrangling-figure/tidyR.png)
+
+Keep it tidy
+
+Learn about tidyverse with browseVignettes:
+
+```{r}
 browseVignettes(package = "tidyverse")
 ```
 <div class="footer" style="margin-top;font-size:60%;"> 
 http://style.tidyverse.org/ </div>
+
 
 The tidy tools manifesto
 ========================================================
@@ -185,51 +197,69 @@ incremental: true
 - creating new variables that are functions of existing variables
 - calculating a set of summary statistics
 
-<img src="Data_Wrangling-figure/Wrangling_Data.png" style="background:none; border:none; box-shadow:none;height="50%"; width="50%";"> www.codeastar.com/data-wrangling/ 
+<img src="Data_Wrangling-figure/Wrangling_Data.png" style="background:none; border:none; box-shadow:none;height="40%"; width="40%";"> www.codeastar.com/data-wrangling/ 
 
 Wrangling: dplyr arguments
 ========================================================
 incremental: true
 <small>Format of __dplyr__</small> <img src="Data_Wrangling-figure/dplyr.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";"> 
 
-<img src="Data_Wrangling-figure/hadley_wickham.png" style="background:none; border:none; box-shadow:none;height="50%"; width="50%";">
+<img src="Data_Wrangling-figure/hadley_wickham.png" style="background:none; border:none; box-shadow:none;height="50%"; width="50%";"> 
+Arguments start with a data frame
 
 ***
-- __Arguments start with a data frame__
 - __select__: return a subset of the columns
 - __filter__: extract a subset of rows
-- __arrange__: reorder rows
 - __rename__: rename variables
 - __mutate__: add new variables and columns or transform
+- __group_by__: split data into groups
 - __summarize__: generate tables of summary statistics
 
 <div class="footer" style="margin-top;font-size:60%;"> 
 https://dplyr.tidyverse.org/ </div>
 
+Getting your data in R
+========================================================
+incremental: true
+<small>Load data</small> <img src="Data_Wrangling-figure/R_logo.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";">
+
+- Load the data
+```{r}
+participants_data <- read.csv("participants_data.csv")
+```
+- Keep your data in the same folder structure as .RProj
+- at or below the level of .RProj
+
 Wrangling: dplyr library
 ========================================================
 incremental: true
-left: 70%
+left: 40%
 <small>Using __dplyr__</small> <img src="Data_Wrangling-figure/dplyr.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";"> 
 
 ```{r}
 library(dplyr)
 ```
 
-
-<img src="Data_Wrangling-figure/github.png" style="background:none; border:none; box-shadow:none;height="40%"; width="40%";"> <small>genomicsclass.github.io/book/pages/dplyr_tutorial</small>
+and others we need today
+```{r}
+library(knitr)
+library(tidyr)
+library(dplyr)
+library(magrittr)
+```
 
 ***
 
-<img src="Data_Wrangling-figure/Roger_Peng.png" style="background:none; border:none; box-shadow:none;height="40%"; width="40%";">
-<small>Roger Peng</small>
-![](Data_Wrangling-figure/wrangler.png)
+<small>Roger Peng</small> <img src="Data_Wrangling-figure/Roger_Peng.png" style="background:none; border:none; box-shadow:none;height="40%"; width="40%";">
+
+<img src="Data_Wrangling-figure/github.png" style="background:none; border:none; box-shadow:none;height="40%"; width="40%";"> <small>genomicsclass.github.io/book/pages/dplyr_tutorial</small>
+
 
 <div class="footer" style="margin-top;font-size:60%;"> 
 https://dplyr.tidyverse.org/ </div>
 
 
-Wrangling: dplyr::select
+Wrangling: dplyr::select aca_work_filter
 ========================================================
 incremental: true
 <small>Subsetting</small> <img src="Data_Wrangling-figure/dplyr.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";">
@@ -237,22 +267,27 @@ incremental: true
 __Select__
 
 ```{r}
-aca_work_filter<-select(participants_data, academic_parents, working_hours_per_day)
+aca_work_filter <- select(participants_data, academic_parents, working_hours_per_day)
 ```
-```{r echo=FALSE}
-head(aca_work_filter)
-```
-```{r}
-non_aca_work_filter<-select(participants_data, -academic_parents, -working_hours_per_day)
-```
-```{r echo=FALSE}
-head(non_aca_work_filter)
-```
+
 <div class="footer" style="margin-top;font-size:60%;"> 
 https://dplyr.tidyverse.org/ </div>
 
+Wrangling: dplyr::select non_aca_work_filter
+========================================================
+incremental: true
+<small>Subsetting</small> <img src="Data_Wrangling-figure/dplyr.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";">
 
-Wrangling: dplyr::filter
+__Select__
+
+```{r}
+non_aca_work_filter <- select(participants_data, -academic_parents, -working_hours_per_day)
+```
+
+<div class="footer" style="margin-top;font-size:60%;"> 
+https://dplyr.tidyverse.org/ </div>
+
+Wrangling: dplyr::filter work_filter
 ========================================================
 incremental: true
 <small>Subsetting</small> <img src="Data_Wrangling-figure/dplyr.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";">
@@ -260,18 +295,28 @@ incremental: true
 
 __Filter__
 ```{r}
-work_filter<-filter(participants_data, working_hours_per_day >10)
-```
-```{r}
-work_name_filter<-filter(participants_data, working_hours_per_day >10 & letters_in_first_name >6)
-work_name_filter
+work_filter <- filter(participants_data, working_hours_per_day >10)
 ```
 
 <div class="footer" style="margin-top;font-size:60%;"> 
 https://dplyr.tidyverse.org/ </div>
 
+Wrangling: dplyr::filter work_name_filter
+========================================================
+incremental: true
+<small>Subsetting</small> <img src="Data_Wrangling-figure/dplyr.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";">
 
-Wrangling: dplyr::rename
+
+__Filter__
+
+```{r}
+work_name_filter <- filter(participants_data, working_hours_per_day >10 & letters_in_first_name >6)
+```
+
+<div class="footer" style="margin-top;font-size:60%;"> 
+https://dplyr.tidyverse.org/ </div>
+
+Wrangling: dplyr::rename name_length
 ========================================================
 incremental: true
 <small> __Rename__ </small> <img src="Data_Wrangling-figure/dplyr.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";">
@@ -280,14 +325,22 @@ incremental: true
 ```{r}
 participants_data <- rename(participants_data, name_length = letters_in_first_name)
 ```
-```{r}
-participants_data <- rename(participants_data,
-daily_labor = working_hours_per_day)
-names(participants_data)
-```
+
 <div class="footer" style="margin-top;font-size:60%;"> 
 https://dplyr.tidyverse.org/ </div>
 
+Wrangling: dplyr::rename daily_labor
+========================================================
+incremental: true
+<small> __Rename__ </small> <img src="Data_Wrangling-figure/dplyr.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";">
+
+
+```{r}
+participants_data <- rename(participants_data,
+daily_labor = working_hours_per_day)
+```
+<div class="footer" style="margin-top;font-size:60%;"> 
+https://dplyr.tidyverse.org/ </div>
 
 Wrangling: dplyr::mutate
 ========================================================
@@ -295,34 +348,34 @@ incremental: true
 <small> __Mutate__ </small> <img src="Data_Wrangling-figure/dplyr.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";">
 
 ```{r}
-participants_data <- mutate(participants_data, labor_mean = daily_labor*mean(daily_labor, na.rm=T))
-# head(participants_data)
+participants_data <- mutate(participants_data, labor_mean = daily_labor*mean(daily_labor))
 ```
 
+<div class="footer"></small><small>https://dplyr.tidyverse.org/ </small> </small></div>
+
+Wrangling: dplyr::mutate
+========================================================
+incremental: true
+<small> __Mutate__ </small> <img src="Data_Wrangling-figure/dplyr.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";">
+
+Create a commute category
+
 ```{r}
-participants_data <- mutate(participants_data, neg_sib_mean = number_of_siblings -mean(number_of_siblings))
-head(participants_data)
+participants_data <- mutate(participants_data, commute = ifelse(km_home_to_zef > 10, "commuter", "local"))
 ```
+
 <div class="footer"></small><small>https://dplyr.tidyverse.org/ </small> </small></div>
 
 Wrangling: dplyr::group_by
 ========================================================
 incremental: true
-<small> __Group by__ </small> <img src="Data_Wrangling-figure/dplyr.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";"> create a commute category
+<small> __Group__ </small> <img src="Data_Wrangling-figure/dplyr.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";"> <small>group data by commuters and non-commuters</small>
 
 ```{r}
-participants_data <- mutate(participants_data, commute = factor(1* (km_home_to_zef > 10), labels = c("commuter", "local")), na.rm=T)
+commuter_data <- group_by(participants_data, commute)
 ```
-<!-- #remove missing data -->
-<!-- #new_participants_data <- participants_data[1:15,] -->
-```{r}
-new_participants_data <- drop_na(participants_data)
-commuter_data <- group_by(new_participants_data, commute)
-commuter_data
-```
-<div class="footer" style="margin-top;font-size:60%;"> 
-https://dplyr.tidyverse.org/ </div>
 
+<div class="footer"></small><small>https://dplyr.tidyverse.org/ </small> </small></div>
 
 Wrangling: dplyr::summarize
 ========================================================
@@ -331,30 +384,33 @@ incremental: true
 
 ```{r}
 commuter_summary <- summarize(commuter_data, mean(days_to_email_response), median(name_length))
-commuter_summary
 ```
 
 
-
-</small> <img src="Data_Wrangling-figure/dplyr.png" style="background:none; border:none; box-shadow:none;height="20%"; width="20%";"><div class="footer"></small><small>https://dplyr.tidyverse.org/ </small> </small></div>
-
-Wrangling: magrittr
+Wrangling: magrittr use
 ========================================================
 incremental: true
-<small> __Pipeline %>%__ </small> <img src="Data_Wrangling-figure/magrittr.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";">
+__Pipeline %>%__ 
 - Do all the previous with a pipeline %>%
 ```{r}
 pipe_data <- participants_data %>% 
-  mutate(commute = factor(1* (km_home_to_zef > 10), 
-                          labels = c("commuter", "local"))) %>% 
-  drop_na() %>% 
+   mutate(commute = ifelse(
+     km_home_to_zef > 10, 
+     "commuter", "local")) %>% 
   group_by(commute) %>% 
-  summarize(mean(days_to_email_response), median(name_length), 
+  summarize(mean(days_to_email_response), 
+            median(name_length), 
             max(years_of_study)) %>% 
   as.data.frame
-
-pipe_data
 ```
+
+
+Wrangling: magrittr try
+========================================================
+incremental: true
+ __Pipeline %>%__  ![](Data_Wrangling-figure/magrittr.png)
+
+- Work on your own with a pipeline %>%
 
 - Make your own query with `dplyr` and `magrittr`
 
@@ -376,23 +432,30 @@ Using purrr
 
 Use purrr to solve: split a data frame into pieces, fit a model to each piece, compute the summary, then extract the R^2.
 
+https://purrr.tidyverse.org/
+
+http://varianceexplained.org/r/teach-tidyverse/
+
+Using purrr for regression
+========================================================
+
+Use purrr 
+
 ```{r}
 library(purrr)
 
-purrr_regression <- mtcars %>%
-  split(.$cyl) %>% # from base R
-  map(~ lm(mpg ~ wt, data = .)) %>%
+participants_data_regression <- 
+    participants_data %>%
+      split(.$batch) %>% # from base R
+        map(~ 
+          lm(days_to_email_response ~ 
+                daily_labor, 
+                 data = .)) %>%
   map(summary) %>%
   map_dbl("r.squared")
 
-purrr_regression
 ```
 
-https://purrr.tidyverse.org/
-
-If there is time
-
-http://varianceexplained.org/r/teach-tidyverse/
 
 Tasks for the afternoon: Basic
 ========================================================
@@ -403,11 +466,8 @@ knitr::include_graphics('Data_Wrangling-figure/dplyr.png')
 ```
 
 ***
-- Create a dataset with a number of different variables of the course participants
-- Data transformation (subsetting with base R and dplyr)
-- Use magrittr pipeline to perform series of tasks with dplyr verbs
-- Merge datasets in base R and dplyr
-- Descriptive statistics (checks in base R and dplyr)
+- Perform the above assessment of participants_data only where gender is 'F'
+- Use the magrittr pipeline to perform the tasks in short form
 
 <div class="footer" style="margin-top;font-size:60%;"> 
 cory.whitney@uni-bonn.de </div>
@@ -415,6 +475,7 @@ cory.whitney@uni-bonn.de </div>
 
 Tasks for the afternoon: Advanced
 ========================================================
+left: 20%
 incremental: true
 
 ```{r, out.width='35%', fig.align='center', echo=FALSE}
@@ -424,10 +485,13 @@ knitr::include_graphics('Data_Wrangling-figure/magrittr.png')
 ```
 
 ***
-- Use other R data set (e.g. iris, diamonds, ethnobotanydata) to work through  tasks 
-  - long format in base
-  - short format with magrittr pipeline
-  - Descriptive statistics (checks in base R and dplyr)
+Work through tasks on the diamonds data in long format in base and short format with magrittr pipeline:
+- select: carat and price
+- filter: only where carat is > 0.5
+- rename: rename price as cost
+- mutate: name expensive or cheap if greater than mean of price/cost
+- group_by: split into cheap and expensive
+- summarize: give summary statistics
 
 <div class="footer" style="margin-top;font-size:60%;"> 
 cory.whitney@uni-bonn.de </div>

@@ -1,0 +1,9 @@
+base
+knitr
+ggplot2
+gridExtra
+datasauRus
+gganimate
+dplyr
+gifski
+reshape2

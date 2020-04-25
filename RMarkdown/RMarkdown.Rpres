@@ -12,7 +12,6 @@ Using RMarkdown
 ========================================================
 author: Cory Whitney
 font-family: 'Helvetica'
-date: "`r Sys.Date()`"
 width: 1920
 height: 1080
 css: mySlideTemplate.css
@@ -45,10 +44,12 @@ right: 30%
 - Use a ‘?’ with function, package, data name in the R console
 - If you get stuck, use Google: just add “R” to a search e.g. a copy of an error message
 - Someone else has also been confused by it and has written about it
-Thousands of talented programmers who scan the web and answer these problems
+- Thousands of talented programmers who scan the web and answer these problems
+
 ```{r, out.width='50%', fig.align='center', echo=FALSE}
 knitr::include_graphics('RMarkdown-figure/stack-overflow.png')
 ```
+
 <div class="footer"></small>https://stackoverflow.com/ </small></div>
 
 ***
@@ -90,7 +91,7 @@ knitr::include_graphics('RMarkdown-figure/rstudio-hex.png')
 
 - open a markdown file
 
-```{r, out.width='50%', echo=FALSE}
+```{r, out.width='40%', echo=FALSE}
 knitr::include_graphics('RMarkdown-figure/open_markdown_file.jpg')
 ```
 

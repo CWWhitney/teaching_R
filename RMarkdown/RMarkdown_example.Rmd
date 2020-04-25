@@ -11,7 +11,7 @@ Avoid absolute paths! Use relative paths (relative to your .Rmd file).
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 
-#install.packages(ethnobotanyR)
+#install.packages("ethnobotanyR")
 library(ethnobotanyR)
 ```
 
@@ -21,7 +21,7 @@ This is an R Markdown document. Markdown is a simple formatting syntax for autho
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-```{r carschunk}
+```{r part_dat}
 part_data <- read.csv("participants_data.csv")
 str(part_data)
 ```
@@ -30,11 +30,9 @@ str(part_data)
 
 You can also embed plots, for example:
 
-```{r pressure}
-plot(pressure)
+```{r pressure, echo=FALSE}
+plot(part_data$km_home_to_zef)
 ```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
@@ -47,6 +45,8 @@ knitr::include_graphics('RMarkdown-figure/hex-rmarkdown.png')
 ```
 
 and in other ways
+
+![Markdown hex sticker](RMarkdown-figure/hex-rmarkdown.png)
 
 ![](RMarkdown-figure/hex-rmarkdown.png)
 Emphasis
@@ -64,7 +64,7 @@ _italic_   __bold__
 
 ### Header 3
 
-##Lists
+## Lists
 
 ## Unordered List:
 
@@ -94,9 +94,6 @@ summary(cars$speed)
 
 There were `r nrow(cars)` cars studied
 
-
-
-
 ## Links
 
 Use a plain http address or add a link to a phrase:
@@ -114,7 +111,7 @@ A friend once said:
 
 Plain Code Blocks
 
-Plain code blocks are displayed in a fixed-width font but not evaulated
+Plain code blocks are displayed in a fixed-width font but not evaluated
 
 ```
 This text is displayed verbatim / preformatted
@@ -135,6 +132,7 @@ $equation$
 
 $$ equation $$
 Horizontal Rule / Page Break
+
 Three or more asterisks or dashes:
 
 ******
@@ -149,8 +147,8 @@ Content Cell  | Content Cell
 Content Cell  | Content Cell
 
 ## Manual Line Breaks
-
-End a line with two or more spaces:
+End a line with two or more spaces, 
+otherwise it all goes on the same line.
 
 Roses are red,  
 subscript <sub>in <span style="color:blue">blue</span> </sub>
