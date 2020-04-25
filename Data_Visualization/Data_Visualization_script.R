@@ -1,3 +1,5 @@
+#The notes I was writing during the Data Vis lecture. 
+
 #load data
 
 participants_data<- read.csv("participants_data.csv")
