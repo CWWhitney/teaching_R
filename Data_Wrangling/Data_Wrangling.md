@@ -109,6 +109,8 @@ The easiest way to get libraries for today is to install the whole tidyverse:
 
 
 ```r
+# install.packages("tidyverse") #run this once only
+#use the '#' symbol to not run
 library(tidyverse)
 ```
 <div class="footer" style="margin-top;font-size:60%;"> 
