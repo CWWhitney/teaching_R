@@ -80,11 +80,11 @@ incremental: true
 **R has several systems for making graphs**
 
 - **Base R** 
-- Create a barplot with the `plot()` function
+- Create a barplot with the `plot()` function 
 
 
 ```r
-plot(participants_data$academic_parents)
+plot(as.factor(participants_data$academic_parents))
 ```
 
 <img src="Data_Visualization-figure/base_barplot-1.png" title="plot of chunk base_barplot" alt="plot of chunk base_barplot" width="20%" style="display: block; margin: auto;" />
@@ -98,7 +98,7 @@ incremental: true
 
 
 ```r
-plot(participants_data$academic_parents, participants_data$days_to_email_response)
+plot(as.factor(participants_data$academic_parents), participants_data$days_to_email_response)
 ```
 
 <img src="Data_Visualization-figure/base_boxplot-1.png" title="plot of chunk base_boxplot" alt="plot of chunk base_boxplot" width="20%" style="display: block; margin: auto;" />
@@ -216,7 +216,7 @@ right: 80%
 
 ```r
 library(dplyr)
-dsmall <- top_n(diamonds, n=100)
+dsmall <- slice_head(diamonds, n=100)
 #Plot with different colors for color
 ggplot(data = dsmall, aes(x=carat, y=price, color = color))+ geom_point()
 ```
