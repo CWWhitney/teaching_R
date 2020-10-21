@@ -49,7 +49,8 @@ and in other ways
 ![Markdown hex sticker](RMarkdown-figure/hex-rmarkdown.png)
 
 ![](RMarkdown-figure/hex-rmarkdown.png)
-Emphasis
+## Emphasis
+
 *italic*   **bold**
 
 _italic_   __bold__
@@ -63,6 +64,8 @@ _italic_   __bold__
 ## Header 2
 
 ### Header 3
+
+#### Header 4
 
 ## Lists
 
@@ -78,8 +81,8 @@ _italic_   __bold__
 1. Item 1
 1. Item 2
 1. Item 3
-    + Item 3a
-    + Item 3b
+    a. Item 3a
+    a. Item 3b
 
 ## R Code Chunks
 
@@ -157,6 +160,6 @@ subscript <sub>in <span style="color:blue">blue</span> </sub>
 
 superscript^2^  
 
-~~strikethrough~~
+~~and strikethrough~~
 
 
