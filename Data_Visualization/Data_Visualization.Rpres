@@ -96,18 +96,8 @@ barplot(parents)
 ```
 <small>Bar plot of number of observations of binary data related to academic parents</small>
 
-Creating a boxplot in base R
-========================================================
-incremental: true
 
-- Create a boxplot with the `boxplot()` function
-
-```{r base_boxplot, out.width='20%', fig.align='center'}
-boxplot(participants_data$academic_parents, participants_data$days_to_email_response)
-```
-<small>Boxplot of days to email response grouped by binary data related to academic parents</small>
-
-ggplot2: overview
+ggplot2: 'Grammar of Graphics' overview
 ========================================================
 incremental: true
 right: 80%
