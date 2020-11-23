@@ -87,10 +87,12 @@ incremental: true
 **R has several systems for making graphs**
 
 - **Base R** 
-- Create a barplot with the `plot()` function
+- Create a barplot with the `table()` and `barplot()` functions
 
 ```{r base_barplot, out.width='20%', fig.align='center'}
-plot(participants_data$academic_parents)
+parents <- table(participants_data$academic_parents)
+
+barplot(parents)
 ```
 <small>Bar plot of number of observations of binary data related to academic parents</small>
 
@@ -98,10 +100,10 @@ Creating a boxplot in base R
 ========================================================
 incremental: true
 
-- Create a boxplot with the same `plot()` function
+- Create a boxplot with the `boxplot()` function
 
 ```{r base_boxplot, out.width='20%', fig.align='center'}
-plot(participants_data$academic_parents, participants_data$days_to_email_response)
+boxplot(participants_data$academic_parents, participants_data$days_to_email_response)
 ```
 <small>Boxplot of days to email response grouped by binary data related to academic parents</small>
 
