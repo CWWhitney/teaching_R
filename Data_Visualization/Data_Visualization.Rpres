@@ -12,6 +12,11 @@
     
 ```{r setup, include=FALSE}
 opts_chunk$set(cache=TRUE)
+library(ggplot2)
+library(gganimate)
+library(gifski)
+library(datasauRus)
+library(tidyverse)
 ```
 
 Data Visualization
@@ -97,7 +102,7 @@ barplot(parents)
 <small>Bar plot of number of observations of binary data related to academic parents</small>
 
 
-ggplot2: 'Grammar of Graphics' overview
+ggplot2: 'Grammar of Graphics' Overview
 ========================================================
 incremental: true
 right: 80%

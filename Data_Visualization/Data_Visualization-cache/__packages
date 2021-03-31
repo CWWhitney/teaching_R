@@ -7,3 +7,10 @@ gganimate
 dplyr
 gifski
 reshape2
+tidyverse
+tibble
+tidyr
+readr
+purrr
+stringr
+forcats

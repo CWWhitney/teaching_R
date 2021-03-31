@@ -80,31 +80,20 @@ incremental: true
 **R has several systems for making graphs**
 
 - **Base R** 
-- Create a barplot with the `plot()` function
+- Create a barplot with the `table()` and `barplot()` functions
 
 
 ```r
-plot(participants_data$academic_parents)
+parents <- table(participants_data$academic_parents)
+
+barplot(parents)
 ```
 
 <img src="Data_Visualization-figure/base_barplot-1.png" title="plot of chunk base_barplot" alt="plot of chunk base_barplot" width="20%" style="display: block; margin: auto;" />
 <small>Bar plot of number of observations of binary data related to academic parents</small>
 
-Creating a boxplot in base R
-========================================================
-incremental: true
 
-- Create a boxplot with the same `plot()` function
-
-
-```r
-plot(participants_data$academic_parents, participants_data$days_to_email_response)
-```
-
-<img src="Data_Visualization-figure/base_boxplot-1.png" title="plot of chunk base_boxplot" alt="plot of chunk base_boxplot" width="20%" style="display: block; margin: auto;" />
-<small>Boxplot of days to email response grouped by binary data related to academic parents</small>
-
-ggplot2: overview
+ggplot2: 'Grammar of Graphics' Overview
 ========================================================
 incremental: true
 right: 80%
