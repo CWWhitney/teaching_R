@@ -1,37 +1,16 @@
 ## Data Visualization
 
-```{r setup_data_vis, include=FALSE}
-
-library(ggplot2)
-library(gganimate)
-library(gifski)
-library(datasauRus)
-library(tidyverse)
-```
-
-<!-- List of Lecture RMD files to be compiled -->
-
-
-
-<img src="images/Circos.png" style="background:none; border:none; box-shadow:none;height="200"; width="200";"><img src="images/INRES_Logo.png" style="background:none; border:none; box-shadow:none;height="100"; width="100";"><img src="images/Uni_Bonn_Picture.png" style="background:none; border:none; box-shadow:none;height="200"; width="200";"><img src="images/ZEF_Logo.png" style="background:none; border:none; box-shadow:none;height="200"; width="200";">
-
-<div class="footer"></small>cory.whitney@uni-bonn.de </small></div>
-
-## Data visualization: getting stuck
-========================================================
+If you ever get stuck
 
 - **Open RStudio**
-![](images/rstudio-hex.png)
+![](images/rstudio-hex.png){width=1in}
 
 - type ‘?’ in R console with function, package or data name
 - Add “R” to a search with a copy of an error message
 
 - **Help > Cheatsheets > Data Visualization with ggplot2**
 
-## Data visualization: getting help
-========================================================
-
-![](images/rstudio-hex.png)
+For getting help
 
 - Many talented programmers 
 - Some scan the web and answer issues
@@ -39,26 +18,19 @@ library(tidyverse)
 ```{r, out.width='20%', fig.align='center', echo=FALSE}
 knitr::include_graphics('images/stack-overflow.png')
 ```
-</small>https://stackoverflow.com/ </small>
+https://stackoverflow.com
 
-
-```{r, out.width='50%', fig.align='center', echo=FALSE}
-knitr::include_graphics('images/hadley_wickham.png')
-```
+![](images/hadley_wickham.png'){width=1in}
 Hadley Wickham
-```{r, out.width='50%', fig.align='center', echo=FALSE}
-knitr::include_graphics('images/Yihui.png')
-```
-Yihui Xie
 
-<small>https://yihui.name/en/2017/08/so-gh-email/</small>
+![](images/Yihui.png'){width=1in}
+Yihui Xie https://yihui.name/en/2017/08/so-gh-email
 
-<small>https://rmarkdown.rstudio.com/ </small>
+https://rmarkdown.rstudio.com/
 
 ## Getting your data in R
-========================================================
 
-<small>Load data</small> <img src="images/R_logo.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";">
+![](images/R_logo.png){width=1in}
 
 - Load the data
 ```{r}
@@ -68,8 +40,6 @@ participants_data <- read.csv("participants_data.csv")
 - at or below the level of .RProj
 
 ## Creating a barplot in base R
-========================================================
-
 
 **R has several systems for making graphs**
 
@@ -81,13 +51,11 @@ parents <- table(participants_data$academic_parents)
 
 barplot(parents)
 ```
-<small>Bar plot of number of observations of binary data related to academic parents</small>
-
+Bar plot of number of observations of binary data related to academic parents
 
 ## ggplot2: 'Grammar of Graphics' Overview
-========================================================
 
-![](images/ggplot2.png)
+![](images/ggplot2.png){width=1in}
 
 
 **Many libraries and functions for graphs in R...**
@@ -102,11 +70,10 @@ barplot(parents)
 
 <http://vita.had.co.nz/papers/layered-grammar.pdf>
 
-
 ## ggplot2: names and email
-========================================================
 
-![](images/ggplot2.png)
+
+![](images/ggplot2.png){width=1in}
 
 
 **Example from your data**
@@ -116,14 +83,14 @@ library(ggplot2)
 ggplot(data = participants_data, aes(x=letters_in_first_name, y=days_to_email_response)) + 
   geom_point()
 ```
-<small>Scatterplot of days to email response as a function of the letters in your first name</small>
+Scatterplot of days to email response as a function of the letters in your first name
 
-<small>Want to understand how all the pieces fit together? See the R for Data Science book: http://r4ds.had.co.nz/</small>
+Want to understand how all the pieces fit together? See the R for Data Science book: http://r4ds.had.co.nz/
 
 ## ggplot2: add color and size
-========================================================
 
-![](images/ggplot2.png)
+
+![](images/ggplot2.png){width=1in}
 
 
 
@@ -131,14 +98,14 @@ ggplot(data = participants_data, aes(x=letters_in_first_name, y=days_to_email_re
 ggplot(data = participants_data, aes(x=letters_in_first_name, y=days_to_email_response, color=academic_parents, size=working_hours_per_day)) + 
   geom_point()
 ``` 
-<small>Scatterplot of letters in your first name as a function of days to email response with colors representing binary data related to academic parents and working hours per day as bubble sizes.</small>
+Scatterplot of letters in your first name as a function of days to email response with colors representing binary data related to academic parents and working hours per day as bubble sizes.
 
 **Make more graphs**
 
 ## ggplot2: iris data
-========================================================
 
-![](images/ggplot2.png)
+
+![](images/ggplot2.png){width=1in}
 
 
 
@@ -150,10 +117,10 @@ ggplot(data = participants_data, aes(x=letters_in_first_name, y=days_to_email_re
 ggplot(data=iris, aes(x=Sepal.Length, y=Petal.Length, color=Species, size=Petal.Width))+ 
   geom_point()
 ```
-<small>Scatterplot of iris petal length as a function of sepal length with colors representing iris species and petal width as bubble sizes.</small>
+Scatterplot of iris petal length as a function of sepal length with colors representing iris species and petal width as bubble sizes.
 
 ## ggplot2: diamonds price
-========================================================
+
 
 ```{r, out.width='70%', fig.align='right', echo=FALSE}
 knitr::include_graphics('images/ggplot2.png')
@@ -177,9 +144,9 @@ grid.arrange(plot1, plot2, ncol=2)
 ```
 
 ## ggplot2: diamonds color shape
-========================================================
 
-![](images/ggplot2.png)
+
+![](images/ggplot2.png){width=1in}
 
 
 
@@ -206,9 +173,9 @@ grid.arrange(plot3, plot4, ncol=2)
 
 
 ## ggplot2: set parameters
-========================================================
 
-![](images/ggplot2.png)
+
+![](images/ggplot2.png){width=1in}
 
 
 Set parameters manually with `I()` *Inhibit Interpretation / Conversion of Objects*
@@ -227,9 +194,9 @@ grid.arrange(plot5, plot6, ncol=2)
 
 
 ## ggplot2: geom options
-========================================================
 
-![](images/ggplot2.png)
+
+![](images/ggplot2.png){width=1in}
 
 
 With “geom” different types of plots can be defined e.g. points, line, boxplot, path, smooth. These can also be combined.
@@ -253,7 +220,7 @@ grid.arrange(p1, p2, p3, ncol=3)
 
 
 ## ggplot2: smooth function
-========================================================
+
 
 ```{r out.width='70%', fig.align='center', echo=FALSE}
 knitr::include_graphics('images/ggplot2.png')
@@ -289,9 +256,9 @@ grid.arrange(pl1, pl2, pl3, ncol=3)
 
 
 ## ggplot2: boxplots 
-========================================================
 
-![](images/ggplot2.png)
+
+![](images/ggplot2.png){width=1in}
 
 
 - Boxplots can be displayed through `geom_boxplot()`. 
@@ -302,12 +269,9 @@ geom_boxplot()
 ```
 
 ## ggplot2: jitter points 
-========================================================
 
 
-![](images/ggplot2.png)
-
-
+![](images/ggplot2.png){width=1in}
 
 
 - Jittered plots `geom_jitter()` show all points. 
@@ -319,12 +283,9 @@ geom_jitter()
 ```
 
 ## ggplot2: adding alpha 
-========================================================
-
-![](images/ggplot2.png)
 
 
-
+![](images/ggplot2.png){width=1in}
 
 In case of overplotting changing `alpha` can help.
 ```{r boxplot_jitter, fig.width=20, fig.height=5, fig.align='center'}
@@ -352,9 +313,9 @@ grid.arrange(pt1, pt2, pt3, ncol=3)
 
 
 ## ggplot2: geom_histogram
-========================================================
 
-![](images/ggplot2.png)
+
+![](images/ggplot2.png){width=1in}
 
 
 ```
@@ -385,10 +346,8 @@ grid.arrange(pt4, pt5, pt6, ncol=3)
 ~~ggplot2 histograms~~
 
 ## ggplot2: subset
-========================================================
 
-
-![](images/ggplot2.png)
+![](images/ggplot2.png){width=1in}
 
 Use factor to subset your data.
 ```
@@ -417,9 +376,9 @@ grid.arrange(plt1, plt2, ncol=2)
 ~~ggplot2 subset with smooth line~~
 
 ##  ggplot2: "slow ggplotting"
-========================================================
 
-![](images/r_ladies.jpg)
+
+![](images/r_ladies.jpg){width=1in}
 
 for `aes()` in `ggplot()`
 
@@ -430,12 +389,12 @@ for `aes()` in `ggplot()`
 - using base R functions and tidyverse functions.  For other packages, the :: style to call them
 - write out arguments (no shortcuts)  aes(x = gdppercap) not aes(gdppercap)
 
-<small><https://evamaerey.github.io/ggplot_flipbook/ggplot_flipbook_xaringan.html#1></small>
+<https://evamaerey.github.io/ggplot_flipbook/ggplot_flipbook_xaringan.html#1>
 
-# ggplot2: not slow example
-========================================================
+##  ggplot2: not slow example
 
-![](images/r_ladies.jpg)
+
+![](images/r_ladies.jpg){width=1in}
 
 
 ggplot code in non-slow fashion
@@ -446,11 +405,9 @@ ggplot(mtcars, aes(mpg, y = hp, col = gear)) +
   labs(x = "the x label", y = "the y label", col = "legend title")
 ```
 
-# ggplot2: slow ggplotting example
-========================================================
-incremental: true
-right: 80%
-![](images/r_ladies.jpg)
+## ggplot2: slow ggplotting example
+
+![](images/r_ladies.jpg){width=1in}
 
 'Slow ggplotting' version for the same plot
 ```{r slow_ggplotting_example, fig.width=20, fig.height=4, fig.align='center'}
@@ -465,10 +422,10 @@ right: 80%
   labs(title = "My Title")
 ```
 
-<small><https://evamaerey.github.io/ggplot_flipbook/ggplot_flipbook_xaringan.html#1></small>
+<https://evamaerey.github.io/ggplot_flipbook/ggplot_flipbook_xaringan.html#1>
 
-# ggplot2: geom_tile
-========================================================
+##  ggplot2: geom_tile
+
 
 ```{r, out.width='80%', fig.align='right', echo=FALSE}
 knitr::include_graphics('images/ggplot2.png')
@@ -500,8 +457,7 @@ y=Var2, fill=value)) +
 geom_tile()
 ```
 
-Export Figures
-========================================================
+## Export Figures
 
 
 ```{r fig.width=10, fig.height=10, fig.align='center', echo=FALSE}
@@ -524,8 +480,10 @@ dev.off()
 ```
 
 
-gganimate: datasauRus
-========================================================
+## gganimate
+
+The datasauRus
+
 
 
 ```{r, out.width='80%', fig.align='right', echo=FALSE}
@@ -548,13 +506,12 @@ ggplot(datasaurus_dozen, aes(x=x, y=y))+
   ease_aes('cubic-in-out')
 ```
 
-gganimate: Datasaurus Dozen
-========================================================
+## gganimate: Datasaurus Dozen
+
 
 ```{r, out.width='80%', fig.align='right', echo=FALSE}
 knitr::include_graphics('images/gganimate_logo.png')
 ```
-
 
 
 ```{r animate_datasaurus_dozen, fig.width=12, fig.height=10, fig.align='center', echo=FALSE}
@@ -569,8 +526,8 @@ ggplot(datasaurus_dozen, aes(x=x, y=y))+
   ease_aes('cubic-in-out')
 ```
   
-gganimate: diamonds carat
-========================================================
+## gganimate: diamonds carat
+
 
 ```{r, out.width='80%', fig.align='right', echo=FALSE}
 library(gifski)
@@ -591,14 +548,12 @@ ggplot(data = dsmall, aes(x = carat, y = price, color = color)) +
 ```
 
 
-Tasks for the afternoon: Basic
-========================================================
+## Tasks for the afternoon: Basic
+
 
 ```{r, out.width='80%', fig.align='center', echo=FALSE}
 knitr::include_graphics('images/ggplot2.png')
 ```
-
-
 
 **Test your new skills**
 
@@ -606,13 +561,11 @@ knitr::include_graphics('images/ggplot2.png')
 - Vary the sample and run the same analysis and plots
 - Save your most interesting figure and share it with us tomorrow
 
-# Tasks for the afternoon: Advanced
-========================================================
+##  Tasks for the afternoon: Advanced
 
 ```{r, out.width='80%', fig.align='center', echo=FALSE}
 knitr::include_graphics('images/ggplot2.png')
 ```
-
 
 **Your turn to perform**
 

@@ -1,80 +1,59 @@
 ---
-title: "Tutorial"
-output: learnr::tutorial
+title: "Introduction to R, from data wrangling to Rmarkdown"
+bibliography: packages.bib
+output: 
+  learnr::tutorial:
+    progressive: true
 runtime: shiny_prerendered
 ---
 
+![](images/INRES_Logo.png){width=1in}
+![](images/Uni_Bonn_Picture.png){width=1in}
+![](images/ZEF_Logo.png){width=1in}
+
 
 ```{r setup, include=FALSE}
-library(rmarkdown)
-library(learnr)
 knitr::opts_chunk$set(echo = FALSE)
+library(datasauRus)
+library(gganimate)
+library(ggplot2)
+library(gifski)
+library(learnr)
+library(rmarkdown)
+library(tidyverse)
+library(dplyr)
+library(magrittr)
 ```
 
 
-## Topic 1
-
-### Exercise 
-
-*Here's a simple exercise with an empty code chunk provided for entering the answer.*
-
-Write the R code required to add two plus two:
-
-```{r two-plus-two, exercise=TRUE}
-
+```{r, warning=FALSE, include = FALSE}
+#Automatically write R package citation entries to a .bib file
+knitr::write_bib(c(.packages(), 
+                   'datasauRus', 
+                   'gganimate',
+                   'ggplot2',
+                   'gifski',
+                   'ggplot2', 
+                   'learnr', 
+                   'rmarkdown', 
+                   'reshape2', 
+                   'tidyverse'), 'packages.bib')
 ```
 
-### Exercise with Code
-
-*Here's an exercise with some prepopulated code as well as `exercise.lines = 5` to provide a bit more initial room to work.*
-
-Now write a function that adds any two numbers and then call it:
-
-```{r add-function, exercise=TRUE, exercise.lines = 5}
-add <- function() {
-  
-}
+```{r child_Intro, child="Introduction.Rmd"}
 ```
 
-## Topic 2
-
-### Exercise with Hint
-
-*Here's an exercise where the chunk is pre-evaulated via the `exercise.eval` option (so the user can see the default output we'd like them to customize). We also add a "hint" to the correct solution via the chunk immediate below labeled `print-limit-hint`.*
-
-Modify the following code to limit the number of rows printed to 5:
-
-```{r print-limit, exercise=TRUE, exercise.eval=TRUE}
-mtcars
+```{r child_Wrangle1, child="Data_Wrangling_1.Rmd"}
 ```
 
-```{r print-limit-hint}
-head(mtcars)
+```{r child_Wrangle1, child="Data_Wrangling_2.Rmd"}
 ```
 
-### Quiz
-
-*You can include any number of single or multiple choice questions as a quiz. Use the `question` function to define a question and the `quiz` function for grouping multiple questions together.*
-
-Some questions to verify that you understand the purposes of various base and recommended R packages:
-
-```{r quiz}
-quiz(
-  question("Which package contains functions for installing other R packages?",
-    answer("base"),
-    answer("tools"),
-    answer("utils", correct = TRUE),
-    answer("codetools")
-  ),
-  question("Which of the R packages listed below are used to create plots?",
-    answer("lattice", correct = TRUE),
-    answer("tools"),
-    answer("stats"),
-    answer("grid", correct = TRUE)
-  )
-)
+```{r child_Vis, child="Data_Visualization.Rmd"}
 ```
 
-```{r child="Data_Visualization/Data_Visualization.Rmd"}
-```
 
+<!-- List of Lecture RMD files to be compiled -->
+
+
+## References
