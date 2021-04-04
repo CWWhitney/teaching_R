@@ -1,5 +1,13 @@
 ## Data Visualization
 
+![](images/wrangler.png){width=1in}
+![](images/tidyR.png){width=1in}
+![](images/dplyr.png){width=1.5in}
+
+The video below offers an overview of the content in covered in this section of the tutorial. Keep in mind that I did not yet have your data when I recorded this so the results of my scripts may be slightly different than yours. Feel free to watch the video and follow along or simply work through the tutorial. 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/J1JjUPzA1mA" frameborder="0" allowfullscreen></iframe>
+
 If you ever get stuck
 
 - **Open RStudio**
