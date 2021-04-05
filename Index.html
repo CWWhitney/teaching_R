@@ -652,7 +652,8 @@ ggplot(data = participants_data,
   geom_point()</code></pre>
 <script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.checker":"NULL"}</script>
 </div>
-<p><img src="Index_files/figure-html/vis-vis-ggplot_name_email-solution-1.png" width="624" /> Scatterplot of days to email response as a function of the letters in your first name.</p>
+<p><img src="Index_files/figure-html/vis-vis-ggplot_name_email-solution-1.png" width="624" /></p>
+<p>Scatterplot of days to email response as a function of the letters in your first name.</p>
 <p>Want to understand how all the pieces fit together? See the R for Data Science book: <a href="http://r4ds.had.co.nz/" class="uri">http://r4ds.had.co.nz/</a></p>
 </div>
 <div id="section-ggplot2-add-color-and-size" class="section level3">
@@ -729,7 +730,7 @@ plot1 &lt;- ggplot(data = diamonds,
                     alpha = 0.2)) +
           geom_point()</code></pre>
 </div>
-<strong>ggplot</strong> accepts formula arguments such as the <code>log</code> function.
+<p><strong>ggplot</strong> accepts formula arguments such as the <code>log</code> function.</p>
 <div class="tutorial-exercise" data-label="vis-ggplot_log" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code># Create a plot with the diamonds data 
 # of the log of carat (x) 
@@ -751,7 +752,7 @@ ggplot(data = diamonds,
 </div>
 <div id="section-ggplot2-colors-and-shapes" class="section level3">
 <h3>ggplot2: Colors and shapes</h3>
-<img src="images/ggplot2.png" style="width:1in" /> Using colors with ggplot <code>geom_point</code>. Here we use the <code>top_n</code> function to select the top few rows of the data (similar to what the <code>head</code> function does when we want to see the top few rows).
+<p><img src="images/ggplot2.png" style="width:1in" /> Using colors with ggplot <code>geom_point</code>. Here we use the <code>top_n</code> function to select the top few rows of the data (similar to what the <code>head</code> function does when we want to see the top few rows).</p>
 <div class="tutorial-exercise" data-label="vis-diamonds_color" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code># Create a smaller diamonds data set (top 100 rows), 
 # create a scatterplot with carat on the x-axis 
@@ -773,7 +774,7 @@ ggplot(data = dsmall, aes(x = carat,
                           color = color)) + 
   geom_point()</code></pre>
 </div>
-Using shapes with ggplot <code>geom_point</code>
+<p>Using shapes with ggplot <code>geom_point</code></p>
 <div class="tutorial-exercise" data-label="vis-diamonds_shape" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code># Create a smaller diamonds data set (top 40 rows), 
 # create a scatterplot with carat on the x-axis 
@@ -803,7 +804,7 @@ ggplot( data = dsmall,
 <div id="section-ggplot2-set-parameters" class="section level3">
 <h3>ggplot2: set parameters</h3>
 <p><img src="images/ggplot2.png" style="width:1in" /></p>
-Set parameters manually with <code>I()</code> <em>Inhibit Interpretation / Conversion of Objects</em>. The <code>I</code> function inhibits the conversion of character vectors to factors and the dropping of names, and ensures that matrices are inserted as single columns. Here it will allow us to use a single argument for coloring and providing opacity to the points.
+<p>Set parameters manually with <code>I()</code> <em>Inhibit Interpretation / Conversion of Objects</em>. The <code>I</code> function inhibits the conversion of character vectors to factors and the dropping of names, and ensures that matrices are inserted as single columns. Here it will allow us to use a single argument for coloring and providing opacity to the points.</p>
 <div class="tutorial-exercise" data-label="vis-ggplot-I" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code># Create a plot of the diamonds data 
 # with carat on the x-axis, price on the y-axis. 
@@ -829,7 +830,7 @@ ggplot(data = diamonds,
 <div id="section-ggplot2-geom-options" class="section level3">
 <h3>ggplot2: geom options</h3>
 <p><img src="images/ggplot2.png" style="width:1in" /></p>
-With <code>geom</code> different types of plots can be defined e.g. points, line, boxplot, path, smooth. Here we use <code>gemo-smooth</code> to look at smoothed conditional means.
+<p>With <code>geom</code> different types of plots can be defined e.g. points, line, boxplot, path, smooth. Here we use <code>gemo-smooth</code> to look at smoothed conditional means.</p>
 <div class="tutorial-exercise" data-label="vis-point-smooth" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code># Create a smaller data set of diamonds with 50 rows. 
 # Create a scatterplot and smoothed conditional 
@@ -886,7 +887,6 @@ ggplot(data = dsmall,
   geom_point()+ 
 geom_smooth(method = &#39;glm&#39;)</code></pre>
 </div>
-<p><del>ggplot2 lines and smoothing options</del></p>
 </div>
 <div id="section-ggplot2-boxplots" class="section level3">
 <h3>ggplot2: boxplots</h3>
@@ -937,11 +937,12 @@ geom_jitter()</code></pre>
 <div id="section-ggplot2-adding-alpha" class="section level3">
 <h3>ggplot2: adding alpha</h3>
 <p><img src="images/ggplot2.png" style="width:1in" /></p>
-<p>In case of overplotting changing <code>alpha</code> can help. <img src="Index_files/figure-html/vis-boxplot_jitter-1.png" width="1920" style="display: block; margin: auto;" /></p>
+<p>In case of overplotting changing <code>alpha</code> can help.</p>
+<p><img src="Index_files/figure-html/vis-boxplot_jitter-1.png" width="1920" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-ggplot2-geom_histogram" class="section level3">
 <h3>ggplot2: geom_histogram</h3>
-<img src="images/ggplot2.png" style="width:1in" /> Here we use <code>geom_histogram</code> to create a density plot.
+<p><img src="images/ggplot2.png" style="width:1in" /> Here we use <code>geom_histogram</code> to create a density plot.</p>
 <div class="tutorial-exercise" data-label="vis-geom-histograms" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code># Change the density plot so that the x-axis is carat 
 # and the color is the diamond color
@@ -976,11 +977,11 @@ ggplot(data = diamonds,
            alpha = I(0.3))) +
 geom_density()</code></pre>
 </div>
-<p><del>ggplot2 histograms</del></p>
+<p><strong>ggplot2 histograms</strong></p>
 </div>
 <div id="section-ggplot2-subset" class="section level3">
 <h3>ggplot2: subset</h3>
-<img src="images/ggplot2.png" style="width:1in" /> Use factor to subset the built in <code>mpg</code> data.
+<p><img src="images/ggplot2.png" style="width:1in" /> Use factor to subset the built in <code>mpg</code> data.</p>
 <div class="tutorial-exercise" data-label="ggplot_subset" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code># Create a plot of the mpg data with 
 # manufacturer as the color and a linear model &#39;lm&#39;
@@ -1001,7 +1002,6 @@ geom_smooth(method = &quot;glm&quot;)</code></pre>
 geom_point() +
 geom_smooth(method = &quot;lm&quot;)</code></pre>
 </div>
-<p><del>ggplot2 subset with smooth line</del></p>
 </div>
 <div id="section-ggplot2-slow-ggplotting" class="section level3">
 <h3>ggplot2: “slow ggplotting”</h3>
@@ -1018,7 +1018,7 @@ geom_smooth(method = &quot;lm&quot;)</code></pre>
 <div id="section-ggplot2-not-slow-example" class="section level3">
 <h3>ggplot2: not slow example</h3>
 <p><img src="images/r_ladies.jpg" style="width:1in" /></p>
-Add a title and axis labels in ggplot.
+<p>Add a title and axis labels in ggplot.</p>
 <div class="tutorial-exercise" data-label="ggplot_labels" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code># Change the title and labels as you see fit
 ggplot(mtcars, 
@@ -1036,7 +1036,7 @@ ggplot(mtcars,
 <div id="section-ggplot2-slow-ggplotting-example" class="section level3">
 <h3>ggplot2: slow ggplotting example</h3>
 <p><img src="images/r_ladies.jpg" style="width:1in" /></p>
-This is an example of a ‘slow ggplotting’ version for the same plot that we created above. This format can be easier to read later (more kind to other readers and future you) but can be more lanorious to write.
+<p>This is an example of a ‘slow ggplotting’ version for the same plot that we created above. This format can be easier to read later (more kind to other readers and future you) but can be more lanorious to write.</p>
 <div class="tutorial-exercise" data-label="slow_ggplotting_example" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code># Change the title and labels as you see fit  
 ggplot(data = mtcars) +
@@ -1104,7 +1104,7 @@ dev.off()</code></pre>
 </div>
 <div id="section-gganimate-datasaurus-dozen" class="section level3">
 <h3>gganimate: Datasaurus Dozen</h3>
-<img src="images/gganimate_logo.png" style="width:1in" /> - Use <code>datasauRus</code>, <code>ggplot2</code> and <code>gganimate</code> <span class="citation">Pedersen and Robinson (2020)</span>.
+<p><img src="images/gganimate_logo.png" style="width:1in" /> - Use <code>datasauRus</code>, <code>ggplot2</code> and <code>gganimate</code> <span class="citation">Pedersen and Robinson (2020)</span>.</p>
 <div class="tutorial-exercise" data-label="animate_datasaurus_dozen" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code># Change this animation as you like
 

@@ -5,9 +5,9 @@ account: cory-whitney
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 3907438
-bundleId: 4434506
+bundleId: 4434635
 url: https://cory-whitney.shinyapps.io/teaching_R/
-when: 1617650409.26394
+when: 1617652924.22565
 asMultiple: FALSE
 asStatic: FALSE
 ignoredFiles: Data_Visualization_Rpres|Data_Wrangling_Rpres
