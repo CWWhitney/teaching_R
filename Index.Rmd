@@ -4,13 +4,13 @@ bibliography: packages.bib
 output: 
   learnr::tutorial:
     progressive: true
+    allow_skip: true
 runtime: shiny_prerendered
 ---
 
 ![](images/INRES_Logo.png){width=1in}
 ![](images/Uni_Bonn_Picture.png){width=1in}
 ![](images/ZEF_Logo.png){width=1in}
-
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
@@ -19,10 +19,11 @@ library(gganimate)
 library(ggplot2)
 library(gifski)
 library(learnr)
+library(purrr)
 library(rmarkdown)
 library(tidyverse)
-library(dplyr)
-library(magrittr)
+  library(dplyr)
+  library(magrittr)
 ```
 
 
@@ -35,10 +36,13 @@ knitr::write_bib(c(.packages(),
                    'gifski',
                    'ggplot2', 
                    'learnr', 
+                   'purrr',
+                   'stats',
                    'rmarkdown', 
-                   'reshape2', 
                    'tidyverse'), 'packages.bib')
 ```
+
+<!-- List of Lecture RMD files to be compiled -->
 
 ```{r child_Intro, child="Introduction.Rmd"}
 ```
@@ -46,14 +50,10 @@ knitr::write_bib(c(.packages(),
 ```{r child_Wrangle1, child="Data_Wrangling_1.Rmd"}
 ```
 
-```{r child_Wrangle1, child="Data_Wrangling_2.Rmd"}
-```
+```{r child_Wrangle2, child="Data_Wrangling_2.Rmd"}
+``` 
 
 ```{r child_Vis, child="Data_Visualization.Rmd"}
 ```
-
-
-<!-- List of Lecture RMD files to be compiled -->
-
 
 ## References

@@ -6,16 +6,16 @@
 
 The video below gives a brief overview the content of this section of the tutorial. 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/_34VPVgCmQ0" frameborder="0" allowfullscreen></iframe>
+![](https://youtu.be/_34VPVgCmQ0)
 
-## Notes on R
+### Notes on R
 - Tidy code style using tidyR 
 - Clean and intuitive functions using dplyr
 - Concise code using magrittr 'Ceci n'est pas une pipe'
 
 ![](images/magrittr.png){width=1in}
 
-## Notes on R: About process
+### Notes on R: About process
 
 - "[...] writing R code is a hedonistically artistic, left-brained, paint-in-your-hair sort of experience [...] 
 - learn how to code the same way we learned how to catch salamanders as children – trial and error, flipping over rocks till we get a reward [...] 
@@ -25,12 +25,12 @@ The video below gives a brief overview the content of this section of the tutori
 ![](images/andrew_macdonald.png){width=1in}
 Andrew MacDonald
 
-## Notes on R: Focus
+### Notes on R: Focus
 
 ![](images/Focus.png){width=5in}
 
 
-## Notes on R: Keeping track of work
+### Notes on R: Keeping track of work
 
 ![](images/tidyR.png){width=1in}
 

@@ -13,58 +13,67 @@ If you ever get stuck
 - **Open RStudio**
 ![](images/rstudio-hex.png){width=1in}
 
-- type ‘?’ in R console with function, package or data name
-- Add “R” to a search with a copy of an error message
+- type '?' in R console with function, package or data name
+- Add 'R' to a search with a copy of an error message
 
-- **Help > Cheatsheets > Data Visualization with ggplot2**
+- In RStudio on your maching find **Help > Cheatsheets > Data Visualization with ggplot2**
 
 For getting help
 
 - Many talented programmers 
 - Some scan the web and answer issues
 
-```{r, out.width='20%', fig.align='center', echo=FALSE}
-knitr::include_graphics('images/stack-overflow.png')
-```
+![](images/stack-overflow.png){width=4in}
+
 https://stackoverflow.com
 
-![](images/hadley_wickham.png'){width=1in}
+![](images/hadley_wickham.png){width=1in}
+
 Hadley Wickham
 
-![](images/Yihui.png'){width=1in}
+![](images/Yihui.png){width=1in}
+
 Yihui Xie https://yihui.name/en/2017/08/so-gh-email
 
 https://rmarkdown.rstudio.com/
 
-## Getting your data in R
+### Getting your data in R
 
 ![](images/R_logo.png){width=1in}
 
-- Load the data
-```{r}
+- Load the data with the `read.csv` function
+```{r vis-load-data}
 participants_data <- read.csv("participants_data.csv")
 ```
+
 - Keep your data in the same folder structure as .RProj
 - at or below the level of .RProj
 
-## Creating a barplot in base R
+### Creating a barplot in base R
 
 **R has several systems for making graphs**
 
 - **Base R** 
 - Create a barplot with the `table()` and `barplot()` functions
 
-```{r base_barplot, out.width='20%', fig.align='center'}
-parents <- table(participants_data$academic_parents)
+```{r vis-base-barplot, exercise=TRUE}
+# Change the barplot by creating a table of gender 
+participants_barplot <- table(participants_data$academic_parents)
 
-barplot(parents)
+barplot(participants_barplot)
 ```
+
+```{r vis-base-barplot-solution}
+participants_barplot <- table(participants_data$gender)
+
+barplot(participants_barplot)
+```
+
 Bar plot of number of observations of binary data related to academic parents
 
-## ggplot2: 'Grammar of Graphics' Overview
+### ggplot2: 'Grammar of Graphics' Overview
 
 ![](images/ggplot2.png){width=1in}
-
 
 **Many libraries and functions for graphs in R...**
 
@@ -78,319 +87,417 @@ Bar plot of number of observations of binary data related to academic parents
 
 <http://vita.had.co.nz/papers/layered-grammar.pdf>
 
-## ggplot2: names and email
-
+### ggplot2: names and email
 
 ![](images/ggplot2.png){width=1in}
-
 
 **Example from your data**
 
-```{r ggplot_name_email, fig.height=2, fig.align='center'}
-library(ggplot2)
-ggplot(data = participants_data, aes(x=letters_in_first_name, y=days_to_email_response)) + 
+```{r vis-ggplot_name_email, exercise=TRUE}
+# Create a scatterplot of days to email response (y) 
+# as a function of the letters in your first name (x) 
+ggplot(data = participants_data, 
+       aes(x = age, 
+           y = number_of_siblings)) + 
   geom_point()
 ```
-Scatterplot of days to email response as a function of the letters in your first name
+
+```{r vis-vis-ggplot_name_email-solution}
+ggplot(data = participants_data, 
+       aes(x = letters_in_first_name, 
+           y = days_to_email_response)) + 
+  geom_point()
+```
+
+Scatterplot of days to email response as a function of the letters in your first name.
 
 Want to understand how all the pieces fit together? See the R for Data Science book: http://r4ds.had.co.nz/
 
-## ggplot2: add color and size
-
+### ggplot2: add color and size
 
 ![](images/ggplot2.png){width=1in}
 
-
-
-```{r ggplot_color_size, fig.height= 2, fig.align='center'} 
-ggplot(data = participants_data, aes(x=letters_in_first_name, y=days_to_email_response, color=academic_parents, size=working_hours_per_day)) + 
+```{r vis-ggplot_color_size, exercise=TRUE}
+# Create a scatterplot of days to email response (y) 
+# as a function of the letters in your first name (x) 
+# with colors representing binary data 
+# related to academic parents (color) 
+# and working hours per day as bubble sizes (size).
+ggplot(data = participants_data, 
+       aes(x = age, 
+           y = batch, 
+           color = gender, 
+           size = number_of_siblings)) + 
   geom_point()
-``` 
-Scatterplot of letters in your first name as a function of days to email response with colors representing binary data related to academic parents and working hours per day as bubble sizes.
+```
 
-**Make more graphs**
+```{r vis-ggplot_color_size-solution}
+ggplot(data = participants_data, 
+       aes(x = letters_in_first_name, 
+           y = days_to_email_response, 
+           color = academic_parents, 
+           size = working_hours_per_day)) + 
+  geom_point()
+```
 
-## ggplot2: iris data
+Scatterplot of days to email response (y) as a function of the letters in your first name (x) with colors representing binary data related to academic parents and working hours per day as bubble sizes.
 
+### ggplot2: iris data
 
 ![](images/ggplot2.png){width=1in}
-
-
-
-
 
 **Example from Anderson's iris data set**
 
-```{r ggplot_iris, fig.height= 2, fig.align='center'}
-ggplot(data=iris, aes(x=Sepal.Length, y=Petal.Length, color=Species, size=Petal.Width))+ 
+```{r vis-ggplot_iris, exercise=TRUE}
+# Create a scatterplot of iris petal length (y) 
+# as a function of sepal length (x) 
+# with colors representing iris species (color) 
+# and petal width as bubble sizes (size).
+ggplot(data = iris, 
+       aes(x = Sepal.Width, 
+           y = Sepal.Length, 
+           color = Species, 
+           size = Petal.Length))+ 
   geom_point()
 ```
+
+```{r vis-ggplot_iris-solution}
+ggplot(data = iris, 
+       aes(x = Sepal.Length, 
+           y = Petal.Length, 
+           color = Species, 
+           size = Petal.Width))+ 
+  geom_point()
+```
+
 Scatterplot of iris petal length as a function of sepal length with colors representing iris species and petal width as bubble sizes.
 
-## ggplot2: diamonds price
+### ggplot2: diamonds price
 
+![](images/ggplot2.png){width=1in}
 
-```{r, out.width='70%', fig.align='right', echo=FALSE}
-knitr::include_graphics('images/ggplot2.png')
+**ggplot** for plotting simple relationships with the `diamonds` data set. Adjust the level of opacity of the points with the `alpha` argument.
+
+```{r vis-ggplot_carat_price, exercise=TRUE} 
+# Create a plot with the diamonds data 
+# of the carat (x) and the price (y)
+plot1 <- ggplot(data = diamonds, 
+                aes(x = cut, y = clarity, 
+                    alpha = 0.2)) +
+          geom_point()
 ```
 
+```{r vis-ggplot_carat_price-solution} 
+plot1 <- ggplot(data = diamonds, 
+                aes(x = carat, 
+                    y = price, 
+                    alpha = 0.2)) +
+          geom_point()
+```
 
-**ggplot** accepts formula arguments such as log
-```
-ggplot(data = diamonds, aes(x=carat, y=price, alpha = 0.2)) + geom_point()
-```
-```
-ggplot(data = diamonds, aes(x=log(carat), y= log(price), alpha = 0.2)) + geom_point()
-```
-```{r ggplot_carat_price, fig.width=20, fig.height=5, fig.align='center', echo=FALSE} 
-plot1 <- ggplot(data = diamonds, aes(x=carat, y=price, alpha = 0.2)) +
+**ggplot** accepts formula arguments such as the `log` function. 
+
+```{r vis-ggplot_log, exercise=TRUE} 
+# Create a plot with the diamonds data 
+# of the log of carat (x) 
+# and the log of price (y)
+ggplot(data = diamonds,
+       aes(x = log(cut),
+           y = log(clarity),
+           alpha = 0.2)) +
   geom_point()
-plot2 <- ggplot(data = diamonds, aes(x=log(carat), y= log(price), alpha = 0.2)) + 
+```
+
+```{r vis-ggplot_log-solution} 
+ggplot(data = diamonds,
+       aes(x = log(carat),
+           y = log(price),
+           alpha = 0.2)) + 
   geom_point()
-library(gridExtra)
-grid.arrange(plot1, plot2, ncol=2)
 ```
 
-## ggplot2: diamonds color shape
+### ggplot2: Colors and shapes
 
 
 ![](images/ggplot2.png){width=1in}
+Using colors with ggplot `geom_point`. Here we use the `top_n` function to select the top few rows of the data (similar to what the `head` function does when we want to see the top few rows).
 
+```{r vis-diamonds_color, exercise=TRUE}
+# Create a smaller diamonds data set (top 100 rows), 
+# create a scatterplot with carat on the x-axis 
+# and price on the y-xis and 
+# with the color of the diamond as the color of the points. 
+dsmall <- top_n(diamonds, n = 10)
 
-
-```{r diamonds_color, fig.show='hide'}
-library(dplyr)
-dsmall <- top_n(diamonds, n=100)
-#Plot with different colors for color
-ggplot(data = dsmall, aes(x=carat, y=price, color = color))+ geom_point()
-#Plot with different shapes for cut 
-ggplot( data = dsmall, aes(carat, price, shape = cut)) + geom_point()
+ggplot(data = dsmall, aes(x = depth, 
+                          y = price, 
+                          color = cut)) + 
+  geom_point()
 ```
 
-```{r ggplot_diamonds_color_shape, fig.height=2, fig.align='center', echo=FALSE} 
-library(dplyr)
-#Create a sample
-dsmall <- dsmall <- top_n(diamonds, n=100)
-#Plot with different colors for color
-plot3<-ggplot(data = dsmall, aes(x=carat, y=price, color = color))+ geom_point()
-#Plot with different shapes for cut 
-plot4<-ggplot( data = dsmall, aes(carat, price, shape = cut)) + geom_point()
-library(gridExtra)
-grid.arrange(plot3, plot4, ncol=2)
+```{r vis-diamonds_color-solution}
+dsmall <- top_n(diamonds, n = 100)
+
+ggplot(data = dsmall, aes(x = carat, 
+                          y = price, 
+                          color = color)) + 
+  geom_point()
 ```
 
+Using shapes with ggplot `geom_point`
 
-## ggplot2: set parameters
+```{r vis-diamonds_shape, exercise=TRUE}
+# Create a smaller diamonds data set (top 40 rows), 
+# create a scatterplot with carat on the x-axis 
+# and price on the y-xis and 
+# with the cut of the diamond as the shapes for the points. 
+dsmall <- top_n(diamonds, 
+                n = 10)
 
+ggplot( data = dsmall, 
+        aes(x = carat, 
+            y = depth, 
+            shape = clarity)) + 
+  geom_point()
+```
+
+```{r vis-diamonds_shape-solution}
+dsmall <- top_n(diamonds, n = 40)
+
+ggplot( data = dsmall, 
+        aes(x = carat, 
+            y = price, 
+            shape = cut)) + 
+  geom_point()
+```
+
+Note that using shapes for an ordinal variable (call `str(diamonds)` to see that cut is an ordinal factor) is not advised. It works but there are probably better ways to do this.
+
+### ggplot2: set parameters
 
 ![](images/ggplot2.png){width=1in}
 
+Set parameters manually with `I()` *Inhibit Interpretation / Conversion of Objects*. The `I` function inhibits the conversion of character vectors to factors and the dropping of names, and ensures that matrices are inserted as single columns. Here it will allow us to use a single argument for coloring and providing opacity to the points.
 
-Set parameters manually with `I()` *Inhibit Interpretation / Conversion of Objects*
-```{r, fig.show = 'hide'}
-ggplot(data = diamonds, aes(carat, price, alpha=I(0.1), color=I("blue"))) + geom_point()
-
-ggplot(data = diamonds, aes(carat, price, alpha=I(0.4), color=I("green"))) + geom_point()
+```{r vis-ggplot-I, exercise=TRUE}
+# Create a plot of the diamonds data 
+# with carat on the x-axis, price on the y-axis. 
+# Use the inhibit function to set the alpha to 0.1 
+# and color to blue.
+ggplot(data = diamonds, 
+       aes(x = depth, 
+           y = price, 
+           alpha = I(0.4), 
+           color = I("green"))) + 
+  geom_point()
 ```
 
-```{r ggplot_set, fig.width=20, fig.height=2, fig.align='center', echo=FALSE} 
-plot5 <- ggplot(data = diamonds, aes(carat, price, alpha=I(0.1), color=I("blue"))) + geom_point()
-plot6<-ggplot(data = diamonds, aes(carat, price, alpha=I(0.4), color=I("green"))) + geom_point()
-library(gridExtra)
-grid.arrange(plot5, plot6, ncol=2)
+```{r vis-ggplot-I-solution}
+ggplot(data = diamonds, 
+       aes(x = carat, 
+           y = price, 
+           alpha = I(0.1), 
+           color = I("blue"))) + 
+  geom_point()
 ```
 
-
-## ggplot2: geom options
-
+### ggplot2: geom options
 
 ![](images/ggplot2.png){width=1in}
 
+With `geom` different types of plots can be defined e.g. points, line, boxplot, path, smooth. Here we use `gemo-smooth` to look at smoothed conditional means.
 
-With “geom” different types of plots can be defined e.g. points, line, boxplot, path, smooth. These can also be combined.
-```
-ggplot(data=dsmall, aes(x=carat, y=price))+
+```{r vis-point-smooth, exercise=TRUE}
+# Create a smaller data set of diamonds with 50 rows. 
+# Create a scatterplot and smoothed conditional 
+# means overlay with carat on the x-axis 
+# and price on the y-axis.
+dsmall <- top_n(diamonds, 
+                n = 10)
+
+ggplot(data = dsmall, 
+       aes(x = depth, 
+           y = price))+
 geom_point()+
 geom_smooth()
 ```
-```{r ggplot_geom, fig.width=20, fig.height=4, fig.align='center', echo=FALSE} 
-#Create a sample
-p1 <- ggplot(data=dsmall, aes(x=carat, y=price))+
-geom_point()
-p2 <- ggplot(data=dsmall, aes(x=carat, y=price))+
+
+```{r vis-point-smooth-solution}
+dsmall <- top_n(diamonds, 
+                n = 50)
+
+ggplot(data = dsmall, 
+       aes(x = carat, 
+           y = price))+
+geom_point()+
 geom_smooth()
-p3 <- ggplot(data=dsmall, aes(x=carat, y=price))+
-geom_smooth()+
-geom_point()
-library(gridExtra)
-grid.arrange(p1, p2, p3, ncol=3)
 ```
 
+### ggplot2: smooth function
 
-## ggplot2: smooth function
-
-
-```{r out.width='70%', fig.align='center', echo=FALSE}
-knitr::include_graphics('images/ggplot2.png')
-```
-
+![]('images/ggplot2.png){width=1in}
 
 `geom_smooth()` selects a smoothing method based on the data. Use `method =` to specify your preferred smoothing method.
-```
-ggplot(data=dsmall, aes(x=carat, y=price))+ geom_point()+ geom_smooth()
 
-ggplot(data=diamonds, aes(x=carat, y=price))+ geom_point()+ 
+```{r vis-smooth, exercise=TRUE}
+# Create a smaller data set of diamonds with 50 rows. 
+# Create a scatterplot and smoothed conditional 
+# means overlay with carat on the x-axis 
+# and price on the y-axis.
+# Use 'glm' as the option for the smoothing
+dsmall <- top_n(diamonds, 
+                n = 10)
+
+ggplot(data = dsmall, 
+       aes(x = depth, 
+           y = price))+ 
+  geom_point()+ 
 geom_smooth(method = 'glm')
 ```
 
-```{r ggplot_smooth, fig.width=20, fig.height=3, fig.align='center', echo=FALSE} 
-#Create a sample
-pl1 <- ggplot(data=dsmall, aes(x=carat, y=price))+
-geom_point()+
-geom_smooth()
+```{r vis-smooth-solution}
+dsmall <- top_n(diamonds, 
+                n = 50)
 
-pl2 <- ggplot(data=diamonds, aes(x=carat, y=price))+
-geom_point()+
-geom_smooth()
-
-pl3 <- ggplot(data=diamonds, aes(x=carat, y=price))+
-geom_point()+
+ggplot(data = dsmall, 
+       aes(x = carat, 
+           y = price))+ 
+  geom_point()+ 
 geom_smooth(method = 'glm')
-
-library(gridExtra)
-grid.arrange(pl1, pl2, pl3, ncol=3)
 ```
-~~ggplot2 lines and smoothing options~~
 
-
-## ggplot2: boxplots 
-
+### ggplot2: boxplots 
 
 ![](images/ggplot2.png){width=1in}
-
 
 - Boxplots can be displayed through `geom_boxplot()`. 
 
-```{r ggplot_boxplot, fig.width=20, fig.height=7, fig.align='center'}
-ggplot(data=diamonds, aes(x=color, y=price/carat)) + 
+```{r vis-ggplot_boxplot, exercise=TRUE}
+# Change the boxplot so that the x-axis is cut and
+#  the y-axis is price divided by carat
+ggplot(data = diamonds, 
+       aes(x = color, 
+           y = carat)) + 
 geom_boxplot()
 ```
 
-## ggplot2: jitter points 
+```{r vis-ggplot_boxplot-solution}
+ggplot(data = diamonds, 
+       aes(x = cut, 
+           y = price/carat)) + 
+geom_boxplot()
+```
 
+### ggplot2: jitter points 
 
 ![](images/ggplot2.png){width=1in}
 
-
 - Jittered plots `geom_jitter()` show all points. 
 
-```{r jitter_plot, fig.width=20, fig.height=5, fig.align='center'}
-ggplot(data=diamonds, aes(x=color, y=price/carat)) + 
+```{r vis-jitter_plot, exercise=TRUE}
+# Change the jittered boxplot so that the x-axis is cut and
+#  the y-axis is price divided by carat
+ggplot(data = diamonds, 
+       aes(x = color, 
+           y = carat)) + 
 geom_boxplot()+ 
 geom_jitter()
 ```
 
-## ggplot2: adding alpha 
+```{r vis-jitter_plot-solution}
+ggplot(data = diamonds, 
+       aes(x = color, 
+           y = price/carat)) + 
+geom_boxplot()+ 
+geom_jitter()
+```
 
+### ggplot2: adding alpha 
 
 ![](images/ggplot2.png){width=1in}
 
 In case of overplotting changing `alpha` can help.
-```{r boxplot_jitter, fig.width=20, fig.height=5, fig.align='center'}
-ggplot(data=diamonds, aes(x=color, y=price/carat, alpha=I(0.1))) + 
+
+```{r vis-boxplot_jitter, fig.width=20, fig.height=5, fig.align='center'}
+ggplot(data = diamonds, aes(x = color, y = price/carat, alpha = I(0.1))) + 
 geom_boxplot()+ 
 geom_jitter()
 ```
 
-```{r ggplot_box_jitter, fig.width=20, fig.height=5, fig.align='center', echo=FALSE} 
-
-pt1 <- ggplot(data=diamonds, aes(x=color, y=price/carat)) + 
-geom_boxplot()
-
-pt2 <- ggplot(data=diamonds, aes(x=color, y=price/carat)) + 
-geom_boxplot()+ 
-geom_jitter()
-
-pt3 <- ggplot(data=diamonds, aes(x=color, y=price/carat, alpha=I(0.1))) + 
-geom_boxplot()+ 
-geom_jitter()
-
-library(gridExtra)
-grid.arrange(pt1, pt2, pt3, ncol=3)
-```
-
-
-## ggplot2: geom_histogram
-
+### ggplot2: geom_histogram
 
 ![](images/ggplot2.png){width=1in}
+Here we use `geom_histogram` to create a density plot.
 
-
-```
-ggplot(data = diamonds, aes(x=carat)) +
-geom_density()
-
-ggplot(data = diamonds, aes(x=carat, color = color)) +
-geom_density()
-
-ggplot(data = diamonds, aes(x=carat, color = color, alpha=I(0.3))) +
+```{r vis-geom-histograms, exercise=TRUE}
+# Change the density plot so that the x-axis is carat 
+# and the color is the diamond color
+ggplot(data = diamonds, 
+       aes(x = carat)) +
 geom_density()
 ```
 
-```{r ggplot_histograms, fig.width=20, fig.height=2, fig.align='center', echo=FALSE} 
-
-pt4 <- ggplot(data = diamonds, aes(x=carat)) +
+```{r vis-geom-histograms-solution}
+ggplot(data = diamonds, 
+       aes(x = carat, 
+           color = color)) +
 geom_density()
-
-pt5 <- ggplot(data = diamonds, aes(x=carat, fill = color)) +
-geom_density()
-
-pt6 <- ggplot(data = diamonds, aes(x=carat, fill = color, alpha=I(0.3))) +
-geom_density()
-
-library(gridExtra)
-grid.arrange(pt4, pt5, pt6, ncol=3)
 ```
-~~ggplot2 histograms~~
 
-## ggplot2: subset
+```{r vis-geom-histogram-alpha, exercise=TRUE}
+# Change the density plot so that the x-axis is carat 
+# the color is the diamond color
+# and hte alpha is set to 0.3 using the inhibit function
+ggplot(data = diamonds, 
+       aes(x = price, 
+           color = cut, 
+           alpha = I(0.5))) +
+geom_density()
+```
+
+```{r vis-geom-histogram-alpha-solution}
+# Change the density plot so that the x-axis is carat 
+# and the color is the diamond color
+ggplot(data = diamonds, 
+       aes(x = carat, 
+           color = color, 
+           alpha = I(0.3))) +
+geom_density()
+```
+
+**ggplot2 histograms**
+
+### ggplot2: subset
 
 ![](images/ggplot2.png){width=1in}
+Use factor to subset the built in `mpg` data.
 
-Use factor to subset your data.
+```{r ggplot_subset, exercise=TRUE}
+# Create a plot of the mpg data with 
+# manufacturer as the color and a linear model 'lm'
+# as the smooth method
+ggplot(data = mpg, 
+       aes(x = displ, 
+           y = hwy,  
+           color = class)) + 
+geom_point() +
+geom_smooth(method = "glm")
 ```
-ggplot(data = mpg, aes(x=displ, y=hwy,  color = cyl))+ 
-geom_point()+
-geom_smooth(method="lm")
 
-ggplot(data = mpg, aes(x=displ, y=hwy,  color = factor(cyl)))+ 
-geom_point()+
-geom_smooth(method="lm")
+```{r ggplot_subset-solution}
+ggplot(data = mpg, 
+       aes(x = displ, 
+           y = hwy,  
+           color = manufacturer)) + 
+geom_point() +
+geom_smooth(method = "lm")
 ```
 
-```{r ggplot_subset, fig.width=20, fig.height=5, fig.align='center', echo=FALSE} 
-
-plt1 <- ggplot(data = mpg, aes(x=displ, y=hwy,  color = cyl))+ 
-geom_point()+
-geom_smooth(method="lm")
-
-plt2 <- ggplot(data = mpg, aes(x=displ, y=hwy,  color = factor(cyl)))+ 
-geom_point()+
-geom_smooth(method="lm")
-
-library(gridExtra)
-grid.arrange(plt1, plt2, ncol=2)
-```
-~~ggplot2 subset with smooth line~~
-
-##  ggplot2: "slow ggplotting"
-
+###  ggplot2: "slow ggplotting"
 
 ![](images/r_ladies.jpg){width=1in}
 
 for `aes()` in `ggplot()`
-
-
 
 - using fewer functions; example - using labs() to add a title instead of ggtitle()
 - using functions multiple times; example aes(x = var1) + aes(y = var2) rather than aes(x = var1, y = var2)
@@ -399,27 +506,34 @@ for `aes()` in `ggplot()`
 
 <https://evamaerey.github.io/ggplot_flipbook/ggplot_flipbook_xaringan.html#1>
 
-##  ggplot2: not slow example
-
+###  ggplot2: not slow example
 
 ![](images/r_ladies.jpg){width=1in}
 
+Add a title and axis labels in ggplot.
 
-ggplot code in non-slow fashion
-```{r ggplot_not_slow, fig.width=20, fig.height=5, fig.align='center'}
-ggplot(mtcars, aes(mpg, y = hp, col = gear)) +
+```{r ggplot_labels, exercise=TRUE} 
+# Change the title and labels as you see fit
+ggplot(mtcars, 
+       aes(mpg, 
+           y = hp, 
+           col = gear)) +
   geom_point() +
   ggtitle("My Title") +
-  labs(x = "the x label", y = "the y label", col = "legend title")
+  labs(x = "the x label", 
+       y = "the y label", 
+       col = "legend title")
 ```
 
-## ggplot2: slow ggplotting example
+### ggplot2: slow ggplotting example
 
 ![](images/r_ladies.jpg){width=1in}
 
-'Slow ggplotting' version for the same plot
-```{r slow_ggplotting_example, fig.width=20, fig.height=4, fig.align='center'}
-  ggplot(data = mtcars) +
+This is an example of a 'slow ggplotting' version for the same plot that we created above. This format can be easier to read later (more kind to other readers and future you) but can be more lanorious to write.
+
+```{r slow_ggplotting_example, exercise=TRUE} 
+# Change the title and labels as you see fit  
+ggplot(data = mtcars) +
   aes(x = mpg) +
   labs(x = "the x label") +
   aes(y = hp) +
@@ -432,46 +546,36 @@ ggplot(mtcars, aes(mpg, y = hp, col = gear)) +
 
 <https://evamaerey.github.io/ggplot_flipbook/ggplot_flipbook_xaringan.html#1>
 
-##  ggplot2: geom_tile
+###  ggplot2: geom_tile
 
+![](images/ggplot2.png){width=1in}
 
-```{r, out.width='80%', fig.align='right', echo=FALSE}
-knitr::include_graphics('images/ggplot2.png')
-```
+- Use `dplyr`, and `ggplot2`
 
+Here we use the `as.data.frame.table` function from base R to create a melted correlation matrix. 
 
-- Use `dplyr`, `ggplot2` and `reshape2` 
-
-```
-part_data<-select_if(participants_data, is.numeric)
-
-cormat <- round(cor(part_data), 1)
-melted_cormat <- melt(cormat)
-
-ggplot(data = melted_cormat, aes(x=Var1, 
-y=Var2, fill=value)) + 
+```{r geom_melted_cormat, exercise=TRUE}
+# subset the data to numeric only with select_if
+part_data <- select_if(participants_data, 
+                       is.numeric)
+# use 'cor' to perform pearson correlation
+# use 'round' to reduce correlation 
+# results to 1 decimal
+cormat <- round(cor(part_data), 
+                digits = 1)
+# use 'as.data.frame.table' to build a table
+# with correlation values
+melted_cormat <- as.data.frame.table(cormat, 
+                                     responseName = "value")
+# plot the result with 'geom-tile'
+ggplot(data = melted_cormat, 
+       aes(x = Var1,
+           y = Var2,
+           fill = value)) + 
 geom_tile()
 ```
 
-```{r geom_melted_cormat, fig.width=12, fig.height=2, fig.align='center', echo=FALSE}
-part_data<-select_if(participants_data, is.numeric)
-
-library(reshape2)
-cormat <- round(cor(part_data), 1)
-melted_cormat <- melt(cormat)
-
-ggplot(data = melted_cormat, aes(x=Var1, 
-y=Var2, fill=value)) + 
-geom_tile()
-```
-
-## Export Figures
-
-
-```{r fig.width=10, fig.height=10, fig.align='center', echo=FALSE}
-knitr::include_graphics('images/cortile.png')
-```
-
+### Export Figures
 
 ```
 png(file = "cortile.png", width = 7, height = 6, units = "in", res = 300)
@@ -483,85 +587,65 @@ dev.off()
 
 - Check with journal about size, resolution etc.
 
-```{r}
-?pdf
-```
+Another output option is pdf. Query the help file with`?pdf`.
 
-
-## gganimate
+### gganimate
 
 The datasauRus
 
+![](images/gganimate_logo.png){width=1in}
 
-
-```{r, out.width='80%', fig.align='right', echo=FALSE}
-knitr::include_graphics('images/gganimate_logo.png')
-```
-
-
-- Use `datasauRus`, `ggplot2` and `gganimate` 
-
-```{r, datasaurus}
-library(gganimate)
-library(datasauRus)
-```
+- Use `datasauRus`, `ggplot2` and `gganimate` [@R-datasaurus, @R-ggplot2, @R-gganimate] 
 
 ```{r, datasaurus2}
-ggplot(datasaurus_dozen, aes(x=x, y=y))+
+ggplot(datasaurus_dozen, aes(x = x, y = y))+
   geom_point()+
   theme_minimal() +
   transition_states(dataset, 3, 1) + 
   ease_aes('cubic-in-out')
 ```
 
-## gganimate: Datasaurus Dozen
+### gganimate: Datasaurus Dozen
 
+![](images/gganimate_logo.png){width=1in}
+- Use `datasauRus`, `ggplot2` and `gganimate` [@R-datasauRus, @R-ggplot2, @R-gganimate].
 
-```{r, out.width='80%', fig.align='right', echo=FALSE}
-knitr::include_graphics('images/gganimate_logo.png')
-```
+```{r animate_datasaurus_dozen, exercise=TRUE}
+# Change this animation as you like
 
-
-```{r animate_datasaurus_dozen, fig.width=12, fig.height=10, fig.align='center', echo=FALSE}
-library(datasauRus)
-library(ggplot2)
-library(gganimate)
-
-ggplot(datasaurus_dozen, aes(x=x, y=y))+
+ggplot(datasaurus_dozen, 
+       aes(x = x,
+           y = y))+
   geom_point()+
   theme_minimal() +
   transition_states(dataset, 3, 1) + 
   ease_aes('cubic-in-out')
 ```
   
-## gganimate: diamonds carat
+### gganimate: diamonds carat
 
+![](images/gganimate_logo.png){width=1in}
 
-```{r, out.width='80%', fig.align='right', echo=FALSE}
-library(gifski)
-library(gganimate)
-knitr::include_graphics('images/gganimate_logo.png')
-```
+- Use `tidyverse`, `ggplot2` and `gganimate` [@R-tidyverse, @R-ggplot2, @R-gganimate].
 
+```{r animate_diamonds, exercise=TRUE}
+# Change this animation as you like
+dsmall <- top_n(diamonds, 
+                n = 10)
 
-
-- Use `tidyverse`, `ggplot2` and `gganimate`
-
-```{r animate_diamonds, fig.width=12, fig.height=4, fig.align='center'}
-ggplot(data = dsmall, aes(x = carat, y = price, color = color)) + 
+ggplot(data = dsmall, 
+       aes(x = carat, 
+           y = price, 
+           color = color)) + 
   geom_line() +
   transition_reveal(carat) + 
   ease_aes("linear") +
-  labs(title='Diamond carat: {frame_along}')
+  labs(title = 'Diamond carat: {frame_along}')
 ```
 
+### Tasks for the afternoon: Basic
 
-## Tasks for the afternoon: Basic
-
-
-```{r, out.width='80%', fig.align='center', echo=FALSE}
-knitr::include_graphics('images/ggplot2.png')
-```
+![](images/ggplot2.png){width=1in}
 
 **Test your new skills**
 
@@ -569,11 +653,9 @@ knitr::include_graphics('images/ggplot2.png')
 - Vary the sample and run the same analysis and plots
 - Save your most interesting figure and share it with us tomorrow
 
-##  Tasks for the afternoon: Advanced
+###  Tasks for the afternoon: Advanced
 
-```{r, out.width='80%', fig.align='center', echo=FALSE}
-knitr::include_graphics('images/ggplot2.png')
-```
+![](images/ggplot2.png){width=1in}
 
 **Your turn to perform**
 
