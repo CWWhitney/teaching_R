@@ -1,0 +1,51 @@
+## Data Wrangling Part 1
+
+![](images/wrangler.png){width=1in}
+![](images/tidyR.png){width=1in}
+![](images/dplyr.png){width=1.5in}
+
+The video below gives a brief overview the content of this section of the tutorial. 
+
+![](https://youtu.be/_34VPVgCmQ0)
+
+### Notes on R
+- Tidy code style using tidyR 
+- Clean and intuitive functions using dplyr
+- Concise code using magrittr 'Ceci n'est pas une pipe'
+
+![](images/magrittr.png){width=1in}
+
+### Notes on R: About process
+
+- "[...] writing R code is a hedonistically artistic, left-brained, paint-in-your-hair sort of experience [...] 
+- learn how to code the same way we learned how to catch salamanders as children – trial and error, flipping over rocks till we get a reward [...] 
+- once the ecstasy of creation has swept over us, we awake late the next morning to find our canvas covered with 2100 lines of R code [...] 
+- Heads throbbing with a statistical absinthe hangover, we trudge through it slowly over days, trying to figure out what we did."
+
+![](images/andrew_macdonald.png){width=1in}
+Andrew MacDonald
+
+### Notes on R: Focus
+
+![](images/Focus.png){width=5in}
+
+
+### Notes on R: Keeping track of work
+
+![](images/tidyR.png){width=1in}
+
+Keep it tidy
+
+Use ‘#’ to annotate and not run
+
+If not Rmarkdown then at least use ‘----’ or ‘####’ 
+
+#Section 1----
+
+#Section 2####
+
+#Section 3####
+
+TOC in upper right console
+
+http://style.tidyverse.org/

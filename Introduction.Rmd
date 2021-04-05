@@ -1,0 +1,7 @@
+## Introduction
+
+Welcome to this interactive tutorial on the R programming language. This tutorial runs in the `learnr` [@R-learnr] library and provides a shiny interface [@R-shiny].  You may follow along by simply working in this browser. You may find the content and learning a bit more useful if you work on your own machine as well. This will require loading the necessary software. For this tutorial we will use functions from `tidyverse` [@R-tidyverse] libraries including `ggplot2` [@R-ggplot2], `dplyr` [@R-dplyr] and `magrittr` [@R-magrittr] among others in the [R programming language](https://www.r-project.org/) [@R-base].
+
+If you are also planning to run this on your own machine then you should start by installing and running [R](https://www.r-project.org/) and [RStudio](https://rstudio.com/). This video walks you through that process. 
+
+![](https://youtu.be/J1JjUPzA1mA)

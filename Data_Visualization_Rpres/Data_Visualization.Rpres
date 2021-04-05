@@ -525,7 +525,7 @@ knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
 
 ***
 
-- Use `dplyr`, `ggplot2` and `reshape2` 
+- Use `dplyr`, and `ggplot2` 
 
 ```
 part_data<-select_if(participants_data, is.numeric)
@@ -541,7 +541,6 @@ geom_tile()
 ```{r geom_melted_cormat, fig.width=12, fig.height=2, fig.align='center', echo=FALSE}
 part_data<-select_if(participants_data, is.numeric)
 
-library(reshape2)
 cormat <- round(cor(part_data), 1)
 melted_cormat <- melt(cormat)
 

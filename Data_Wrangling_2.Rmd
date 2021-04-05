@@ -1,0 +1,468 @@
+## Data Wrangling Part 2
+
+![](images/wrangler.png){width=1in}
+![](images/tidyR.png){width=1in}
+![](images/dplyr.png){width=1.5in}
+
+The video below offers an overview of the content in covered in this section of the tutorial. Keep in mind that I did not yet have your data when I recorded this so the results of my scripts may be slightly different than yours. Feel free to watch the video and follow along or simply work through the tutorial. 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/A6H12OW03IE" frameborder="0" allowfullscreen></iframe>
+
+
+### Notes on tidy R
+
+![](images/tidyR.png){width=1in}
+
+Keep it tidy
+
+If you are following this tutorial by running the code on your local machine (recomended) then it may make sense to check your R version by running the following code in the R console: `version`. At the time of writing this I am using R version 4.0.4 'Lost Library Book' [@R-base]. if you do not have this version or something newer it may make sense to update so that you can follow long.
+
+The easiest way to get libraries for today is to install the whole tidyverse [@R-tidyverse] by typing `install.packages("tidyverse)` in the R console and then running `library(tidyverse)`:
+
+http://style.tidyverse.org/
+
+### Notes on tidy R browseVignettes
+
+![](images/tidyR.png){width=1in}
+
+Keep it tidy
+
+Get a lot of examples and details about the tidyverse by running the following code in the R console: `browseVignettes(package = "tidyverse")`. Nearly every R library has a collection of vignettes that walk through examples and show, often in explicit detail, the authors intended use of the library.
+ 
+### The tidy tools manifesto
+
+In this tutorial we will be following the basic ideas behind the tidyverse. 
+
+![](images/tidy_paper.jpg){width=5in}
+
+Read the [full tidyverse manifesto here](http://style.tidyverse.org/).
+
+### Notes on R: tidyR process
+
+![](images/tidyR.png){width=1in}
+
+Keep it tidy
+
+![](images/tidyR_process.png){width=5in}
+
+- Good coding style is like correct punctuation:
+- withoutitthingsarehardtoread
+ 
+- When your data is tidy, each column is a variable, and each row is an observation
+- Consistent structure lets you focus your struggle on questions about the data, not fighting to get the data into the right form for different functions
+
+![](images/wrangler.png){width=2in}
+
+http://style.tidyverse.org/
+
+### Notes on R: Tidy Data
+
+Three things make a dataset tidy:
+- Each variable with its own column.
+- Each observation with its own row.
+- Each value with its own cell.
+
+![](images/tidydata.png){width=5in}
+
+Read more about this from [Wickham's paper](www.jstatsoft.org/v59/i10/paper) in the Journal of Statistical Software.
+
+### Wrangling: transform
+
+- Once you have __tidy__ data, a common first step is to __transform__ it
+- narrowing in on observations of interest
+- creating new variables that are functions of existing variables
+- calculating a set of summary statistics
+
+![](images/Wrangling_Data.png){width=3in} 
+
+www.codeastar.com/data-wrangling/ 
+
+### Wrangling: dplyr arguments
+
+Format of __dplyr__ 
+
+![](images/dplyr.png){width=1in} 
+
+Arguments start with a data frame
+
+- __select__: return a subset of the columns
+- __filter__: extract a subset of rows
+- __rename__: rename variables
+- __mutate__: add new variables and columns or transform
+- __group_by__: split data into groups
+- __summarize__: generate tables of summary statistics
+
+https://dplyr.tidyverse.org/
+
+### Getting your data in R
+
+Load data 
+
+![](images/R_logo.png){width=1in}
+
+- Load the data using the `read.csv` function
+
+```{r wrangle2-participants-data}
+participants_data <- read.csv("participants_data.csv")
+```
+
+- View the full data 
+
+```{r wrangle2-names_participants-data}
+participants_data
+```
+
+- Look at the top rows of the data with the `head` function. The default of the `head` function is to show 6 rows. This can be changed with the `n` argument.
+
+```{r wrangle2-head-participants-data, excercize = TRUE}
+# Change the number of rows displayed to 7
+head(participants_data, 
+     n = 4)
+```
+
+```{r wrangle2-head-participants-data-solution}
+head(participants_data, 
+     n = 7)
+```
+
+- Check the names of the variables in the data with the `names` function
+
+```{r wrangle2-names-participants-data}
+names(participants_data)
+```
+
+- Look at the structure of the data with the `str` function
+
+```{r wrangle2-str-participants-data}
+str(participants_data)
+```
+
+- Call a particular variable in your data with `$` 
+```{r wrangle2-call-variable, excercize = TRUE}
+# Change the variable to gender
+participants_data$age
+```
+
+```{r wrangle2-call-variable-solution}
+participants_data$gender
+```
+
+Follow these steps to see the result of the rest of the transformations we perform with `tidyverse`.
+
+Learn more about what this function does by typing `?read.csv` in the R console.
+
+- Keep your data in the same folder structure as .RProj
+- at or below the level of .RProj
+
+### Wrangling: dplyr library
+
+Using __dplyr__ ![](images/dplyr.png){width=1in}
+
+Load the dplyr library by running `library(dplyr)` in the R console. do the same for other libraries we need today `library(tidyr)` and `library(magrittr)` [@R-tidyr, @R-magrittr, @R-dplyr].
+
+Inspiration for many of the following materials comes from Roger Peng's [dplyr tutorial](genomicsclass.github.io/book/pages/dplyr_tutorial).  
+
+![](images/github.png){width=1in}
+
+https://dplyr.tidyverse.org/
+
+### Wrangling: dplyr::select aca_work_set
+
+Subsetting 
+
+![](images/dplyr.png){width=1in}
+
+__Select__
+
+Create a subset of the data with the `select` function:
+
+```{r wrangle2-select-aca-parents, exercise=TRUE}
+# Change the selection to batch and age
+select(participants_data, 
+       academic_parents,
+       working_hours_per_day)
+```
+
+```{r wrangle2-select-aca-parents-solution}
+select(participants_data,
+       batch,
+       age)
+```
+
+https://dplyr.tidyverse.org/
+
+### Wrangling: dplyr::select non_aca_work_filter
+
+Subsetting ![](images/dplyr.png){width=1in}
+
+__Select__
+
+Try creating a subset of the data with the `select` function:
+
+```{r wrangle2-select-non-aca-parents, exercise=TRUE}
+# Change the selection 
+# without batch and age
+select(participants_data,
+       -academic_parents,
+       -working_hours_per_day)
+```
+
+```{r wrangle2-select-non-aca-parents-solution}
+select(participants_data, 
+       -batch, 
+       -age)
+```
+
+https://dplyr.tidyverse.org/
+
+### Wrangling: dplyr::filter work_filter
+
+Subsetting ![](images/dplyr.png){width=1in}
+
+__Filter__
+
+Try creating a subset of the data with the `filter` function:
+
+```{r wrangle2-filter-work, exercise=TRUE}
+# Change the selection to 
+# those who work more than 5 hours a day
+filter(participants_data, 
+       working_hours_per_day >10)
+```
+
+```{r wrangle2-filter-work-solution}
+filter(participants_data, 
+       working_hours_per_day >5)
+```
+
+https://dplyr.tidyverse.org/
+
+### Wrangling: dplyr::filter work_name_filter
+
+Subsetting ![](images/dplyr.png){width=1in}
+
+  __Filter__
+
+Try creating a subset of the data with the `filter` function:
+
+```{r wrangle2-filter-work-name, exercise=TRUE}
+# Change the filter to those who 
+# work more than 5 hours a day and 
+# names are longer than three letters
+filter(participants_data, 
+       working_hours_per_day >10 & 
+         letters_in_first_name >6)
+```
+
+```{r wrangle2-filter-work-name-solution}
+filter(participants_data, 
+       working_hours_per_day >5 & 
+         letters_in_first_name >3)
+```
+
+https://dplyr.tidyverse.org/
+
+### Wrangling: dplyr::rename name_length
+
+ __Rename__  ![](images/dplyr.png){width=1in}
+
+Change the names of the variables in the data with the `rename` function:
+
+```{r wrangle2-rename-letters, exercise=TRUE}
+# Rename the variable km_home_to_zef as commute
+rename(participants_data, 
+       name_length = letters_in_first_name)
+```
+
+```{r wrangle2-rename-letters-solution}
+rename(participants_data, 
+       commute = km_home_to_zef)
+```
+
+https://dplyr.tidyverse.org/
+
+### Wrangling: dplyr::mutate
+
+ __Mutate__  ![](images/dplyr.png){width=1in}
+
+```{r wrangle2-rename-work, exercise=TRUE}
+# Mutate a new column named age_mean that is a function of the age multiplied by the mean of all ages in the group
+mutate(participants_data, 
+       labor_mean = working_hours_per_day*
+              mean(working_hours_per_day))
+```
+
+```{r wrangle2-rename-work-solution}
+mutate(participants_data, 
+       age_mean = age*
+         mean(age))
+```
+
+https://dplyr.tidyverse.org/  
+
+### Wrangling: dplyr::mutate
+
+ __Mutate__  ![](images/dplyr.png){width=1in}
+
+Create a commute category with the `mutate` function:
+
+```{r wrangle2-mutate-commute, exercise=TRUE}
+# Mutate new column named response_speed 
+# populated by 'slow' if it took you 
+# more than a day to answer my email and 
+# 'fast' for others
+mutate(participants_data, 
+       commute = 
+         ifelse(km_home_to_zef > 10, 
+                 "commuter", "local"))
+```
+
+```{r wrangle2-mutate-commute-solution}
+mutate(participants_data, 
+       response_speed = 
+         ifelse(days_to_email_response > 1, 
+                        "slow", "fast"))
+```
+
+https://dplyr.tidyverse.org/  
+
+### Wrangling: dplyr::summarize
+
+ __Summarize__  
+ 
+ ![](images/dplyr.png){width=1in} 
+ 
+ Get a summary of travel times and days to response
+
+```{r wrangle2-summar-commute, exercise=TRUE}
+# Create a summary of the participants_mutate data 
+# with the mean number of siblings 
+# and median years of study
+summarize(participants_data,
+          mean(years_of_study),
+          median(letters_in_first_name))
+```
+
+```{r wrangle2-summar-commute-solution}
+summarize(participants_data,
+          mean(number_of_siblings),
+          median(years_of_study))
+```
+
+### Wrangling: magrittr use
+
+  __Pipeline %>%__ 
+
+- Do all the previous with a `magrittr` pipeline %>%. Use the `group_by` function to get these results for comparison between groups.
+
+```{r wrangle2-pipe-long, exercise=TRUE}
+# Use the magrittr pipe to summarize 
+# the mean days to email response, 
+# median letters in first name, 
+# and maximum years of study by gender
+participants_data %>% 
+  group_by(research_continent) %>% 
+  summarize(mean(days_to_email_response), 
+            median(letters_in_first_name), 
+            max(years_of_study))
+```
+
+```{r wrangle2-pipe-long-solution}
+participants_data %>% 
+  group_by(gender) %>% 
+  summarize(mean(days_to_email_response), 
+            median(letters_in_first_name), 
+            max(years_of_study))
+```
+
+Now use the `mutate` function to subset the data and use the `group_by` function to get these results for comparisons between groups.
+
+```{r wrangle2-pipe-long2, exercise=TRUE}
+# Use the magrittr pipe to create a new column 
+# called commute, where those who travel 
+# more than 10km to get to the office 
+# are called "commuter" and others are "local". 
+# Summarize the mean days to email response, 
+# median letters in first name, 
+# and maximum years of study. 
+participants_data %>% 
+   mutate(response_speed = ifelse(
+     days_to_email_response > 1, 
+     "slow", "fast")) %>% 
+  group_by(response_speed) %>% 
+  summarize(mean(number_of_siblings), 
+            median(years_of_study), 
+            max(letters_in_first_name))
+```
+
+```{r wrangle2-pipe-long2-solution}
+participants_data %>% 
+   mutate(commute = ifelse(
+     km_home_to_zef > 10, 
+     "commuter", "local")) %>% 
+  group_by(commute) %>% 
+  summarize(mean(days_to_email_response), 
+            median(letters_in_first_name), 
+            max(years_of_study))
+```
+
+### purrr: Apply a function to each element of a vector
+
+![](images/purrr.jpg){width=4in}
+
+We will use the `purrr` library to run a regression [@R-purrr]. Run the code `library(purrr)` in your local R console to load the library.
+
+![](images/purrr.jpg){width=1in}
+Now we will use the `purrr` library for a simple linear regression [@R-purr]. Note that when using base R functions with the `magrittr` pipeline we use '.' to refer to the data.  The functions `split` and `lm` are from base R and stats packages [@R-base, @R-stats].
+
+Use purrr to solve: split a data frame into pieces, fit a model to each piece, compute the summary, then extract the R^2.
+
+```{r wrangle2-purr-regression, exercise=TRUE}
+# Split the data frame by batch, 
+# fit a linear model formula 
+# (days to email response as dependent 
+# and working hours as independent) 
+# to each batch, compute the summary, 
+# then extract the R^2.
+participants_data_regression <- 
+    participants_data %>%
+      split(.$gender) %>% 
+        map(~ 
+          lm(number_of_publications ~ 
+                number_of_siblings, 
+                 data = .)) %>%
+  map(summary) %>%
+  map_dbl("r.squared")
+```
+
+```{r wrangle2-purr-regression-solution}
+participants_data_regression <- 
+    participants_data %>%
+      split(.$batch) %>% # from base R
+        map(~ 
+          lm(days_to_email_response ~ 
+                working_hours_per_day, 
+                 data = .)) %>%
+  map(summary) %>%
+  map_dbl("r.squared")
+```
+
+Learn more about purrr from in [the tidyverse](https://purrr.tidyverse.org/) and from [varianceexplained](http://varianceexplained.org/r/teach-tidyverse/).
+
+[Check out the purr Cheatsheet](https://github.com/rstudio/cheatsheets/blob/master/purrr.pdf) 
+
+
+### Tasks for the afternoon: Advanced
+
+![](images/tidyR.png){width=1in}
+![](images/dplyr.png){width=1in}
+![](images/magrittr.png){width=1in}
+
+Work through tasks on the diamonds data in long format in base and short format with magrittr pipeline:
+
+- select: carat and price
+- filter: only where carat is > 0.5
+- rename: rename price as cost
+- mutate: name expensive or cheap if greater than mean of price/cost
+- group_by: split into cheap and expensive
+- summarize: give some summary statistics of your choice

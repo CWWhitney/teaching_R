@@ -1,0 +1,13 @@
+name: teaching_R
+title: teaching_R
+username:
+account: cory-whitney
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3907438
+bundleId: 4434635
+url: https://cory-whitney.shinyapps.io/teaching_R/
+when: 1617652924.22565
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: Data_Visualization_Rpres|Data_Wrangling_Rpres
