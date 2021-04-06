@@ -4,4 +4,4 @@ Welcome to this interactive tutorial on the R programming language. This tutoria
 
 If you are also planning to run this on your own machine then you should start by installing and running [R](https://www.r-project.org/) and [RStudio](https://rstudio.com/). This video walks you through that process. 
 
-![](https://youtu.be/J1JjUPzA1mA)
+![](https://youtu.be/WT3tKlzCZgo)
