@@ -24,6 +24,8 @@ library(rmarkdown)
 library(tidyverse)
   library(dplyr)
   library(magrittr)
+# load the data
+participants_data <- read.csv("participants_data.csv")
 ```
 
 
@@ -37,7 +39,6 @@ knitr::write_bib(c(.packages(),
                    'ggplot2', 
                    'learnr', 
                    'purrr',
-                   'stats',
                    'rmarkdown', 
                    'tidyverse'), 'packages.bib')
 ```

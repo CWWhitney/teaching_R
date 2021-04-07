@@ -6,17 +6,17 @@
 
 The video below offers an overview of the content in covered in this section of the tutorial. Keep in mind that I did not yet have your data when I recorded this so the results of my scripts may be slightly different than yours. Feel free to watch the video and follow along or simply work through the tutorial. 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/J1JjUPzA1mA" frameborder="0" allowfullscreen></iframe>
+![](https://youtu.be/J1JjUPzA1mA)
 
 If you ever get stuck
 
 - **Open RStudio**
+
 ![](images/rstudio-hex.png){width=1in}
 
-- type '?' in R console with function, package or data name
+- Type '?' in R console with function, package or data name
 - Add 'R' to a search with a copy of an error message
-
-- In RStudio on your maching find **Help > Cheatsheets > Data Visualization with ggplot2**
+- In RStudio on your machine find **Help > Cheatsheets > Data Visualization with ggplot2**
 
 For getting help
 
@@ -595,15 +595,7 @@ The datasauRus
 
 ![](images/gganimate_logo.png){width=1in}
 
-- Use `datasauRus`, `ggplot2` and `gganimate` [@R-datasaurus, @R-ggplot2, @R-gganimate] 
-
-```{r, datasaurus2}
-ggplot(datasaurus_dozen, aes(x = x, y = y))+
-  geom_point()+
-  theme_minimal() +
-  transition_states(dataset, 3, 1) + 
-  ease_aes('cubic-in-out')
-```
+- Use `datasauRus`, `ggplot2` and `gganimate` [@R-datasauRus, @R-ggplot2, @R-gganimate] 
 
 ### gganimate: Datasaurus Dozen
 

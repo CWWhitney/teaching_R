@@ -22,8 +22,7 @@ The video below gives a brief overview the content of this section of the tutori
 - once the ecstasy of creation has swept over us, we awake late the next morning to find our canvas covered with 2100 lines of R code [...] 
 - Heads throbbing with a statistical absinthe hangover, we trudge through it slowly over days, trying to figure out what we did."
 
-![](images/andrew_macdonald.png){width=1in}
-Andrew MacDonald
+     *Andrew MacDonald*
 
 ### Notes on R: Focus
 

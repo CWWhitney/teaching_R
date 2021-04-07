@@ -6,8 +6,7 @@
 
 The video below offers an overview of the content in covered in this section of the tutorial. Keep in mind that I did not yet have your data when I recorded this so the results of my scripts may be slightly different than yours. Feel free to watch the video and follow along or simply work through the tutorial. 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/A6H12OW03IE" frameborder="0" allowfullscreen></iframe>
-
+![](https://youtu.be/A6H12OW03IE)
 
 ### Notes on tidy R
 
@@ -15,7 +14,7 @@ The video below offers an overview of the content in covered in this section of 
 
 Keep it tidy
 
-If you are following this tutorial by running the code on your local machine (recomended) then it may make sense to check your R version by running the following code in the R console: `version`. At the time of writing this I am using R version 4.0.4 'Lost Library Book' [@R-base]. if you do not have this version or something newer it may make sense to update so that you can follow long.
+If you are following this tutorial by running the code on your local machine (recommended) then it may make sense to check your R version by running the following code in the R console: `version`. At the time of writing this I am using R version 4.0.4 'Lost Library Book' [@R-base]. if you do not have this version or something newer it may make sense to update so that you can follow long.
 
 The easiest way to get libraries for today is to install the whole tidyverse [@R-tidyverse] by typing `install.packages("tidyverse)` in the R console and then running `library(tidyverse)`:
 
@@ -102,13 +101,21 @@ Load data
 
 - Load the data using the `read.csv` function
 
-```{r wrangle2-participants-data}
+```{r wrangle2-participants-data, exercise=TRUE}
+# Use this on your machine
 participants_data <- read.csv("participants_data.csv")
 ```
 
-- View the full data 
+Learn more about what this function does by typing `?read.csv` in the R console.
 
-```{r wrangle2-names_participants-data}
+- Keep your data in the same folder structure as .RProj
+- at or below the level of .RProj
+
+### Looking at the data
+
+- View the full data in the console (see the `View` function to see it in the Rstudio 'Environment')
+
+```{r wrangle2-names_participants-data, exercise=TRUE}
 participants_data
 ```
 
@@ -127,17 +134,18 @@ head(participants_data,
 
 - Check the names of the variables in the data with the `names` function
 
-```{r wrangle2-names-participants-data}
+```{r wrangle2-names-participants-data, excercize = TRUE}
 names(participants_data)
 ```
 
 - Look at the structure of the data with the `str` function
 
-```{r wrangle2-str-participants-data}
+```{r wrangle2-str-participants-data, excercize = TRUE}
 str(participants_data)
 ```
 
 - Call a particular variable in your data with `$` 
+
 ```{r wrangle2-call-variable, excercize = TRUE}
 # Change the variable to gender
 participants_data$age
@@ -148,11 +156,6 @@ participants_data$gender
 ```
 
 Follow these steps to see the result of the rest of the transformations we perform with `tidyverse`.
-
-Learn more about what this function does by typing `?read.csv` in the R console.
-
-- Keep your data in the same folder structure as .RProj
-- at or below the level of .RProj
 
 ### Wrangling: dplyr library
 
@@ -413,7 +416,7 @@ participants_data %>%
 We will use the `purrr` library to run a regression [@R-purrr]. Run the code `library(purrr)` in your local R console to load the library.
 
 ![](images/purrr.jpg){width=1in}
-Now we will use the `purrr` library for a simple linear regression [@R-purr]. Note that when using base R functions with the `magrittr` pipeline we use '.' to refer to the data.  The functions `split` and `lm` are from base R and stats packages [@R-base, @R-stats].
+Now we will use the `purrr` library for a simple linear regression [@R-purrr]. Note that when using base R functions with the `magrittr` pipeline we use '.' to refer to the data.  The functions `split` and `lm` are from base R and stats [@R-base].
 
 Use purrr to solve: split a data frame into pieces, fit a model to each piece, compute the summary, then extract the R^2.
 
