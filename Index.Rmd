@@ -8,7 +8,7 @@ output:
 runtime: shiny_prerendered
 ---
 
-<!-- Warning: there must always be a line before a code chunk -->
+<!-- Warning: there must always be a new line before a code chunk and end of file -->
 <!-- If not the whole learnr puts odd columns across your html file -->
 
 ![](images/INRES_Logo.png){width=1in}

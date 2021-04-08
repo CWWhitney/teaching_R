@@ -20,3 +20,18 @@ Here is an example of how this tutorial works. The code below calculates the ans
 ```
 
 In this interface you will see options for looking at the solution and sometimes some hints for the code. Feel free to run these here in the web interface and also to run them on your own machine.  
+
+You will also always have the option to get a copy of the code to run on your own machine. To do that you will need all the libraries. If these do not load you will also need to use the `install.packages()` function. i.e. `install.packages("datasauRus")`.
+
+```{r example-libraries, exercise=TRUE}
+library(datasauRus)
+library(gganimate)
+library(ggplot2)
+library(gifski)
+library(purrr)
+library(rmarkdown)
+library(tidyverse)
+  library(dplyr)
+  library(magrittr)
+```  
+  
