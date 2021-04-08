@@ -5,3 +5,18 @@ Welcome to this interactive tutorial on the R programming language. This tutoria
 If you are also planning to run this on your own machine then you should start by installing and running [R](https://www.r-project.org/) and [RStudio](https://rstudio.com/). This video walks you through that process. 
 
 ![](https://youtu.be/WT3tKlzCZgo)
+
+### Using this tutorial
+
+Here is an example of how this tutorial works. The code below calculates the answer to one plus one:
+
+```{r example-addition, exercise=TRUE}
+# Change this code so it computes two plus two
+1 + 1
+```
+
+```{r example-addition-solution}
+2 + 2
+```
+
+In this interface you will see options for looking at the solution and sometimes some hints for the code. Feel free to run these here in the web interface and also to run them on your own machine.  

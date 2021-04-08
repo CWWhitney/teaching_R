@@ -1,5 +1,5 @@
 ---
-title: "Introduction to R, from data wrangling to Rmarkdown"
+title: "Introduction to R, from wrangling to visualization"
 bibliography: packages.bib
 output: 
   learnr::tutorial:
@@ -7,6 +7,9 @@ output:
     allow_skip: true
 runtime: shiny_prerendered
 ---
+
+<!-- Warning: there must always be a line before a code chunk -->
+<!-- If not the whole learnr puts odd columns across your html file -->
 
 ![](images/INRES_Logo.png){width=1in}
 ![](images/Uni_Bonn_Picture.png){width=1in}
@@ -19,7 +22,7 @@ library(gganimate)
 library(ggplot2)
 library(gifski)
 library(learnr)
-tutorial_options(exercise.timelimit = 200)
+    tutorial_options(exercise.timelimit = 200)
 library(purrr)
 library(rmarkdown)
 library(tidyverse)

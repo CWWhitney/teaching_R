@@ -44,6 +44,7 @@ https://rmarkdown.rstudio.com/
 ![](images/R_logo.png){width=1in}
 
 - Load the data with the `read.csv` function
+
 ```{r vis-load-data, exercise=TRUE}
 participants_data <- read.csv("participants_data.csv")
 ```
@@ -698,3 +699,4 @@ You can add a label that follow the transitions by adding `labs` options:
 - Display those data in an interactive plot
 - Play around with the design
 - Export your most interesting figure and share it with us
+
