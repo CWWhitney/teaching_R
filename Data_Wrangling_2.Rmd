@@ -121,7 +121,7 @@ participants_data
 
 - Look at the top rows of the data with the `head` function. The default of the `head` function is to show 6 rows. This can be changed with the `n` argument.
 
-```{r wrangle2-head-participants-data, excercize = TRUE}
+```{r wrangle2-head-participants-data, exercise=TRUE}
 # Change the number of rows displayed to 7
 head(participants_data, 
      n = 4)
@@ -134,19 +134,19 @@ head(participants_data,
 
 - Check the names of the variables in the data with the `names` function
 
-```{r wrangle2-names-participants-data, excercize = TRUE}
+```{r wrangle2-names-participants-data, exercise=TRUE}
 names(participants_data)
 ```
 
 - Look at the structure of the data with the `str` function
 
-```{r wrangle2-str-participants-data, excercize = TRUE}
+```{r wrangle2-str-participants-data, exercise=TRUE}
 str(participants_data)
 ```
 
 - Call a particular variable in your data with `$` 
 
-```{r wrangle2-call-variable, excercize = TRUE}
+```{r wrangle2-call-variable, exercise=TRUE}
 # Change the variable to gender
 participants_data$age
 ```
@@ -455,13 +455,14 @@ Learn more about purrr from in [the tidyverse](https://purrr.tidyverse.org/) and
 [Check out the purr Cheatsheet](https://github.com/rstudio/cheatsheets/blob/master/purrr.pdf) 
 
 
-### Tasks for the afternoon: Advanced
-
 ![](images/tidyR.png){width=1in}
 ![](images/dplyr.png){width=1in}
 ![](images/magrittr.png){width=1in}
+### Test your new skills
 
-Work through tasks on the diamonds data in long format in base and short format with magrittr pipeline:
+**Your turn to perform**
+
+Up until this point the code has been provided for you to work on. Now it is time for you to apply your new found skills. Please work through the wrangling tasks we just went though. Use the diamonds data and make the steps in long format (i.e. assigning each step to an object) and short format with (i.e. with the magrittr pipeline):
 
 - select: carat and price
 - filter: only where carat is > 0.5

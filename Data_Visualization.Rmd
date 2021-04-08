@@ -698,20 +698,20 @@ You can add a label that follow the transitions by adding `labs` options:
 
 ![](images/ggplot2.png){width=1in}
 
-**Test your new skills**
-
-- Use scatter plots, barcharts and boxplots
-- Vary the sample and run the same analysis and plots
-- Save your most interesting figure and share it with us tomorrow
-
-###  Tasks for the afternoon: Advanced
+### Test your new skills
 
 ![](images/ggplot2.png){width=1in}
 
 **Your turn to perform**
 
-- Import data from an external source (e.g. FAO, World Bank)
-- Display those data in an interactive plot
+- Use scatter plots, barcharts and boxplots
+- Vary the sample and run the same analysis and plots
+- Save your most interesting figure and share it with us tomorrow
+
+**Optional advanced work**
+
+- Import your own data or data from an external source (e.g. FAO, World Bank)
+- Display those data using ggplot tools (feel free to animate it)
 - Play around with the design
 - Export your most interesting figure and share it with us
 

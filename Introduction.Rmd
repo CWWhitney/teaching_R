@@ -19,7 +19,7 @@ Here is an example of how this tutorial works. The code below calculates the ans
 2 + 2
 ```
 
-In this interface you will see options for looking at the solution and sometimes some hints for the code. Feel free to run these here in the web interface and also to run them on your own machine.  
+For each example there will also generally be a small exercise after the '#" mark. We ill ask you to work in this interface and make changes to the existing code. In this interface you will see options for looking at the solution and sometimes some hints. Feel free to run these here in the web interface and also to run them on your own machine. 
 
 You will also always have the option to get a copy of the code to run on your own machine. To do that you will need all the libraries. If these do not load you will also need to use the `install.packages()` function. i.e. `install.packages("datasauRus")`.
 
