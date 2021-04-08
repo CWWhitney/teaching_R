@@ -421,11 +421,26 @@ geom_jitter()
 
 In case of overplotting changing `alpha` can help.
 
-```{r vis-boxplot_jitter, fig.width=20, fig.height=5, fig.align='center'}
-ggplot(data = diamonds, aes(x = color, y = price/carat, alpha = I(0.1))) + 
+```{r vis-boxplot_jitter, exercise=TRUE}
+# Change the alpha to 0.4 to make 
+# the scatter less transparent
+ggplot(data = diamonds, 
+       aes(x = color, 
+           y = price/carat, 
+           alpha = I(0.1))) + 
 geom_boxplot()+ 
 geom_jitter()
 ```
+
+```{r vis-boxplot_jitter-solution}
+ggplot(data = diamonds, 
+       aes(x = color, 
+           y = price/carat, 
+           alpha = I(0.4))) + 
+geom_boxplot()+ 
+geom_jitter()
+```
+
 
 ### ggplot2: geom_histogram
 
