@@ -8,6 +8,8 @@ The video below offers an overview of the content in covered in this section of 
 
 ![](https://youtu.be/J1JjUPzA1mA)
 
+### Getting stuck
+
 If you ever get stuck
 
 - **Open RStudio**
@@ -102,7 +104,7 @@ ggplot(data = participants_data,
   geom_point()
 ```
 
-```{r vis-vis-ggplot_name_email-solution}
+```{r vis-ggplot_name_email-solution}
 ggplot(data = participants_data, 
        aes(x = letters_in_first_name, 
            y = days_to_email_response)) + 
@@ -335,7 +337,7 @@ geom_smooth()
 
 ### ggplot2: smooth function
 
-![]('images/ggplot2.png){width=1in}
+![](images/ggplot2.png){width=1in}
 
 `geom_smooth()` selects a smoothing method based on the data. Use `method =` to specify your preferred smoothing method.
 
@@ -602,18 +604,39 @@ The datasauRus
 ![](images/gganimate_logo.png){width=1in}
 - Use `datasauRus`, `ggplot2` and `gganimate` [@R-datasauRus, @R-ggplot2, @R-gganimate].
 
-```{r animate_datasaurus_dozen, exercise=TRUE}
-# Change this animation as you like
+```{r data_datasaurus_dozen-check, exercise=TRUE}
+# Check the names for the `datasaurus_dozen` data
 
+```
+
+```{r data_datasaurus_dozen-check-solution}
+names(datasaurus_dozen)
+```
+
+Create an animation (depending on your server this may work better on your local machine).
+
+```{r animate_datasaurus_dozen, exercise=TRUE}
+# Change the 'ease_aes()' option from default 'linear'
+# to 'cubic-in-out' for a smoother appearance
 ggplot(datasaurus_dozen, 
        aes(x = x,
            y = y))+
   geom_point()+
   theme_minimal() +
-  transition_states(dataset, 3, 1) + 
-  ease_aes('cubic-in-out')
+  transition_states(states = dataset) + 
+  ease_aes()
 ```
   
+```{r animate_datasaurus_dozen-solution}
+ggplot(datasaurus_dozen, 
+       aes(x = x,
+           y = y))+
+  geom_point()+
+  theme_minimal() +
+  transition_states(states = dataset) + 
+  ease_aes('cubic-in-out')
+```
+
 ### gganimate: diamonds carat
 
 ![](images/gganimate_logo.png){width=1in}
@@ -621,7 +644,7 @@ ggplot(datasaurus_dozen,
 - Use `tidyverse`, `ggplot2` and `gganimate` [@R-tidyverse, @R-ggplot2, @R-gganimate].
 
 ```{r animate_diamonds, exercise=TRUE}
-# Change this animation as you like
+# Change the diamonds data to 100 observations
 dsmall <- top_n(diamonds, 
                 n = 10)
 
@@ -631,10 +654,27 @@ ggplot(data = dsmall,
            color = color)) + 
   geom_line() +
   transition_reveal(carat) + 
-  ease_aes("linear") +
-  labs(title = 'Diamond carat: {frame_along}')
+  ease_aes() 
 ```
 
+```{r animate_diamonds-solution}
+dsmall <- top_n(diamonds, 
+                n = 100)
+
+ggplot(data = dsmall, 
+       aes(x = carat, 
+           y = price, 
+           color = color)) + 
+  geom_line() +
+  transition_reveal(carat) + 
+  ease_aes() 
+```
+
+You can add a label that follow the transitions by adding `labs` options:
+```
+  + labs(title = 'Diamond carat: {frame_along}')
+```
+  
 ### Tasks for the afternoon: Basic
 
 ![](images/ggplot2.png){width=1in}
