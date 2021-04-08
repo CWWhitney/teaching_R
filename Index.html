@@ -120,7 +120,7 @@ $(document).ready(function () {
 <!-- List of Lecture RMD files to be compiled -->
 <div id="section-introduction" class="section level2">
 <h2>Introduction</h2>
-<p>Welcome to this interactive tutorial on the R programming language. This tutorial runs in the <code>learnr</code> <span class="citation">(Schloerke, Allaire, and Borges 2020)</span> library and provides a shiny interface <span class="citation">(Chang et al. 2021)</span>. You may follow along by simply working in this browser. You may find the content and learning a bit more useful if you work on your own machine as well. This will require loading the necessary software. For this tutorial we will use functions from <code>tidyverse</code> <span class="citation">(Wickham 2019)</span> libraries including <code>ggplot2</code> <span class="citation">(Wickham et al. 2020)</span>, <code>dplyr</code> <span class="citation">(Wickham et al. 2021)</span> and <code>magrittr</code> <span class="citation">(Bache and Wickham 2020)</span> among others in the <a href="https://www.r-project.org/">R programming language</a> <span class="citation">(R Core Team 2021)</span>.</p>
+<p>Welcome to this interactive tutorial on the R programming language. This tutorial runs in the <code>learnr</code> <span class="citation">(Schloerke, Allaire, and Borges 2020)</span> library and provides a shiny interface <span class="citation">(<strong>R-shiny?</strong>)</span>. You may follow along by simply working in this browser. You may find the content and learning a bit more useful if you work on your own machine as well. This will require loading the necessary software. For this tutorial we will use functions from <code>tidyverse</code> <span class="citation">(Wickham 2019)</span> libraries including <code>ggplot2</code> <span class="citation">(Wickham et al. 2020)</span>, <code>dplyr</code> <span class="citation">(<strong>R-dplyr?</strong>)</span> and <code>magrittr</code> <span class="citation">(<strong>R-magrittr?</strong>)</span> among others in the <a href="https://www.r-project.org/">R programming language</a> <span class="citation">(R Core Team 2021)</span>.</p>
 <p>If you are also planning to run this on your own machine then you should start by installing and running <a href="https://www.r-project.org/">R</a> and <a href="https://rstudio.com/">RStudio</a>. This video walks you through that process.</p>
 <p><img src="https://youtu.be/WT3tKlzCZgo" /></p>
 </div>
@@ -313,7 +313,7 @@ participants_data &lt;- read.csv(&quot;participants_data.csv&quot;)</code></pre>
 <div id="section-wrangling-dplyr-library" class="section level3">
 <h3>Wrangling: dplyr library</h3>
 <p>Using <strong>dplyr</strong> <img src="images/dplyr.png" style="width:1in" /></p>
-<p>Load the dplyr library by running <code>library(dplyr)</code> in the R console. do the same for other libraries we need today <code>library(tidyr)</code> and <code>library(magrittr)</code> <span class="citation">Wickham et al. (2021)</span>.</p>
+<p>Load the dplyr library by running <code>library(dplyr)</code> in the R console. do the same for other libraries we need today <code>library(tidyr)</code> and <code>library(magrittr)</code> <span class="citation">(<strong>R-dplyr?</strong>)</span>.</p>
 <p>Inspiration for many of the following materials comes from Roger Peng’s <a href="genomicsclass.github.io/book/pages/dplyr_tutorial">dplyr tutorial</a>.</p>
 <p><img src="images/github.png" style="width:1in" /></p>
 <p><a href="https://dplyr.tidyverse.org/" class="uri">https://dplyr.tidyverse.org/</a></p>
@@ -1159,9 +1159,10 @@ ggplot(datasaurus_dozen,
 <li>Use <code>tidyverse</code>, <code>ggplot2</code> and <code>gganimate</code> <span class="citation">Pedersen and Robinson (2020)</span>.</li>
 </ul>
 <div class="tutorial-exercise" data-label="animate_diamonds" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
-<pre class="text"><code># Change the diamonds data to 100 observations
+<pre class="text"><code># Change our &#39;dsmall&#39; selection 
+# of diamonds data to 100 observations
 dsmall &lt;- top_n(diamonds, 
-                n = 10)
+                n = 40)
 
 ggplot(data = dsmall, 
        aes(x = carat, 
@@ -1494,12 +1495,6 @@ output$`tutorial-exercise-animate_diamonds-output` <- renderUI({
 </script>
 <!--/html_preserve-->
 <div id="section-refs" class="references csl-bib-body hanging-indent">
-<div id="section-ref-R-magrittr" class="csl-entry">
-Bache, Stefan Milton, and Hadley Wickham. 2020. <em>Magrittr: A Forward-Pipe Operator for r</em>. <a href="https://CRAN.R-project.org/package=magrittr">https://CRAN.R-project.org/package=magrittr</a>.
-</div>
-<div id="section-ref-R-shiny" class="csl-entry">
-Chang, Winston, Joe Cheng, JJ Allaire, Carson Sievert, Barret Schloerke, Yihui Xie, Jeff Allen, Jonathan McPherson, Alan Dipert, and Barbara Borges. 2021. <em>Shiny: Web Application Framework for r</em>. <a href="https://shiny.rstudio.com/">https://shiny.rstudio.com/</a>.
-</div>
 <div id="section-ref-R-purrr" class="csl-entry">
 Henry, Lionel, and Hadley Wickham. 2020. <em>Purrr: Functional Programming Tools</em>. <a href="https://CRAN.R-project.org/package=purrr">https://CRAN.R-project.org/package=purrr</a>.
 </div>
@@ -1518,14 +1513,8 @@ Schloerke, Barret, JJ Allaire, and Barbara Borges. 2020. <em>Learnr: Interactive
 <div id="section-ref-R-tidyverse" class="csl-entry">
 Wickham, Hadley. 2019. <em>Tidyverse: Easily Install and Load the Tidyverse</em>. <a href="https://CRAN.R-project.org/package=tidyverse">https://CRAN.R-project.org/package=tidyverse</a>.
 </div>
-<div id="section-ref-R-tidyr" class="csl-entry">
-———. 2021. <em>Tidyr: Tidy Messy Data</em>. <a href="https://CRAN.R-project.org/package=tidyr">https://CRAN.R-project.org/package=tidyr</a>.
-</div>
 <div id="section-ref-R-ggplot2" class="csl-entry">
 Wickham, Hadley, Winston Chang, Lionel Henry, Thomas Lin Pedersen, Kohske Takahashi, Claus Wilke, Kara Woo, Hiroaki Yutani, and Dewey Dunnington. 2020. <em>Ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics</em>. <a href="https://CRAN.R-project.org/package=ggplot2">https://CRAN.R-project.org/package=ggplot2</a>.
-</div>
-<div id="section-ref-R-dplyr" class="csl-entry">
-Wickham, Hadley, Romain François, Lionel Henry, and Kirill Müller. 2021. <em>Dplyr: A Grammar of Data Manipulation</em>. <a href="https://CRAN.R-project.org/package=dplyr">https://CRAN.R-project.org/package=dplyr</a>.
 </div>
 </div>
 </div>

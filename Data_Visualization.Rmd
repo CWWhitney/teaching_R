@@ -44,7 +44,7 @@ https://rmarkdown.rstudio.com/
 ![](images/R_logo.png){width=1in}
 
 - Load the data with the `read.csv` function
-```{r vis-load-data}
+```{r vis-load-data, exercise=TRUE}
 participants_data <- read.csv("participants_data.csv")
 ```
 
@@ -604,6 +604,8 @@ The datasauRus
 ![](images/gganimate_logo.png){width=1in}
 - Use `datasauRus`, `ggplot2` and `gganimate` [@R-datasauRus, @R-ggplot2, @R-gganimate].
 
+We will use the `datasaurus_dozen` data for this example [@R-datasauRus]. First we should get a sense of the contents of this data set. 
+
 ```{r data_datasaurus_dozen-check, exercise=TRUE}
 # Check the names for the `datasaurus_dozen` data
 
@@ -644,9 +646,10 @@ ggplot(datasaurus_dozen,
 - Use `tidyverse`, `ggplot2` and `gganimate` [@R-tidyverse, @R-ggplot2, @R-gganimate].
 
 ```{r animate_diamonds, exercise=TRUE}
-# Change the diamonds data to 100 observations
+# Change our 'dsmall' selection 
+# of diamonds data to 100 observations
 dsmall <- top_n(diamonds, 
-                n = 10)
+                n = 40)
 
 ggplot(data = dsmall, 
        aes(x = carat, 
