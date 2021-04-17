@@ -16,8 +16,8 @@ If you ever get stuck
 
 ![](images/rstudio-hex.png){width=1in}
 
-- Type '?' in R console with function, package or data name
-- Add 'R' to a search with a copy of an error message
+- Type `?` in R console with function, package or data name
+- Add `R` to an internet search quesry with a copy of any error message you get from R
 - In RStudio on your machine find **Help > Cheatsheets > Data Visualization with ggplot2**
 
 For getting help
@@ -49,8 +49,8 @@ https://rmarkdown.rstudio.com/
 participants_data <- read.csv("participants_data.csv")
 ```
 
-- Keep your data in the same folder structure as .RProj
-- at or below the level of .RProj
+- Keep your data in the same folder structure as the .RProj file
+- at or below the level of the .RProj file
 
 ### Creating a barplot in base R
 
@@ -704,9 +704,9 @@ You can add a label that follow the transitions by adding `labs` options:
 
 **Your turn to perform**
 
-- Use scatter plots, barcharts and boxplots
+- Create a scatter plot, barchart and boxplot (as above)
 - Vary the sample and run the same analysis and plots
-- Save your most interesting figure and share it with us tomorrow
+- Save your most interesting figure and share it with us
 
 **Optional advanced work**
 

@@ -14,11 +14,24 @@ The video below offers an overview of the content in covered in this section of 
 
 Keep it tidy
 
-If you are following this tutorial by running the code on your local machine (recommended) then it may make sense to check your R version by running the following code in the R console: `version`. At the time of writing this I am using R version 4.0.4 'Lost Library Book' [@R-base]. if you do not have this version or something newer it may make sense to update so that you can follow long.
+If you are following this tutorial by running the code on your local machine (recommended) then it may make sense to check your R version by running the following code in your R console: 
 
-The easiest way to get libraries for today is to install the whole tidyverse [@R-tidyverse] by typing `install.packages("tidyverse)` in the R console and then running `library(tidyverse)`:
+```{r example-version, exercise=TRUE}
+version
+```  
 
-http://style.tidyverse.org/
+At the time of writing this I am using R version 4.0.4 `Lost Library Book` [@R-base]. If you do not have this version or something newer it may make sense to update so that you can follow along without pesky version issues.
+
+The easiest way to get libraries for today is to install the whole tidyverse [@R-tidyverse] by typing `install.packages("tidyverse")` in the R console and then running `library(tidyverse)`:
+
+```
+install.packages("tidyverse")
+library(tidyverse)
+```  
+
+If you save your work to an .R file (recommended) be sure to annotate any code that you do not intend to run each time with the `#` symbol. You should only need to install tidyverse once and should be sure to either change that line of code to `#install.packages("tidyverse")` or remove it from your script. 
+
+Read more style tips in the [tidyverse style guide](http://style.tidyverse.org/) [@R-tidyverse].
 
 ### Notes on tidy R browseVignettes
 
@@ -34,7 +47,7 @@ In this tutorial we will be following the basic ideas behind the tidyverse.
 
 ![](images/tidy_paper.jpg){width=5in}
 
-Read the [full tidyverse manifesto here](http://style.tidyverse.org/).
+Read the [full tidyverse manifesto here](https://cran.r-project.org/web/packages/tidyverse/vignettes/manifesto.html).
 
 ### Notes on R: tidyR process
 
@@ -42,21 +55,21 @@ Read the [full tidyverse manifesto here](http://style.tidyverse.org/).
 
 Keep it tidy
 
-![](images/tidyR_process.png){width=5in}
+![](images/tidyR_process.png){width=4in}
 
 - Good coding style is like correct punctuation:
 - withoutitthingsarehardtoread
- 
 - When your data is tidy, each column is a variable, and each row is an observation
 - Consistent structure lets you focus your struggle on questions about the data, not fighting to get the data into the right form for different functions
 
 ![](images/wrangler.png){width=2in}
 
-http://style.tidyverse.org/
+Read more style tipes in the [tidyverse style guide](http://style.tidyverse.org/) [@R-tidyverse].
 
 ### Notes on R: Tidy Data
 
 Three things make a dataset tidy:
+
 - Each variable with its own column.
 - Each observation with its own row.
 - Each value with its own cell.
@@ -101,12 +114,22 @@ Load data
 
 - Load the data using the `read.csv` function
 
-```{r wrangle2-participants-data, exercise=TRUE}
+```
 # Use this on your machine
 participants_data <- read.csv("participants_data.csv")
 ```
 
 Learn more about what this function does by typing `?read.csv` in the R console.
+
+You can also get the data from this Github repository by using the `read_csv` function from the `readr` library [@R-readr] and `url` function from base R.  In this case you will want to use the 'save as' option for the webpage so that you can have it stored locally as a `comma separated values` (.csv) file on your machine.
+
+```{r wrangle2-git-data, exercise=TRUE}
+library(readr)
+
+urlfile = "https://raw.githubusercontent.com/CWWhitney/teaching_R/master/participants_data.csv"
+
+participants_data <- read_csv(url(urlfile))
+```
 
 - Keep your data in the same folder structure as .RProj
 - at or below the level of .RProj
@@ -125,6 +148,22 @@ participants_data
 # Change the number of rows displayed to 7
 head(participants_data, 
      n = 4)
+```
+
+```{r wrangle2-head-participants-data-hint-1}
+# use the ?head option to learn the details of the function
+?head
+```
+
+```{r wrangle2-head-participants-data-hint-2}
+# look at the 'Arguments' section for the 'n' argument
+?head
+```
+
+```{r wrangle2-head-participants-data-hint-3}
+# The 'n' argument should be changed from 'n = 4' to 'n = 7'
+head(participants_data, 
+     n = 7)
 ```
 
 ```{r wrangle2-head-participants-data-solution}
@@ -167,7 +206,7 @@ Inspiration for many of the following materials comes from Roger Peng's [dplyr t
 
 ![](images/github.png){width=1in}
 
-https://dplyr.tidyverse.org/
+Read more about the [dplyr library](https://dplyr.tidyverse.org/) [@R-dplyr].
 
 ### Wrangling: dplyr::select aca_work_set
 

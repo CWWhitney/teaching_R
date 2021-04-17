@@ -557,7 +557,7 @@ right: 80%
 
 - Use scatter plots, barcharts and boxplots
 - Vary the sample and run the same analysis and plots
-- Save your most interesting figure and share it with us tomorrow
+- Save your most interesting figure and share it with us 
 
 Tasks for the afternoon: Advanced
 ========================================================

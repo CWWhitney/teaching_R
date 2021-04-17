@@ -1,6 +1,6 @@
 ## Introduction
 
-Welcome to this interactive tutorial on the R programming language. This tutorial runs in the `learnr` [@R-learnr] library and provides a shiny interface [@R-shiny].  You may follow along by simply working in this browser. You may find the content and learning a bit more useful if you work on your own machine as well. This will require loading the necessary software. For this tutorial we will use functions from `tidyverse` [@R-tidyverse] libraries including `ggplot2` [@R-ggplot2], `dplyr` [@R-dplyr] and `magrittr` [@R-magrittr] among others in the [R programming language](https://www.r-project.org/) [@R-base].
+Welcome to this interactive tutorial on the R programming language. This tutorial runs in the `learnr` [@R-learnr] library and provides a `shiny` interface [@R-shiny] that will allow you the cahnce to interact with the examples in the R programming language. You may follow along by simply working in this browser. You may find the content and learning a bit more useful if you work on your own machine as well. This will require loading the necessary software. For this tutorial we will use functions from `tidyverse` [@R-tidyverse] libraries including `ggplot2` [@R-ggplot2], `dplyr` [@R-dplyr] and `magrittr` [@R-magrittr] among others in the [R programming language](https://www.r-project.org/) [@R-base].
 
 If you are also planning to run this on your own machine then you should start by installing and running [R](https://www.r-project.org/) and [RStudio](https://rstudio.com/). This video walks you through that process. 
 
@@ -8,7 +8,7 @@ If you are also planning to run this on your own machine then you should start b
 
 ### Using this tutorial
 
-Here is an example of how this tutorial works. The code below calculates the answer to one plus one:
+Here is an example of how this tutorial works. The code below calculates the answer to one plus one. 
 
 ```{r example-addition, exercise=TRUE}
 # Change this code so it computes two plus two
@@ -19,7 +19,7 @@ Here is an example of how this tutorial works. The code below calculates the ans
 2 + 2
 ```
 
-For each example there will also generally be a small exercise after the '#" mark. We will ask you to work in this interface and make changes to the existing code. In this interface you will see options for looking at the solution and sometimes some hints. Feel free to run these here in the web interface and also to run them on your own machine. 
+For each example there will also generally be a small exercise after the `#` mark. We will ask you to work in this interface and make changes to the existing code. In this interface you will see options for looking at the solution and sometimes some hints. Feel free to run these here in the web interface and also to run them on your own machine. 
 
 You will also always have the option to get a copy of the code to run on your own machine. To do that you will need all the libraries. If these do not load you will also need to use the `install.packages()` function. i.e. `install.packages("datasauRus")`.
 
@@ -31,6 +31,7 @@ library(gifski)
 library(purrr)
 library(rmarkdown)
 library(tidyverse)
+# part of the tidyverse:
   library(dplyr)
   library(magrittr)
 ```  

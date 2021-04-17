@@ -24,6 +24,7 @@ library(gifski)
 library(learnr)
     tutorial_options(exercise.timelimit = 200)
 library(purrr)
+library(readr)
 library(rmarkdown)
 library(tidyverse)
   library(dplyr)
@@ -43,6 +44,7 @@ knitr::write_bib(c(.packages(),
                    'ggplot2', 
                    'learnr', 
                    'purrr',
+                   'readr',
                    'rmarkdown', 
                    'tidyverse'), 'packages.bib')
 ```

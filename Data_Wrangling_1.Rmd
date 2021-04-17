@@ -35,16 +35,18 @@ The video below gives a brief overview the content of this section of the tutori
 
 Keep it tidy
 
-Use ‘#’ to annotate and not run
+When writing .R files use the `#` symbol to annotate and not run lines. This is a great way to make notes for others and for future you.
 
-If not Rmarkdown then at least use ‘----’ or ‘####’ 
+We will talk later about using other file types like `Rmarkdown` for organizing R script and other associated languages. There it will be possible to add a lot more information and text, cittions etc. An .R file is intended for code but we can still keep it organized in sections by ending headers with `----` or `####` annotation. 
 
-#Section 1----
+`# Section 1 ----`
 
-#Section 2####
+`# Section 2 ####`
 
-#Section 3####
+`# Section 3 ####`
 
-TOC in upper right console
+Look for the `Table of contents` in the upper right console of the RStudio scripting pane (next to the `Run` button).
 
-http://style.tidyverse.org/
+![](images/toc_rstudio.png){width=2in}
+
+Read more tips in the [Tidyverse Style guide](http://style.tidyverse.org/).
