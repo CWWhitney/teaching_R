@@ -11,11 +11,11 @@ runtime: shiny_prerendered
 <!-- Warning: there must always be a new line before a code chunk and end of file -->
 <!-- If not the whole learnr puts odd columns across your html file -->
 
-<!-- Also, we can have either solutions or hints, not both -->
+<!-- Also, we can have either `solutions` or `hints`, not both -->
 
-![](images/INRES_Logo.png){width=1in}
-![](images/Uni_Bonn_Picture.png){width=1in}
-![](images/ZEF_Logo.png){width=1in}
+![](images/INRES_Logo.png){width=2in}
+![](images/Uni_Bonn_Picture.png){width=2in}
+![](images/ZEF_Logo.png){width=2in}
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
@@ -63,6 +63,9 @@ knitr::write_bib(c(.packages(),
 ``` 
 
 ```{r child_Vis, child="Data_Visualization.Rmd"}
+```
+
+```{r child_Vis, child="Data_Animation.Rmd"}
 ```
 
 ## References

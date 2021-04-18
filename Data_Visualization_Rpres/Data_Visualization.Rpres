@@ -38,8 +38,8 @@ incremental: true
 - **Open RStudio**
 ![](Data_Visualization-figure/rstudio-hex.png)
 
-- type ‘?’ in R console with function, package or data name
-- Add “R” to a search with a copy of an error message
+- type `?` in R console with function, package or data name
+- Add `R` to a search with a copy of an error message
 
 - **Help > Cheatsheets > Data Visualization with ggplot2**
 
@@ -53,9 +53,8 @@ right: 30%
 - Many talented programmers 
 - Some scan the web and answer issues
 
-```{r, out.width='20%', fig.align='center', echo=FALSE}
-knitr::include_graphics('Data_Visualization-figure/stack-overflow.png')
-```
+![](Data_Visualization-figure/stack-overflow.png)
+
 </small>https://stackoverflow.com/ </small>
 
 ***
@@ -95,9 +94,9 @@ incremental: true
 - Create a barplot with the `table()` and `barplot()` functions
 
 ```{r base_barplot, out.width='20%', fig.align='center'}
-parents <- table(participants_data$academic_parents)
+participants_barplot <- table(participants_data$academic_parents)
 
-barplot(parents)
+barplot(participants_barplot)
 ```
 <small>Bar plot of number of observations of binary data related to academic parents</small>
 
@@ -135,7 +134,9 @@ right: 80%
 
 ```{r ggplot_name_email, fig.height=2, fig.align='center'}
 library(ggplot2)
-ggplot(data = participants_data, aes(x=letters_in_first_name, y=days_to_email_response)) + 
+ggplot(data = participants_data, 
+       aes(x = letters_in_first_name, 
+           y = days_to_email_response)) + 
   geom_point()
 ```
 <small>Scatterplot of days to email response as a function of the letters in your first name</small>
@@ -152,7 +153,11 @@ right: 80%
 ***
 
 ```{r ggplot_color_size, fig.height= 2, fig.align='center'} 
-ggplot(data = participants_data, aes(x=letters_in_first_name, y=days_to_email_response, color=academic_parents, size=working_hours_per_day)) + 
+ggplot(data = participants_data, 
+       aes(x = letters_in_first_name, 
+           y = days_to_email_response, 
+           color = academic_parents, 
+           size = working_hours_per_day)) + 
   geom_point()
 ``` 
 <small>Scatterplot of letters in your first name as a function of days to email response with colors representing binary data related to academic parents and working hours per day as bubble sizes.</small>
@@ -171,7 +176,11 @@ right: 80%
 **Example from Anderson's iris data set**
 
 ```{r ggplot_iris, fig.height= 2, fig.align='center'}
-ggplot(data=iris, aes(x=Sepal.Length, y=Petal.Length, color=Species, size=Petal.Width))+ 
+ggplot(data = iris, 
+       aes(x = Sepal.Length, 
+           y = Petal.Length, 
+           color = Species, 
+           size = Petal.Width))+ 
   geom_point()
 ```
 <small>Scatterplot of iris petal length as a function of sepal length with colors representing iris species and petal width as bubble sizes.</small>
@@ -180,26 +189,18 @@ ggplot2: diamonds price
 ========================================================
 incremental: true
 right: 80%
-```{r, out.width='70%', fig.align='right', echo=FALSE}
-knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
-```
+![](Data_Visualization-figure/ggplot2.png)
 
 ***
 
 **ggplot** accepts formula arguments such as log
-```
-ggplot(data = diamonds, aes(x=carat, y=price, alpha = 0.2)) + geom_point()
-```
-```
-ggplot(data = diamonds, aes(x=log(carat), y= log(price), alpha = 0.2)) + geom_point()
-```
-```{r ggplot_carat_price, fig.width=20, fig.height=5, fig.align='center', echo=FALSE} 
-plot1 <- ggplot(data = diamonds, aes(x=carat, y=price, alpha = 0.2)) +
+
+```{r ggplot_carat_price, fig.height= 2, fig.align='center'} 
+ggplot(data = diamonds,
+       aes(x = log(carat),
+           y = log(price),
+           alpha = 0.2)) + 
   geom_point()
-plot2 <- ggplot(data = diamonds, aes(x=log(carat), y= log(price), alpha = 0.2)) + 
-  geom_point()
-library(gridExtra)
-grid.arrange(plot1, plot2, ncol=2)
 ```
 
 ggplot2: diamonds color shape
@@ -211,25 +212,16 @@ right: 80%
 
 ***
 
-```{r diamonds_color, fig.show='hide'}
-library(dplyr)
-dsmall <- top_n(diamonds, n=100)
-#Plot with different colors for color
-ggplot(data = dsmall, aes(x=carat, y=price, color = color))+ geom_point()
-#Plot with different shapes for cut 
-ggplot( data = dsmall, aes(carat, price, shape = cut)) + geom_point()
-```
-
-```{r ggplot_diamonds_color_shape, fig.height=2, fig.align='center', echo=FALSE} 
-library(dplyr)
-#Create a sample
-dsmall <- dsmall <- top_n(diamonds, n=100)
-#Plot with different colors for color
-plot3<-ggplot(data = dsmall, aes(x=carat, y=price, color = color))+ geom_point()
-#Plot with different shapes for cut 
-plot4<-ggplot( data = dsmall, aes(carat, price, shape = cut)) + geom_point()
-library(gridExtra)
-grid.arrange(plot3, plot4, ncol=2)
+```{r diamonds_color, fig.height=2, fig.align='center', echo=FALSE} 
+# Create a smaller diamonds data set (top 100 rows), 
+dsmall <- top_n(diamonds, n = 100)
+# create a scatterplot with carat on the x-axis
+# and price on the y-xis and 
+# with the color of the diamond as the color of the points. 
+ggplot(data = dsmall, aes(x = carat, 
+                          y = price, 
+                          color = color)) + 
+  geom_point()
 ```
 
 
@@ -243,17 +235,17 @@ right: 80%
 ***
 
 Set parameters manually with `I()` *Inhibit Interpretation / Conversion of Objects*
-```{r, fig.show = 'hide'}
-ggplot(data = diamonds, aes(carat, price, alpha=I(0.1), color=I("blue"))) + geom_point()
-
-ggplot(data = diamonds, aes(carat, price, alpha=I(0.4), color=I("green"))) + geom_point()
-```
-
-```{r ggplot_set, fig.width=20, fig.height=2, fig.align='center', echo=FALSE} 
-plot5 <- ggplot(data = diamonds, aes(carat, price, alpha=I(0.1), color=I("blue"))) + geom_point()
-plot6<-ggplot(data = diamonds, aes(carat, price, alpha=I(0.4), color=I("green"))) + geom_point()
-library(gridExtra)
-grid.arrange(plot5, plot6, ncol=2)
+```{r, fig.height=2, fig.align='center', echo=FALSE} 
+# Create a plot of the diamonds data 
+# with carat on the x-axis, price on the y-axis. 
+# Use the inhibit function to set the alpha to 0.1 
+# and color to blue.
+ggplot(data = diamonds, 
+       aes(x = carat, 
+           y = price, 
+           alpha = I(0.1), 
+           color = I("blue"))) + 
+  geom_point()
 ```
 
 
@@ -267,22 +259,19 @@ right: 80%
 ***
 
 With “geom” different types of plots can be defined e.g. points, line, boxplot, path, smooth. These can also be combined.
-```
-ggplot(data=dsmall, aes(x=carat, y=price))+
+
+```{r, fig.height=2, fig.align='center', echo=FALSE} 
+# Create a smaller data set of diamonds with 50 rows.
+dsmall <- top_n(diamonds, 
+                n = 50) 
+# Create a scatterplot and smoothed conditional 
+# means overlay with carat on the x-axis 
+# and price on the y-axis.
+ggplot(data = dsmall, 
+       aes(x = carat, 
+           y = price))+
 geom_point()+
 geom_smooth()
-```
-```{r ggplot_geom, fig.width=20, fig.height=4, fig.align='center', echo=FALSE} 
-#Create a sample
-p1 <- ggplot(data=dsmall, aes(x=carat, y=price))+
-geom_point()
-p2 <- ggplot(data=dsmall, aes(x=carat, y=price))+
-geom_smooth()
-p3 <- ggplot(data=dsmall, aes(x=carat, y=price))+
-geom_smooth()+
-geom_point()
-library(gridExtra)
-grid.arrange(p1, p2, p3, ncol=3)
 ```
 
 
@@ -290,36 +279,25 @@ ggplot2: smooth function
 ========================================================
 incremental: true
 right: 80%
-```{r out.width='70%', fig.align='center', echo=FALSE}
-knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
-```
+![](Data_Visualization-figure/ggplot2.png)
 
 ***
 
 `geom_smooth()` selects a smoothing method based on the data. Use `method =` to specify your preferred smoothing method.
-```
-ggplot(data=dsmall, aes(x=carat, y=price))+ geom_point()+ geom_smooth()
 
-ggplot(data=diamonds, aes(x=carat, y=price))+ geom_point()+ 
-geom_smooth(method = 'glm')
-```
-
-```{r ggplot_smooth, fig.width=20, fig.height=3, fig.align='center', echo=FALSE} 
-#Create a sample
-pl1 <- ggplot(data=dsmall, aes(x=carat, y=price))+
-geom_point()+
-geom_smooth()
-
-pl2 <- ggplot(data=diamonds, aes(x=carat, y=price))+
-geom_point()+
-geom_smooth()
-
-pl3 <- ggplot(data=diamonds, aes(x=carat, y=price))+
-geom_point()+
-geom_smooth(method = 'glm')
-
-library(gridExtra)
-grid.arrange(pl1, pl2, pl3, ncol=3)
+```{r ggplot_smooth, fig.height=2, fig.align='center', echo=FALSE} 
+# Create a smaller data set of diamonds with 50 rows. 
+dsmall <- top_n(diamonds, 
+                n = 50)
+# Create a scatterplot and smoothed conditional 
+# means overlay with carat on the x-axis 
+# and price on the y-axis.
+# Use 'glm' as the option for the smoothing
+ggplot(data = dsmall, 
+       aes(x = carat, 
+           y = price))+ 
+  geom_point()+ 
+geom_smooth(method = 'glm') 
 ```
 ~~ggplot2 lines and smoothing options~~
 
@@ -336,7 +314,11 @@ right: 80%
 - Boxplots can be displayed through `geom_boxplot()`. 
 
 ```{r ggplot_boxplot, fig.width=20, fig.height=7, fig.align='center'}
-ggplot(data=diamonds, aes(x=color, y=price/carat)) + 
+# Create a boxplot where the x-axis is cut and
+#  the y-axis is price divided by carat
+ggplot(data = diamonds, 
+       aes(x = cut, 
+           y = price/carat)) + 
 geom_boxplot()
 ```
 
@@ -352,326 +334,27 @@ right: 80%
 - Jittered plots `geom_jitter()` show all points. 
 
 ```{r jitter_plot, fig.width=20, fig.height=5, fig.align='center'}
-ggplot(data=diamonds, aes(x=color, y=price/carat)) + 
+# Create a jittered boxplot where the x-axis is cut and
+#  the y-axis is price divided by carat
+ggplot(data = diamonds, 
+       aes(x = color, 
+           y = price/carat)) + 
 geom_boxplot()+ 
 geom_jitter()
 ```
 
-ggplot2: adding alpha 
+<!-- "many more examples in the tutorial" -->
+
+Your turn to perform
 ========================================================
 incremental: true
 right: 80%
 ![](Data_Visualization-figure/ggplot2.png)
 
-
 ***
 
-In case of overplotting changing `alpha` can help.
-```{r boxplot_jitter, fig.width=20, fig.height=5, fig.align='center'}
-ggplot(data=diamonds, aes(x=color, y=price/carat, alpha=I(0.1))) + 
-geom_boxplot()+ 
-geom_jitter()
-```
+After you have gone through the tutorial please do the following exercises.
 
-```{r ggplot_box_jitter, fig.width=20, fig.height=5, fig.align='center', echo=FALSE} 
-
-pt1 <- ggplot(data=diamonds, aes(x=color, y=price/carat)) + 
-geom_boxplot()
-
-pt2 <- ggplot(data=diamonds, aes(x=color, y=price/carat)) + 
-geom_boxplot()+ 
-geom_jitter()
-
-pt3 <- ggplot(data=diamonds, aes(x=color, y=price/carat, alpha=I(0.1))) + 
-geom_boxplot()+ 
-geom_jitter()
-
-library(gridExtra)
-grid.arrange(pt1, pt2, pt3, ncol=3)
-```
-
-
-ggplot2: geom_histogram
-========================================================
-incremental: true
-right: 80%
-![](Data_Visualization-figure/ggplot2.png)
-
-
-***
-
-```
-ggplot(data = diamonds, aes(x=carat)) +
-geom_density()
-
-ggplot(data = diamonds, aes(x=carat, color = color)) +
-geom_density()
-
-ggplot(data = diamonds, aes(x=carat, color = color, alpha=I(0.3))) +
-geom_density()
-```
-
-```{r ggplot_histograms, fig.width=20, fig.height=2, fig.align='center', echo=FALSE} 
-
-pt4 <- ggplot(data = diamonds, aes(x=carat)) +
-geom_density()
-
-pt5 <- ggplot(data = diamonds, aes(x=carat, fill = color)) +
-geom_density()
-
-pt6 <- ggplot(data = diamonds, aes(x=carat, fill = color, alpha=I(0.3))) +
-geom_density()
-
-library(gridExtra)
-grid.arrange(pt4, pt5, pt6, ncol=3)
-```
-~~ggplot2 histograms~~
-
-ggplot2: subset
-========================================================
-incremental: true
-right: 80%
-![](Data_Visualization-figure/ggplot2.png)
-
-
-***
-
-Use factor to subset your data.
-```
-ggplot(data = mpg, aes(x=displ, y=hwy,  color = cyl))+ 
-geom_point()+
-geom_smooth(method="lm")
-
-ggplot(data = mpg, aes(x=displ, y=hwy,  color = factor(cyl)))+ 
-geom_point()+
-geom_smooth(method="lm")
-```
-
-```{r ggplot_subset, fig.width=20, fig.height=5, fig.align='center', echo=FALSE} 
-
-plt1 <- ggplot(data = mpg, aes(x=displ, y=hwy,  color = cyl))+ 
-geom_point()+
-geom_smooth(method="lm")
-
-plt2 <- ggplot(data = mpg, aes(x=displ, y=hwy,  color = factor(cyl)))+ 
-geom_point()+
-geom_smooth(method="lm")
-
-library(gridExtra)
-grid.arrange(plt1, plt2, ncol=2)
-```
-~~ggplot2 subset with smooth line~~
-
-ggplot2: "slow ggplotting"
-========================================================
-incremental: true
-right: 80%
-![](Data_Visualization-figure/r_ladies.jpg)
-
-for `aes()` in `ggplot()`
-***
-
-- using fewer functions; example - using labs() to add a title instead of ggtitle()
-- using functions multiple times; example aes(x = var1) + aes(y = var2) rather than aes(x = var1, y = var2)
-- using base R functions and tidyverse functions.  For other packages, the :: style to call them
-- write out arguments (no shortcuts)  aes(x = gdppercap) not aes(gdppercap)
-
-<small><https://evamaerey.github.io/ggplot_flipbook/ggplot_flipbook_xaringan.html#1></small>
-
-ggplot2: not slow example
-========================================================
-incremental: true
-right: 80%
-![](Data_Visualization-figure/r_ladies.jpg)
-
-***
-ggplot code in non-slow fashion
-```{r ggplot_not_slow, fig.width=20, fig.height=5, fig.align='center'}
-ggplot(mtcars, aes(mpg, y = hp, col = gear)) +
-  geom_point() +
-  ggtitle("My Title") +
-  labs(x = "the x label", y = "the y label", col = "legend title")
-```
-
-ggplot2: slow ggplotting example
-========================================================
-incremental: true
-right: 80%
-![](Data_Visualization-figure/r_ladies.jpg)
-
-***
-'Slow ggplotting' version for the same plot
-```{r slow_ggplotting_example, fig.width=20, fig.height=4, fig.align='center'}
-  ggplot(data = mtcars) +
-  aes(x = mpg) +
-  labs(x = "the x label") +
-  aes(y = hp) +
-  labs(y = "the y label") +
-  geom_point() +
-  aes(col = gear) +
-  labs(col = "legend title") +
-  labs(title = "My Title")
-```
-
-<small><https://evamaerey.github.io/ggplot_flipbook/ggplot_flipbook_xaringan.html#1></small>
-
-ggplot2: geom_tile
-========================================================
-incremental: true
-right: 80%
-```{r, out.width='80%', fig.align='right', echo=FALSE}
-knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
-```
-
-***
-
-- Use `dplyr`, and `ggplot2` 
-
-```
-part_data<-select_if(participants_data, is.numeric)
-
-cormat <- round(cor(part_data), 1)
-melted_cormat <- melt(cormat)
-
-ggplot(data = melted_cormat, aes(x=Var1, 
-y=Var2, fill=value)) + 
-geom_tile()
-```
-
-```{r geom_melted_cormat, fig.width=12, fig.height=2, fig.align='center', echo=FALSE}
-part_data<-select_if(participants_data, is.numeric)
-
-cormat <- round(cor(part_data), 1)
-melted_cormat <- melt(cormat)
-
-ggplot(data = melted_cormat, aes(x=Var1, 
-y=Var2, fill=value)) + 
-geom_tile()
-```
-
-Export Figures
-========================================================
-incremental: true
-right: 70%
-```{r fig.width=10, fig.height=10, fig.align='center', echo=FALSE}
-knitr::include_graphics('Data_Visualization-figure/cortile.png')
-```
-
-***
-
-```
-png(file = "cortile.png", width = 7, height = 6, units = "in", res = 300)
-
-ggplot(data = melted_cormat, aes(x = Var1, y = Var2, fill = value)) + geom_tile() + theme(axis.text.x = element_text(angle = 45, hjust = 1))
-
-dev.off()
-```
-
-- Check with journal about size, resolution etc.
-
-```{r}
-?pdf
-```
-
-
-gganimate: datasauRus
-========================================================
-incremental: true
-right: 80%
-```{r, out.width='80%', fig.align='right', echo=FALSE}
-knitr::include_graphics('Data_Visualization-figure/gganimate_logo.png')
-```
-
-***
-
-- Use `datasauRus`, `ggplot2` and `gganimate` 
-
-```
-library(gganimate)
-library(datasauRus)
-```
-```
-ggplot(datasaurus_dozen, aes(x=x, y=y))+
-  geom_point()+
-  theme_minimal() +
-  transition_states(dataset, 3, 1) + 
-  ease_aes('cubic-in-out')
-```
-
-gganimate: Datasaurus Dozen
-========================================================
-incremental: true
-right: 80%
-```{r, out.width='80%', fig.align='right', echo=FALSE}
-knitr::include_graphics('Data_Visualization-figure/gganimate_logo.png')
-```
-
-***
-
-```{r animate_datasaurus_dozen, fig.width=12, fig.height=10, fig.align='center', echo=FALSE}
-library(datasauRus)
-library(ggplot2)
-library(gganimate)
-
-ggplot(datasaurus_dozen, aes(x=x, y=y))+
-  geom_point()+
-  theme_minimal() +
-  transition_states(dataset, 3, 1) + 
-  ease_aes('cubic-in-out')
-```
-  
-gganimate: diamonds carat
-========================================================
-incremental: true
-right: 80%
-```{r, out.width='80%', fig.align='right', echo=FALSE}
-library(gifski)
-library(gganimate)
-knitr::include_graphics('Data_Visualization-figure/gganimate_logo.png')
-```
-
-***
-
-- Use `tidyverse`, `ggplot2` and `gganimate`
-
-```{r animate_diamonds, fig.width=12, fig.height=4, fig.align='center'}
-ggplot(data = dsmall, aes(x = carat, y = price, color = color)) + 
-  geom_line() +
-  transition_reveal(carat) + 
-  ease_aes("linear") +
-  labs(title='Diamond carat: {frame_along}')
-```
-
-
-Tasks for the afternoon: Basic
-========================================================
-incremental: true
-right: 80%
-```{r, out.width='80%', fig.align='center', echo=FALSE}
-knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
-```
-
-***
-
-**Test your new skills**
-
-- Use scatter plots, barcharts and boxplots
+- Create a scatter plot, barchart and boxplot (as above)
 - Vary the sample and run the same analysis and plots
-- Save your most interesting figure and share it with us 
-
-Tasks for the afternoon: Advanced
-========================================================
-incremental: true
-right: 80%
-```{r, out.width='80%', fig.align='center', echo=FALSE}
-knitr::include_graphics('Data_Visualization-figure/ggplot2.png')
-```
-
-***
-
-**Your turn to perform**
-
-- Import data from an external source (e.g. FAO, World Bank)
-- Display those data in an interactive plot
-- Play around with the design
-- Export your most interesting figure and share it with us
+- Save your most interesting figure and share it with us

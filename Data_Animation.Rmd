@@ -1,0 +1,94 @@
+## Data Animation
+
+![](images/wrangler.png){width=1in}
+![](images/tidyR.png){width=1in}
+![](images/dplyr.png){width=1.5in}
+
+
+### gganimate
+
+The datasauRus
+
+![](images/gganimate_logo.png){width=1in}
+
+- Use `datasauRus`, `ggplot2` and `gganimate` [@R-datasauRus, @R-ggplot2, @R-gganimate] 
+
+### gganimate: Datasaurus Dozen
+
+![](images/gganimate_logo.png){width=1in}
+- Use `datasauRus`, `ggplot2` and `gganimate` [@R-datasauRus, @R-ggplot2, @R-gganimate].
+
+We will use the `datasaurus_dozen` data for this example [@R-datasauRus]. First we should get a sense of the contents of this data set. 
+
+```{r data_datasaurus_dozen-check, exercise=TRUE}
+# Check the names for the `datasaurus_dozen` data
+
+```
+
+```{r data_datasaurus_dozen-check-solution}
+names(datasaurus_dozen)
+```
+
+Create an animation (depending on your server this may work better on your local machine).
+
+```{r animate_datasaurus_dozen, exercise=TRUE}
+# Change the 'ease_aes()' option from default 'linear'
+# to 'cubic-in-out' for a smoother appearance
+ggplot(datasaurus_dozen, 
+       aes(x = x,
+           y = y))+
+  geom_point()+
+  theme_minimal() +
+  transition_states(states = dataset) + 
+  ease_aes()
+```
+  
+```{r animate_datasaurus_dozen-solution}
+ggplot(datasaurus_dozen, 
+       aes(x = x,
+           y = y))+
+  geom_point()+
+  theme_minimal() +
+  transition_states(states = dataset) + 
+  ease_aes('cubic-in-out')
+```
+
+### gganimate: diamonds carat
+
+![](images/gganimate_logo.png){width=1in}
+
+- Use `tidyverse`, `ggplot2` and `gganimate` [@R-tidyverse, @R-ggplot2, @R-gganimate].
+
+```{r animate_diamonds, exercise=TRUE}
+# Change our 'dsmall' selection 
+# of diamonds data to 100 observations
+dsmall <- top_n(diamonds, 
+                n = 40)
+
+ggplot(data = dsmall, 
+       aes(x = carat, 
+           y = price, 
+           color = color)) + 
+  geom_line() +
+  transition_reveal(carat) + 
+  ease_aes() 
+```
+
+```{r animate_diamonds-solution}
+dsmall <- top_n(diamonds, 
+                n = 100)
+
+ggplot(data = dsmall, 
+       aes(x = carat, 
+           y = price, 
+           color = color)) + 
+  geom_line() +
+  transition_reveal(carat) + 
+  ease_aes() 
+```
+
+You can add a label that follow the transitions by adding `labs` options:
+```
+  + labs(title = 'Diamond carat: {frame_along}')
+```
+  

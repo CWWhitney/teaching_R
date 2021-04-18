@@ -4,7 +4,7 @@
 ![](images/tidyR.png){width=1in}
 ![](images/dplyr.png){width=1.5in}
 
-The video below offers an overview of the content in covered in this section of the tutorial. Keep in mind that I did not yet have your data when I recorded this so the results of my scripts may be slightly different than yours. Feel free to watch the video and follow along or simply work through the tutorial. 
+The video below offers an overview of the content in covered in this section of the tutorial. Keep in mind that I did not yet have your data when I recorded this so the results of my scripts may be slightly different than yours. Feel free to watch the video and follow along or simply work through the tutorial. All the [Data Visualization slides](http://htmlpreview.github.io/?https://github.com/CWWhitney/teaching_R/blob/master/Data_Visualization_Rpres/Data_Visualization.html#/) are also available as a web page. 
 
 ![](https://youtu.be/J1JjUPzA1mA)
 
@@ -45,7 +45,7 @@ https://rmarkdown.rstudio.com/
 
 - Load the data with the `read.csv` function
 
-```{r vis-load-data, exercise=TRUE}
+```
 participants_data <- read.csv("participants_data.csv")
 ```
 
@@ -205,8 +205,8 @@ plot1 <- ggplot(data = diamonds,
 # of the log of carat (x) 
 # and the log of price (y)
 ggplot(data = diamonds,
-       aes(x = log(cut),
-           y = log(clarity),
+       aes(x = log(depth),
+           y = log(table),
            alpha = 0.2)) +
   geom_point()
 ```
@@ -465,7 +465,7 @@ geom_density()
 ```{r vis-geom-histogram-alpha, exercise=TRUE}
 # Change the density plot so that the x-axis is carat 
 # the color is the diamond color
-# and hte alpha is set to 0.3 using the inhibit function
+# and the alpha is set to 0.3 using the inhibit function
 ggplot(data = diamonds, 
        aes(x = price, 
            color = cut, 
@@ -517,12 +517,12 @@ geom_smooth(method = "lm")
 
 for `aes()` in `ggplot()`
 
-- using fewer functions; example - using labs() to add a title instead of ggtitle()
-- using functions multiple times; example aes(x = var1) + aes(y = var2) rather than aes(x = var1, y = var2)
-- using base R functions and tidyverse functions.  For other packages, the :: style to call them
-- write out arguments (no shortcuts)  aes(x = gdppercap) not aes(gdppercap)
+- using fewer functions; example - using `labs()` to add a title instead of `ggtitle()`
+- using functions multiple times; example `aes(x = var1) + aes(y = var2)` rather than `aes(x = var1, y = var2)`
+- using base R functions and tidyverse functions. For other packages, the `::` style to call them 
+- write out arguments (no shortcuts)  `aes(x = gdppercap)` not `aes(gdppercap)`
 
-<https://evamaerey.github.io/ggplot_flipbook/ggplot_flipbook_xaringan.html#1>
+For more about this check out the [ggplot flip book](https://evamaerey.github.io/ggplot_flipbook/ggplot_flipbook_xaringan.html#1).
 
 ###  ggplot2: not slow example
 
@@ -541,6 +541,21 @@ ggplot(mtcars,
   labs(x = "the x label", 
        y = "the y label", 
        col = "legend title")
+```
+
+```{r ggplot_labels-hint-1}
+# Change the "My Title" portion of `ggtitle("My Title")` 
+# to something else like "A really cool title"
+```
+
+```{r ggplot_labels-hint-2}
+# Change the "the y label" portion of `y = "the y label"` 
+# to something else like "A very cool y label"
+```
+
+```{r ggplot_labels-hint-3}
+# Change the "the y label" portion of `x = "the x label"` 
+# to something else like "An exceptionally cool x label"
 ```
 
 ### ggplot2: slow ggplotting example
@@ -562,7 +577,6 @@ ggplot(data = mtcars) +
   labs(title = "My Title")
 ```
 
-<https://evamaerey.github.io/ggplot_flipbook/ggplot_flipbook_xaringan.html#1>
 
 ###  ggplot2: geom_tile
 
@@ -607,93 +621,6 @@ dev.off()
 
 Another output option is pdf. Query the help file with`?pdf`.
 
-### gganimate
-
-The datasauRus
-
-![](images/gganimate_logo.png){width=1in}
-
-- Use `datasauRus`, `ggplot2` and `gganimate` [@R-datasauRus, @R-ggplot2, @R-gganimate] 
-
-### gganimate: Datasaurus Dozen
-
-![](images/gganimate_logo.png){width=1in}
-- Use `datasauRus`, `ggplot2` and `gganimate` [@R-datasauRus, @R-ggplot2, @R-gganimate].
-
-We will use the `datasaurus_dozen` data for this example [@R-datasauRus]. First we should get a sense of the contents of this data set. 
-
-```{r data_datasaurus_dozen-check, exercise=TRUE}
-# Check the names for the `datasaurus_dozen` data
-
-```
-
-```{r data_datasaurus_dozen-check-solution}
-names(datasaurus_dozen)
-```
-
-Create an animation (depending on your server this may work better on your local machine).
-
-```{r animate_datasaurus_dozen, exercise=TRUE}
-# Change the 'ease_aes()' option from default 'linear'
-# to 'cubic-in-out' for a smoother appearance
-ggplot(datasaurus_dozen, 
-       aes(x = x,
-           y = y))+
-  geom_point()+
-  theme_minimal() +
-  transition_states(states = dataset) + 
-  ease_aes()
-```
-  
-```{r animate_datasaurus_dozen-solution}
-ggplot(datasaurus_dozen, 
-       aes(x = x,
-           y = y))+
-  geom_point()+
-  theme_minimal() +
-  transition_states(states = dataset) + 
-  ease_aes('cubic-in-out')
-```
-
-### gganimate: diamonds carat
-
-![](images/gganimate_logo.png){width=1in}
-
-- Use `tidyverse`, `ggplot2` and `gganimate` [@R-tidyverse, @R-ggplot2, @R-gganimate].
-
-```{r animate_diamonds, exercise=TRUE}
-# Change our 'dsmall' selection 
-# of diamonds data to 100 observations
-dsmall <- top_n(diamonds, 
-                n = 40)
-
-ggplot(data = dsmall, 
-       aes(x = carat, 
-           y = price, 
-           color = color)) + 
-  geom_line() +
-  transition_reveal(carat) + 
-  ease_aes() 
-```
-
-```{r animate_diamonds-solution}
-dsmall <- top_n(diamonds, 
-                n = 100)
-
-ggplot(data = dsmall, 
-       aes(x = carat, 
-           y = price, 
-           color = color)) + 
-  geom_line() +
-  transition_reveal(carat) + 
-  ease_aes() 
-```
-
-You can add a label that follow the transitions by adding `labs` options:
-```
-  + labs(title = 'Diamond carat: {frame_along}')
-```
-  
 ### Tasks for the afternoon: Basic
 
 ![](images/ggplot2.png){width=1in}
@@ -707,11 +634,4 @@ You can add a label that follow the transitions by adding `labs` options:
 - Create a scatter plot, barchart and boxplot (as above)
 - Vary the sample and run the same analysis and plots
 - Save your most interesting figure and share it with us
-
-**Optional advanced work**
-
-- Import your own data or data from an external source (e.g. FAO, World Bank)
-- Display those data using ggplot tools (feel free to animate it)
-- Play around with the design
-- Export your most interesting figure and share it with us
 

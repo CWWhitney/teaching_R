@@ -1,10 +1,10 @@
 ## Data Wrangling Part 1
 
-![](images/wrangler.png){width=1in}
+![](images/wrangler.png){width=2in}
 ![](images/tidyR.png){width=1in}
 ![](images/dplyr.png){width=1.5in}
 
-The video below gives a brief overview the content of this section of the tutorial. 
+The video below gives a brief overview the content of this section of the tutorial. All the [Data Wrangling slides](http://htmlpreview.github.io/?https://github.com/CWWhitney/teaching_R/blob/master/Data_Wrangling_Rpres/Data_Wrangling.html#/) are also available as a web page. 
 
 ![](https://youtu.be/_34VPVgCmQ0)
 

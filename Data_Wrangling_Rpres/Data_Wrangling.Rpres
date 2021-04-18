@@ -79,18 +79,21 @@ right: 80%
 Keep it tidy
 ***
 
-Use ‘#’ to annotate and not run
+Use `#` to annotate and not run
 
-If not Rmarkdown then at least use ‘----’ or ‘####’ 
+If not Rmarkdown then at least use `----` or `####` 
 
-#Section 1----
+`# Section 1 ----`
 
-#Section 2####
+`# Section 2 ####`
 
-#Section 3####
+`# Section 3 ####`
 
 <span style="font-weight:bold; color:red;">TOC in upper right console</span>
 
+<!-- End Part 1 -->
+
+<!-- Begin Part 2 -->
 
 <div class="footer" style="margin-top;font-size:60%;"> 
 http://style.tidyverse.org/ </div>
@@ -230,18 +233,59 @@ participants_data <- read.csv("participants_data.csv")
 - Keep your data in the same folder structure as .RProj
 - at or below the level of .RProj
 
+Use `head` in R
+========================================================
+incremental: true
+<small>Load data</small> <img src="Data_Wrangling-figure/R_logo.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";">
+
+- Look at the top rows of the data with the `head` function.
+```{r wrangle-pres-head-participants-data}
+head(participants_data)
+```
+
+Use `names` in R
+========================================================
+incremental: true
+<small>Load data</small> <img src="Data_Wrangling-figure/R_logo.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";">
+
+- Check the names of the variables in the data with the `names` function.
+```{r wrangle-pres-names-participants-data}
+head(participants_data)
+```
+
+Use `str` in R
+========================================================
+incremental: true
+<small>Load data</small> <img src="Data_Wrangling-figure/R_logo.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";">
+
+- Look at the structure of the data with the `str` function.
+```{r wrangle-pres-str-participants-data}
+str(participants_data)
+```
+
+Use `$` in R
+========================================================
+incremental: true
+<small>Load data</small> <img src="Data_Wrangling-figure/R_logo.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";">
+
+- Call a particular variable in your data with `$`
+```{r wrangle-pres-subset-participants-data}
+participants_data$age
+```
+
+
 Wrangling: dplyr library
 ========================================================
 incremental: true
 left: 40%
 <small>Using __dplyr__</small> <img src="Data_Wrangling-figure/dplyr.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";"> 
 
-```{r}
+```{r wrangle-pres-load-dplyr}
 library(dplyr)
 ```
 
 and others we need today
-```{r}
+```{r wrangle-pres-load-libraries}
 library(knitr)
 library(tidyr)
 library(dplyr)
@@ -259,49 +303,40 @@ library(magrittr)
 https://dplyr.tidyverse.org/ </div>
 
 
-Wrangling: dplyr::select aca_work_filter
+Wrangling: dplyr::select 
 ========================================================
 incremental: true
 <small>Subsetting</small> <img src="Data_Wrangling-figure/dplyr.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";">
 
 __Select__
 
-```{r}
-aca_work_filter <- select(participants_data, academic_parents, working_hours_per_day)
+- Create a subset of the data with the `select` function
+```{r wrangle-pres-select}
+select(participants_data, 
+       academic_parents,
+       working_hours_per_day)
 ```
 
 <div class="footer" style="margin-top;font-size:60%;"> 
 https://dplyr.tidyverse.org/ </div>
 
-Wrangling: dplyr::select non_aca_work_filter
+Wrangling: dplyr::select (-)
 ========================================================
 incremental: true
 <small>Subsetting</small> <img src="Data_Wrangling-figure/dplyr.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";">
 
 __Select__
 
-```{r}
-non_aca_work_filter <- select(participants_data, -academic_parents, -working_hours_per_day)
+```{r wrangle-pres-deselect}
+select(participants_data,
+       -academic_parents,
+       -working_hours_per_day)
 ```
 
 <div class="footer" style="margin-top;font-size:60%;"> 
 https://dplyr.tidyverse.org/ </div>
 
-Wrangling: dplyr::filter work_filter
-========================================================
-incremental: true
-<small>Subsetting</small> <img src="Data_Wrangling-figure/dplyr.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";">
-
-
-__Filter__
-```{r}
-work_filter <- filter(participants_data, working_hours_per_day >10)
-```
-
-<div class="footer" style="margin-top;font-size:60%;"> 
-https://dplyr.tidyverse.org/ </div>
-
-Wrangling: dplyr::filter work_name_filter
+Wrangling: dplyr::filter
 ========================================================
 incremental: true
 <small>Subsetting</small> <img src="Data_Wrangling-figure/dplyr.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";">
@@ -309,8 +344,27 @@ incremental: true
 
 __Filter__
 
-```{r}
-work_name_filter <- filter(participants_data, working_hours_per_day >10 & letters_in_first_name >6)
+Create a subset of the data with the `filter` function
+```{r wrangle-pres-filter}
+filter(participants_data, 
+       working_hours_per_day >10)
+```
+
+<div class="footer" style="margin-top;font-size:60%;"> 
+https://dplyr.tidyverse.org/ </div>
+
+Wrangling: dplyr::filter (multiple)
+========================================================
+incremental: true
+<small>Subsetting</small> <img src="Data_Wrangling-figure/dplyr.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";">
+
+
+__Filter__
+
+```{r wrangle-pres-filter-2}
+filter(participants_data, 
+       working_hours_per_day >10 & 
+         letters_in_first_name >6)
 ```
 
 <div class="footer" style="margin-top;font-size:60%;"> 
@@ -322,22 +376,23 @@ incremental: true
 <small> __Rename__ </small> <img src="Data_Wrangling-figure/dplyr.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";">
 
 
-```{r}
-participants_data <- rename(participants_data, name_length = letters_in_first_name)
+```{r wrangle-pres-rename}
+rename(participants_data, 
+       name_length = letters_in_first_name)
 ```
 
 <div class="footer" style="margin-top;font-size:60%;"> 
 https://dplyr.tidyverse.org/ </div>
 
-Wrangling: dplyr::rename daily_labor
+Wrangling: dplyr::rename (again)
 ========================================================
 incremental: true
 <small> __Rename__ </small> <img src="Data_Wrangling-figure/dplyr.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";">
 
 
-```{r}
-participants_data <- rename(participants_data,
-daily_labor = working_hours_per_day)
+```{r wrangle-pres-rename2}
+rename(participants_data, 
+       commute = km_home_to_zef)
 ```
 <div class="footer" style="margin-top;font-size:60%;"> 
 https://dplyr.tidyverse.org/ </div>
@@ -347,32 +402,26 @@ Wrangling: dplyr::mutate
 incremental: true
 <small> __Mutate__ </small> <img src="Data_Wrangling-figure/dplyr.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";">
 
-```{r}
-participants_data <- mutate(participants_data, labor_mean = daily_labor*mean(daily_labor))
+```{r wrangle-pres-mutate}
+mutate(participants_data, 
+       labor_mean = working_hours_per_day*
+              mean(working_hours_per_day))
 ```
 
 <div class="footer"></small><small>https://dplyr.tidyverse.org/ </small> </small></div>
 
-Wrangling: dplyr::mutate
+Wrangling: dplyr::mutate (again)
 ========================================================
 incremental: true
 <small> __Mutate__ </small> <img src="Data_Wrangling-figure/dplyr.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";">
 
 Create a commute category
 
-```{r}
-participants_data <- mutate(participants_data, commute = ifelse(km_home_to_zef > 10, "commuter", "local"))
-```
-
-<div class="footer"></small><small>https://dplyr.tidyverse.org/ </small> </small></div>
-
-Wrangling: dplyr::group_by
-========================================================
-incremental: true
-<small> __Group__ </small> <img src="Data_Wrangling-figure/dplyr.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";"> <small>group data by commuters and non-commuters</small>
-
-```{r}
-commuter_data <- group_by(participants_data, commute)
+```{r wrangle-pres-mutate2}
+mutate(participants_data, 
+       commute = 
+         ifelse(km_home_to_zef > 10, 
+                 "commuter", "local"))
 ```
 
 <div class="footer"></small><small>https://dplyr.tidyverse.org/ </small> </small></div>
@@ -380,39 +429,33 @@ commuter_data <- group_by(participants_data, commute)
 Wrangling: dplyr::summarize
 ========================================================
 incremental: true
-<small> __Summarize__ </small> <img src="Data_Wrangling-figure/dplyr.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";"> <small>get a summary of travel times and days to response</small>
+<small> __Summarize__ </small> <img src="Data_Wrangling-figure/dplyr.png" style="background:none; border:none; box-shadow:none;height="10%"; width="10%";">
+
+Get a summary of selected variables with `summarize`
 
 ```{r}
-commuter_summary <- summarize(commuter_data, mean(days_to_email_response), median(name_length))
+summarize(participants_data,
+          mean(years_of_study),
+          median(letters_in_first_name))
 ```
 
 
 Wrangling: magrittr use
 ========================================================
 incremental: true
+
 __Pipeline %>%__ 
-- Do all the previous with a pipeline %>%
+
+- Mix all the previous with a pipeline `%>%` and use the `group_by` function to get summaries per category
+
 ```{r}
-pipe_data <- participants_data %>% 
-   mutate(commute = ifelse(
-     km_home_to_zef > 10, 
-     "commuter", "local")) %>% 
-  group_by(commute) %>% 
+participants_data %>% 
+  group_by(research_continent) %>% 
   summarize(mean(days_to_email_response), 
-            median(name_length), 
-            max(years_of_study)) %>% 
-  as.data.frame
+            median(letters_in_first_name), 
+            max(years_of_study))
 ```
 
-
-Wrangling: magrittr try
-========================================================
-incremental: true
- __Pipeline %>%__  ![](Data_Wrangling-figure/magrittr.png)
-
-- Work on your own with a pipeline %>%
-
-- Make your own query with `dplyr` and `magrittr`
 
 purrr: Apply a function to each element of a vector
 ========================================================
@@ -423,7 +466,7 @@ incremental: true
 library(purrr)
 ```
 
-purr Cheatsheet
+purr Cheatsheet https://github.com/rstudio/cheatsheets/blob/master/purrr.pdf
 
 Using purrr
 ========================================================
@@ -444,12 +487,11 @@ Use purrr
 ```{r}
 library(purrr)
 
-participants_data_regression <- 
     participants_data %>%
-      split(.$batch) %>% # from base R
+      split(.$gender) %>% 
         map(~ 
-          lm(days_to_email_response ~ 
-                daily_labor, 
+          lm(number_of_publications ~ 
+                number_of_siblings, 
                  data = .)) %>%
   map(summary) %>%
   map_dbl("r.squared")
@@ -457,23 +499,7 @@ participants_data_regression <-
 ```
 
 
-Tasks for the afternoon: Basic
-========================================================
-incremental: true
-```{r, out.width='35%', fig.align='center', echo=FALSE}
-knitr::include_graphics('Data_Wrangling-figure/tidyR.png')
-knitr::include_graphics('Data_Wrangling-figure/dplyr.png')
-```
-
-***
-- Perform the above assessment of participants_data only where gender is 'F'
-- Use the magrittr pipeline to perform the tasks in short form
-
-<div class="footer" style="margin-top;font-size:60%;"> 
-cory.whitney@uni-bonn.de </div>
-
-
-Tasks for the afternoon: Advanced
+Tasks to test your new skills
 ========================================================
 left: 20%
 incremental: true
@@ -485,7 +511,8 @@ knitr::include_graphics('Data_Wrangling-figure/magrittr.png')
 ```
 
 ***
-Work through tasks on the diamonds data in long format in base and short format with magrittr pipeline:
+Work through tasks on the `diamonds` data in long format in base and short format with magrittr pipeline:
+
 - select: carat and price
 - filter: only where carat is > 0.5
 - rename: rename price as cost
