@@ -34,9 +34,8 @@ incremental: true
 Data visualization: getting stuck
 ========================================================
 incremental: true
-
-- **Open RStudio**
 ![](Data_Visualization-figure/rstudio-hex.png)
+- **Open RStudio**
 
 - type `?` in R console with function, package or data name
 - Add `R` to a search with a copy of an error message
@@ -59,18 +58,12 @@ right: 30%
 
 ***
 
-```{r, out.width='50%', fig.align='center', echo=FALSE}
-knitr::include_graphics('Data_Visualization-figure/hadley_wickham.png')
-```
+![](Data_Visualization-figure/hadley_wickham.png)
 Hadley Wickham
-```{r, out.width='50%', fig.align='center', echo=FALSE}
-knitr::include_graphics('Data_Visualization-figure/Yihui.png')
-```
+
+![](Data_Visualization-figure/Yihui.png)
 Yihui Xie
-
 <small>https://yihui.name/en/2017/08/so-gh-email/</small>
-
-<small>https://rmarkdown.rstudio.com/ </small>
 
 Getting your data in R
 ========================================================
@@ -99,7 +92,6 @@ participants_barplot <- table(participants_data$academic_parents)
 barplot(participants_barplot)
 ```
 <small>Bar plot of number of observations of binary data related to academic parents</small>
-
 
 ggplot2: 'Grammar of Graphics' Overview
 ========================================================

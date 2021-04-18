@@ -27,9 +27,8 @@ incremental: true
 Data visualization: getting stuck
 ========================================================
 incremental: true
-
-- **Open RStudio**
 ![](Data_Visualization-figure/rstudio-hex.png)
+- **Open RStudio**
 
 - type `?` in R console with function, package or data name
 - Add `R` to a search with a copy of an error message
@@ -52,14 +51,12 @@ right: 30%
 
 ***
 
-<img src="Data_Visualization-figure/hadley_wickham.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" width="50%" style="display: block; margin: auto;" />
+![](Data_Visualization-figure/hadley_wickham.png)
 Hadley Wickham
-<img src="Data_Visualization-figure/Yihui.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" width="50%" style="display: block; margin: auto;" />
+
+![](Data_Visualization-figure/Yihui.png)
 Yihui Xie
-
 <small>https://yihui.name/en/2017/08/so-gh-email/</small>
-
-<small>https://rmarkdown.rstudio.com/ </small>
 
 Getting your data in R
 ========================================================
@@ -92,7 +89,6 @@ barplot(participants_barplot)
 
 <img src="Data_Visualization-figure/base_barplot-1.png" title="plot of chunk base_barplot" alt="plot of chunk base_barplot" width="20%" style="display: block; margin: auto;" />
 <small>Bar plot of number of observations of binary data related to academic parents</small>
-
 
 ggplot2: 'Grammar of Graphics' Overview
 ========================================================
@@ -230,7 +226,7 @@ right: 80%
 ***
 
 Set parameters manually with `I()` *Inhibit Interpretation / Conversion of Objects*
-<img src="Data_Visualization-figure/unnamed-chunk-4-1.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" style="display: block; margin: auto;" />
+<img src="Data_Visualization-figure/unnamed-chunk-2-1.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" style="display: block; margin: auto;" />
 
 
 ggplot2: geom options
@@ -244,7 +240,7 @@ right: 80%
 
 With “geom” different types of plots can be defined e.g. points, line, boxplot, path, smooth. These can also be combined.
 
-<img src="Data_Visualization-figure/unnamed-chunk-5-1.png" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" style="display: block; margin: auto;" />
+<img src="Data_Visualization-figure/unnamed-chunk-3-1.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" style="display: block; margin: auto;" />
 
 
 ggplot2: smooth function

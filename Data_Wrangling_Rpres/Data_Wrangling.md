@@ -89,13 +89,9 @@ If not Rmarkdown then at least use `----` or `####`
 
 <span style="font-weight:bold; color:red;">TOC in upper right console</span>
 
-
-
 <!-- End Part 1 -->
 
-
 <!-- Begin Part 2 -->
-
 
 <div class="footer" style="margin-top;font-size:60%;"> 
 http://style.tidyverse.org/ </div>

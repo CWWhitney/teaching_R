@@ -485,6 +485,8 @@ geom_density()
 
 **ggplot2 histograms**
 
+For more tools that offer visualizations of distributions and uncertainty see the [decisionSupport vignette](https://cran.r-project.org/web/packages/decisionSupport/vignettes/example_decision_function.html) and the [ggdist](https://github.com/mjskay/ggdist/blob/master/figures-source/cheat_sheet-slabinterval.pdf) package. 
+
 ### ggplot2: subset
 
 ![](images/ggplot2.png){width=1in}
