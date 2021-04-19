@@ -123,7 +123,7 @@ $(document).ready(function () {
 <!-- List of Lecture RMD files to be compiled -->
 <div id="section-introduction" class="section level2">
 <h2>Introduction</h2>
-<p>Welcome to this interactive tutorial on the R programming language. This tutorial runs in the <code>learnr</code> <span class="citation">(Schloerke, Allaire, and Borges 2020)</span> library and provides a <code>shiny</code> interface <span class="citation">(Chang et al. 2021)</span> that will allow you the chance to interact with the examples in the R programming language. You may follow along by simply working in this browser. You may find the content and learning a bit more useful if you work on your own machine as well. This will require loading the necessary software. For this tutorial we will use functions from <code>tidyverse</code> <span class="citation">(Wickham 2019)</span> libraries including <code>ggplot2</code> <span class="citation">(Wickham et al. 2020)</span>, <code>dplyr</code> <span class="citation">(Wickham et al. 2021)</span> and <code>magrittr</code> <span class="citation">(Bache and Wickham 2020)</span> among others in the <a href="https://www.r-project.org/">R programming language</a> <span class="citation">(R Core Team 2021)</span>.</p>
+<p>Welcome to this interactive tutorial on the R programming language. This tutorial runs in the <code>learnr</code> <span class="citation">(Schloerke, Allaire, and Borges 2020)</span> library and provides a <code>shiny</code> interface <span class="citation">(Chang et al. 2021)</span> that will allow you the chance to interact with the examples in the R programming language. You may follow along by simply working in this browser. You may find the content and learning a bit more useful if you work on your own machine as well. This will require loading the necessary software. For this tutorial we will use functions from <code>tidyverse</code> <span class="citation">(Wickham 2021b)</span> libraries including <code>ggplot2</code> <span class="citation">(Wickham et al. 2020)</span>, <code>dplyr</code> <span class="citation">(Wickham et al. 2021)</span> and <code>magrittr</code> <span class="citation">(Bache and Wickham 2020)</span> among others in the <a href="https://www.r-project.org/">R programming language</a> <span class="citation">(R Core Team 2021)</span>.</p>
 <p>If you are also planning to run this on your own machine then you should start by installing and running <a href="https://www.r-project.org/">R</a> and <a href="https://rstudio.com/">RStudio</a>. This video walks you through that process.</p>
 <p><img src="https://youtu.be/WT3tKlzCZgo" /></p>
 <div id="section-using-this-tutorial" class="section level3">
@@ -157,8 +157,8 @@ library(tidyverse)
 <div id="section-data-wrangling-part-1" class="section level2">
 <h2>Data Wrangling Part 1</h2>
 <p><img src="images/wrangler.png" style="width:2in" /> <img src="images/tidyR.png" style="width:1in" /> <img src="images/dplyr.png" style="width:1.5in" /></p>
-<p>The video below gives a brief overview the content of this section of the tutorial. All the <a href="http://htmlpreview.github.io/?https://github.com/CWWhitney/teaching_R/blob/master/Data_Wrangling_Rpres/Data_Wrangling.html#/">Data Wrangling slides</a> are also available as a web page.</p>
-<p><img src="https://youtu.be/_34VPVgCmQ0" /></p>
+<p>The video below gives a brief overview of the content covered in this section of the tutorial. All the <a href="http://htmlpreview.github.io/?https://github.com/CWWhitney/teaching_R/blob/master/Data_Wrangling_Rpres/Data_Wrangling.html#/">Data Wrangling slides</a> are also available as a web page.</p>
+<p><img src="https://youtu.be/j6XRof3q9aM" /></p>
 <div id="section-notes-on-r" class="section level3">
 <h3>Notes on R</h3>
 <ul>
@@ -199,8 +199,8 @@ library(tidyverse)
 <div id="section-data-wrangling-part-2" class="section level2">
 <h2>Data Wrangling Part 2</h2>
 <p><img src="images/wrangler.png" style="width:1in" /> <img src="images/tidyR.png" style="width:1in" /> <img src="images/dplyr.png" style="width:1.5in" /></p>
-<p>The video below offers an overview of the content in covered in this section of the tutorial. Keep in mind that I did not yet have your data when I recorded this so the results of my scripts may be slightly different than yours. Feel free to watch the video and follow along or simply work through the tutorial.</p>
-<p><img src="https://youtu.be/A6H12OW03IE" /></p>
+<p>The video below offers a brief overview of the content covered in this section of the tutorial. Feel free to watch the video and follow along or simply work through the tutorial.</p>
+<p><img src="https://youtu.be/8vqQljFcMsw" /></p>
 <div id="section-notes-on-tidy-r" class="section level3">
 <h3>Notes on tidy R</h3>
 <p><img src="images/tidyR.png" style="width:1in" /></p>
@@ -211,11 +211,11 @@ library(tidyverse)
 <script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.timelimit":200,"exercise.checker":"NULL"}</script>
 </div>
 <p>At the time of writing this I am using R version 4.0.4 <code>Lost Library Book</code> <span class="citation">(R Core Team 2021)</span>. If you do not have this version or something newer it may make sense to update so that you can follow along without pesky version issues.</p>
-<p>The easiest way to get libraries for today is to install the whole tidyverse <span class="citation">(Wickham 2019)</span> by typing <code>install.packages("tidyverse")</code> in the R console and then running <code>library(tidyverse)</code>:</p>
+<p>The easiest way to get libraries for today is to install the whole tidyverse <span class="citation">(Wickham 2021b)</span> by typing <code>install.packages("tidyverse")</code> in the R console and then running <code>library(tidyverse)</code>:</p>
 <pre><code>install.packages(&quot;tidyverse&quot;)
 library(tidyverse)</code></pre>
 <p>If you save your work to an .R file (recommended) be sure to annotate any code that you do not intend to run each time with the <code>#</code> symbol. You should only need to install tidyverse once and should be sure to either change that line of code to <code>#install.packages("tidyverse")</code> or remove it from your script.</p>
-<p>Read more style tips in the <a href="http://style.tidyverse.org/">tidyverse style guide</a> <span class="citation">(Wickham 2019)</span>.</p>
+<p>Read more style tips in the <a href="http://style.tidyverse.org/">tidyverse style guide</a> <span class="citation">(Wickham 2021b)</span>.</p>
 </div>
 <div id="section-notes-on-tidy-r-browsevignettes" class="section level3">
 <h3>Notes on tidy R browseVignettes</h3>
@@ -241,7 +241,7 @@ library(tidyverse)</code></pre>
 <li>Consistent structure lets you focus your struggle on questions about the data, not fighting to get the data into the right form for different functions</li>
 </ul>
 <p><img src="images/wrangler.png" style="width:2in" /></p>
-<p>Read more style tipes in the <a href="http://style.tidyverse.org/">tidyverse style guide</a> <span class="citation">(Wickham 2019)</span>.</p>
+<p>Read more style tipes in the <a href="http://style.tidyverse.org/">tidyverse style guide</a> <span class="citation">(Wickham 2021b)</span>.</p>
 </div>
 <div id="section-notes-on-r-tidy-data" class="section level3">
 <h3>Notes on R: Tidy Data</h3>
@@ -458,14 +458,14 @@ filter(participants_data,
 <p><strong>Rename</strong> <img src="images/dplyr.png" style="width:1in" /></p>
 <p>Change the names of the variables in the data with the <code>rename</code> function:</p>
 <div class="tutorial-exercise" data-label="wrangle2-rename-letters" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
-<pre class="text"><code># Rename the variable km_home_to_zef as commute
+<pre class="text"><code># Rename the variable km_home_to_office as commute
 rename(participants_data, 
        name_length = letters_in_first_name)</code></pre>
 <script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.timelimit":200,"exercise.checker":"NULL"}</script>
 </div>
 <div class="tutorial-exercise-support" data-label="wrangle2-rename-letters-solution" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code>rename(participants_data, 
-       commute = km_home_to_zef)</code></pre>
+       commute = km_home_to_office)</code></pre>
 </div>
 <p><a href="https://dplyr.tidyverse.org/" class="uri">https://dplyr.tidyverse.org/</a></p>
 </div>
@@ -497,7 +497,7 @@ mutate(participants_data,
 # &#39;fast&#39; for others
 mutate(participants_data, 
        commute = 
-         ifelse(km_home_to_zef &gt; 10, 
+         ifelse(km_home_to_office &gt; 10, 
                  &quot;commuter&quot;, &quot;local&quot;))</code></pre>
 <script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.timelimit":200,"exercise.checker":"NULL"}</script>
 </div>
@@ -576,7 +576,7 @@ participants_data %&gt;%
 <div class="tutorial-exercise-support" data-label="wrangle2-pipe-long2-solution" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code>participants_data %&gt;% 
    mutate(commute = ifelse(
-     km_home_to_zef &gt; 10, 
+     km_home_to_office &gt; 10, 
      &quot;commuter&quot;, &quot;local&quot;)) %&gt;% 
   group_by(commute) %&gt;% 
   summarize(mean(days_to_email_response), 
@@ -626,7 +626,7 @@ participants_data %&gt;%
 <li>select: carat and price</li>
 <li>filter: only where carat is &gt; 0.5</li>
 <li>rename: rename price as cost</li>
-<li>mutate: name expensive or cheap if greater than mean of price/cost</li>
+<li>mutate: name expensive if greater than mean of price/cost or cheap otherwise</li>
 <li>group_by: split into cheap and expensive</li>
 <li>summarize: give some summary statistics of your choice</li>
 </ul>
@@ -1632,7 +1632,7 @@ output$`tutorial-exercise-animate_diamonds-output` <- renderUI({
 <!--/html_preserve-->
 <!--html_preserve-->
 <script type="application/shiny-prerendered" data-context="execution_dependencies">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages","version"]},"class":{"type":"character","attributes":{},"value":["data.frame"]},"row.names":{"type":"integer","attributes":{},"value":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88]}},"value":[{"type":"character","attributes":{},"value":["assertthat","backports","base","broom","bslib","cellranger","cli","colorspace","compiler","crayon","datasauRus","datasets","DBI","dbplyr","debugme","digest","dplyr","ellipsis","evaluate","fansi","farver","fastmap","forcats","fs","generics","gganimate","ggplot2","gifski","glue","graphics","grDevices","grid","gtable","haven","hms","htmltools","htmlwidgets","httpuv","httr","jquerylib","jsonlite","knitr","later","learnr","lifecycle","lubridate","magrittr","markdown","methods","mime","modelr","munsell","pillar","pkgconfig","prettyunits","progress","promises","purrr","R6","Rcpp","readr","readxl","reprex","rlang","rmarkdown","rprojroot","rstudioapi","rvest","sass","scales","shiny","stats","stringi","stringr","tibble","tidyr","tidyselect","tidyverse","tools","tweenr","utf8","utils","vctrs","withr","xfun","xml2","xtable","yaml"]},{"type":"character","attributes":{},"value":["0.2.1","1.2.1","4.0.4","0.7.5","0.2.4","1.1.0","2.3.1","2.0-0","4.0.4","1.4.1.9000","0.1.4","4.0.4","1.1.1","2.1.0","1.1.0","0.6.27","1.0.5","0.3.1","0.14","0.4.2","2.1.0","1.1.0","0.5.1","1.5.0","0.1.0","1.0.7","3.3.3","0.8.7.1","1.4.2","4.0.4","4.0.4","4.0.4","0.3.0","2.3.1","1.0.0","0.5.1.1","1.5.3","1.5.5","1.4.2","0.1.3","1.7.2","1.31.6","1.1.0.1","0.10.1","1.0.0","1.7.10","2.0.1","1.1","4.0.4","0.10","0.1.8","0.5.0","1.5.1","2.0.3","1.1.1","1.2.2","1.2.0.1","0.3.4","2.5.0","1.0.6","1.4.0","1.3.1","1.0.0","0.4.10","2.7","2.0.2","0.13","1.0.0","0.3.1","1.1.1","1.6.0","4.0.4","1.5.3","1.4.0","3.1.0","1.1.3","1.1.0","1.3.0","4.0.4","1.0.1","1.2.1","4.0.4","0.3.6","2.4.1","0.22","1.3.2","1.8-4","2.2.1"]}]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages","version"]},"class":{"type":"character","attributes":{},"value":["data.frame"]},"row.names":{"type":"integer","attributes":{},"value":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87]}},"value":[{"type":"character","attributes":{},"value":["assertthat","backports","base","broom","bslib","cellranger","cli","colorspace","compiler","crayon","datasauRus","datasets","DBI","dbplyr","digest","dplyr","ellipsis","evaluate","fansi","farver","fastmap","forcats","fs","generics","gganimate","ggplot2","gifski","glue","graphics","grDevices","grid","gtable","haven","hms","htmltools","htmlwidgets","httpuv","httr","jquerylib","jsonlite","knitr","later","learnr","lifecycle","lubridate","magrittr","markdown","methods","mime","modelr","munsell","pillar","pkgconfig","prettyunits","progress","promises","purrr","R6","Rcpp","readr","readxl","reprex","rlang","rmarkdown","rprojroot","rstudioapi","rvest","sass","scales","shiny","stats","stringi","stringr","tibble","tidyr","tidyselect","tidyverse","tools","tweenr","utf8","utils","vctrs","withr","xfun","xml2","xtable","yaml"]},{"type":"character","attributes":{},"value":["0.2.1","1.2.1","4.0.4","0.7.6","0.2.4","1.1.0","2.4.0","2.0-0","4.0.4","1.4.1.9000","0.1.4","4.0.4","1.1.1","2.1.1","0.6.27","1.0.5","0.3.1","0.14","0.4.2","2.1.0","1.1.0","0.5.1","1.5.0","0.1.0","1.0.7","3.3.3","0.8.7.1","1.4.2","4.0.4","4.0.4","4.0.4","0.3.0","2.3.1","1.0.0","0.5.1.1","1.5.3","1.5.5","1.4.2","0.1.3","1.7.2","1.31.6","1.1.0.1","0.10.1","1.0.0","1.7.10","2.0.1","1.1","4.0.4","0.10","0.1.8","0.5.0","1.6.0","2.0.3","1.1.1","1.2.2","1.2.0.1","0.3.4","2.5.0","1.0.6","1.4.0","1.3.1","2.0.0","0.4.10","2.7","2.0.2","0.13","1.0.0","0.3.1","1.1.1","1.6.0","4.0.4","1.5.3","1.4.0","3.1.0","1.1.3","1.1.0","1.3.1","4.0.4","1.0.1","1.2.1","4.0.4","0.3.6","2.4.1","0.22","1.3.2","1.8-4","2.2.1"]}]}]}
 </script>
 <!--/html_preserve-->
 <div id="section-refs" class="references csl-bib-body hanging-indent">
@@ -1657,11 +1657,11 @@ R Core Team. 2021. <em>R: A Language and Environment for Statistical Computing</
 <div id="section-ref-R-learnr" class="csl-entry">
 Schloerke, Barret, JJ Allaire, and Barbara Borges. 2020. <em>Learnr: Interactive Tutorials for r</em>. <a href="https://CRAN.R-project.org/package=learnr">https://CRAN.R-project.org/package=learnr</a>.
 </div>
-<div id="section-ref-R-tidyverse" class="csl-entry">
-Wickham, Hadley. 2019. <em>Tidyverse: Easily Install and Load the Tidyverse</em>. <a href="https://CRAN.R-project.org/package=tidyverse">https://CRAN.R-project.org/package=tidyverse</a>.
-</div>
 <div id="section-ref-R-tidyr" class="csl-entry">
-———. 2021. <em>Tidyr: Tidy Messy Data</em>. <a href="https://CRAN.R-project.org/package=tidyr">https://CRAN.R-project.org/package=tidyr</a>.
+Wickham, Hadley. 2021a. <em>Tidyr: Tidy Messy Data</em>. <a href="https://CRAN.R-project.org/package=tidyr">https://CRAN.R-project.org/package=tidyr</a>.
+</div>
+<div id="section-ref-R-tidyverse" class="csl-entry">
+———. 2021b. <em>Tidyverse: Easily Install and Load the Tidyverse</em>. <a href="https://CRAN.R-project.org/package=tidyverse">https://CRAN.R-project.org/package=tidyverse</a>.
 </div>
 <div id="section-ref-R-ggplot2" class="csl-entry">
 Wickham, Hadley, Winston Chang, Lionel Henry, Thomas Lin Pedersen, Kohske Takahashi, Claus Wilke, Kara Woo, Hiroaki Yutani, and Dewey Dunnington. 2020. <em>Ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics</em>. <a href="https://CRAN.R-project.org/package=ggplot2">https://CRAN.R-project.org/package=ggplot2</a>.

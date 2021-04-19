@@ -4,9 +4,9 @@
 ![](images/tidyR.png){width=1in}
 ![](images/dplyr.png){width=1.5in}
 
-The video below offers an overview of the content in covered in this section of the tutorial. Keep in mind that I did not yet have your data when I recorded this so the results of my scripts may be slightly different than yours. Feel free to watch the video and follow along or simply work through the tutorial. 
+The video below offers a brief overview of the content covered in this section of the tutorial. Feel free to watch the video and follow along or simply work through the tutorial. 
 
-![](https://youtu.be/A6H12OW03IE)
+![](https://youtu.be/8vqQljFcMsw)
 
 ### Notes on tidy R
 
@@ -311,14 +311,14 @@ https://dplyr.tidyverse.org/
 Change the names of the variables in the data with the `rename` function:
 
 ```{r wrangle2-rename-letters, exercise=TRUE}
-# Rename the variable km_home_to_zef as commute
+# Rename the variable km_home_to_office as commute
 rename(participants_data, 
        name_length = letters_in_first_name)
 ```
 
 ```{r wrangle2-rename-letters-solution}
 rename(participants_data, 
-       commute = km_home_to_zef)
+       commute = km_home_to_office)
 ```
 
 https://dplyr.tidyverse.org/
@@ -355,7 +355,7 @@ Create a commute category with the `mutate` function:
 # 'fast' for others
 mutate(participants_data, 
        commute = 
-         ifelse(km_home_to_zef > 10, 
+         ifelse(km_home_to_office > 10, 
                  "commuter", "local"))
 ```
 
@@ -440,7 +440,7 @@ participants_data %>%
 ```{r wrangle2-pipe-long2-solution}
 participants_data %>% 
    mutate(commute = ifelse(
-     km_home_to_zef > 10, 
+     km_home_to_office > 10, 
      "commuter", "local")) %>% 
   group_by(commute) %>% 
   summarize(mean(days_to_email_response), 
@@ -504,7 +504,7 @@ Up until this point the code has been provided for you to work on. Now it is tim
 - select: carat and price
 - filter: only where carat is > 0.5
 - rename: rename price as cost
-- mutate: name expensive or cheap if greater than mean of price/cost
+- mutate: name expensive if greater than mean of price/cost or cheap otherwise
 - group_by: split into cheap and expensive
 - summarize: give some summary statistics of your choice
 
