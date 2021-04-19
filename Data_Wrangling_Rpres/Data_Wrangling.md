@@ -284,38 +284,15 @@ incremental: true
 - Check the names of the variables in the data with the `names` function.
 
 ```r
-head(participants_data)
+names(participants_data)
 ```
 
 ```
-  batch age gender continent_of_origin research_continent
-1  2017  33      F              Europe             Europe
-2  2017  31      F       South America      South America
-3  2017  30      F       South America      South America
-4  2017  28      M              Africa             Africa
-5  2017  30      M              Africa             Africa
-6  2017  30      M              Africa             Africa
-  number_of_publications working_hours_per_day number_of_siblings
-1                      6                     8                  1
-2                      0                     8                  2
-3                      1                     7                  2
-4                      1                    16                  1
-5                      3                    12                  5
-6                      3                    16                  4
-  academic_parents km_home_to_zef years_of_study days_to_email_response
-1                N            1.7             20                      1
-2                Y           40.0              9                      1
-3                N        10370.0              7                      1
-4                Y           15.0              3                      1
-5                N            6.0              7                      1
-6                N            8.3             10                      2
-  letters_in_first_name
-1                     4
-2                     6
-3                     7
-4                     7
-5                     6
-6                     6
+ [1] "batch"                  "age"                    "gender"                
+ [4] "continent_of_origin"    "research_continent"     "number_of_publications"
+ [7] "working_hours_per_day"  "number_of_siblings"     "academic_parents"      
+[10] "km_home_to_zef"         "years_of_study"         "days_to_email_response"
+[13] "letters_in_first_name" 
 ```
 
 Use `str` in R

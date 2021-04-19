@@ -250,7 +250,7 @@ incremental: true
 
 - Check the names of the variables in the data with the `names` function.
 ```{r wrangle-pres-names-participants-data}
-head(participants_data)
+names(participants_data)
 ```
 
 Use `str` in R
