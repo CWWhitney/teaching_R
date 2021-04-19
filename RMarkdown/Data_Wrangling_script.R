@@ -52,7 +52,7 @@ participants_data <- rename(participants_data, daily_labor = working_hours_per_d
 participants_data <- mutate(participants_data, labor_mean = daily_labor*mean(daily_labor))
 
 participants_data <- mutate(participants_data, 
-                            commute = ifelse(km_home_to_zef > 10, 
+                            commute = ifelse(km_home_to_office > 10, 
                             "commuter", "local"))
 
 commuter_data <- group_by(participants_data, commute)
@@ -62,7 +62,7 @@ commuter_summary <- summarize(commuter_data, mean(days_to_email_response), media
 
 pipe_data <- participants_data %>% 
   mutate(commute = ifelse(
-    km_home_to_zef > 10, 
+    km_home_to_office > 10, 
     "commuter", "local")) %>% 
   group_by(commute) %>% 
   summarize(mean(days_to_email_response), 

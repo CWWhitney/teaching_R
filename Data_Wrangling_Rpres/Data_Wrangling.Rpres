@@ -392,7 +392,7 @@ incremental: true
 
 ```{r wrangle-pres-rename2}
 rename(participants_data, 
-       commute = km_home_to_zef)
+       commute = km_home_to_office)
 ```
 <div class="footer" style="margin-top;font-size:60%;"> 
 https://dplyr.tidyverse.org/ </div>
@@ -420,7 +420,7 @@ Create a commute category
 ```{r wrangle-pres-mutate2}
 mutate(participants_data, 
        commute = 
-         ifelse(km_home_to_zef > 10, 
+         ifelse(km_home_to_office > 10, 
                  "commuter", "local"))
 ```
 
