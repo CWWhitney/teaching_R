@@ -504,8 +504,30 @@ Up until this point the code has been provided for you to work on. Now it is tim
 - select: carat and price
 - filter: only where carat is > 0.5
 - rename: rename price as cost
-- mutate: name expensive if greater than mean of price/cost or cheap otherwise
+- mutate: create a variable with 'expensive' if greater than mean of cost and 'cheap' otherwise
 - group_by: split into cheap and expensive
 - summarize: give some summary statistics of your choice
 
 The diamonds data is built in with the `ggplot2` library. It is already available in your R environment. Look at the help file with `?diamonds` to learn more about it. 
+
+```{r wrangle2-final, exercise=TRUE}
+
+```
+
+```{r wrangle2-final-solution}
+    diamonds %>%
+  #   - select: carat and price
+      select(carat, price) %>%
+# - filter: only where carat is > 0.5
+      filter(carat > 0.5) %>%
+# - rename: rename price as cost
+      rename(cost = price) %>%
+# - mutate: create a variable 'cheap_expensive' with 'expensive' if greater than mean of cost and 'cheap' otherwise
+    mutate(cheap_expensive = ifelse(
+       cost > mean(cost), 
+      "expensive", "cheap")) %>%
+  # - group_by: split into cheap and expensive
+    group_by(cheap_expensive) %>%
+  # - summarize: give some summary statistics of your choice
+    summarize(mean(price), mean(carat))
+```
