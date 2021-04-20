@@ -529,5 +529,5 @@ The diamonds data is built in with the `ggplot2` library. It is already availabl
   # - group_by: split into cheap and expensive
     group_by(cheap_expensive) %>%
   # - summarize: give some summary statistics of your choice
-    summarize(mean(price), mean(carat))
+    summarize(mean(cost), mean(carat))
 ```
