@@ -37,7 +37,7 @@ Keep it tidy
 
 When writing .R files use the `#` symbol to annotate and not run lines. This is a great way to make notes for others and for future you.
 
-We will talk later about using other file types like `Rmarkdown` for organizing R script and other associated languages. There it will be possible to add a lot more information and text, cittions etc. An .R file is intended for code but we can still keep it organized in sections by ending headers with `----` or `####` annotation. 
+We will talk later about using other file types like `Rmarkdown` for organizing R script and other associated languages. There it will be possible to add a lot more information and text, citations etc. An .R file is intended for code but we can still keep it organized in sections by ending headers with `----` or `####` annotation. 
 
 `# Section 1 ----`
 

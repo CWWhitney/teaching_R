@@ -112,6 +112,8 @@ Load data
 
 ![](images/R_logo.png){width=1in}
 
+The data we will use for this course is [on Github](https://raw.githubusercontent.com/CWWhitney/teaching_R/master/participants_data.csv) and you can save it as a .csv to your local folder. 
+
 - Load the data using the `read.csv` function
 
 ```

@@ -10,7 +10,7 @@
 
 
 
-<meta name="progressive" content="true" />
+<meta name="progressive" content="false" />
 <meta name="allow-skip" content="true" />
 
 <title>Introduction to R, from wrangling to visualization</title>
@@ -187,7 +187,7 @@ library(tidyverse)
 <p><img src="images/tidyR.png" style="width:1in" /></p>
 <p>Keep it tidy</p>
 <p>When writing .R files use the <code>#</code> symbol to annotate and not run lines. This is a great way to make notes for others and for future you.</p>
-<p>We will talk later about using other file types like <code>Rmarkdown</code> for organizing R script and other associated languages. There it will be possible to add a lot more information and text, cittions etc. An .R file is intended for code but we can still keep it organized in sections by ending headers with <code>----</code> or <code>####</code> annotation.</p>
+<p>We will talk later about using other file types like <code>Rmarkdown</code> for organizing R script and other associated languages. There it will be possible to add a lot more information and text, citations etc. An .R file is intended for code but we can still keep it organized in sections by ending headers with <code>----</code> or <code>####</code> annotation.</p>
 <p><code># Section 1 ----</code></p>
 <p><code># Section 2 ####</code></p>
 <p><code># Section 3 ####</code></p>
@@ -284,6 +284,7 @@ library(tidyverse)</code></pre>
 <h3>Getting your data in R</h3>
 <p>Load data</p>
 <p><img src="images/R_logo.png" style="width:1in" /></p>
+<p>The data we will use for this course is <a href="https://raw.githubusercontent.com/CWWhitney/teaching_R/master/participants_data.csv">on Github</a> and you can save it as a .csv to your local folder.</p>
 <ul>
 <li>Load the data using the <code>read.csv</code> function</li>
 </ul>
@@ -657,7 +658,7 @@ participants_data %&gt;%
 <h2>Data Visualization</h2>
 <p><img src="images/wrangler.png" style="width:1in" /> <img src="images/tidyR.png" style="width:1in" /> <img src="images/dplyr.png" style="width:1.5in" /></p>
 <p>The video below offers an overview of the content in covered in this section of the tutorial. Keep in mind that I did not yet have your data when I recorded this so the results of my scripts may be slightly different than yours. Feel free to watch the video and follow along or simply work through the tutorial. All the <a href="http://htmlpreview.github.io/?https://github.com/CWWhitney/teaching_R/blob/master/Data_Visualization_Rpres/Data_Visualization.html#/">Data Visualization slides</a> are also available as a web page.</p>
-<p><img src="https://youtu.be/J1JjUPzA1mA" /></p>
+<p><img src="https://youtu.be/y4BPnwyxU-E" /></p>
 <div id="section-getting-stuck" class="section level3">
 <h3>Getting stuck</h3>
 <p>If you ever get stuck</p>
@@ -776,6 +777,12 @@ ggplot(data = participants_data,
   geom_point()</code></pre>
 </div>
 <p>Scatterplot of days to email response (y) as a function of the letters in your first name (x) with colors representing binary data related to academic parents and working hours per day as bubble sizes.</p>
+</div>
+<div id="section-built-in-r-data" class="section level3">
+<h3>Built in R data</h3>
+<p>Now we will go over some more options and use some of the data that comes with R and the libraries that we will be working with.</p>
+<p>The following video walks through some of the additional functions covered in this tutorial and the methods for applying these.</p>
+<p><img src="https://youtu.be/PpNnSwz3mNQ" /></p>
 </div>
 <div id="section-ggplot2-iris-data" class="section level3">
 <h3>ggplot2: iris data</h3>

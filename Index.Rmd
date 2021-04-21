@@ -3,7 +3,6 @@ title: "Introduction to R, from wrangling to visualization"
 bibliography: packages.bib
 output: 
   learnr::tutorial:
-    progressive: true
     allow_skip: true
 runtime: shiny_prerendered
 ---

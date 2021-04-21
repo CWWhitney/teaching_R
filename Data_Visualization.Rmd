@@ -6,7 +6,7 @@
 
 The video below offers an overview of the content in covered in this section of the tutorial. Keep in mind that I did not yet have your data when I recorded this so the results of my scripts may be slightly different than yours. Feel free to watch the video and follow along or simply work through the tutorial. All the [Data Visualization slides](http://htmlpreview.github.io/?https://github.com/CWWhitney/teaching_R/blob/master/Data_Visualization_Rpres/Data_Visualization.html#/) are also available as a web page. 
 
-![](https://youtu.be/J1JjUPzA1mA)
+![](https://youtu.be/y4BPnwyxU-E)
 
 ### Getting stuck
 
@@ -144,6 +144,16 @@ ggplot(data = participants_data,
 ```
 
 Scatterplot of days to email response (y) as a function of the letters in your first name (x) with colors representing binary data related to academic parents and working hours per day as bubble sizes.
+
+
+### Built in R data 
+
+Now we will go over some more options and use some of the data that comes with R and the libraries that we will be working with.
+
+The following video walks through some of the additional functions covered in this tutorial and the methods for applying these. 
+
+![](https://youtu.be/PpNnSwz3mNQ)
+
 
 ### ggplot2: iris data
 

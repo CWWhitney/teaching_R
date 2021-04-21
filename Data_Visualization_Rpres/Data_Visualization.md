@@ -183,27 +183,6 @@ ggplot(data = iris,
 <img src="Data_Visualization-figure/ggplot_iris-1.png" title="plot of chunk ggplot_iris" alt="plot of chunk ggplot_iris" style="display: block; margin: auto;" />
 <small>Scatterplot of iris petal length as a function of sepal length with colors representing iris species and petal width as bubble sizes.</small>
 
-ggplot2: diamonds price
-========================================================
-incremental: true
-right: 80%
-![](Data_Visualization-figure/ggplot2.png)
-
-***
-
-**ggplot** accepts formula arguments such as log
-
-
-```r
-ggplot(data = diamonds,
-       aes(x = log(carat),
-           y = log(price),
-           alpha = 0.2)) + 
-  geom_point()
-```
-
-<img src="Data_Visualization-figure/ggplot_carat_price-1.png" title="plot of chunk ggplot_carat_price" alt="plot of chunk ggplot_carat_price" style="display: block; margin: auto;" />
-
 ggplot2: diamonds color shape
 ========================================================
 incremental: true
@@ -213,21 +192,19 @@ right: 80%
 
 ***
 
+Create a smaller diamonds data set (top 100 rows) for a scatterplot with carat on the x-axis and price on the y-xis and with the color of the diamond as the color of the points.
+
+
+```r
+dsmall <- top_n(diamonds, n = 100)
+ 
+ggplot(data = dsmall, aes(x = carat, 
+                          y = price, 
+                          color = color)) + 
+  geom_point()
+```
+
 <img src="Data_Visualization-figure/diamonds_color-1.png" title="plot of chunk diamonds_color" alt="plot of chunk diamonds_color" style="display: block; margin: auto;" />
-
-
-ggplot2: set parameters
-========================================================
-incremental: true
-right: 80%
-![](Data_Visualization-figure/ggplot2.png)
-
-
-***
-
-Set parameters manually with `I()` *Inhibit Interpretation / Conversion of Objects*
-<img src="Data_Visualization-figure/unnamed-chunk-2-1.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" style="display: block; margin: auto;" />
-
 
 ggplot2: geom options
 ========================================================
@@ -240,7 +217,22 @@ right: 80%
 
 With “geom” different types of plots can be defined e.g. points, line, boxplot, path, smooth. These can also be combined.
 
-<img src="Data_Visualization-figure/unnamed-chunk-3-1.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" style="display: block; margin: auto;" />
+
+```r
+# Create a smaller data set of diamonds with 50 rows.
+dsmall <- top_n(diamonds, 
+                n = 50) 
+# Create a scatterplot and smoothed conditional 
+# means overlay with carat on the x-axis 
+# and price on the y-axis.
+ggplot(data = dsmall, 
+       aes(x = carat, 
+           y = price))+
+geom_point()+
+geom_smooth()
+```
+
+<img src="Data_Visualization-figure/unnamed-chunk-2-1.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" style="display: block; margin: auto;" />
 
 
 ggplot2: smooth function
@@ -252,6 +244,22 @@ right: 80%
 ***
 
 `geom_smooth()` selects a smoothing method based on the data. Use `method =` to specify your preferred smoothing method.
+
+
+```r
+# Create a smaller data set of diamonds with 50 rows. 
+dsmall <- top_n(diamonds, 
+                n = 50)
+# Create a scatterplot and smoothed conditional 
+# means overlay with carat on the x-axis 
+# and price on the y-axis.
+# Use 'glm' as the option for the smoothing
+ggplot(data = dsmall, 
+       aes(x = carat, 
+           y = price))+ 
+  geom_point()+ 
+geom_smooth(method = 'glm') 
+```
 
 <img src="Data_Visualization-figure/ggplot_smooth-1.png" title="plot of chunk ggplot_smooth" alt="plot of chunk ggplot_smooth" style="display: block; margin: auto;" />
 ~~ggplot2 lines and smoothing options~~

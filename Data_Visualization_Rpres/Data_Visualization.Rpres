@@ -177,24 +177,6 @@ ggplot(data = iris,
 ```
 <small>Scatterplot of iris petal length as a function of sepal length with colors representing iris species and petal width as bubble sizes.</small>
 
-ggplot2: diamonds price
-========================================================
-incremental: true
-right: 80%
-![](Data_Visualization-figure/ggplot2.png)
-
-***
-
-**ggplot** accepts formula arguments such as log
-
-```{r ggplot_carat_price, fig.height= 2, fig.align='center'} 
-ggplot(data = diamonds,
-       aes(x = log(carat),
-           y = log(price),
-           alpha = 0.2)) + 
-  geom_point()
-```
-
 ggplot2: diamonds color shape
 ========================================================
 incremental: true
@@ -204,42 +186,17 @@ right: 80%
 
 ***
 
-```{r diamonds_color, fig.height=2, fig.align='center', echo=FALSE} 
-# Create a smaller diamonds data set (top 100 rows), 
+Create a smaller diamonds data set (top 100 rows) for a scatterplot with carat on the x-axis and price on the y-xis and with the color of the diamond as the color of the points.
+
+```{r diamonds_color, fig.height=2, fig.align='center'} 
+
 dsmall <- top_n(diamonds, n = 100)
-# create a scatterplot with carat on the x-axis
-# and price on the y-xis and 
-# with the color of the diamond as the color of the points. 
+ 
 ggplot(data = dsmall, aes(x = carat, 
                           y = price, 
                           color = color)) + 
   geom_point()
 ```
-
-
-ggplot2: set parameters
-========================================================
-incremental: true
-right: 80%
-![](Data_Visualization-figure/ggplot2.png)
-
-
-***
-
-Set parameters manually with `I()` *Inhibit Interpretation / Conversion of Objects*
-```{r, fig.height=2, fig.align='center', echo=FALSE} 
-# Create a plot of the diamonds data 
-# with carat on the x-axis, price on the y-axis. 
-# Use the inhibit function to set the alpha to 0.1 
-# and color to blue.
-ggplot(data = diamonds, 
-       aes(x = carat, 
-           y = price, 
-           alpha = I(0.1), 
-           color = I("blue"))) + 
-  geom_point()
-```
-
 
 ggplot2: geom options
 ========================================================
@@ -252,7 +209,7 @@ right: 80%
 
 With “geom” different types of plots can be defined e.g. points, line, boxplot, path, smooth. These can also be combined.
 
-```{r, fig.height=2, fig.align='center', echo=FALSE} 
+```{r, fig.height=2, fig.align='center'} 
 # Create a smaller data set of diamonds with 50 rows.
 dsmall <- top_n(diamonds, 
                 n = 50) 
@@ -277,7 +234,7 @@ right: 80%
 
 `geom_smooth()` selects a smoothing method based on the data. Use `method =` to specify your preferred smoothing method.
 
-```{r ggplot_smooth, fig.height=2, fig.align='center', echo=FALSE} 
+```{r ggplot_smooth, fig.height=2, fig.align='center'} 
 # Create a smaller data set of diamonds with 50 rows. 
 dsmall <- top_n(diamonds, 
                 n = 50)
