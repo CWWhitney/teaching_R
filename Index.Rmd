@@ -64,7 +64,7 @@ knitr::write_bib(c(.packages(),
 ```{r child_Vis, child="Data_Visualization.Rmd"}
 ```
 
-```{r child_Vis, child="Data_Animation.Rmd"}
-```
+<!-- ```{r child_Vis, child="Data_Animation.Rmd"} -->
+<!-- ``` -->
 
 ## References
