@@ -6,7 +6,9 @@
 
 The video below offers a brief overview of the content covered in this section of the tutorial. Feel free to watch the video and follow along or simply work through the tutorial. 
 
-![](https://youtu.be/8vqQljFcMsw)
+<!-- ![](https://youtu.be/8vqQljFcMsw) -->
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8vqQljFcMsw" frameborder="0" allowfullscreen></iframe>
 
 ### Notes on tidy R
 

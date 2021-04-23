@@ -6,7 +6,9 @@
 
 The video below gives a brief overview of the content covered in this section of the tutorial. All the [Data Wrangling slides](http://htmlpreview.github.io/?https://github.com/CWWhitney/teaching_R/blob/master/Data_Wrangling_Rpres/Data_Wrangling.html#/) are also available as a web page. 
 
-![](https://youtu.be/j6XRof3q9aM)
+<!-- ![](https://youtu.be/j6XRof3q9aM) -->
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/j6XRof3q9aM" frameborder="0" allowfullscreen></iframe>
 
 ### Notes on R
 - Tidy code style using tidyR 
