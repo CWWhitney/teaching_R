@@ -38,3 +38,13 @@ library(tidyverse)
   library(magrittr)
 ```  
   
+  
+### Bonus RStudio settings
+
+You will see from the examples throughout the course that I use dark mode in RStudio. You can find these settings and choose the one you like best under *Global Options > Appearance*. For my display I use the 'Pastel On Dark' option.  
+
+![](images/dark_mode.png){width=3in}
+
+Using color in code is nice and can also help you troubleshoot code that uses lots of nested parentheses `()`, square brackets `[]` or curly braces `{}`. You can adjust these settings under *Global Options > Code > Display*.
+
+![](images/rainbow_parentheses.png){width=3in}
