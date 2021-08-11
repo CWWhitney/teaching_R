@@ -1,8 +1,8 @@
 ## Data Visualization
 
-![](images/wrangler.png){width=1in}
-![](images/tidyR.png){width=1in}
-![](images/dplyr.png){width=1.5in}
+![](images/Circos.png){width=1.5in}
+![](images/ggplot2.png){width=1.1in}
+![](images/gganimate_logo.png){width=1in}
 
 The video below offers an overview of the content in covered in this section of the tutorial. Keep in mind that I did not yet have your data when I recorded this so the results of my scripts may be slightly different than yours. Feel free to watch the video and follow along or simply work through the tutorial. All the [Data Visualization slides](http://htmlpreview.github.io/?https://github.com/CWWhitney/teaching_R/blob/master/Data_Visualization_Rpres/Data_Visualization.html#/) are also available as a web page. 
 
@@ -576,7 +576,7 @@ ggplot(mtcars,
 
 ![](images/r_ladies.jpg){width=1in}
 
-This is an example of a 'slow ggplotting' version for the same plot that we created above. This format can be easier to read later (more kind to other readers and future you) but can be more lanorious to write.
+This is an example of a 'slow ggplotting' version for the same plot that we created above. This format can be easier to read later (more kind to other readers and future you) but can be more laborious to write.
 
 ```{r slow_ggplotting_example, exercise=TRUE} 
 # Change the title and labels as you see fit  
@@ -596,9 +596,13 @@ ggplot(data = mtcars) +
 
 ![](images/ggplot2.png){width=1in}
 
-- Use `dplyr`, and `ggplot2`
+- Use `dplyr`, and `ggplot2` together
 
-Here we use the `as.data.frame.table` function from base R to create a melted correlation matrix. 
+We first subset the data to numeric only with `select_if` from the `dplyr` package. They way we use this, all the variables for which `is.numeric` returns TRUE are selected.
+
+We use the `cor` function from the `stats` package can help us calculate correlations. We use the default of correlating all observations `use = "everything"` and using the `method = "pearson"` correlation. We wrap this in the `round` function from base R to reduce the number of decimals to 1 (not necessary but gives a little more nuance to the plot in the end).
+
+We use the `as.data.frame.table` function from base R to create a melted correlation matrix. The results of this, i.e. `names(melted_cormat)`, are "Var1", "Var2" (x and y) and "value" (the correlation result).  We use these for the `aes` options in `ggplot2` and plot this as a `geom_tile`.
 
 ```{r geom_melted_cormat, exercise=TRUE}
 # subset the data to numeric only with select_if
@@ -622,6 +626,8 @@ geom_tile()
 ```
 
 ### Export Figures
+
+To export figures we can use the `png` function from the `grDevices` library. Call the `png()` function and tell it your specifications for the plot (consider the requirements of the targeted publication). Then run the code that generates the plot before calling `dev.off()` to reset the ‘active’ device. 
 
 ```
 png(file = "cortile.png", width = 7, height = 6, units = "in", res = 300)

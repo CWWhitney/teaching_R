@@ -123,7 +123,7 @@ $(document).ready(function () {
 <!-- List of Lecture RMD files to be compiled -->
 <div id="section-introduction" class="section level2">
 <h2>Introduction</h2>
-<p>Welcome to this interactive tutorial on the R programming language. This tutorial runs in the <code>learnr</code> <span class="citation">(Schloerke, Allaire, and Borges 2020)</span> library and provides a <code>shiny</code> interface <span class="citation">(Chang et al. 2021)</span> that will allow you the chance to interact with the examples in the R programming language. You may follow along by simply working in this browser. You may find the content and learning a bit more useful if you work on your own machine as well. This will require loading the necessary software. For this tutorial we will use functions from <code>tidyverse</code> <span class="citation">(Wickham 2021b)</span> libraries including <code>ggplot2</code> <span class="citation">(Wickham et al. 2020)</span>, <code>dplyr</code> <span class="citation">(Wickham et al. 2021)</span> and <code>magrittr</code> <span class="citation">(Bache and Wickham 2020)</span> among others in the <a href="https://www.r-project.org/">R programming language</a> <span class="citation">(R Core Team 2021)</span>.</p>
+<p>Welcome to this interactive tutorial on the R programming language. This tutorial runs in the <code>learnr</code> <span class="citation">(Schloerke, Allaire, and Borges 2020)</span> library and provides a <code>shiny</code> interface <span class="citation">(Chang et al. 2021)</span> that will allow you the chance to interact with the examples in the R programming language. You may follow along by simply working in this browser. You may find the content and learning a bit more useful if you work on your own machine as well. This will require loading the necessary software. For this tutorial we will use functions from <code>tidyverse</code> <span class="citation">(Wickham 2021b)</span> libraries including <code>ggplot2</code> <span class="citation">(Wickham, Chang, et al. 2021)</span>, <code>dplyr</code> <span class="citation">(Wickham, François, et al. 2021)</span> and <code>magrittr</code> <span class="citation">(Bache and Wickham 2020)</span> among others in the <a href="https://www.r-project.org/">R programming language</a> <span class="citation">(R Core Team 2021)</span>.</p>
 <p>If you are also planning to run this on your own machine then you should start by installing and running <a href="https://www.r-project.org/">R</a> and <a href="https://rstudio.com/">RStudio</a>. This video walks you through that process.</p>
 <!-- ![](https://youtu.be/WT3tKlzCZgo) -->
 <iframe width="560" height="315" src="https://www.youtube.com/embed/WT3tKlzCZgo" frameborder="0" allowfullscreen>
@@ -383,10 +383,10 @@ participants_data$age</code></pre>
 <div id="section-wrangling-dplyr-library" class="section level3">
 <h3>Wrangling: dplyr library</h3>
 <p>Using <strong>dplyr</strong> <img src="images/dplyr.png" style="width:1in" /></p>
-<p>Load the dplyr library by running <code>library(dplyr)</code> in the R console. do the same for other libraries we need today <code>library(tidyr)</code> and <code>library(magrittr)</code> <span class="citation">Wickham et al. (2021)</span>.</p>
+<p>Load the dplyr library by running <code>library(dplyr)</code> in the R console. do the same for other libraries we need today <code>library(tidyr)</code> and <code>library(magrittr)</code> <span class="citation">Wickham, François, et al. (2021)</span>.</p>
 <p>Inspiration for many of the following materials comes from Roger Peng’s <a href="genomicsclass.github.io/book/pages/dplyr_tutorial">dplyr tutorial</a>.</p>
 <p><img src="images/github.png" style="width:1in" /></p>
-<p>Read more about the <a href="https://dplyr.tidyverse.org/">dplyr library</a> <span class="citation">(Wickham et al. 2021)</span>.</p>
+<p>Read more about the <a href="https://dplyr.tidyverse.org/">dplyr library</a> <span class="citation">(Wickham, François, et al. 2021)</span>.</p>
 </div>
 <div id="section-wrangling-dplyrselect-aca_work_set" class="section level3">
 <h3>Wrangling: dplyr::select aca_work_set</h3>
@@ -669,7 +669,7 @@ participants_data %&gt;%
 </div>
 <div id="section-data-visualization" class="section level2">
 <h2>Data Visualization</h2>
-<p><img src="images/wrangler.png" style="width:1in" /> <img src="images/tidyR.png" style="width:1in" /> <img src="images/dplyr.png" style="width:1.5in" /></p>
+<p><img src="images/Circos.png" style="width:1.5in" /> <img src="images/ggplot2.png" style="width:1.1in" /> <img src="images/gganimate_logo.png" style="width:1in" /></p>
 <p>The video below offers an overview of the content in covered in this section of the tutorial. Keep in mind that I did not yet have your data when I recorded this so the results of my scripts may be slightly different than yours. Feel free to watch the video and follow along or simply work through the tutorial. All the <a href="http://htmlpreview.github.io/?https://github.com/CWWhitney/teaching_R/blob/master/Data_Visualization_Rpres/Data_Visualization.html#/">Data Visualization slides</a> are also available as a web page.</p>
 <!-- ![](https://youtu.be/y4BPnwyxU-E) -->
 <iframe width="560" height="315" src="https://www.youtube.com/embed/y4BPnwyxU-E" frameborder="0" allowfullscreen>
@@ -1183,7 +1183,7 @@ ggplot(mtcars,
 <div id="section-ggplot2-slow-ggplotting-example" class="section level3">
 <h3>ggplot2: slow ggplotting example</h3>
 <p><img src="images/r_ladies.jpg" style="width:1in" /></p>
-<p>This is an example of a ‘slow ggplotting’ version for the same plot that we created above. This format can be easier to read later (more kind to other readers and future you) but can be more lanorious to write.</p>
+<p>This is an example of a ‘slow ggplotting’ version for the same plot that we created above. This format can be easier to read later (more kind to other readers and future you) but can be more laborious to write.</p>
 <div class="tutorial-exercise" data-label="slow_ggplotting_example" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code># Change the title and labels as you see fit  
 ggplot(data = mtcars) +
@@ -1202,9 +1202,11 @@ ggplot(data = mtcars) +
 <h3>ggplot2: geom_tile</h3>
 <p><img src="images/ggplot2.png" style="width:1in" /></p>
 <ul>
-<li>Use <code>dplyr</code>, and <code>ggplot2</code></li>
+<li>Use <code>dplyr</code>, and <code>ggplot2</code> together</li>
 </ul>
-<p>Here we use the <code>as.data.frame.table</code> function from base R to create a melted correlation matrix.</p>
+<p>We first subset the data to numeric only with <code>select_if</code> from the <code>dplyr</code> package. They way we use this, all the variables for which <code>is.numeric</code> returns TRUE are selected.</p>
+<p>We use the <code>cor</code> function from the <code>stats</code> package can help us calculate correlations. We use the default of correlating all observations <code>use = "everything"</code> and using the <code>method = "pearson"</code> correlation. We wrap this in the <code>round</code> function from base R to reduce the number of decimals to 1 (not necessary but gives a little more nuance to the plot in the end).</p>
+<p>We use the <code>as.data.frame.table</code> function from base R to create a melted correlation matrix. The results of this, i.e. <code>names(melted_cormat)</code>, are “Var1,” “Var2” (x and y) and “value” (the correlation result). We use these for the <code>aes</code> options in <code>ggplot2</code> and plot this as a <code>geom_tile</code>.</p>
 <div class="tutorial-exercise" data-label="geom_melted_cormat" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code># subset the data to numeric only with select_if
 part_data &lt;- select_if(participants_data, 
@@ -1229,6 +1231,7 @@ geom_tile()</code></pre>
 </div>
 <div id="section-export-figures" class="section level3">
 <h3>Export Figures</h3>
+<p>To export figures we can use the <code>png</code> function from the <code>grDevices</code> library. Call the <code>png()</code> function and tell it your specifications for the plot (consider the requirements of the targeted publication). Then run the code that generates the plot before calling <code>dev.off()</code> to reset the ‘active’ device.</p>
 <pre><code>png(file = &quot;cortile.png&quot;, width = 7, height = 6, units = &quot;in&quot;, res = 300)
 
 ggplot(data = melted_cormat, aes(x = Var1, y = Var2, fill = value)) + geom_tile() + theme(axis.text.x = element_text(angle = 45, hjust = 1))
@@ -1580,7 +1583,7 @@ output$`tutorial-exercise-geom_melted_cormat-output` <- renderUI({
 <!--/html_preserve-->
 <!--html_preserve-->
 <script type="application/shiny-prerendered" data-context="execution_dependencies">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages","version"]},"class":{"type":"character","attributes":{},"value":["data.frame"]},"row.names":{"type":"integer","attributes":{},"value":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87]}},"value":[{"type":"character","attributes":{},"value":["assertthat","backports","base","broom","bslib","cellranger","cli","colorspace","compiler","crayon","datasauRus","datasets","DBI","dbplyr","digest","dplyr","ellipsis","evaluate","fansi","farver","fastmap","forcats","fs","generics","gganimate","ggplot2","gifski","glue","graphics","grDevices","grid","gtable","haven","hms","htmltools","htmlwidgets","httpuv","httr","jquerylib","jsonlite","knitr","later","learnr","lifecycle","lubridate","magrittr","markdown","methods","mime","modelr","munsell","pillar","pkgconfig","prettyunits","progress","promises","purrr","R6","Rcpp","readr","readxl","reprex","rlang","rmarkdown","rprojroot","rstudioapi","rvest","sass","scales","shiny","stats","stringi","stringr","tibble","tidyr","tidyselect","tidyverse","tools","tweenr","utf8","utils","vctrs","withr","xfun","xml2","xtable","yaml"]},{"type":"character","attributes":{},"value":["0.2.1","1.2.1","4.0.4","0.7.6","0.2.4","1.1.0","2.4.0","2.0-0","4.0.4","1.4.1.9000","0.1.4","4.0.4","1.1.1","2.1.1","0.6.27","1.0.5","0.3.1","0.14","0.4.2","2.1.0","1.1.0","0.5.1","1.5.0","0.1.0","1.0.7","3.3.3","0.8.7.1","1.4.2","4.0.4","4.0.4","4.0.4","0.3.0","2.3.1","1.0.0","0.5.1.1","1.5.3","1.5.5","1.4.2","0.1.3","1.7.2","1.31.6","1.1.0.1","0.10.1","1.0.0","1.7.10","2.0.1","1.1","4.0.4","0.10","0.1.8","0.5.0","1.6.0","2.0.3","1.1.1","1.2.2","1.2.0.1","0.3.4","2.5.0","1.0.6","1.4.0","1.3.1","2.0.0","0.4.10","2.7","2.0.2","0.13","1.0.0","0.3.1","1.1.1","1.6.0","4.0.4","1.5.3","1.4.0","3.1.0","1.1.3","1.1.0","1.3.1","4.0.4","1.0.1","1.2.1","4.0.4","0.3.6","2.4.1","0.22","1.3.2","1.8-4","2.2.1"]}]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages","version"]},"class":{"type":"character","attributes":{},"value":["data.frame"]},"row.names":{"type":"integer","attributes":{},"value":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87]}},"value":[{"type":"character","attributes":{},"value":["assertthat","backports","base","broom","bslib","cellranger","cli","colorspace","compiler","crayon","datasauRus","datasets","DBI","dbplyr","digest","dplyr","ellipsis","evaluate","fansi","farver","fastmap","forcats","fs","generics","gganimate","ggplot2","gifski","glue","graphics","grDevices","grid","gtable","haven","hms","htmltools","htmlwidgets","httpuv","httr","jquerylib","jsonlite","knitr","later","learnr","lifecycle","lubridate","magrittr","markdown","methods","mime","modelr","munsell","pillar","pkgconfig","prettyunits","progress","promises","purrr","R6","Rcpp","readr","readxl","reprex","rlang","rmarkdown","rprojroot","rstudioapi","rvest","sass","scales","shiny","stats","stringi","stringr","tibble","tidyr","tidyselect","tidyverse","tools","tweenr","utf8","utils","vctrs","withr","xfun","xml2","xtable","yaml"]},{"type":"character","attributes":{},"value":["0.2.1","1.2.1","4.0.4","0.7.8","0.2.4","1.1.0","3.0.0","2.0-2","4.0.4","1.4.1.9000","0.1.4","4.0.4","1.1.1","2.1.1","0.6.27","1.0.5","0.3.2","0.14","0.5.0","2.1.0","1.1.0","0.5.1","1.5.0","0.1.0","1.0.7","3.3.5","0.8.7.1","1.4.2","4.0.4","4.0.4","4.0.4","0.3.0","2.3.1","1.0.0","0.5.1.1","1.5.3","1.5.5","1.4.2","0.1.3","1.7.2","1.31.6","1.1.0.1","0.10.1","1.0.0","1.7.10","2.0.1","1.1","4.0.4","0.10","0.1.8","0.5.0","1.6.1","2.0.3","1.1.1","1.2.2","1.2.0.1","0.3.4","2.5.0","1.0.6","1.4.0","1.3.1","2.0.0","0.4.11","2.7","2.0.2","0.13","1.0.0","0.3.1","1.1.1","1.6.0","4.0.4","1.5.3","1.4.0","3.1.2","1.1.3","1.1.0","1.3.1","4.0.4","1.0.1","1.2.1","4.0.4","0.3.8","2.4.2","0.22","1.3.2","1.8-4","2.2.1"]}]}]}
 </script>
 <!--/html_preserve-->
 <div id="section-refs" class="references csl-bib-body hanging-indent">
@@ -1606,7 +1609,7 @@ Wickham, Hadley. 2021a. <em>Tidyr: Tidy Messy Data</em>. <a href="https://CRAN.R
 ———. 2021b. <em>Tidyverse: Easily Install and Load the Tidyverse</em>. <a href="https://CRAN.R-project.org/package=tidyverse">https://CRAN.R-project.org/package=tidyverse</a>.
 </div>
 <div id="section-ref-R-ggplot2" class="csl-entry">
-Wickham, Hadley, Winston Chang, Lionel Henry, Thomas Lin Pedersen, Kohske Takahashi, Claus Wilke, Kara Woo, Hiroaki Yutani, and Dewey Dunnington. 2020. <em>Ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics</em>. <a href="https://CRAN.R-project.org/package=ggplot2">https://CRAN.R-project.org/package=ggplot2</a>.
+Wickham, Hadley, Winston Chang, Lionel Henry, Thomas Lin Pedersen, Kohske Takahashi, Claus Wilke, Kara Woo, Hiroaki Yutani, and Dewey Dunnington. 2021. <em>Ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics</em>. <a href="https://CRAN.R-project.org/package=ggplot2">https://CRAN.R-project.org/package=ggplot2</a>.
 </div>
 <div id="section-ref-R-dplyr" class="csl-entry">
 Wickham, Hadley, Romain François, Lionel Henry, and Kirill Müller. 2021. <em>Dplyr: A Grammar of Data Manipulation</em>. <a href="https://CRAN.R-project.org/package=dplyr">https://CRAN.R-project.org/package=dplyr</a>.
