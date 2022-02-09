@@ -2,7 +2,7 @@
 
 ![](images/Circos.png){width=1.5in}
 ![](images/ggplot2.png){width=1.1in}
-![](images/gganimate_logo.png){width=1in}
+
 
 The video below offers an overview of the content in covered in this section of the tutorial. Keep in mind that I did not yet have your data when I recorded this so the results of my scripts may be slightly different than yours. Feel free to watch the video and follow along or simply work through the tutorial. All the [Data Visualization slides](http://htmlpreview.github.io/?https://github.com/CWWhitney/teaching_R/blob/master/Data_Visualization_Rpres/Data_Visualization.html#/) are also available as a web page. 
 
