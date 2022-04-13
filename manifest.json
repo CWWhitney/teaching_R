@@ -1381,33 +1381,6 @@
         "Built": "R 4.1.0; ; 2021-05-27 16:44:50 UTC; unix"
       }
     },
-    "gifski": {
-      "Source": "CRAN",
-      "Repository": "https://cran.rstudio.com/",
-      "description": {
-        "Package": "gifski",
-        "Type": "Package",
-        "Title": "Highest Quality GIF Encoder",
-        "Version": "1.4.3-1",
-        "Authors@R": "c(\n    person(\"Jeroen\", \"Ooms\", ,\"jeroen@berkeley.edu\", role = c(\"aut\", \"cre\"),\n      comment = c(ORCID = \"0000-0002-4035-0289\")),\n    person(\"Kornel Lesiński\", role = \"cph\", comment = \"Gifski Rust library\"))",
-        "Description": "Multi-threaded GIF encoder written in Rust: <https://gif.ski/>. \n    Converts images to GIF animations using pngquant's efficient cross-frame \n    palettes and temporal dithering with thousands of colors per frame.",
-        "License": "MIT + file LICENSE",
-        "URL": "https://gif.ski/ (upstream), https://github.com/r-rust/gifski\n(devel)",
-        "BugReports": "https://github.com/r-rust/gifski/issues",
-        "SystemRequirements": "Cargo (rustc package manager)",
-        "Encoding": "UTF-8",
-        "RoxygenNote": "7.1.1",
-        "Suggests": "ggplot2, gapminder",
-        "Language": "en-US",
-        "NeedsCompilation": "yes",
-        "Packaged": "2021-05-01 22:52:43 UTC; jeroen",
-        "Author": "Jeroen Ooms [aut, cre] (<https://orcid.org/0000-0002-4035-0289>),\n  Kornel Lesiński [cph] (Gifski Rust library)",
-        "Maintainer": "Jeroen Ooms <jeroen@berkeley.edu>",
-        "Repository": "CRAN",
-        "Date/Publication": "2021-05-02 04:30:02 UTC",
-        "Built": "R 4.1.0; x86_64-apple-darwin17.0; 2021-05-26 03:57:16 UTC; unix"
-      }
-    },
     "glue": {
       "Source": "CRAN",
       "Repository": "https://cran.rstudio.com/",
@@ -3595,7 +3568,7 @@
       "checksum": "ab4392088a107b4d52fa642f55a8665b"
     },
     "Data_Visualization_Rpres/Data_Visualization-cache/__packages": {
-      "checksum": "c1cbc9c1f2d02a4f6b71904400be1ba8"
+      "checksum": "0a36534522a7aec4e8df3ad66ff1df2f"
     },
     "Data_Visualization_Rpres/Data_Visualization-cache/animate_datasaurus_dozen_cce3faa64dd8e9fe38b5b0cfea1abf64.RData": {
       "checksum": "99fdb5172599f15d74693aea8c2da94b"
@@ -3615,14 +3588,14 @@
     "Data_Visualization_Rpres/Data_Visualization-cache/animate_diamonds_d6bbff97804bd90ca03d1c632b1e1942.rdx": {
       "checksum": "eb216f15c8f5f35d79be62a3b9492e62"
     },
-    "Data_Visualization_Rpres/Data_Visualization-cache/base_barplot_99599cc05f918749b85c5292ef6552c4.RData": {
-      "checksum": "c7d585317695af3ae3fa1f7ae025a3de"
+    "Data_Visualization_Rpres/Data_Visualization-cache/base_barplot_1675381b9c2526ae662b3f32c59dbec0.RData": {
+      "checksum": "7507df49472854af3854c8fa00c21ae3"
     },
-    "Data_Visualization_Rpres/Data_Visualization-cache/base_barplot_99599cc05f918749b85c5292ef6552c4.rdb": {
-      "checksum": "39f467fada6153068f97f8b26eceb9a8"
+    "Data_Visualization_Rpres/Data_Visualization-cache/base_barplot_1675381b9c2526ae662b3f32c59dbec0.rdb": {
+      "checksum": "6308fe96697966fea76a32bf2a5f8a2b"
     },
-    "Data_Visualization_Rpres/Data_Visualization-cache/base_barplot_99599cc05f918749b85c5292ef6552c4.rdx": {
-      "checksum": "23fb3996b236c5da89a66cafb80d4628"
+    "Data_Visualization_Rpres/Data_Visualization-cache/base_barplot_1675381b9c2526ae662b3f32c59dbec0.rdx": {
+      "checksum": "fe69baf622652557acaa0b06b2444b24"
     },
     "Data_Visualization_Rpres/Data_Visualization-cache/base_boxplot_0df74ac6291a9e0fb0b19f15aad022e7.RData": {
       "checksum": "73378dfcff78d0bd5d92db0693710ad2"
@@ -3642,14 +3615,14 @@
     "Data_Visualization_Rpres/Data_Visualization-cache/boxplot_jitter_da64cf55d6f894a939aa739f14fbb038.rdx": {
       "checksum": "eb216f15c8f5f35d79be62a3b9492e62"
     },
-    "Data_Visualization_Rpres/Data_Visualization-cache/diamonds_color_53649f70facac9666aefe3cdae68c506.RData": {
-      "checksum": "342679c531ea258f636011bfca8c3d13"
+    "Data_Visualization_Rpres/Data_Visualization-cache/diamonds_color_e72a8f1d8610a80d2bcd155349727197.RData": {
+      "checksum": "0958c8e8ff25dc20f7bfa22dda5dca71"
     },
-    "Data_Visualization_Rpres/Data_Visualization-cache/diamonds_color_53649f70facac9666aefe3cdae68c506.rdb": {
-      "checksum": "2672c4361253f908f6875da80415518b"
+    "Data_Visualization_Rpres/Data_Visualization-cache/diamonds_color_e72a8f1d8610a80d2bcd155349727197.rdb": {
+      "checksum": "adf0c99eeb6f843e8d5bb84c710a276e"
     },
-    "Data_Visualization_Rpres/Data_Visualization-cache/diamonds_color_53649f70facac9666aefe3cdae68c506.rdx": {
-      "checksum": "08a214f5176dda04cda9f0e1b07479f4"
+    "Data_Visualization_Rpres/Data_Visualization-cache/diamonds_color_e72a8f1d8610a80d2bcd155349727197.rdx": {
+      "checksum": "db6ca62a07b110551e7a0b8d4dee474e"
     },
     "Data_Visualization_Rpres/Data_Visualization-cache/geom_histogram_script_b88575b2ff4c25b2f2a87c34dda3b5a4.RData": {
       "checksum": "96f5c91e85ea09bd4869379494a1ab46"
@@ -3678,14 +3651,14 @@
     "Data_Visualization_Rpres/Data_Visualization-cache/ggplot_box_jitter_51fad491689e5d35753e1672063dd4e8.rdx": {
       "checksum": "501614f804417f48b30c8f507df4d044"
     },
-    "Data_Visualization_Rpres/Data_Visualization-cache/ggplot_boxplot_1c514e70202a6d64c033e8c3e3f84391.RData": {
-      "checksum": "7ff53463f6f5a2d05b86c34abb278820"
+    "Data_Visualization_Rpres/Data_Visualization-cache/ggplot_boxplot_95bf3152ad4f7c6454fa4251e5022d67.RData": {
+      "checksum": "bae004f3cbb73f2cc6231fd5fcbb30ae"
     },
-    "Data_Visualization_Rpres/Data_Visualization-cache/ggplot_boxplot_1c514e70202a6d64c033e8c3e3f84391.rdb": {
+    "Data_Visualization_Rpres/Data_Visualization-cache/ggplot_boxplot_95bf3152ad4f7c6454fa4251e5022d67.rdb": {
       "checksum": "d41d8cd98f00b204e9800998ecf8427e"
     },
-    "Data_Visualization_Rpres/Data_Visualization-cache/ggplot_boxplot_1c514e70202a6d64c033e8c3e3f84391.rdx": {
-      "checksum": "7b89e503febb7570f9a779f0836d1b05"
+    "Data_Visualization_Rpres/Data_Visualization-cache/ggplot_boxplot_95bf3152ad4f7c6454fa4251e5022d67.rdx": {
+      "checksum": "1d2b6121ce8b6e55ec313dd6c55fd9e4"
     },
     "Data_Visualization_Rpres/Data_Visualization-cache/ggplot_carat_price_eb626567b580b1f5edaf0ba3aa83e60e.RData": {
       "checksum": "c4e6f2d0b2f6aff07dee7d507b7392b5"
@@ -3696,14 +3669,14 @@
     "Data_Visualization_Rpres/Data_Visualization-cache/ggplot_carat_price_eb626567b580b1f5edaf0ba3aa83e60e.rdx": {
       "checksum": "7b89e503febb7570f9a779f0836d1b05"
     },
-    "Data_Visualization_Rpres/Data_Visualization-cache/ggplot_color_size_e3427f77a1396e3866ae1c0fcaf43adc.RData": {
-      "checksum": "311e2dfeb88b546830705c22b67e59e2"
+    "Data_Visualization_Rpres/Data_Visualization-cache/ggplot_color_size_1ebc9c095993bc238015745a9f559cf9.RData": {
+      "checksum": "3604106264dd301a099e45c756788988"
     },
-    "Data_Visualization_Rpres/Data_Visualization-cache/ggplot_color_size_e3427f77a1396e3866ae1c0fcaf43adc.rdb": {
+    "Data_Visualization_Rpres/Data_Visualization-cache/ggplot_color_size_1ebc9c095993bc238015745a9f559cf9.rdb": {
       "checksum": "d41d8cd98f00b204e9800998ecf8427e"
     },
-    "Data_Visualization_Rpres/Data_Visualization-cache/ggplot_color_size_e3427f77a1396e3866ae1c0fcaf43adc.rdx": {
-      "checksum": "7b89e503febb7570f9a779f0836d1b05"
+    "Data_Visualization_Rpres/Data_Visualization-cache/ggplot_color_size_1ebc9c095993bc238015745a9f559cf9.rdx": {
+      "checksum": "1d2b6121ce8b6e55ec313dd6c55fd9e4"
     },
     "Data_Visualization_Rpres/Data_Visualization-cache/ggplot_diamonds_color_shape_fa8417fab35c714462c208f4cea63dea.RData": {
       "checksum": "f849622d40afb5db2953c0bb5cdc2a53"
@@ -3732,23 +3705,23 @@
     "Data_Visualization_Rpres/Data_Visualization-cache/ggplot_histograms_98c8c6a6c691f2c40490c69eab79b788.rdx": {
       "checksum": "f7d7756e237a00ec681bcfa942f3846d"
     },
-    "Data_Visualization_Rpres/Data_Visualization-cache/ggplot_iris_10d2e836dccc9b483d1d5045b2f2aa34.RData": {
-      "checksum": "c18e113d6f0dbdb381822e8d85fb3d86"
+    "Data_Visualization_Rpres/Data_Visualization-cache/ggplot_iris_04b26bddc2fb06247716bd742cc66214.RData": {
+      "checksum": "a4411023347ce5a32f684ffbd7e7b6ec"
     },
-    "Data_Visualization_Rpres/Data_Visualization-cache/ggplot_iris_10d2e836dccc9b483d1d5045b2f2aa34.rdb": {
+    "Data_Visualization_Rpres/Data_Visualization-cache/ggplot_iris_04b26bddc2fb06247716bd742cc66214.rdb": {
       "checksum": "d41d8cd98f00b204e9800998ecf8427e"
     },
-    "Data_Visualization_Rpres/Data_Visualization-cache/ggplot_iris_10d2e836dccc9b483d1d5045b2f2aa34.rdx": {
-      "checksum": "7b89e503febb7570f9a779f0836d1b05"
+    "Data_Visualization_Rpres/Data_Visualization-cache/ggplot_iris_04b26bddc2fb06247716bd742cc66214.rdx": {
+      "checksum": "1d2b6121ce8b6e55ec313dd6c55fd9e4"
     },
-    "Data_Visualization_Rpres/Data_Visualization-cache/ggplot_name_email_82aa06a2e4512182e6dcd1a386a2114b.RData": {
-      "checksum": "0da0fb782515ddb034b23c1de1f83c25"
+    "Data_Visualization_Rpres/Data_Visualization-cache/ggplot_name_email_520a8719cb81fce5bd1e8a452ef3d28d.RData": {
+      "checksum": "a0c8aeb88880cb32ece3a4b4232d2f71"
     },
-    "Data_Visualization_Rpres/Data_Visualization-cache/ggplot_name_email_82aa06a2e4512182e6dcd1a386a2114b.rdb": {
+    "Data_Visualization_Rpres/Data_Visualization-cache/ggplot_name_email_520a8719cb81fce5bd1e8a452ef3d28d.rdb": {
       "checksum": "d41d8cd98f00b204e9800998ecf8427e"
     },
-    "Data_Visualization_Rpres/Data_Visualization-cache/ggplot_name_email_82aa06a2e4512182e6dcd1a386a2114b.rdx": {
-      "checksum": "7b89e503febb7570f9a779f0836d1b05"
+    "Data_Visualization_Rpres/Data_Visualization-cache/ggplot_name_email_520a8719cb81fce5bd1e8a452ef3d28d.rdx": {
+      "checksum": "1d2b6121ce8b6e55ec313dd6c55fd9e4"
     },
     "Data_Visualization_Rpres/Data_Visualization-cache/ggplot_not_slow_3802950d910a594652a96e594a0fe25a.RData": {
       "checksum": "390394a6af3aa2598483063c08b714d8"
@@ -3777,14 +3750,14 @@
     "Data_Visualization_Rpres/Data_Visualization-cache/ggplot_set_5d0a2283d8fa46a301c8710aaf9a612c.rdx": {
       "checksum": "7aa64531a5395548f11c218537695842"
     },
-    "Data_Visualization_Rpres/Data_Visualization-cache/ggplot_smooth_a0ec11893e03b495371295b8a4a265b7.RData": {
-      "checksum": "9ddeb5ca1ef04fd522c6abc36a350b4a"
+    "Data_Visualization_Rpres/Data_Visualization-cache/ggplot_smooth_294deb6d0a13dbfcc3c8ddba5c918853.RData": {
+      "checksum": "f595289e173b1ebbb5a9ef20b75d3b18"
     },
-    "Data_Visualization_Rpres/Data_Visualization-cache/ggplot_smooth_a0ec11893e03b495371295b8a4a265b7.rdb": {
-      "checksum": "ce2c61121c6c1376c5af4892f5bd04af"
+    "Data_Visualization_Rpres/Data_Visualization-cache/ggplot_smooth_294deb6d0a13dbfcc3c8ddba5c918853.rdb": {
+      "checksum": "233ec1208ffdf55ca2267209e3a966f5"
     },
-    "Data_Visualization_Rpres/Data_Visualization-cache/ggplot_smooth_a0ec11893e03b495371295b8a4a265b7.rdx": {
-      "checksum": "95f4ae8f7a5e5d08405cbe0342126007"
+    "Data_Visualization_Rpres/Data_Visualization-cache/ggplot_smooth_294deb6d0a13dbfcc3c8ddba5c918853.rdx": {
+      "checksum": "7207ce617c0f4ccd9f8130c9d07a7e23"
     },
     "Data_Visualization_Rpres/Data_Visualization-cache/ggplot_subset_abaacb623e07c75b57d7044017a3dea3.RData": {
       "checksum": "5254622720353883785e10461a9b6f8f"
@@ -3795,14 +3768,14 @@
     "Data_Visualization_Rpres/Data_Visualization-cache/ggplot_subset_abaacb623e07c75b57d7044017a3dea3.rdx": {
       "checksum": "3e3cda0908798311b47ee6772b4693ab"
     },
-    "Data_Visualization_Rpres/Data_Visualization-cache/jitter_plot_aa6303dde555c857bd5db60c5c1f30fe.RData": {
-      "checksum": "9cdf1ad1feba1ee58d181e9d2a8cc384"
+    "Data_Visualization_Rpres/Data_Visualization-cache/jitter_plot_6d73dbecd5f7d01f3320253ebb598db1.RData": {
+      "checksum": "c061e0a24321098a7e814189949823b7"
     },
-    "Data_Visualization_Rpres/Data_Visualization-cache/jitter_plot_aa6303dde555c857bd5db60c5c1f30fe.rdb": {
+    "Data_Visualization_Rpres/Data_Visualization-cache/jitter_plot_6d73dbecd5f7d01f3320253ebb598db1.rdb": {
       "checksum": "d41d8cd98f00b204e9800998ecf8427e"
     },
-    "Data_Visualization_Rpres/Data_Visualization-cache/jitter_plot_aa6303dde555c857bd5db60c5c1f30fe.rdx": {
-      "checksum": "7b89e503febb7570f9a779f0836d1b05"
+    "Data_Visualization_Rpres/Data_Visualization-cache/jitter_plot_6d73dbecd5f7d01f3320253ebb598db1.rdx": {
+      "checksum": "1d2b6121ce8b6e55ec313dd6c55fd9e4"
     },
     "Data_Visualization_Rpres/Data_Visualization-cache/qplot_box_jitter_25d98f6a7f85d82685651ea760807abf.RData": {
       "checksum": "38c7b91f5dd15db542b27b5a262dee1d"
@@ -3930,14 +3903,14 @@
     "Data_Visualization_Rpres/Data_Visualization-cache/slow_ggplotting_example_a0a99f0165a4bbf87e86f8387f8a805c.rdx": {
       "checksum": "eb216f15c8f5f35d79be62a3b9492e62"
     },
-    "Data_Visualization_Rpres/Data_Visualization-cache/unnamed-chunk-1_dd8ad6767dc2f450d73d944d1ffe47da.RData": {
-      "checksum": "5ada42b09e6d2ea7ad2d97ee63355f83"
+    "Data_Visualization_Rpres/Data_Visualization-cache/unnamed-chunk-1_3b18eae8ef173b49238b2fad96c80dea.RData": {
+      "checksum": "019d93febc1937e4c68fec5cf19e2692"
     },
-    "Data_Visualization_Rpres/Data_Visualization-cache/unnamed-chunk-1_dd8ad6767dc2f450d73d944d1ffe47da.rdb": {
-      "checksum": "f4aacc2e1697a6ce5f7c476d0e605516"
+    "Data_Visualization_Rpres/Data_Visualization-cache/unnamed-chunk-1_3b18eae8ef173b49238b2fad96c80dea.rdb": {
+      "checksum": "f5aa806163e182bb8500d5c25c1cf8d9"
     },
-    "Data_Visualization_Rpres/Data_Visualization-cache/unnamed-chunk-1_dd8ad6767dc2f450d73d944d1ffe47da.rdx": {
-      "checksum": "c3af1ad5c6b2f9b1e1e967797b9a95ee"
+    "Data_Visualization_Rpres/Data_Visualization-cache/unnamed-chunk-1_3b18eae8ef173b49238b2fad96c80dea.rdx": {
+      "checksum": "d1f5eff6fe832031e05f774a367b963c"
     },
     "Data_Visualization_Rpres/Data_Visualization-cache/unnamed-chunk-10_7ee62357e76c8b288deb0a15a5e45ebb.RData": {
       "checksum": "6282cc4b3849283792ee9c307c4f6bc5"
@@ -4020,14 +3993,14 @@
     "Data_Visualization_Rpres/Data_Visualization-cache/unnamed-chunk-18_3096c8e24a1bea1eb6678f91c14bcc5c.rdx": {
       "checksum": "eb216f15c8f5f35d79be62a3b9492e62"
     },
-    "Data_Visualization_Rpres/Data_Visualization-cache/unnamed-chunk-2_a211b7e7a4192fb9aac99343c6eeb669.RData": {
-      "checksum": "bb349e6df877b2cbcd93f059a933f41e"
+    "Data_Visualization_Rpres/Data_Visualization-cache/unnamed-chunk-2_98ef5fcab6fdf3f64c69258b443d7130.RData": {
+      "checksum": "a3de5859ea42bef28024dadecdbdc298"
     },
-    "Data_Visualization_Rpres/Data_Visualization-cache/unnamed-chunk-2_a211b7e7a4192fb9aac99343c6eeb669.rdb": {
-      "checksum": "ce2c61121c6c1376c5af4892f5bd04af"
+    "Data_Visualization_Rpres/Data_Visualization-cache/unnamed-chunk-2_98ef5fcab6fdf3f64c69258b443d7130.rdb": {
+      "checksum": "233ec1208ffdf55ca2267209e3a966f5"
     },
-    "Data_Visualization_Rpres/Data_Visualization-cache/unnamed-chunk-2_a211b7e7a4192fb9aac99343c6eeb669.rdx": {
-      "checksum": "95f4ae8f7a5e5d08405cbe0342126007"
+    "Data_Visualization_Rpres/Data_Visualization-cache/unnamed-chunk-2_98ef5fcab6fdf3f64c69258b443d7130.rdx": {
+      "checksum": "7207ce617c0f4ccd9f8130c9d07a7e23"
     },
     "Data_Visualization_Rpres/Data_Visualization-cache/unnamed-chunk-3_7bfa4a9b6e7d2a08d8127b2d51fd4b71.RData": {
       "checksum": "4a03b3ee95b529970ec7ed1554b4f460"
@@ -4105,7 +4078,7 @@
       "checksum": "dd72197b3b02854f78b15d8de2bb816b"
     },
     "Data_Visualization_Rpres/Data_Visualization-figure/base_barplot-1.png": {
-      "checksum": "c86652dc8dd955fdf99bf4d47c361144"
+      "checksum": "6ec4ea6eafd04fb291a297dc187a1527"
     },
     "Data_Visualization_Rpres/Data_Visualization-figure/base_barplot-2.png": {
       "checksum": "74c1e9936223a631f40e526a6e5ee2ee"
@@ -4126,7 +4099,7 @@
       "checksum": "b0377a9fd0ea0b3897b8eddfe01f56ce"
     },
     "Data_Visualization_Rpres/Data_Visualization-figure/diamonds_color-1.png": {
-      "checksum": "3c1b09072e805ef5ba2e706819d2995f"
+      "checksum": "bc62a2ef605bf85d06c6780ed732ee2e"
     },
     "Data_Visualization_Rpres/Data_Visualization-figure/diamonds_color-2.png": {
       "checksum": "574a2a584f6599e7c657c29ccc6d9232"
@@ -4156,7 +4129,7 @@
       "checksum": "a22f669185de475d9e3c0f5be4e06b44"
     },
     "Data_Visualization_Rpres/Data_Visualization-figure/ggplot_color_size-1.png": {
-      "checksum": "072462104919b425f01d19e0e4d74ab4"
+      "checksum": "1456f4d2105e86d2b1319a21f9a4c28c"
     },
     "Data_Visualization_Rpres/Data_Visualization-figure/ggplot_diamonds_color_shape-1.png": {
       "checksum": "7c4c1d27529cd2a73c7dd192a935668c"
@@ -4171,7 +4144,7 @@
       "checksum": "76fafa27fb3d1fcc78c4c0c4bbc17be2"
     },
     "Data_Visualization_Rpres/Data_Visualization-figure/ggplot_name_email-1.png": {
-      "checksum": "d440c38318891e27d7c3bb53dbe1e5e3"
+      "checksum": "6a575693e8a130fd488902bcac62f9c6"
     },
     "Data_Visualization_Rpres/Data_Visualization-figure/ggplot_not_slow-1.png": {
       "checksum": "27dac840cef0031ae42cf6daf310629e"
@@ -4198,7 +4171,7 @@
       "checksum": "77b7dd721e03884fe0e362ced36c5bed"
     },
     "Data_Visualization_Rpres/Data_Visualization-figure/jitter_plot-1.png": {
-      "checksum": "063f5a9f7dd444a4435b90cc986564ec"
+      "checksum": "470076db598de63d59f79603d9ceae2d"
     },
     "Data_Visualization_Rpres/Data_Visualization-figure/layered_grammer.jpg": {
       "checksum": "221877fd9d87b6876247b026429a84f3"
@@ -4303,7 +4276,7 @@
       "checksum": "16e03fb3b962f889a9ba421bc42bc2ae"
     },
     "Data_Visualization_Rpres/Data_Visualization.Rpres": {
-      "checksum": "8dc422eff2a795470053426785d1d1ba"
+      "checksum": "7c85bba1aecb4e17cd2ee91f19fdde51"
     },
     "Data_Visualization_Rpres/Index_files/figure-html/animate_datasaurus_dozen-1.gif": {
       "checksum": "441aa58a6e6d9ede9a3aa7dfa131c4f7"
@@ -4321,7 +4294,7 @@
       "checksum": "533a867e542c55553947ddfe8462c39b"
     },
     "Data_Visualization.Rmd": {
-      "checksum": "e648a608819a284be1a51a120c4e7c88"
+      "checksum": "6c2696656324e5184790ffaaf1cca258"
     },
     "Data_Wrangling_1.Rmd": {
       "checksum": "144ecae8a4673261209a2aaf47ecc8cf"
