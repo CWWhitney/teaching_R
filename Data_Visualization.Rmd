@@ -19,7 +19,7 @@ If you ever get stuck
 ![](images/rstudio-hex.png){width=1in}
 
 - Type `?` in R console with function, package or data name
-- Add `R` to an internet search quesry with a copy of any error message you get from R
+- Add `R` to an internet search query with a copy of any error message you get from R
 - In RStudio on your machine find **Help > Cheatsheets > Data Visualization with ggplot2**
 
 For getting help
