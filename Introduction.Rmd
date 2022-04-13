@@ -29,7 +29,6 @@ You will also always have the option to get a copy of the code to run on your ow
 library(datasauRus)
 library(gganimate)
 library(ggplot2)
-library(gifski)
 library(purrr)
 library(rmarkdown)
 library(tidyverse)
