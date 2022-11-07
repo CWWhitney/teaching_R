@@ -21,7 +21,7 @@ knitr::opts_chunk$set(echo = FALSE)
 library(datasauRus)
 library(gganimate)
 library(ggplot2)
-# library(gifski) # remove animated 
+library(gifski) # remove animated 
 library(learnr)
     tutorial_options(exercise.timelimit = 200)
 library(purrr)
@@ -62,7 +62,7 @@ knitr::write_bib(c(.packages(),
 ```{r child_Vis, child="Data_Visualization.Rmd"}
 ```
 
-<!-- ```{r child_Vis, child="Data_Animation.Rmd"} -->
-<!-- ``` -->
+```{r child_Vis, child="Data_Animation.Rmd"}
+```
 
 ## References
