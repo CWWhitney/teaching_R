@@ -1,33 +1,60 @@
-batch,age,gender,continent_of_origin,research_continent,number_of_publications,working_hours_per_day,number_of_siblings,academic_parents,km_home_to_office,years_of_study,days_to_email_response,letters_in_first_name
-2017,33,F,Europe,Europe,6,8,1,N,1.7,20,1,4
+batch,age,gender,continent_of_origin,research_continent,number_of_publications,working_hours_per_day,number_of_siblings,academic_parents,km_home_to_zef,years_of_study,days_to_email_response,letters_in_first_name
+2017,33,F,Europe,Europe,6,8,1,N,17,20,1,4
 2017,31,F,South America,South America,0,8,2,Y,40,9,1,6
 2017,30,F,South America,South America,1,7,2,N,10370,7,1,7
 2017,28,M,Africa,Africa,1,16,1,Y,15,3,1,7
 2017,30,M,Africa,Africa,3,12,5,N,6,7,1,6
-2017,30,M,Africa,Africa,3,16,4,N,8.3,10,2,6
+2017,30,M,Africa,Africa,3,16,4,N,83,10,2,6
 2017,33,F,Africa,Africa,0,3,7,N,9,6,2,5
 2017,30,F,South America,South America,2,8,1,N,65,7,2,7
 2017,27,M,Europe,Europe,0,9,2,Y,1,6,3,5
 2018,32,F,China,China,2,8,3,N,3,20,3,4
-2018,32,F,Asia,Asia,2,10,2,N,4.3,18,1,5
-2018,36,M,Africa,Africa,10,7,6,Y,7.9,18,1,8
-2018,43,F,North America,North America,2,8,5,N,0.13,18,1,8
-2018,32,M,Asia,Asia,2,8,6,N,4.1,18,1,6
+2018,32,F,Asia,Asia,2,10,2,N,43,18,1,5
+2018,36,M,Africa,Africa,10,7,6,Y,79,18,1,8
+2018,43,F,North America,North America,2,8,5,N,13,18,1,8
+2018,32,M,Asia,Asia,2,8,6,N,41,18,1,6
 2018,28,M,Asia,Asia,0,7,5,N,4,17,1,5
 2018,28,F,Asia,Asia,0,6,2,N,4,17,1,5
 2019,33,M,Asia,Asia,2,8,3,Y,104,17,1,6
-2019,31,F,Asia,Asia,2,4,3,Y,23.8,12,1,5
-2019,34,M,Africa,Africa,2,8,2,Y,8.2,12,1,7
+2019,31,F,Asia,Asia,2,4,3,Y,238,12,1,5
+2019,34,M,Africa,Africa,2,8,2,Y,82,12,1,7
 2019,29,M,South America,Africa,2,8,0,N,4,12,3,5
-2019,31,F,South America,South America,3,6,2,N,1.1,12,3,8
+2019,31,F,South America,South America,3,6,2,N,11,12,3,8
 2019,37,M,Asia,Asia,3,6,3,Y,10311,12,4,7
 2019,34,M,Asia,Asia,6,5,2,Y,8,12,4,4
-2019,23,F,Asia,Africa,0,3,1,N,3.6,12,4,6
-2019,35,M,South America,South America,10,6,2,N,4.8,12,4,6
+2019,23,F,Asia,Africa,0,3,1,N,36,12,4,6
+2019,35,M,South America,South America,10,6,2,N,48,12,4,6
 2017,37,M,Asia,Asia,3,6,3,Y,10300,17,2,7
 2019,29,F,Asia,Asia,2,3,2,Y,3,10,1,5
 2012,32,F,Asia,Asia,10,8,1,Y,6700,20,1,5
-2019,27,F,South America,South America,2,8,1,N,2.1,19,1,4
-2019,36,F,Asia,Asia,3,6,4,N,2.5,19,2,5
+2019,27,F,South America,South America,2,8,1,N,21,19,1,4
+2019,36,F,Asia,Asia,3,6,4,N,25,19,2,5
 2019,29,M,South America,Africa,2,8,0,N,4,18,1,5
 2019,32,M,Africa,Africa,1,8,4,N,6,20,1,5
+2021,30,F,Europe,Africa/Europe,1,6,1,N,30,19,2,9
+2021,33,M,Europe,Africa/ Europe,2,8,3,Y,30,18,1,7
+2021,23,F,Asia,Asia,0,8,0,N,5,19,2,7
+2021,27,F,South America,South America,0,8,1,N,9741,24,2,6
+2021,30,F,Africa,Africa,0,6,3,Y,2.8,27,2,10
+2021,35,M,Africa,Africa,1,6,3,Y,10,19,1,6
+2021,27,F,Asia,Asia,5,8,1,N,4.3,25,4,7
+2021,43,M,Africa,Africa,12,8,0,N,6,10,4,10
+2021,25,M,Europe,South America,1,6,2,Y,400,7,2,5
+2021,31,F,Southeast Asia,Southeast Asia,8,5,1,N,2,20,1,8
+2021,34,M,Asia,Asia,5,8,5,N,3,18,4,5
+2021,36,F,South America,South America,0,8,0,Y,2,19,2,5
+2021,43,F,Africa,Africa,4,7,3,N,1.9,21,2,4
+2021,33,M,Asia,Asia,25,8,1,N,,18,1,6
+2022,29,,Africa,Africa,0,7,4,N,7,18,3,7
+2021,34,M,Africa,South America,10,8,3,Y,1.1,20,2,6
+2021,22,F,Europe,Europe,0,2,2,N,"1,7",4,1,5
+2021,26,F,Europe,Europe,0,8,2,Y,4,7,1,6
+2021,30,M,Africa,Africa,8,8,2,Y,8,20,1,5
+2022,29,F,Southeast Asia,Southeast Asia,2,8,4,N,6,18,1,4
+2023,28,M,Africa,Africa,0,8,3,Y,4,18,1,7
+2022,30,F,Asia,Asia,1,7,2,N,12,17,1,6
+2022,28,F,Asia,Asia,2,3,0,N,8,18,1,5
+2022,33,M,Africa,Africa,3,8,4,N,6,19,1,10
+2022,32,F,Africa,Africa,4,8,5,Y,3,17,1,7
+2022,35,M,Africa,Africa,3,8,4,N,8,20,1,8
+2022,33,F,America,America,1,8,3,Y,0.3,22,1,2
