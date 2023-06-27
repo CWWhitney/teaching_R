@@ -260,13 +260,13 @@ head(participants_data)
 4                      1                    16                  1
 5                      3                    12                  5
 6                      3                    16                  4
-  academic_parents km_home_to_zef years_of_study days_to_email_response
-1                N            1.7             20                      1
-2                Y           40.0              9                      1
-3                N        10370.0              7                      1
-4                Y           15.0              3                      1
-5                N            6.0              7                      1
-6                N            8.3             10                      2
+  academic_parents km_home_to_office years_of_study days_to_email_response
+1                N               1.7             20                      1
+2                Y              40.0              9                      1
+3                N           10370.0              7                      1
+4                Y              15.0              3                      1
+5                N               6.0              7                      1
+6                N               8.3             10                      2
   letters_in_first_name
 1                     4
 2                     6
@@ -291,7 +291,7 @@ names(participants_data)
  [1] "batch"                  "age"                    "gender"                
  [4] "continent_of_origin"    "research_continent"     "number_of_publications"
  [7] "working_hours_per_day"  "number_of_siblings"     "academic_parents"      
-[10] "km_home_to_zef"         "years_of_study"         "days_to_email_response"
+[10] "km_home_to_office"      "years_of_study"         "days_to_email_response"
 [13] "letters_in_first_name" 
 ```
 
@@ -317,7 +317,7 @@ str(participants_data)
  $ working_hours_per_day : int  8 8 7 16 12 16 3 8 9 8 ...
  $ number_of_siblings    : int  1 2 2 1 5 4 7 1 2 3 ...
  $ academic_parents      : chr  "N" "Y" "N" "Y" ...
- $ km_home_to_zef        : num  1.7 40 10370 15 6 ...
+ $ km_home_to_office     : num  1.7 40 10370 15 6 ...
  $ years_of_study        : int  20 9 7 3 7 10 6 7 6 20 ...
  $ days_to_email_response: int  1 1 1 1 1 2 2 2 3 3 ...
  $ letters_in_first_name : int  4 6 7 7 6 6 5 7 5 4 ...
@@ -365,7 +365,16 @@ Tasks to test your new skills
 left: 20%
 incremental: true
 
-<img src="Data_Wrangling-figure/tidyR.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" width="35%" style="display: block; margin: auto;" /><img src="Data_Wrangling-figure/dplyr.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" width="35%" style="display: block; margin: auto;" /><img src="Data_Wrangling-figure/magrittr.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" width="35%" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
+<img src="Data_Wrangling-figure/tidyR.png" alt="plot of chunk unnamed-chunk-4" width="35%" />
+<p class="caption">plot of chunk unnamed-chunk-4</p>
+</div><div class="figure" style="text-align: center">
+<img src="Data_Wrangling-figure/dplyr.png" alt="plot of chunk unnamed-chunk-4" width="35%" />
+<p class="caption">plot of chunk unnamed-chunk-4</p>
+</div><div class="figure" style="text-align: center">
+<img src="Data_Wrangling-figure/magrittr.png" alt="plot of chunk unnamed-chunk-4" width="35%" />
+<p class="caption">plot of chunk unnamed-chunk-4</p>
+</div>
 
 ***
 Work through tasks on the `diamonds` data in long format in base and short format with magrittr pipeline:
