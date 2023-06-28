@@ -59,10 +59,10 @@ knitr::write_bib(c(.packages(),
 ```{r child_Wrangle2, child="Data_Wrangling_2.Rmd"}
 ```
 
-<!-- ```{r child_Vis, child="Data_Visualization.Rmd"} -->
-<!-- ``` -->
+```{r child_Vis, child="Data_Visualization.Rmd"}
+```
 
-<!-- ```{r child_Vis, child="Data_Animation.Rmd"} -->
-<!-- ``` -->
+<!-- # ```{r child_Vis, child="Data_Animation.Rmd"} -->
+<!-- # ``` -->
 
 ## References
