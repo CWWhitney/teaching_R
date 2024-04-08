@@ -1,4 +1,4 @@
-batch,age,gender,continent_of_origin,research_continent,number_of_publications,working_hours_per_day,number_of_siblings,academic_parents,km_home_to_zef,years_of_study,days_to_email_response,@dropdown
+batch,age,gender,continent_of_origin,research_continent,number_of_publications,working_hours_per_day,number_of_siblings,academic_parents,km_home_to_zef,years_of_study,days_to_email_response,letters_in_first_name
 2017,33,F,Europe,Europe,6,8,1,N,17,20,1,4
 2017,31,F,South America,South America,0,8,2,Y,40,9,1,6
 2017,30,F,South America,South America,1,7,2,N,10370,7,1,7
