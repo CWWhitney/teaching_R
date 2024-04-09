@@ -53,11 +53,11 @@ knitr::write_bib(c(.packages(),
 ```{r child_Intro, child="Introduction.Rmd"}
 ```
 
-<!-- ```{r child_Wrangle1, child="Data_Wrangling_1.Rmd"} -->
-<!-- ``` -->
+```{r child_Wrangle1, child="Data_Wrangling_1.Rmd"}
+```
 
-<!-- ```{r child_Wrangle2, child="Data_Wrangling_2.Rmd"} -->
-<!-- ``` -->
+```{r child_Wrangle2, child="Data_Wrangling_2.Rmd"}
+```
 
 <!-- ```{r child_Vis, child="Data_Visualization.Rmd"} -->
 <!-- ``` -->
