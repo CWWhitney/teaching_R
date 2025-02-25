@@ -624,6 +624,69 @@ ggplot(data = melted_cormat,
 geom_tile()
 ```
 
+### Specifying appearance of the plot
+
+ggplot allows a very high level of control over your plots. There is nothing wrong with
+the default settings in ggplot2, but it is relatively easy to add your personal touch
+to the plot and distinguish yourself and your plot from the mass of ggplot beginners. 
+For example, you could change the colors of the tile plot. 
+
+```{r geom_melted_cormat_custom_color, exercise=TRUE}
+# plot the result with 'geom-tile'
+ggplot(data = melted_cormat, 
+       aes(x = Var1,
+           y = Var2,
+           fill = value)) + 
+geom_tile() +
+scale_fill_gradient(low = "white", high = "red")
+```
+
+Maybe you want to have diverging colors. Then `scale_fill_gradient2` would be an option.
+
+```{r geom_melted_cormat_custom_color_diverge, exercise=TRUE}
+# plot the result with 'geom-tile'
+ggplot(data = melted_cormat, 
+       aes(x = Var1,
+           y = Var2,
+           fill = value)) + 
+geom_tile() +
+  scale_fill_gradient2(midpoint = 0.5, low = "#075AFF",
+                       mid = "#FFFFCC",
+                       high = "#FF0000")
+```
+Usually colors are encoded in hex-code like in this example, but R has also some 
+pre-defined colors like in the example before, where we used 'white' and 'red'.
+You can also control other aspects of your plot, like the shape of points, the 
+color of the outlines in your plot (for when you use geom_lines for example) or
+the size. 
+
+Here are more details on contoling colors: https://www.sthda.com/english/wiki/ggplot2-colors-how-to-change-colors-automatically-and-manually.
+
+Another thing you can control is the general appearance of your plot. There are
+pre-defined settings, which are called themes. They control anything from the
+ticks on your axis to the color of the background. In the `theme` you can also
+specify the text size, important when you make plots for publications and need
+to make sure that the labels are still readible in your text document.
+
+```{r geom_melted_cormat_theme_bw, exercise=TRUE}
+# plot the result with 'geom-tile'
+ggplot(data = melted_cormat, 
+       aes(x = Var1,
+           y = Var2,
+           fill = value)) + 
+geom_tile() +
+  scale_fill_gradient2(midpoint = 0.5, low = "#075AFF",
+                       mid = "#FFFFCC",
+                       high = "#FF0000") +
+  theme_bw(base_size = 15) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+In the example above we increased the text size with the `base_size` argument, changed
+the overal plot theme to `theme_bw` and rotated the x-axis labels because they
+were overlapping in the previous examples. There are many more themes, it is fun to 
+experiment a little bit.
+
+
 ### Export Figures
 
 To export figures we can use the `png` function from the `grDevices` library. Call the `png()` function and tell it your specifications for the plot (consider the requirements of the targeted publication). Then run the code that generates the plot before calling `dev.off()` to reset the ‘active’ device. 
@@ -638,7 +701,17 @@ dev.off()
 
 - Check with journal about size, resolution etc.
 
-Another output option is pdf. Query the help file with`?pdf`.
+Another output option is pdf. Query the help file with `?pdf`.
+
+You can also save ggplot2 figures with the `ggsave()` function. The function offers a variety of output formats including .jpeg, .png, .tiff and .pdf. Make sure that the file extension specified in the 
+`filenane` argument matches the format specified in the `device` argument of the function. You can control `height` and `width` of the plot. The `units` argument controls in which units height and 
+width are specified - handy if you feel more comfortable expressing the dimensions in cm instead of inches. The resolution is controled with the `dpi` argument. 
+
+```
+ggplot(data = melted_cormat, aes(x = Var1, y = Var2, fill = value)) + geom_tile() + theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+ggsave(filename = "cortile.png", device = 'png', height = 10, width = 15, units = 'cm')
+```
 
 ### Tasks for the afternoon: Basic
 
