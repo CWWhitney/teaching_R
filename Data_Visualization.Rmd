@@ -713,10 +713,6 @@ ggplot(data = melted_cormat, aes(x = Var1, y = Var2, fill = value)) + geom_tile(
 ggsave(filename = "cortile.png", device = 'png', height = 10, width = 15, units = 'cm')
 ```
 
-### Tasks for the afternoon: Basic
-
-![](images/ggplot2.png){width=1in}
-
 ### Test your new skills
 
 ![](images/ggplot2.png){width=1in}
