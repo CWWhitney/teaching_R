@@ -14,7 +14,7 @@ The video below offers a brief overview of the content covered in this section o
 
 ![](images/tidyR.png){width=1in}
 
-Keep it tidy
+*Keep it tidy*
 
 If you are following this tutorial by running the code on your local machine (recommended) then it may make sense to check your R version by running the following code in your R console: 
 
@@ -39,7 +39,7 @@ Read more style tips in the [tidyverse style guide](http://style.tidyverse.org/)
 
 ![](images/tidyR.png){width=1in}
 
-Keep it tidy
+*Keep it tidy*
 
 Get a lot of examples and details about the tidyverse by running the following code in the R console: `browseVignettes(package = "tidyverse")`. Nearly every R library has a collection of vignettes that walk through examples and show, often in explicit detail, the authors intended use of the library.
  
@@ -78,7 +78,7 @@ Three things make a dataset tidy:
 
 ![](images/tidydata.png){width=5in}
 
-Read more about this from [Wickham's paper](www.jstatsoft.org/v59/i10/paper) in the Journal of Statistical Software.
+Read more about this from [Hadley Wickham's paper](www.jstatsoft.org/v59/i10/paper) in the *Journal of Statistical Software*.
 
 ### Wrangling: transform
 
@@ -160,7 +160,7 @@ head(participants_data,
 ```
 
 ```{r wrangle2-head-participants-data-hint-2}
-# look at the 'Arguments' section for the 'n' argument
+# look at the 'Arguments' section of the help file for the 'n' argument
 ?head
 ```
 
