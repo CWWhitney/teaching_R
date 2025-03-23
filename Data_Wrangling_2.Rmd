@@ -22,16 +22,16 @@ If you are following this tutorial by running the code on your local machine (re
 version
 ```  
 
-At the time of writing this I am using R version 4.0.4 `Lost Library Book` [@R-base]. If you do not have this version or something newer it may make sense to update so that you can follow along without pesky version issues.
+At the time of writing this I am using R version 4.4.2 `Pile of Leaves` [@R-base]. If you do not have this version or something newer it may make sense to update so that you can follow along without pesky version issues.
 
-The easiest way to get libraries for today is to install the whole tidyverse [@R-tidyverse] by typing `install.packages("tidyverse")` in the R console and then running `library(tidyverse)`:
+The easiest way to get libraries for today is to install the whole `tidyverse` [@R-tidyverse] by typing `install.packages("tidyverse")` in the R console and then running `library(tidyverse)`:
 
 ```
 install.packages("tidyverse")
 library(tidyverse)
 ```  
 
-If you save your work to an .R file (recommended) be sure to annotate any code that you do not intend to run each time with the `#` symbol. You should only need to install tidyverse once and should be sure to either change that line of code to `#install.packages("tidyverse")` or remove it from your script. 
+If you save your work to an `.R` file (recommended) be sure to annotate any code that you do not intend to run each time with the `#` symbol. You should only need to install `tidyverse` once and should be sure to either change that line of code to `#install.packages("tidyverse")` or remove it from your script. 
 
 Read more style tips in the [tidyverse style guide](http://style.tidyverse.org/) [@R-tidyverse].
 

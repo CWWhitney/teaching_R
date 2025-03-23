@@ -110,7 +110,7 @@ if (window.hljs) {
 <article class="topics" id="learnr-tutorial-content">
 
 <!-- Warning: there must always be a new line before a code chunk and end of file -->
-<!-- If not the whole learnr puts odd columns across your html file -->
+<!-- If not learnr puts odd columns across the html file -->
 <!-- Also, we can have either `solutions` or `hints`, not both -->
 <p><img src="images/INRES_Logo.png" style="width:2in" /> <img
 src="images/Uni_Bonn_Picture.png" style="width:2in" /> <img
@@ -144,8 +144,9 @@ video walks you through that process.</p>
 </iframe>
 <div id="section-using-this-tutorial" class="section level3">
 <h3>Using this tutorial</h3>
-<p>Here is an example of how this tutorial works. The code below
-calculates the answer to one plus one.</p>
+<p>As an example of how this tutorial works please adjust the code
+below, which calculates the answer of one plus one. Change it to compute
+two plus two.</p>
 <div class="tutorial-exercise" data-label="example-addition"
 data-completion="1" data-diagnostics="1" data-startover="1"
 data-lines="0" data-pipe="|&gt;">
@@ -173,9 +174,7 @@ i.e. <code>install.packages("datasauRus")</code>.</p>
 <div class="tutorial-exercise" data-label="example-libraries"
 data-completion="1" data-diagnostics="1" data-startover="1"
 data-lines="0" data-pipe="|&gt;">
-<pre class="text"><code>library(datasauRus)
-library(gganimate)
-library(ggplot2)
+<pre class="text"><code>library(ggplot2)
 library(purrr)
 library(rmarkdown)
 library(tidyverse)
@@ -289,23 +288,23 @@ data-lines="0" data-pipe="|&gt;">
 <pre class="text"><code>version</code></pre>
 <script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
 </div>
-<p>At the time of writing this I am using R version 4.0.4
-<code>Lost Library Book</code> <span class="citation">(R Core Team
+<p>At the time of writing this I am using R version 4.4.2
+<code>Pile of Leaves</code> <span class="citation">(R Core Team
 2024)</span>. If you do not have this version or something newer it may
 make sense to update so that you can follow along without pesky version
 issues.</p>
 <p>The easiest way to get libraries for today is to install the whole
-tidyverse <span class="citation">(Wickham 2023)</span> by typing
-<code>install.packages("tidyverse")</code> in the R console and then
-running <code>library(tidyverse)</code>:</p>
+<code>tidyverse</code> <span class="citation">(Wickham 2023)</span> by
+typing <code>install.packages("tidyverse")</code> in the R console and
+then running <code>library(tidyverse)</code>:</p>
 <pre><code>install.packages(&quot;tidyverse&quot;)
 library(tidyverse)</code></pre>
-<p>If you save your work to an .R file (recommended) be sure to annotate
-any code that you do not intend to run each time with the <code>#</code>
-symbol. You should only need to install tidyverse once and should be
-sure to either change that line of code to
-<code>#install.packages("tidyverse")</code> or remove it from your
-script.</p>
+<p>If you save your work to an <code>.R</code> file (recommended) be
+sure to annotate any code that you do not intend to run each time with
+the <code>#</code> symbol. You should only need to install
+<code>tidyverse</code> once and should be sure to either change that
+line of code to <code>#install.packages("tidyverse")</code> or remove it
+from your script.</p>
 <p>Read more style tips in the <a
 href="http://style.tidyverse.org/">tidyverse style guide</a> <span
 class="citation">(Wickham 2023)</span>.</p>
@@ -1793,7 +1792,7 @@ ggsave(filename = &quot;cortile.png&quot;, device = &#39;png&#39;, height = 10, 
 <script type="application/shiny-prerendered" data-context="server-start">
 knitr::opts_chunk$set(echo = FALSE)
 # library(datasauRus) # for animation
-library(gganimate) # for animation
+# library(gganimate) # for animation
 library(ggplot2)
 # library(gifski) # for animation
 library(learnr)
@@ -1838,7 +1837,7 @@ output$`tutorial-exercise-example-addition-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "example-addition", global_setup = structure(c("knitr::opts_chunk$set(echo = FALSE)", 
-"# library(datasauRus) # for animation", "library(gganimate) # for animation", 
+"# library(datasauRus) # for animation", "# library(gganimate) # for animation", 
 "library(ggplot2)", "# library(gifski) # for animation", "library(learnr)", 
 "    tutorial_options(exercise.timelimit = 200)", "library(purrr)", 
 "library(readr)", "library(rmarkdown)", "library(tidyverse)", 
@@ -1884,14 +1883,14 @@ output$`tutorial-exercise-example-libraries-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "example-libraries", global_setup = structure(c("knitr::opts_chunk$set(echo = FALSE)", 
-"# library(datasauRus) # for animation", "library(gganimate) # for animation", 
+"# library(datasauRus) # for animation", "# library(gganimate) # for animation", 
 "library(ggplot2)", "# library(gifski) # for animation", "library(learnr)", 
 "    tutorial_options(exercise.timelimit = 200)", "library(purrr)", 
 "library(readr)", "library(rmarkdown)", "library(tidyverse)", 
 "  library(dplyr)", "  library(magrittr)", "# load the data", 
 "participants_data <- read.csv(\"participants_data.csv\")"), chunk_opts = list(
     label = "setup", include = FALSE)), setup = NULL, chunks = list(
-    list(label = "example-libraries", code = "library(datasauRus)\nlibrary(gganimate)\nlibrary(ggplot2)\nlibrary(purrr)\nlibrary(rmarkdown)\nlibrary(tidyverse)\n# part of the tidyverse:\n  library(dplyr)\n  library(magrittr)", 
+    list(label = "example-libraries", code = "library(ggplot2)\nlibrary(purrr)\nlibrary(rmarkdown)\nlibrary(tidyverse)\n# part of the tidyverse:\n  library(dplyr)\n  library(magrittr)", 
         opts = list(label = "\"example-libraries\"", exercise = "TRUE"), 
         engine = "r")), code_check = NULL, error_check = NULL, 
     check = NULL, solution = NULL, tests = NULL, options = list(
@@ -1911,12 +1910,11 @@ learnr:::store_exercise_cache(structure(list(label = "example-libraries", global
         message = TRUE, render = NULL, ref.label = NULL, child = NULL, 
         engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
         max.print = 1000, exercise.timelimit = 200, label = "example-libraries", 
-        exercise = TRUE, code = c("library(datasauRus)", "library(gganimate)", 
-        "library(ggplot2)", "library(purrr)", "library(rmarkdown)", 
-        "library(tidyverse)", "# part of the tidyverse:", "  library(dplyr)", 
-        "  library(magrittr)"), out.width.px = 624, out.height.px = 384, 
-        params.src = "example-libraries, exercise=TRUE", fig.num = 0, 
-        exercise.df_print = "paged", exercise.checker = "NULL"), 
+        exercise = TRUE, code = c("library(ggplot2)", "library(purrr)", 
+        "library(rmarkdown)", "library(tidyverse)", "# part of the tidyverse:", 
+        "  library(dplyr)", "  library(magrittr)"), out.width.px = 624, 
+        out.height.px = 384, params.src = "example-libraries, exercise=TRUE", 
+        fig.num = 0, exercise.df_print = "paged", exercise.checker = "NULL"), 
     engine = "r", version = "4"), class = c("r", "tutorial_exercise"
 )))
 </script>
@@ -1931,7 +1929,7 @@ output$`tutorial-exercise-example-version-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "example-version", global_setup = structure(c("knitr::opts_chunk$set(echo = FALSE)", 
-"# library(datasauRus) # for animation", "library(gganimate) # for animation", 
+"# library(datasauRus) # for animation", "# library(gganimate) # for animation", 
 "library(ggplot2)", "# library(gifski) # for animation", "library(learnr)", 
 "    tutorial_options(exercise.timelimit = 200)", "library(purrr)", 
 "library(readr)", "library(rmarkdown)", "library(tidyverse)", 
@@ -1975,7 +1973,7 @@ output$`tutorial-exercise-wrangle2-git-data-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "wrangle2-git-data", global_setup = structure(c("knitr::opts_chunk$set(echo = FALSE)", 
-"# library(datasauRus) # for animation", "library(gganimate) # for animation", 
+"# library(datasauRus) # for animation", "# library(gganimate) # for animation", 
 "library(ggplot2)", "# library(gifski) # for animation", "library(learnr)", 
 "    tutorial_options(exercise.timelimit = 200)", "library(purrr)", 
 "library(readr)", "library(rmarkdown)", "library(tidyverse)", 
@@ -2020,7 +2018,7 @@ output$`tutorial-exercise-wrangle2-names_participants-data-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "wrangle2-names_participants-data", global_setup = structure(c("knitr::opts_chunk$set(echo = FALSE)", 
-"# library(datasauRus) # for animation", "library(gganimate) # for animation", 
+"# library(datasauRus) # for animation", "# library(gganimate) # for animation", 
 "library(ggplot2)", "# library(gifski) # for animation", "library(learnr)", 
 "    tutorial_options(exercise.timelimit = 200)", "library(purrr)", 
 "library(readr)", "library(rmarkdown)", "library(tidyverse)", 
@@ -2065,7 +2063,7 @@ output$`tutorial-exercise-wrangle2-head-participants-data-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "wrangle2-head-participants-data", global_setup = structure(c("knitr::opts_chunk$set(echo = FALSE)", 
-"# library(datasauRus) # for animation", "library(gganimate) # for animation", 
+"# library(datasauRus) # for animation", "# library(gganimate) # for animation", 
 "library(ggplot2)", "# library(gifski) # for animation", "library(learnr)", 
 "    tutorial_options(exercise.timelimit = 200)", "library(purrr)", 
 "library(readr)", "library(rmarkdown)", "library(tidyverse)", 
@@ -2112,7 +2110,7 @@ output$`tutorial-exercise-wrangle2-names-participants-data-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "wrangle2-names-participants-data", global_setup = structure(c("knitr::opts_chunk$set(echo = FALSE)", 
-"# library(datasauRus) # for animation", "library(gganimate) # for animation", 
+"# library(datasauRus) # for animation", "# library(gganimate) # for animation", 
 "library(ggplot2)", "# library(gifski) # for animation", "library(learnr)", 
 "    tutorial_options(exercise.timelimit = 200)", "library(purrr)", 
 "library(readr)", "library(rmarkdown)", "library(tidyverse)", 
@@ -2157,7 +2155,7 @@ output$`tutorial-exercise-wrangle2-str-participants-data-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "wrangle2-str-participants-data", global_setup = structure(c("knitr::opts_chunk$set(echo = FALSE)", 
-"# library(datasauRus) # for animation", "library(gganimate) # for animation", 
+"# library(datasauRus) # for animation", "# library(gganimate) # for animation", 
 "library(ggplot2)", "# library(gifski) # for animation", "library(learnr)", 
 "    tutorial_options(exercise.timelimit = 200)", "library(purrr)", 
 "library(readr)", "library(rmarkdown)", "library(tidyverse)", 
@@ -2202,7 +2200,7 @@ output$`tutorial-exercise-wrangle2-call-variable-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "wrangle2-call-variable", global_setup = structure(c("knitr::opts_chunk$set(echo = FALSE)", 
-"# library(datasauRus) # for animation", "library(gganimate) # for animation", 
+"# library(datasauRus) # for animation", "# library(gganimate) # for animation", 
 "library(ggplot2)", "# library(gifski) # for animation", "library(learnr)", 
 "    tutorial_options(exercise.timelimit = 200)", "library(purrr)", 
 "library(readr)", "library(rmarkdown)", "library(tidyverse)", 
@@ -2249,7 +2247,7 @@ output$`tutorial-exercise-wrangle2-select-aca-parents-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "wrangle2-select-aca-parents", global_setup = structure(c("knitr::opts_chunk$set(echo = FALSE)", 
-"# library(datasauRus) # for animation", "library(gganimate) # for animation", 
+"# library(datasauRus) # for animation", "# library(gganimate) # for animation", 
 "library(ggplot2)", "# library(gifski) # for animation", "library(learnr)", 
 "    tutorial_options(exercise.timelimit = 200)", "library(purrr)", 
 "library(readr)", "library(rmarkdown)", "library(tidyverse)", 
@@ -2297,7 +2295,7 @@ output$`tutorial-exercise-wrangle2-select-non-aca-parents-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "wrangle2-select-non-aca-parents", global_setup = structure(c("knitr::opts_chunk$set(echo = FALSE)", 
-"# library(datasauRus) # for animation", "library(gganimate) # for animation", 
+"# library(datasauRus) # for animation", "# library(gganimate) # for animation", 
 "library(ggplot2)", "# library(gifski) # for animation", "library(learnr)", 
 "    tutorial_options(exercise.timelimit = 200)", "library(purrr)", 
 "library(readr)", "library(rmarkdown)", "library(tidyverse)", 
@@ -2345,7 +2343,7 @@ output$`tutorial-exercise-wrangle2-filter-work-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "wrangle2-filter-work", global_setup = structure(c("knitr::opts_chunk$set(echo = FALSE)", 
-"# library(datasauRus) # for animation", "library(gganimate) # for animation", 
+"# library(datasauRus) # for animation", "# library(gganimate) # for animation", 
 "library(ggplot2)", "# library(gifski) # for animation", "library(learnr)", 
 "    tutorial_options(exercise.timelimit = 200)", "library(purrr)", 
 "library(readr)", "library(rmarkdown)", "library(tidyverse)", 
@@ -2393,7 +2391,7 @@ output$`tutorial-exercise-wrangle2-filter-work-name-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "wrangle2-filter-work-name", global_setup = structure(c("knitr::opts_chunk$set(echo = FALSE)", 
-"# library(datasauRus) # for animation", "library(gganimate) # for animation", 
+"# library(datasauRus) # for animation", "# library(gganimate) # for animation", 
 "library(ggplot2)", "# library(gifski) # for animation", "library(learnr)", 
 "    tutorial_options(exercise.timelimit = 200)", "library(purrr)", 
 "library(readr)", "library(rmarkdown)", "library(tidyverse)", 
@@ -2443,7 +2441,7 @@ output$`tutorial-exercise-wrangle2-rename-letters-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "wrangle2-rename-letters", global_setup = structure(c("knitr::opts_chunk$set(echo = FALSE)", 
-"# library(datasauRus) # for animation", "library(gganimate) # for animation", 
+"# library(datasauRus) # for animation", "# library(gganimate) # for animation", 
 "library(ggplot2)", "# library(gifski) # for animation", "library(learnr)", 
 "    tutorial_options(exercise.timelimit = 200)", "library(purrr)", 
 "library(readr)", "library(rmarkdown)", "library(tidyverse)", 
@@ -2491,7 +2489,7 @@ output$`tutorial-exercise-wrangle2-rename-work-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "wrangle2-rename-work", global_setup = structure(c("knitr::opts_chunk$set(echo = FALSE)", 
-"# library(datasauRus) # for animation", "library(gganimate) # for animation", 
+"# library(datasauRus) # for animation", "# library(gganimate) # for animation", 
 "library(ggplot2)", "# library(gifski) # for animation", "library(learnr)", 
 "    tutorial_options(exercise.timelimit = 200)", "library(purrr)", 
 "library(readr)", "library(rmarkdown)", "library(tidyverse)", 
@@ -2540,7 +2538,7 @@ output$`tutorial-exercise-wrangle2-mutate-commute-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "wrangle2-mutate-commute", global_setup = structure(c("knitr::opts_chunk$set(echo = FALSE)", 
-"# library(datasauRus) # for animation", "library(gganimate) # for animation", 
+"# library(datasauRus) # for animation", "# library(gganimate) # for animation", 
 "library(ggplot2)", "# library(gifski) # for animation", "library(learnr)", 
 "    tutorial_options(exercise.timelimit = 200)", "library(purrr)", 
 "library(readr)", "library(rmarkdown)", "library(tidyverse)", 
@@ -2592,7 +2590,7 @@ output$`tutorial-exercise-wrangle2-summar-commute-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "wrangle2-summar-commute", global_setup = structure(c("knitr::opts_chunk$set(echo = FALSE)", 
-"# library(datasauRus) # for animation", "library(gganimate) # for animation", 
+"# library(datasauRus) # for animation", "# library(gganimate) # for animation", 
 "library(ggplot2)", "# library(gifski) # for animation", "library(learnr)", 
 "    tutorial_options(exercise.timelimit = 200)", "library(purrr)", 
 "library(readr)", "library(rmarkdown)", "library(tidyverse)", 
@@ -2642,7 +2640,7 @@ output$`tutorial-exercise-wrangle2-pipe-long-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "wrangle2-pipe-long", global_setup = structure(c("knitr::opts_chunk$set(echo = FALSE)", 
-"# library(datasauRus) # for animation", "library(gganimate) # for animation", 
+"# library(datasauRus) # for animation", "# library(gganimate) # for animation", 
 "library(ggplot2)", "# library(gifski) # for animation", "library(learnr)", 
 "    tutorial_options(exercise.timelimit = 200)", "library(purrr)", 
 "library(readr)", "library(rmarkdown)", "library(tidyverse)", 
@@ -2694,7 +2692,7 @@ output$`tutorial-exercise-wrangle2-pipe-long2-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "wrangle2-pipe-long2", global_setup = structure(c("knitr::opts_chunk$set(echo = FALSE)", 
-"# library(datasauRus) # for animation", "library(gganimate) # for animation", 
+"# library(datasauRus) # for animation", "# library(gganimate) # for animation", 
 "library(ggplot2)", "# library(gifski) # for animation", "library(learnr)", 
 "    tutorial_options(exercise.timelimit = 200)", "library(purrr)", 
 "library(readr)", "library(rmarkdown)", "library(tidyverse)", 
@@ -2751,7 +2749,7 @@ output$`tutorial-exercise-wrangle2-purr-regression-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "wrangle2-purr-regression", global_setup = structure(c("knitr::opts_chunk$set(echo = FALSE)", 
-"# library(datasauRus) # for animation", "library(gganimate) # for animation", 
+"# library(datasauRus) # for animation", "# library(gganimate) # for animation", 
 "library(ggplot2)", "# library(gifski) # for animation", "library(learnr)", 
 "    tutorial_options(exercise.timelimit = 200)", "library(purrr)", 
 "library(readr)", "library(rmarkdown)", "library(tidyverse)", 
@@ -2806,7 +2804,7 @@ output$`tutorial-exercise-wrangle2-final-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "wrangle2-final", global_setup = structure(c("knitr::opts_chunk$set(echo = FALSE)", 
-"# library(datasauRus) # for animation", "library(gganimate) # for animation", 
+"# library(datasauRus) # for animation", "# library(gganimate) # for animation", 
 "library(ggplot2)", "# library(gifski) # for animation", "library(learnr)", 
 "    tutorial_options(exercise.timelimit = 200)", "library(purrr)", 
 "library(readr)", "library(rmarkdown)", "library(tidyverse)", 
@@ -2858,7 +2856,7 @@ output$`tutorial-exercise-vis-base-barplot-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "vis-base-barplot", global_setup = structure(c("knitr::opts_chunk$set(echo = FALSE)", 
-"# library(datasauRus) # for animation", "library(gganimate) # for animation", 
+"# library(datasauRus) # for animation", "# library(gganimate) # for animation", 
 "library(ggplot2)", "# library(gifski) # for animation", "library(learnr)", 
 "    tutorial_options(exercise.timelimit = 200)", "library(purrr)", 
 "library(readr)", "library(rmarkdown)", "library(tidyverse)", 
@@ -2906,7 +2904,7 @@ output$`tutorial-exercise-vis-ggplot_name_email-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "vis-ggplot_name_email", global_setup = structure(c("knitr::opts_chunk$set(echo = FALSE)", 
-"# library(datasauRus) # for animation", "library(gganimate) # for animation", 
+"# library(datasauRus) # for animation", "# library(gganimate) # for animation", 
 "library(ggplot2)", "# library(gifski) # for animation", "library(learnr)", 
 "    tutorial_options(exercise.timelimit = 200)", "library(purrr)", 
 "library(readr)", "library(rmarkdown)", "library(tidyverse)", 
@@ -2956,7 +2954,7 @@ output$`tutorial-exercise-vis-ggplot_color_size-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "vis-ggplot_color_size", global_setup = structure(c("knitr::opts_chunk$set(echo = FALSE)", 
-"# library(datasauRus) # for animation", "library(gganimate) # for animation", 
+"# library(datasauRus) # for animation", "# library(gganimate) # for animation", 
 "library(ggplot2)", "# library(gifski) # for animation", "library(learnr)", 
 "    tutorial_options(exercise.timelimit = 200)", "library(purrr)", 
 "library(readr)", "library(rmarkdown)", "library(tidyverse)", 
@@ -3010,7 +3008,7 @@ output$`tutorial-exercise-vis-ggplot_iris-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "vis-ggplot_iris", global_setup = structure(c("knitr::opts_chunk$set(echo = FALSE)", 
-"# library(datasauRus) # for animation", "library(gganimate) # for animation", 
+"# library(datasauRus) # for animation", "# library(gganimate) # for animation", 
 "library(ggplot2)", "# library(gifski) # for animation", "library(learnr)", 
 "    tutorial_options(exercise.timelimit = 200)", "library(purrr)", 
 "library(readr)", "library(rmarkdown)", "library(tidyverse)", 
@@ -3063,7 +3061,7 @@ output$`tutorial-exercise-vis-ggplot_carat_price-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "vis-ggplot_carat_price", global_setup = structure(c("knitr::opts_chunk$set(echo = FALSE)", 
-"# library(datasauRus) # for animation", "library(gganimate) # for animation", 
+"# library(datasauRus) # for animation", "# library(gganimate) # for animation", 
 "library(ggplot2)", "# library(gifski) # for animation", "library(learnr)", 
 "    tutorial_options(exercise.timelimit = 200)", "library(purrr)", 
 "library(readr)", "library(rmarkdown)", "library(tidyverse)", 
@@ -3114,7 +3112,7 @@ output$`tutorial-exercise-vis-ggplot_log-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "vis-ggplot_log", global_setup = structure(c("knitr::opts_chunk$set(echo = FALSE)", 
-"# library(datasauRus) # for animation", "library(gganimate) # for animation", 
+"# library(datasauRus) # for animation", "# library(gganimate) # for animation", 
 "library(ggplot2)", "# library(gifski) # for animation", "library(learnr)", 
 "    tutorial_options(exercise.timelimit = 200)", "library(purrr)", 
 "library(readr)", "library(rmarkdown)", "library(tidyverse)", 
@@ -3165,7 +3163,7 @@ output$`tutorial-exercise-vis-diamonds_color-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "vis-diamonds_color", global_setup = structure(c("knitr::opts_chunk$set(echo = FALSE)", 
-"# library(datasauRus) # for animation", "library(gganimate) # for animation", 
+"# library(datasauRus) # for animation", "# library(gganimate) # for animation", 
 "library(ggplot2)", "# library(gifski) # for animation", "library(learnr)", 
 "    tutorial_options(exercise.timelimit = 200)", "library(purrr)", 
 "library(readr)", "library(rmarkdown)", "library(tidyverse)", 
@@ -3218,7 +3216,7 @@ output$`tutorial-exercise-vis-diamonds_shape-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "vis-diamonds_shape", global_setup = structure(c("knitr::opts_chunk$set(echo = FALSE)", 
-"# library(datasauRus) # for animation", "library(gganimate) # for animation", 
+"# library(datasauRus) # for animation", "# library(gganimate) # for animation", 
 "library(ggplot2)", "# library(gifski) # for animation", "library(learnr)", 
 "    tutorial_options(exercise.timelimit = 200)", "library(purrr)", 
 "library(readr)", "library(rmarkdown)", "library(tidyverse)", 
@@ -3272,7 +3270,7 @@ output$`tutorial-exercise-vis-ggplot-I-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "vis-ggplot-I", global_setup = structure(c("knitr::opts_chunk$set(echo = FALSE)", 
-"# library(datasauRus) # for animation", "library(gganimate) # for animation", 
+"# library(datasauRus) # for animation", "# library(gganimate) # for animation", 
 "library(ggplot2)", "# library(gifski) # for animation", "library(learnr)", 
 "    tutorial_options(exercise.timelimit = 200)", "library(purrr)", 
 "library(readr)", "library(rmarkdown)", "library(tidyverse)", 
@@ -3324,7 +3322,7 @@ output$`tutorial-exercise-vis-point-smooth-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "vis-point-smooth", global_setup = structure(c("knitr::opts_chunk$set(echo = FALSE)", 
-"# library(datasauRus) # for animation", "library(gganimate) # for animation", 
+"# library(datasauRus) # for animation", "# library(gganimate) # for animation", 
 "library(ggplot2)", "# library(gifski) # for animation", "library(learnr)", 
 "    tutorial_options(exercise.timelimit = 200)", "library(purrr)", 
 "library(readr)", "library(rmarkdown)", "library(tidyverse)", 
@@ -3377,7 +3375,7 @@ output$`tutorial-exercise-vis-smooth-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "vis-smooth", global_setup = structure(c("knitr::opts_chunk$set(echo = FALSE)", 
-"# library(datasauRus) # for animation", "library(gganimate) # for animation", 
+"# library(datasauRus) # for animation", "# library(gganimate) # for animation", 
 "library(ggplot2)", "# library(gifski) # for animation", "library(learnr)", 
 "    tutorial_options(exercise.timelimit = 200)", "library(purrr)", 
 "library(readr)", "library(rmarkdown)", "library(tidyverse)", 
@@ -3430,7 +3428,7 @@ output$`tutorial-exercise-vis-ggplot_boxplot-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "vis-ggplot_boxplot", global_setup = structure(c("knitr::opts_chunk$set(echo = FALSE)", 
-"# library(datasauRus) # for animation", "library(gganimate) # for animation", 
+"# library(datasauRus) # for animation", "# library(gganimate) # for animation", 
 "library(ggplot2)", "# library(gifski) # for animation", "library(learnr)", 
 "    tutorial_options(exercise.timelimit = 200)", "library(purrr)", 
 "library(readr)", "library(rmarkdown)", "library(tidyverse)", 
@@ -3480,7 +3478,7 @@ output$`tutorial-exercise-vis-jitter_plot-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "vis-jitter_plot", global_setup = structure(c("knitr::opts_chunk$set(echo = FALSE)", 
-"# library(datasauRus) # for animation", "library(gganimate) # for animation", 
+"# library(datasauRus) # for animation", "# library(gganimate) # for animation", 
 "library(ggplot2)", "# library(gifski) # for animation", "library(learnr)", 
 "    tutorial_options(exercise.timelimit = 200)", "library(purrr)", 
 "library(readr)", "library(rmarkdown)", "library(tidyverse)", 
@@ -3530,7 +3528,7 @@ output$`tutorial-exercise-vis-boxplot_jitter-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "vis-boxplot_jitter", global_setup = structure(c("knitr::opts_chunk$set(echo = FALSE)", 
-"# library(datasauRus) # for animation", "library(gganimate) # for animation", 
+"# library(datasauRus) # for animation", "# library(gganimate) # for animation", 
 "library(ggplot2)", "# library(gifski) # for animation", "library(learnr)", 
 "    tutorial_options(exercise.timelimit = 200)", "library(purrr)", 
 "library(readr)", "library(rmarkdown)", "library(tidyverse)", 
@@ -3582,7 +3580,7 @@ output$`tutorial-exercise-vis-geom-histograms-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "vis-geom-histograms", global_setup = structure(c("knitr::opts_chunk$set(echo = FALSE)", 
-"# library(datasauRus) # for animation", "library(gganimate) # for animation", 
+"# library(datasauRus) # for animation", "# library(gganimate) # for animation", 
 "library(ggplot2)", "# library(gifski) # for animation", "library(learnr)", 
 "    tutorial_options(exercise.timelimit = 200)", "library(purrr)", 
 "library(readr)", "library(rmarkdown)", "library(tidyverse)", 
@@ -3631,7 +3629,7 @@ output$`tutorial-exercise-vis-geom-histogram-alpha-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "vis-geom-histogram-alpha", global_setup = structure(c("knitr::opts_chunk$set(echo = FALSE)", 
-"# library(datasauRus) # for animation", "library(gganimate) # for animation", 
+"# library(datasauRus) # for animation", "# library(gganimate) # for animation", 
 "library(ggplot2)", "# library(gifski) # for animation", "library(learnr)", 
 "    tutorial_options(exercise.timelimit = 200)", "library(purrr)", 
 "library(readr)", "library(rmarkdown)", "library(tidyverse)", 
@@ -3683,7 +3681,7 @@ output$`tutorial-exercise-ggplot_subset-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "ggplot_subset", global_setup = structure(c("knitr::opts_chunk$set(echo = FALSE)", 
-"# library(datasauRus) # for animation", "library(gganimate) # for animation", 
+"# library(datasauRus) # for animation", "# library(gganimate) # for animation", 
 "library(ggplot2)", "# library(gifski) # for animation", "library(learnr)", 
 "    tutorial_options(exercise.timelimit = 200)", "library(purrr)", 
 "library(readr)", "library(rmarkdown)", "library(tidyverse)", 
@@ -3734,7 +3732,7 @@ output$`tutorial-exercise-ggplot_labels-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "ggplot_labels", global_setup = structure(c("knitr::opts_chunk$set(echo = FALSE)", 
-"# library(datasauRus) # for animation", "library(gganimate) # for animation", 
+"# library(datasauRus) # for animation", "# library(gganimate) # for animation", 
 "library(ggplot2)", "# library(gifski) # for animation", "library(learnr)", 
 "    tutorial_options(exercise.timelimit = 200)", "library(purrr)", 
 "library(readr)", "library(rmarkdown)", "library(tidyverse)", 
@@ -3782,7 +3780,7 @@ output$`tutorial-exercise-slow_ggplotting_example-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "slow_ggplotting_example", global_setup = structure(c("knitr::opts_chunk$set(echo = FALSE)", 
-"# library(datasauRus) # for animation", "library(gganimate) # for animation", 
+"# library(datasauRus) # for animation", "# library(gganimate) # for animation", 
 "library(ggplot2)", "# library(gifski) # for animation", "library(learnr)", 
 "    tutorial_options(exercise.timelimit = 200)", "library(purrr)", 
 "library(readr)", "library(rmarkdown)", "library(tidyverse)", 
@@ -3830,7 +3828,7 @@ output$`tutorial-exercise-geom_melted_cormat-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "geom_melted_cormat", global_setup = structure(c("knitr::opts_chunk$set(echo = FALSE)", 
-"# library(datasauRus) # for animation", "library(gganimate) # for animation", 
+"# library(datasauRus) # for animation", "# library(gganimate) # for animation", 
 "library(ggplot2)", "# library(gifski) # for animation", "library(learnr)", 
 "    tutorial_options(exercise.timelimit = 200)", "library(purrr)", 
 "library(readr)", "library(rmarkdown)", "library(tidyverse)", 
@@ -3883,7 +3881,7 @@ output$`tutorial-exercise-geom_melted_cormat_custom_color-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "geom_melted_cormat_custom_color", global_setup = structure(c("knitr::opts_chunk$set(echo = FALSE)", 
-"# library(datasauRus) # for animation", "library(gganimate) # for animation", 
+"# library(datasauRus) # for animation", "# library(gganimate) # for animation", 
 "library(ggplot2)", "# library(gifski) # for animation", "library(learnr)", 
 "    tutorial_options(exercise.timelimit = 200)", "library(purrr)", 
 "library(readr)", "library(rmarkdown)", "library(tidyverse)", 
@@ -3932,7 +3930,7 @@ output$`tutorial-exercise-geom_melted_cormat_custom_color_diverge-output` <- ren
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "geom_melted_cormat_custom_color_diverge", 
     global_setup = structure(c("knitr::opts_chunk$set(echo = FALSE)", 
-    "# library(datasauRus) # for animation", "library(gganimate) # for animation", 
+    "# library(datasauRus) # for animation", "# library(gganimate) # for animation", 
     "library(ggplot2)", "# library(gifski) # for animation", 
     "library(learnr)", "    tutorial_options(exercise.timelimit = 200)", 
     "library(purrr)", "library(readr)", "library(rmarkdown)", 
@@ -3982,7 +3980,7 @@ output$`tutorial-exercise-geom_melted_cormat_theme_bw-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "geom_melted_cormat_theme_bw", global_setup = structure(c("knitr::opts_chunk$set(echo = FALSE)", 
-"# library(datasauRus) # for animation", "library(gganimate) # for animation", 
+"# library(datasauRus) # for animation", "# library(gganimate) # for animation", 
 "library(ggplot2)", "# library(gifski) # for animation", "library(learnr)", 
 "    tutorial_options(exercise.timelimit = 200)", "library(purrr)", 
 "library(readr)", "library(rmarkdown)", "library(tidyverse)", 
@@ -4029,7 +4027,7 @@ learnr:::store_exercise_cache(structure(list(label = "geom_melted_cormat_theme_b
 <!--/html_preserve-->
 <!--html_preserve-->
 <script type="application/shiny-prerendered" data-context="execution_dependencies">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages","version"]},"class":{"type":"character","attributes":{},"value":["data.frame"]},"row.names":{"type":"integer","attributes":{},"value":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74]}},"value":[{"type":"character","attributes":{},"value":["backports","base","bslib","cachem","checkmate","cli","colorspace","compiler","crayon","datasets","digest","dplyr","evaluate","farver","fastmap","fontawesome","forcats","generics","gganimate","ggplot2","glue","graphics","grDevices","grid","gtable","hms","htmltools","htmlwidgets","httpuv","jquerylib","jsonlite","knitr","later","learnr","lifecycle","lubridate","magick","magrittr","methods","mime","munsell","pillar","pkgconfig","prettyunits","progress","promises","purrr","R6","Rcpp","readr","rlang","rmarkdown","rprojroot","rstudioapi","sass","scales","shiny","stats","stringi","stringr","tibble","tidyr","tidyselect","tidyverse","timechange","tools","tweenr","tzdb","utils","vctrs","withr","xfun","xtable","yaml"]},{"type":"character","attributes":{},"value":["1.5.0","4.4.2","0.9.0","1.1.0","2.3.2","3.6.4","2.1-1","4.4.2","1.5.3","4.4.2","0.6.37","1.1.4","1.0.3","2.1.2","1.2.0","0.5.3","1.0.0","0.1.3","1.0.9","3.5.1","1.8.0","4.4.2","4.4.2","4.4.2","0.3.6","1.1.3","0.5.8.1","1.6.4","1.6.15","0.1.4","1.9.0","1.49","1.4.1","0.11.5","1.0.4","1.9.4","2.8.5","2.0.3","4.4.2","0.12","0.5.1","1.10.1","2.0.3","1.2.0","1.2.3","1.3.2","1.0.4","2.6.1","1.0.14","2.1.5","1.1.5","2.29","2.0.4","0.17.1","0.4.9","1.3.0","1.10.0","4.4.2","1.8.4","1.5.1","3.2.1","1.3.1","1.2.1","2.0.0","0.3.0","4.4.2","2.0.3","0.4.0","4.4.2","0.6.5","3.0.2","0.51","1.8-4","2.3.10"]}]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages","version"]},"class":{"type":"character","attributes":{},"value":["data.frame"]},"row.names":{"type":"integer","attributes":{},"value":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67]}},"value":[{"type":"character","attributes":{},"value":["backports","base","bslib","cachem","checkmate","cli","colorspace","compiler","datasets","digest","dplyr","evaluate","fastmap","fontawesome","forcats","generics","ggplot2","glue","graphics","grDevices","grid","gtable","hms","htmltools","htmlwidgets","httpuv","jquerylib","jsonlite","knitr","later","learnr","lifecycle","lubridate","magrittr","methods","mime","munsell","pillar","pkgconfig","promises","purrr","R6","Rcpp","readr","rlang","rmarkdown","rprojroot","rstudioapi","sass","scales","shiny","stats","stringi","stringr","tibble","tidyr","tidyselect","tidyverse","timechange","tools","tzdb","utils","vctrs","withr","xfun","xtable","yaml"]},{"type":"character","attributes":{},"value":["1.5.0","4.4.2","0.9.0","1.1.0","2.3.2","3.6.4","2.1-1","4.4.2","4.4.2","0.6.37","1.1.4","1.0.3","1.2.0","0.5.3","1.0.0","0.1.3","3.5.1","1.8.0","4.4.2","4.4.2","4.4.2","0.3.6","1.1.3","0.5.8.1","1.6.4","1.6.15","0.1.4","1.9.0","1.49","1.4.1","0.11.5","1.0.4","1.9.4","2.0.3","4.4.2","0.12","0.5.1","1.10.1","2.0.3","1.3.2","1.0.4","2.6.1","1.0.14","2.1.5","1.1.5","2.29","2.0.4","0.17.1","0.4.9","1.3.0","1.10.0","4.4.2","1.8.4","1.5.1","3.2.1","1.3.1","1.2.1","2.0.0","0.3.0","4.4.2","0.4.0","4.4.2","0.6.5","3.0.2","0.51","1.8-4","2.3.10"]}]}]}
 </script>
 <!--/html_preserve-->
 <div id="section-refs" class="references csl-bib-body hanging-indent"
