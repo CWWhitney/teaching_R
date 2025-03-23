@@ -3,7 +3,7 @@
 ![](images/Circos.png){width=1.5in}
 ![](images/ggplot2.png){width=1.1in}
 
-The video below offers an overview of the content in covered in this section of the tutorial. Keep in mind that I did not yet have your data when I recorded this so the results of my scripts may be slightly different than yours. Feel free to watch the video and follow along or simply work through the tutorial. All the [Data Visualization slides](http://htmlpreview.github.io/?https://github.com/CWWhitney/teaching_R/blob/master/Data_Visualization_Rpres/Data_Visualization.html#/) are also available as a web page. 
+The video below offers an overview of the content covered in this section of the tutorial. Keep in mind that I did not yet have your data when I recorded this so the results of my scripts may be slightly different than yours. Feel free to watch the video and follow along or simply work through the tutorial. All the [Data Visualization slides](http://htmlpreview.github.io/?https://github.com/CWWhitney/teaching_R/blob/master/Data_Visualization_Rpres/Data_Visualization.html#/) are also available as a web page. 
 
 <!-- ![](https://youtu.be/y4BPnwyxU-E) -->
 
@@ -45,6 +45,11 @@ https://rmarkdown.rstudio.com/
 ![](images/R_logo.png){width=1in}
 
 - Load the data with the `read.csv` function
+
+```{r setup_data_vis, include=FALSE}
+# load the data
+participants_data <- read.csv("participants_data.csv")
+```
 
 ```
 participants_data <- read.csv("participants_data.csv")
@@ -606,7 +611,7 @@ We use the `as.data.frame.table` function from base R to create a melted correla
 ```{r geom_melted_cormat, exercise=TRUE}
 # subset the data to numeric only with select_if
 part_data <- select_if(participants_data, 
-                       is.numeric)
+                       is.numeric, na.rm = TRUE)
 # use 'cor' to perform pearson correlation
 # use 'round' to reduce correlation 
 # results to 1 decimal
@@ -624,6 +629,34 @@ ggplot(data = melted_cormat,
 geom_tile()
 ```
 
+Use `na.omit` to get rid of any rows missing data. 
+
+````
+na.omit(select_if(participants_data, 
+                       is.numeric, na.rm = TRUE))
+````
+
+```{r geom_melted_cormat-solution}
+# subset the data to numeric only with select_if
+part_data <- na.omit(select_if(participants_data, 
+                       is.numeric, na.rm = TRUE))
+# use 'cor' to perform pearson correlation
+# use 'round' to reduce correlation 
+# results to 1 decimal
+cormat <- round(cor(part_data), 
+                digits = 1)
+# use 'as.data.frame.table' to build a table
+# with correlation values
+melted_cormat <- as.data.frame.table(cormat, 
+                                     responseName = "value")
+# plot the result with 'geom-tile'
+ggplot(data = melted_cormat, 
+       aes(x = Var1,
+           y = Var2,
+           fill = value)) + 
+geom_tile()
+```
+                       
 ### Specifying appearance of the plot
 
 ggplot allows a very high level of control over your plots. There is nothing wrong with
@@ -654,6 +687,7 @@ geom_tile() +
                        mid = "#FFFFCC",
                        high = "#FF0000")
 ```
+
 Usually colors are encoded in hex-code like in this example, but R has also some 
 pre-defined colors like in the example before, where we used 'white' and 'red'.
 You can also control other aspects of your plot, like the shape of points, the 
