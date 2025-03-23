@@ -8,7 +8,7 @@ runtime: shiny_prerendered
 ---
 
 <!-- Warning: there must always be a new line before a code chunk and end of file -->
-<!-- If not the whole learnr puts odd columns across your html file -->
+<!-- If not learnr puts odd columns across the html file -->
 
 <!-- Also, we can have either `solutions` or `hints`, not both -->
 
@@ -19,7 +19,7 @@ runtime: shiny_prerendered
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 # library(datasauRus) # for animation
-library(gganimate) # for animation
+# library(gganimate) # for animation
 library(ggplot2)
 # library(gifski) # for animation
 library(learnr)
@@ -38,8 +38,8 @@ participants_data <- read.csv("participants_data.csv")
 ```{r, warning=FALSE, include = FALSE}
 #Automatically write R package citation entries to a .bib file
 knitr::write_bib(c(.packages(), 
-                   'datasauRus', 
-                   'gganimate',
+                  # 'datasauRus', 
+                   #'gganimate',
                    'ggplot2',
                    'learnr', 
                    'purrr',
