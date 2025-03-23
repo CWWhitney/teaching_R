@@ -170,7 +170,7 @@ machine.</p>
 on your own machine. To do that you will need all the libraries. If
 these do not load you will also need to use the
 <code>install.packages()</code> function.
-i.e. <code>install.packages("datasauRus")</code>.</p>
+i.e. <code>install.packages("ggplot2")</code>.</p>
 <div class="tutorial-exercise" data-label="example-libraries"
 data-completion="1" data-diagnostics="1" data-startover="1"
 data-lines="0" data-pipe="|&gt;">
@@ -278,7 +278,7 @@ along or simply work through the tutorial.</p>
 <div id="section-notes-on-tidy-r" class="section level3">
 <h3>Notes on tidy R</h3>
 <p><img src="images/tidyR.png" style="width:1in" /></p>
-<p>Keep it tidy</p>
+<p><em>Keep it tidy</em></p>
 <p>If you are following this tutorial by running the code on your local
 machine (recommended) then it may make sense to check your R version by
 running the following code in your R console:</p>
@@ -313,7 +313,7 @@ class="citation">(Wickham 2023)</span>.</p>
 class="section level3">
 <h3>Notes on tidy R browseVignettes</h3>
 <p><img src="images/tidyR.png" style="width:1in" /></p>
-<p>Keep it tidy</p>
+<p><em>Keep it tidy</em></p>
 <p>Get a lot of examples and details about the tidyverse by running the
 following code in the R console:
 <code>browseVignettes(package = "tidyverse")</code>. Nearly every R
@@ -359,8 +359,8 @@ class="citation">(Wickham 2023)</span>.</p>
 </ul>
 <p><img src="images/tidydata.png" style="width:5in" /></p>
 <p>Read more about this from <a
-href="www.jstatsoft.org/v59/i10/paper">Wickham’s paper</a> in the
-Journal of Statistical Software.</p>
+href="www.jstatsoft.org/v59/i10/paper">Hadley Wickham’s paper</a> in the
+<em>Journal of Statistical Software</em>.</p>
 </div>
 <div id="section-wrangling-transform" class="section level3">
 <h3>Wrangling: transform</h3>
@@ -466,7 +466,7 @@ data-pipe="|&gt;">
 data-label="wrangle2-head-participants-data-hint-2" data-completion="1"
 data-diagnostics="1" data-startover="1" data-lines="0"
 data-pipe="|&gt;">
-<pre class="text"><code># look at the &#39;Arguments&#39; section for the &#39;n&#39; argument
+<pre class="text"><code># look at the &#39;Arguments&#39; section of the help file for the &#39;n&#39; argument
 ?head</code></pre>
 </div>
 <div class="tutorial-exercise-support"
@@ -934,7 +934,7 @@ data-pipe="|&gt;">
 <h2>Data Visualization</h2>
 <p><img src="images/Circos.png" style="width:1.5in" /> <img
 src="images/ggplot2.png" style="width:1.1in" /></p>
-<p>The video below offers an overview of the content in covered in this
+<p>The video below offers an overview of the content covered in this
 section of the tutorial. Keep in mind that I did not yet have your data
 when I recorded this so the results of my scripts may be slightly
 different than yours. Feel free to watch the video and follow along or
@@ -1649,7 +1649,7 @@ data-completion="1" data-diagnostics="1" data-startover="1"
 data-lines="0" data-pipe="|&gt;">
 <pre class="text"><code># subset the data to numeric only with select_if
 part_data &lt;- select_if(participants_data, 
-                       is.numeric)
+                       is.numeric, na.rm = TRUE)
 # use &#39;cor&#39; to perform pearson correlation
 # use &#39;round&#39; to reduce correlation 
 # results to 1 decimal
@@ -1666,6 +1666,32 @@ ggplot(data = melted_cormat,
            fill = value)) + 
 geom_tile()</code></pre>
 <script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
+</div>
+<p>Use <code>na.omit</code> to get rid of any rows missing data.</p>
+<pre><code>na.omit(select_if(participants_data, 
+                       is.numeric, na.rm = TRUE))</code></pre>
+<div class="tutorial-exercise-support"
+data-label="geom_melted_cormat-solution" data-completion="1"
+data-diagnostics="1" data-startover="1" data-lines="0"
+data-pipe="|&gt;">
+<pre class="text"><code># subset the data to numeric only with select_if
+part_data &lt;- na.omit(select_if(participants_data, 
+                       is.numeric, na.rm = TRUE))
+# use &#39;cor&#39; to perform pearson correlation
+# use &#39;round&#39; to reduce correlation 
+# results to 1 decimal
+cormat &lt;- round(cor(part_data), 
+                digits = 1)
+# use &#39;as.data.frame.table&#39; to build a table
+# with correlation values
+melted_cormat &lt;- as.data.frame.table(cormat, 
+                                     responseName = &quot;value&quot;)
+# plot the result with &#39;geom-tile&#39;
+ggplot(data = melted_cormat, 
+       aes(x = Var1,
+           y = Var2,
+           fill = value)) + 
+geom_tile()</code></pre>
 </div>
 </div>
 <div id="section-specifying-appearance-of-the-plot"
@@ -3835,17 +3861,27 @@ learnr:::store_exercise_cache(structure(list(label = "geom_melted_cormat", globa
 "  library(dplyr)", "  library(magrittr)", "# load the data", 
 "participants_data <- read.csv(\"participants_data.csv\")"), chunk_opts = list(
     label = "setup", include = FALSE)), setup = NULL, chunks = list(
-    list(label = "geom_melted_cormat", code = "# subset the data to numeric only with select_if\npart_data <- select_if(participants_data, \n                       is.numeric)\n# use 'cor' to perform pearson correlation\n# use 'round' to reduce correlation \n# results to 1 decimal\ncormat <- round(cor(part_data), \n                digits = 1)\n# use 'as.data.frame.table' to build a table\n# with correlation values\nmelted_cormat <- as.data.frame.table(cormat, \n                                     responseName = \"value\")\n# plot the result with 'geom-tile'\nggplot(data = melted_cormat, \n       aes(x = Var1,\n           y = Var2,\n           fill = value)) + \ngeom_tile()", 
+    list(label = "geom_melted_cormat", code = "# subset the data to numeric only with select_if\npart_data <- select_if(participants_data, \n                       is.numeric, na.rm = TRUE)\n# use 'cor' to perform pearson correlation\n# use 'round' to reduce correlation \n# results to 1 decimal\ncormat <- round(cor(part_data), \n                digits = 1)\n# use 'as.data.frame.table' to build a table\n# with correlation values\nmelted_cormat <- as.data.frame.table(cormat, \n                                     responseName = \"value\")\n# plot the result with 'geom-tile'\nggplot(data = melted_cormat, \n       aes(x = Var1,\n           y = Var2,\n           fill = value)) + \ngeom_tile()", 
         opts = list(label = "\"geom_melted_cormat\"", exercise = "TRUE"), 
         engine = "r")), code_check = NULL, error_check = NULL, 
-    check = NULL, solution = NULL, tests = NULL, options = list(
-        eval = FALSE, echo = TRUE, results = "markup", tidy = FALSE, 
-        tidy.opts = NULL, collapse = FALSE, prompt = FALSE, comment = NA, 
-        highlight = FALSE, size = "normalsize", background = "#F7F7F7", 
-        strip.white = TRUE, cache = 0, cache.path = "Index_cache/html/", 
-        cache.vars = NULL, cache.lazy = TRUE, dependson = NULL, 
-        autodep = FALSE, cache.rebuild = FALSE, fig.keep = "high", 
-        fig.show = "asis", fig.align = "default", fig.path = "Index_files/figure-html/", 
+    check = NULL, solution = structure(c("# subset the data to numeric only with select_if", 
+    "part_data <- na.omit(select_if(participants_data, ", "                       is.numeric, na.rm = TRUE))", 
+    "# use 'cor' to perform pearson correlation", "# use 'round' to reduce correlation ", 
+    "# results to 1 decimal", "cormat <- round(cor(part_data), ", 
+    "                digits = 1)", "# use 'as.data.frame.table' to build a table", 
+    "# with correlation values", "melted_cormat <- as.data.frame.table(cormat, ", 
+    "                                     responseName = \"value\")", 
+    "# plot the result with 'geom-tile'", "ggplot(data = melted_cormat, ", 
+    "       aes(x = Var1,", "           y = Var2,", "           fill = value)) + ", 
+    "geom_tile()"), chunk_opts = list(label = "geom_melted_cormat-solution")), 
+    tests = NULL, options = list(eval = FALSE, echo = TRUE, results = "markup", 
+        tidy = FALSE, tidy.opts = NULL, collapse = FALSE, prompt = FALSE, 
+        comment = NA, highlight = FALSE, size = "normalsize", 
+        background = "#F7F7F7", strip.white = TRUE, cache = 0, 
+        cache.path = "Index_cache/html/", cache.vars = NULL, 
+        cache.lazy = TRUE, dependson = NULL, autodep = FALSE, 
+        cache.rebuild = FALSE, fig.keep = "high", fig.show = "asis", 
+        fig.align = "default", fig.path = "Index_files/figure-html/", 
         dev = "png", dev.args = NULL, dpi = 192, fig.ext = "png", 
         fig.width = 6.5, fig.height = 4, fig.env = "figure", 
         fig.cap = NULL, fig.scap = NULL, fig.lp = "fig:", fig.subcap = NULL, 
@@ -3856,7 +3892,7 @@ learnr:::store_exercise_cache(structure(list(label = "geom_melted_cormat", globa
         engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
         max.print = 1000, exercise.timelimit = 200, label = "geom_melted_cormat", 
         exercise = TRUE, code = c("# subset the data to numeric only with select_if", 
-        "part_data <- select_if(participants_data, ", "                       is.numeric)", 
+        "part_data <- select_if(participants_data, ", "                       is.numeric, na.rm = TRUE)", 
         "# use 'cor' to perform pearson correlation", "# use 'round' to reduce correlation ", 
         "# results to 1 decimal", "cormat <- round(cor(part_data), ", 
         "                digits = 1)", "# use 'as.data.frame.table' to build a table", 
